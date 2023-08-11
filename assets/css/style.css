@@ -147,7 +147,7 @@ body {
 
 .section-heading {
   text-align: center;
-  margin-top: 140px;
+  margin-top: 50px;
   margin-bottom: 80px;
 }
 
@@ -181,7 +181,7 @@ body {
 .main-button a {
   display: inline-block;
   font-size: 15px;
-  padding: 12px 20px;
+  padding: 10px 15px;
   background-color: #ed563b;
   color: #fff;
   text-align: center;
@@ -200,6 +200,16 @@ body {
 header
 --------------------------------------------- 
 */
+
+.site-logo, .img {
+  float: left;  
+  padding-top: 4px;
+  padding: 12px;
+  min-height: 10vh;
+  max-height: 10vh;
+  width: auto;  
+}
+
 
 .background-header {
   background: rgba(250,250,250,0.99) !important;
@@ -247,7 +257,7 @@ header
 }
 
 .header-area .main-nav {
-  min-height: 80px;
+  min-height: 80%;
   background: transparent;
 }
 
@@ -591,7 +601,6 @@ header
   }
 }
 
-
 /* 
 ---------------------------------------------
 banner
@@ -620,44 +629,107 @@ banner
     background-color: rgba(35,45,57,0.8);
     top: 0;
     left: 0;
-    bottom: 7px;
+    bottom: 1px;
     width: 100%;
 }
 
 .main-banner .caption {
-  text-align: center;
-  position: absolute;
+  text-align: left;
+  position: relative;
   width: 80%;
   left: 50%;
   top: 50%;
   transform: translate(-50%,-50%);
 }
 
-.main-banner .caption h6 {
-  margin-top: 0px;
-  font-size: 18px;
-  text-transform: uppercase;
-  font-weight: 800;
-  color: #fff;
-  letter-spacing: 0.5px;
+.main-banner .student-img {
+  text-align: right;
+  position: absolute;
+  width: 80%;
+  left: 50%;
+  top: 90%;
+  transform: translate(-50%,-50%);
 }
 
+.main-banner .caption h6{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: #fff;
+  letter-spacing: 1px;
+  position: relative;
+}
 .main-banner .caption h2 {
   margin-top: 30px;
-  margin-bottom: 25px;
-  font-size: 84px;
+  margin-bottom: 30px;
+  font-size: 70px;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #fff;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.main-banner .caption h2 em {
+  font-style: normal;
+  color: #ed563b;
+  font-weight: 700;
+}
+
+.main-banner .caption h4 {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 70px;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #fffcfc;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+/*
+---------------------------------------------
+common questions
+---------------------------------------------
+*/
+
+#question {
+  padding: 120px 0px;
+  background-color: #ffffff;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 80%;
+  text-align: center;
+}
+
+.question h2 {
+  font-size: 36px;
   text-transform: uppercase;
   font-weight: 800;
   color: #fff;
   letter-spacing: 1px;
 }
 
-.main-banner .caption h2 em {
+.question h2 em {
   font-style: normal;
   color: #ed563b;
-  font-weight: 900;
 }
 
+.question a {
+  font-size: 16px;
+  color: #196baa;
+  margin: 15px 0px 25px 0px;
+}
+
+.this-section-heading{
+  text-align: left;
+  margin-top: 140px;
+  margin-bottom: 80px;
+  
+}
 
 /*
 ---------------------------------------------
@@ -671,7 +743,7 @@ features
 
 .feature-item {
   display: inline-block;
-  margin-bottom: 60px;
+  margin-bottom: 10px;
 }
 
 .feature-item .left-icon img {
@@ -683,7 +755,7 @@ features
   display: inline;
 }
 
-.feature-item .right-content h4 {
+.feature-item .right-content h3 {
   margin-top: 0px;
   margin-bottom:  7px;
   letter-spacing: 0.25px;
@@ -710,10 +782,11 @@ subscribe
 
 #call-to-action {
   padding: 120px 0px;
-  background-image: url(../images/cta-bg.jpg);
+  background-color: #000000;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  opacity: 80%;
   text-align: center;
 }
 
@@ -807,10 +880,10 @@ Our Classes
   color: #1e1e1e;
 }
 .tabs-content {
-  margin-left: 30px;
+  margin-left: 10px;
   text-align: left;
   display: inline-block;
-  transition: all 0.3s;
+
 }
 .tabs-content img {
   max-width: 100%;
@@ -827,7 +900,7 @@ Our Classes
 }
 .tabs-content p {
   font-size: 14px;
-  color: #7a7a7a;
+  color: #ffffff;
   margin-bottom: 28px;
 }
 
@@ -839,8 +912,8 @@ schedule
 */
 
 #schedule {
-  padding: 0px 0px 140px 0px;
-  background-image: url(../images/schedule-bg.jpg);
+  padding: 120px 0px 140px 0px;
+  background-color: #404142;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -935,12 +1008,67 @@ schedule
   transition: all 350ms;
 }
 
+/* 
+---------------------------------------------
+programs
+--------------------------------------------- 
+*/
+#programs .program-item {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+  padding: 40px;
+}
 
+#programs .program-item img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+#programs .program-item span {
+  font-size: 25px;
+  font-weight: 500;
+  color: #ed563b;
+  display: inline-block;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+#programs .program-item h4 {
+  font-size: 19px;
+  font-weight: 600;
+  color: #232d39;
+  letter-spacing: 0.5px;
+  margin-bottom: 18px;
+}
+
+#programs .program-item p {
+  margin-bottom: 20px;
+}
+
+#programs .program-item ul.social-icons li {
+  display: inline-block;
+  margin-right: 12px;
+}
+
+#programs .program-item ul.social-icons li:last-child {
+  margin-right: 0px;
+}
+
+#programs .program-item ul.social-icons li a {
+  color: #232d39;
+  transition: all .3s;
+}
+
+#programs .program-item ul.social-icons li a:hover {
+  color: #ed563b;
+}
 /* 
 ---------------------------------------------
 trainers
 --------------------------------------------- 
 */
+
 
 #trainers .trainer-item {
   background-color: #fff;
@@ -955,7 +1083,7 @@ trainers
 }
 
 #trainers .trainer-item span {
-  font-size: 13px;
+  font-size: 25px;
   font-weight: 500;
   color: #ed563b;
   display: inline-block;
@@ -1207,7 +1335,54 @@ preloader
 
 /* 
 ---------------------------------------------
-responsive
+application form
+--------------------------------------------- 
+*/
+.buttonload {
+  background-color: #4CAF50; /* Green background */
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  padding: 12px 24px; /* Some padding */
+  font-size: 16px; /* Set a font-size */
+}
+
+/* Add a right margin to each icon */
+.fa {
+  margin-left: -2px;
+  margin-right: 8px;
+}
+.disabled {
+  pointer-events: none;
+  cursor: default;
+}
+.xlabel{
+    text-align: right;
+    margin-top: 6px;
+}
+.font-blue-madison {
+    color: #578ebe !important;
+}
+.bold{
+    font-weight: bold;
+}
+.selected-date{
+    /*color: #ff6817 !important;*/
+    background-color:  #ff6817 !important;
+}
+.limit-exceed {
+	color: red;
+}
+
+.text-center{
+    text-align: center;
+}
+.text-cross{
+    text-decoration: line-through;
+}
+
+/* 
+---------------------------------------------
+end of application form
 --------------------------------------------- 
 */
 
@@ -1246,4 +1421,41 @@ responsive
   .feature-item .right-content a.text-button {
     margin-left: 130px;
   }
+}
+
+/* 
+---------------------------------------------
+Log in form
+--------------------------------------------- 
+*/
+
+#dmain {
+  box-shadow: 0px 0px 14px #999999;
+  border-radius: 5px;
+  border-color: #d3d3d3;
+  border-width: 1px;
+  border-style: solid;
+  background-color: white;
+  width: 450px;
+  height: 400px;
+  margin-left: 270px;
+  margin-top: 30px;
+}
+
+/* 
+---------------------------------------------
+Sign in form
+--------------------------------------------- 
+*/
+#ddown {
+  height: 440px;
+  width: 1338px;
+  display: block;
+}
+
+#drig {
+
+  height: 470px;
+  width: 1338px;
+  display: block;
 }
