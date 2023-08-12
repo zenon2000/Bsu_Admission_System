@@ -201,13 +201,19 @@ header
 --------------------------------------------- 
 */
 
-.site-logo, .img {
+
+.site-logo {
   float: left;  
   padding-top: 4px;
   padding: 12px;
   min-height: 10vh;
   max-height: 10vh;
   width: auto;  
+}
+
+.site-logo .img .h4 .em{
+  height: 80px;
+  display: inline;
 }
 
 
@@ -224,6 +230,7 @@ header
 .background-header .logo,
 .background-header .main-nav .nav li a {
   color: #232d39!important;
+
 }
 
 .background-header .main-nav .nav li:last-child a {
@@ -235,11 +242,14 @@ header
 }
 
 .background-header .main-nav .nav li:hover a {
-  color: #ed563b!important;
+  color: #232d39!important;
 }
 
 .background-header .nav li a.active {
-  color: #ed563b!important;
+  color: #232d39!important;
+}
+.background-header .logo em{
+  color: #232d39 !important;
 }
 
 .header-area {
@@ -254,16 +264,17 @@ header
   -moz-transition: all .5s ease 0s;
   -o-transition: all .5s ease 0s;
   transition: all .5s ease 0s;
+  overflow: hidden;
 }
 
 .header-area .main-nav {
-  min-height: 80%;
+  max-height: 100%;
   background: transparent;
 }
 
 .header-area .main-nav .logo {
   line-height: 80px;
-  color: #fff;
+  color: #22e62c;
   font-size: 32px;
   font-weight: 800;
   text-transform: uppercase;
@@ -276,7 +287,7 @@ header
 
 .header-area .main-nav .logo em {
   font-style: normal;
-  color: #ed563b;
+  color: #d4f568f0;
   font-weight: 900;
 }
 
@@ -289,8 +300,9 @@ header
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
-  position: relative;
+  position:relative;
   z-index: 999;
+  height: 80px;
 }
 
 .header-area .main-nav .nav li {
@@ -350,7 +362,7 @@ header
   opacity: 1;
 }
 
-.header-area .main-nav .menu-trigger {
+.header-area .main-nav .menu-trigger  {
   cursor: pointer;
   display: block;
   position: absolute;
@@ -360,12 +372,12 @@ header
   text-indent: -9999em;
   z-index: 99;
   right: 40px;
-  display: none;
+  overflow: hidden;
 }
 
 .header-area .main-nav .menu-trigger span,
 .header-area .main-nav .menu-trigger span:before,
-.header-area .main-nav .menu-trigger span:after {
+.header-area .main-nav .menu-trigger span:after  {
   -moz-transition: all 0.4s;
   -o-transition: all 0.4s;
   -webkit-transition: all 0.4s;
@@ -474,7 +486,7 @@ header
 }
 
 @media (max-width: 1200px) {
-  .header-area .main-nav .nav li {
+  .header-area .main-nav h4 .nav li {
     padding-left: 12px;
     padding-right: 12px;
   }
