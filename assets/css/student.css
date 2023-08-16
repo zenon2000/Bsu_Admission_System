@@ -75,7 +75,7 @@ header, nav, section, article, aside, footer, hgroup {
 html, body {
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
-  background-color: #fff;
+  background-color: #999997;
   font-size: 16px;
   -ms-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
@@ -108,7 +108,7 @@ global styles
 */
 html,
 body {
-  background: #fff;
+  background: #999997;
   font-family: 'Poppins', sans-serif;
 }
 
@@ -152,8 +152,10 @@ body {
 /* Header*/
 
 .header-area{
-    background-color: #424242;
+  background-color: #146b4e;
+    background-image: url( "banner.jpg");
     position: absolute;
+    padding: 20px 10px;
     top: 0px;
     left: 0px;
     right: 0px;
@@ -163,5 +165,71 @@ body {
     -o-transition: all .5s ease 0s;
     transition: all .5s ease 0s;
     overflow: hidden;
+}
+
+.header-area h4{
+  text-align: right;
+  text-transform: uppercase;
+  font-size: 80px;
+  font-weight: 800 px;
+  color: #fff;
+}
+.header-area img{
+  float: left;  
+  padding-top: 4px;
+  padding: 12px;
+  min-height: 180px;
+  max-height: 180px;
+  width: auto;  
+}
+.header-area a.logo{
+  text-align: right;
+  text-transform: uppercase;
+  font-size: 80px;
+  font-weight: 800 px;
+  color: #fff;
+}
+.header-area a:hover{
+  background-color: #12501f;
+  color: white;
+}
+.header-area a.active{
+  background-color: rgb(18, 80, 31); 
+  color: white;
+}
+
+.navbar {
+  height: 80px;
+  background-color: #555;
+  overflow: hidden;
+}
+
+.navbar a {
+  float: left;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+  position: relative;
+}
+
+.navbar a:hover {
+  background-color: #000;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+
+@media sscreen and (max-width:700px){
+  .header-area a{
+    float: none;
+    display: block;
+    text-align: right;
+  }
+  .navbar a {
+    float: none;
+    display: block;
+  }
 }
 
