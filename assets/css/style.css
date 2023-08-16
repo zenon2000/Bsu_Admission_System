@@ -244,17 +244,16 @@ header-landing page
   left: 0px;
   right: 0px;
   z-index: 100;
-  height: 80px;
+  min-height: 100px;
+  max-height: 800px;
   background: rgba(250,250,250,0.1);
   -webkit-transition: all .5s ease 0s;
   -moz-transition: all .5s ease 0s;
   -o-transition: all .5s ease 0s;
   transition: all .5s ease 0s;
-  overflow: hidden;
 }
 
 .header-area .main-nav {
-  max-height: 100%;
   background: transparent;
 }
 
@@ -288,7 +287,6 @@ header-landing page
   transition: all 0.3s ease 0s;
   position:relative;
   z-index: 999;
-  height: 80px;
 }
 
 .header-area .main-nav .nav li {
@@ -358,7 +356,7 @@ header-landing page
   text-indent: -9999em;
   z-index: 99;
   right: 40px;
-  overflow: hidden;
+  display: none;
 }
 
 .header-area .main-nav .menu-trigger span,
@@ -459,8 +457,8 @@ header-landing page
   background-color: #1e1e1e;
 }
 
-.header-area.header-sticky {
-  min-height: 80px;
+.header-area .header-sticky {
+  height: 80px;
 }
 
 .header-area.header-sticky .nav {
@@ -493,9 +491,10 @@ header-landing page
   .header-area {
     background-color: #f7f7f7;
     padding: 0px 15px;
-    height: 80px;
+    height: 100px;
     box-shadow: none;
     text-align: center;
+    font-size: 180px;
   }
   .header-area .container {
     padding: 0px;
