@@ -1,10 +1,3 @@
-/*
-
-TemplateMo 548 Training Studio
-
-https://templatemo.com/tm-548-training-studio
-
-*/
 
 /* ---------------------------------------------
 Table of contents
@@ -163,7 +156,7 @@ body {
 
 .section-heading h2 em {
   font-style: normal;
-  color: #ed563b;
+  color: #53ed3b;
 }
 
 .section-heading img {
@@ -182,8 +175,8 @@ body {
   display: inline-block;
   font-size: 15px;
   padding: 10px 15px;
-  background-color: #ed563b;
-  color: #fff;
+  background-color: #53ed3b;
+  color: #111010;
   text-align: center;
   font-weight: 400;
   text-transform: uppercase;
@@ -191,7 +184,7 @@ body {
 }
 
 .main-button a:hover {
-  background-color: #f9735b;
+  background-color: #53ed3b;
 }
 
 
@@ -251,7 +244,7 @@ header-landing page
   left: 0px;
   right: 0px;
   z-index: 100;
-  height: 2vh;
+  height: 80px;
   background: rgba(250,250,250,0.1);
   -webkit-transition: all .5s ease 0s;
   -moz-transition: all .5s ease 0s;
@@ -606,76 +599,6 @@ header-landing page
   }
 }
 
-
-/* 
----------------------------------------------
-header-student page
---------------------------------------------- 
-*/
-.profile {
-  float: left;  
-  padding-top: 4px;
-  padding: 12px;
-  min-height: 10vh;
-  max-height: 10vh;
-}
-
-.student-nav {
-    background-color: #5e605e;
-    width: 200px;
-    height: 100%;
-    position:absolute;
-    top: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: top;
-    overflow: hidden;
-}
-
-.nav-item {
-    color: #fff;
-    padding: 10px;
-    margin: 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.nav-item li img{
-  text-decoration: none;
-  color: #fff;
-  size: 5px;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-}
-
-
-.nav-item:hover {
-    background-color: #555;
-}
-
-.student-header{
-  position: right;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  z-index: 100;
-  height: 80px;
-  background: rgba(250,250,250,0.1);
-  -webkit-transition: all .5s ease 0s;
-  -moz-transition: all .5s ease 0s;
-  -o-transition: all .5s ease 0s;
-  transition: all .5s ease 0s;
-}
-
-.student-header h4{
-text-align: right;
-}
-
-.student-header p{
-  text-align: right;
-  }
 /* 
 ---------------------------------------------
 banner
