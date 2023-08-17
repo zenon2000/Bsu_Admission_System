@@ -153,7 +153,6 @@ body {
 
 .header-area{
   background-color: #146b4e;
-    background-image: url( "banner.jpg");
     position: absolute;
     padding: 20px 10px;
     top: 0px;
@@ -167,14 +166,27 @@ body {
     overflow: hidden;
 }
 
-.header-area h4{
+.logo-area{
+  position: absolute;
+  padding: 20px 10px;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 100;
+  -webkit-transition: all .5s ease 0s;
+  -moz-transition: all .5s ease 0s;
+  -o-transition: all .5s ease 0s;
+  transition: all .5s ease 0s;
+  overflow: hidden
+}
+.logo-area h4{
   text-align: right;
   text-transform: uppercase;
   font-size: 80px;
   font-weight: 800 px;
   color: #fff;
 }
-.header-area img{
+.logo-area img{
   float: left;  
   padding-top: 4px;
   padding: 12px;
@@ -182,18 +194,18 @@ body {
   max-height: 180px;
   width: auto;  
 }
-.header-area a.logo{
+.logo-area a.logo{
   text-align: right;
   text-transform: uppercase;
   font-size: 80px;
   font-weight: 800 px;
   color: #fff;
 }
-.header-area a:hover{
+.logo-area a:hover{
   background-color: #12501f;
   color: white;
 }
-.header-area a.active{
+.logo-area a.active{
   background-color: rgb(18, 80, 31); 
   color: white;
 }
@@ -204,13 +216,14 @@ body {
   overflow: hidden;
 }
 
-.navbar a {
+.navbar li a {
   float: left;
-  padding: 12px;
+  padding: 4px;
   color: white;
   text-decoration: none;
   font-size: 17px;
   position: relative;
+  flex: 1;
 }
 
 .navbar a:hover {
