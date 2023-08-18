@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Benguet State University- Online Admission</title>
     
     <!-- Additional CSS Files -->
@@ -17,7 +17,18 @@
     <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
 
     <link rel="stylesheet" href="assets/css/student.css">
-    
+    <script>
+      function openNav(navName){
+        var i;
+        var x=document.getElementsByClassName("nav");
+
+        for(i = 0; i< x.length;i++){
+          x[i].style.display="none;"
+        }
+        document.getElementById(navName).style.display= "block" 
+      }
+    </script>
+
     </head>
     
     <body>
@@ -42,43 +53,39 @@
           <div class="logo-area">
             <img src="assets/images/BSU Logo1.png" alt="bsu-logo">
               <h4 class="logo">Benguet State University</h4> 
-           </div>  
-              <nav class="navbar">
-                <ul>
-                  <li><a href="#profile">Profile</a></li>
-                  <li><a href="#docs">Documents</a></li>
-                  <li><a href="announce">Announcement</a></li>
-                  <li><a href="notice">Notice</a></li>
-                  <li><a href="FAQ">FAQ</a></li>
-                  <li><button class="w3-bar-item w3-button"><a href="landing.html">Logout</a></button></li>
-                </ul>                
-              </nav>
+           </div>
+           <div>
+            <nav class="navbar">
+              <ul>
+                <li><a href="#profile" onclick="openNav('profile')">Profile</a></li>
+                <li><a href="#docs" onclick="openNav('docs')">Documents</a></li>
+                <li><a href="announce" onclick="openNav('announce')">Announcement</a></li>
+                <li><a href="notice" onclick="openNav('notice')">Notice</a></li>
+                <li><a href="FAQ" onclick="openNav('faq')">FAQ</a></li>
+                <li><button class="w3-bar-item w3-button"><a href="landing.html">Logout</a></button></li>
+              </ul>                
+            </nav>
+           </div>              
       </div>
     </div>
 
-    <div>
+    <div id="profile" class="nav-items">
       <h2><a href="" class="active">Profile</a></h2>
     </div>
-    <div>
-      <h2><a href="">Announcement</a></h2>
-    </div>
-    <div>
+    <div id="docs" class="nav-items">
       <h2><a href="">Documents</a></h2>
     </div>
-    <div>
+    <div id="announce" class="nav-items">
+      <h2><a href="">Announcement</a></h2>
+    </div>
+
+    <div id="notice" class="nav-items">
       <h2><a href="">Notice</a></h2>
     </div>
-    <div>
+    <div id="faq" class="nav-items">
       <h2><a href="">FAQ</a></h2>
     </div>
 
-    <div class="container">
-        <div class="row">
-          <table>
-
-          </table>
-        </div>
-    </div>
     <div><!--Appointment--></div>
     <div></div>
 <!--End of other forms-->
