@@ -51,55 +51,53 @@
     
     
     <!-- ***** Header Area Start ***** -->
+    <header>
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <div class="jumbotron text-center" style="margin-bottom: 0;">
-            <a href="#top" ><img src="assets/images/logo_1-removebg-preview.png" alt="bsu-logo"></a>
-            <a href="#top"><h4>Benguet State University</h4></a> 
+          <div>
             <ul class="social-items">
               <li><a href=""><i class=" fa fa-facebook"></i></a></li>
               <li><a href=""><i class=" fa fa-twitter"></i></a></li>
               <li><a href=""><i class=" fa fa-google-plus"></i></a></li>
               <li><a href=""><i class=" fa fa-instagram"></i></a></li>
               <li><a href=""><i class=" fa fa-phone"></i></a></li>
-              <li>
+            </ul>
+          </div> 
+          <div class="jumbotron text-center" style="margin-bottom: 0;">
+            <a href="#top" ><img src="assets/images/logo_1-removebg-preview.png" alt="bsu-logo"></a>               
+          </div>
+          <div class="col-12">
+            <ul class="nav-items">
+              <li><a href="#profile" onclick="openNav('profile')" class="active"><i class="fa fa-home"></i></a></li>
+              <li><a href="#docs" onclick="openNav('docs')"><i class="fa fa-folder"></i></a></li>
+              <li><a href="announce" onclick="openNav('announce')"><i class="fa fa-download"></i></a></li>
+              <li><a href="notice" onclick="openNav('notice')"><i class="fa fa-bell"></i></a></li>
+              <li><a href="FAQ" onclick="openNav('faq')">FAQ</a></li>
+              <li><a href="landing.html"><i class="fa fa-cog"></i></a></li>
+              <li class="search-container">
                 <input type="text" placeholder="Search...">
                 <button type="submit" class="search-button"><i class="fa fa-search" ></i></button>
               </li>
-            </ul>
-        </div>    
+            </ul>  
+          </div>
         </div>                  
       </div>
-
-
-      <div class="navbar navbar-inverse">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <a href="" class="navbar-brand"><img src="" alt=""></a>
-          
-          <ul class="nav nav-justified">
-            <li><a href="#profile" onclick="openNav('profile')">Profile</a></li>
-            <li><a href="#docs" onclick="openNav('docs')">Documents</a></li>
-            <li><a href="announce" onclick="openNav('announce')">Announcement</a></li>
-            <li><a href="notice" onclick="openNav('notice')">Notice</a></li>
-            <li><a href="FAQ" onclick="openNav('faq')">FAQ</a></li>
-            <li><button class="w3-bar-item w3-button"><a href="landing.html">Logout</a></button></li>
-          </ul>    
-        </div>
-      </div>
-      </div>
     </div>
+  </header>
 
 
+
+  
     <!--Profile-->
+    <section id="profile">
     <div class="container">
       <div class="row">
         <div class="col-sm-4">
           <h2><a href="" class="active">Profile</a></h2>
           <h3>Name:</h3>
           <h3>Account Number:</h3>
-          <div><img src="assets/images/profile.png" alt=""></div>
+          <div><i class="fa fa-user-circle-o"></i></div>
         </div>
         <div class="col-sm-8">
           <h2>Status</h2>
@@ -107,6 +105,7 @@
         </div>
       </div>
     </div>
+  </section>
     <!--Profile END-->
     <div id="docs" class="nav-items">
       <h2><a href="">Documents</a></h2>

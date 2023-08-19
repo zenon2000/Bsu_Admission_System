@@ -194,7 +194,7 @@ header-landing page
 --------------------------------------------- 
 */
 
-.site-logo .logo{
+.site-logo .img{
   float: left;  
   padding-top: 4px;
   padding: 12px;
@@ -268,6 +268,7 @@ header-landing page
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
+  size:32px ;
 }
 
 .header-area .main-nav .logo em {
@@ -481,7 +482,10 @@ header-landing page
 
 @media (max-width: 767px) {
   .header-area .main-nav .logo {
-    color: #1e1e1e;
+    float: none;
+    display: block;
+    text-align: left;
+    color: #000000;
   }
   .header-area.header-sticky .nav li a:hover,
   .header-area.header-sticky .nav li a.active {
@@ -491,7 +495,7 @@ header-landing page
   .header-area {
     background-color: #f7f7f7;
     padding: 0px 15px;
-    height: 100px;
+    min-height: 100px;
     box-shadow: none;
     text-align: center;
     font-size: 180px;
