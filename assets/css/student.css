@@ -316,7 +316,14 @@ body {
   color: rgb(250, 239, 239);
   size: auto;
 }
-
+/**Banner**/
+.banner img{
+  display:block;
+  margin:0 auto;
+  background-size: cover;
+  height: 80px;
+  width: auto;
+}
 @media (max-width: 1200px){
   .nav-items li a{
     padding-left: 12px;
