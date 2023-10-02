@@ -165,7 +165,7 @@ justify-content: center;
 	display: flex;
 	align-items: center;
 	border-radius: 48px;
-	font-size: 16px;
+	font-size: 13.5px;
 	color: var(--dark);
 	white-space: nowrap;
 	overflow-x: hidden;
@@ -1541,6 +1541,18 @@ nav {
         border: none;
         outline: none;
     }
+
+
+
+	#sidebar .brand .adminprofile{
+		height:31px;
+		width: 32px;
+		align-items: center;
+		margin:15px;
+		margin-inline-end: 23px;
+		display: flex;
+		justify-content: center;
+		}
 
 }
 
