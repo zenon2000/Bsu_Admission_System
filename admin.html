@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BSU Faculty</title>
     <link rel="icon" href="frontend/assets/images/BSU Logo1.png" type="image/x-icon">
-    <link rel="stylesheet" href="frontend/assets/css//fac.css" />
+    <link rel="stylesheet" href="frontend/assets/css//admin.css" />
     <!-- Boxicons -->
     
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
@@ -26,33 +26,33 @@
                 </a>
             </li>
            
-            <li class="active">
+            <li id="manage-accounts-link">
                 <a href="#">
                     <i class='bx bx-group'></i>
                     <span class="text">Manage Accounts</span>
                 </a>
             </li>
-            <li class="active">
+            <li>
                 <a href="#">
                     <i class='bx bx-calendar'></i>
                     <span class="text">Interview Scheduling</span>
                 </a>
             </li>
-            <li class="active">
+            <li>
                 <a href="#">
-                    <i class='bx bx-notepad'></i>
+                    <i class='bx bx-list-ul'></i>
                     <span class="text">Content Management</span>
                 </a>
             </li>
-            <li class="active">
+            <li>
                 <a href="#">
-                    <i class='bx bxs-dashboard'></i>
+                    <i class='bx bx-export'></i>
                     <span class="text">Data Import or Export</span>
                 </a>
             </li>
-            <li class="active">
+            <li>
                 <a href="#">
-                    <i class='bx bxs-dashboard'></i>
+                    <i class='bx bx-shield'></i>
                     <span class="text">Security and permission</span>
                 </a>
             </li>
@@ -103,6 +103,7 @@
 
         <!-- MAIN -->
         <main>
+               	<!--Staff member-->   
             <div class="head-title">
                 <div class="left">
                     <h1>Dashboard</h1>
@@ -116,137 +117,252 @@
                         </li>
                     </ul>
                 </div>
-                <li>
-                    <a href="#" class="btn-download">
-                        <i class='bx bxs-cloud-download'></i>
-                        <span class="text">Download PDF</span>
-                    </a>
-                </li>
+               
             </div>
 
             <ul class="box-info">
                 <li>
-                    <i class='bx bxs-group'></i>
+                    <i class='bx bx-group'></i>
                     <span class="text">
                         <h3>1020</h3>
-                        <p>WaitList</p>
+                        <p> Members</p>
                     </span>
                 </li>
                 <li>
-                    <i class='bx bxs-group'></i>
+                    <i class='bx bx-list-ul'></i>
                     <span class="text">
                         <h3>1020</h3>
-                        <p>Slots Left</p>
+                        <p>Reviewed students</p>
                     </span>
                 </li>
                 <li>
-                    <i class='bx bxs-group'></i>
+                    <i class='bx bx-calendar'></i>
                     <span class="text">
                         <h3>2834</h3>
-                        <p>Rejected</p>
+                        <p>Admission Calendar</p>
                     </span>
                 </li>
                 <li>
-                    <i class='bx bxs-group'></i>
+                    <i class='bx bx-user'></i>
                     <span class="text">
                         <h3>2543</h3>
-                        <p>Admitted</p>
+                        <p>Faculty</p>
                     </span>
                 </li>
             </ul>
+            
+        
 
             <div class="table-data">
                 <div class="order">
-                    <div class="head">
-                        <h3>Student Lists</h3>
-                        <i class='bx bx-search' id="searchIcon"></i>
-                        <i class='bx bx-filter'></i>
-                        <div class="search-box" id="searchBox">
-                            <input type="text" placeholder="Search...">
-                        </div>
-                    </div>
+                <div class="head">
+                        <h3>Staff Members</h3>
+                        <i class='bx bx-history'></i>
+                        <i class='bx bxs-trash'></i><i class='bx bx-sort'></i>
+                  
+                </div>
                     <table>
                         <thead>
                             <tr>
-                                <th>Student</th>
-                                <th>Date of Admission</th>
-                                <th>Status</th>
+                                <th>Application Number</th>
+                                <th>Position</th>
+                                <th>Username</th>
+                                <th>Logs</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td>
-                                    <img src="frontend/assets/images/human icon.png" alt="Student">
-                                    <p>John Doe</p>
+                                 <img src="frontend/assets/images/human icon.png" alt="Student">
+                                    <p>0000001</p>
                                 </td>
-                                <td>01-10-2021</td>
-                                <td><span class="status completed">Admitted</span></td>
+                                <td><p>.....</p></td>
+                                <td><p>username</p></td>
+                                <td><p>logs dito</p></td>
+                                <td><p>Actions met ditoy</p></td>
+                                
                             </tr>
                             <tr>
                                 <td>
                                     <img src="frontend/assets/images/human icon.png" alt="Student">
-                                    <p>Jane Doe</p>
+                                    <p>0000002</p>
                                 </td>
-                                <td>01-10-2021</td>
-                                <td><span class="status pending">Rejected</span></td>
+                                <td><p>.....</p></td>
+                                <td><p>username</p></td>
+                                <td><p>logs dito</p></td>
+                                <td><p>Actions met ditoy</p></td>
+                             </tr>
+                            <tr>
+                                <td>
+                                    <img src="frontend/assets/images/human icon.png" alt="Student">
+                                    <p>0000003</p>
+                                </td>
+                                <td><p>.....</p></td>
+                                <td><p>username</p></td>
+                                <td><p>logs dito</p></td>
+                                <td><p>Actions met ditoy</p></td>
                             </tr>
                             <tr>
                                 <td>
                                     <img src="frontend/assets/images/human icon.png" alt="Student">
-                                    <p>Johny Doe</p>
+                                    <p>0000004</p>
                                 </td>
-                                <td>01-10-2021</td>
-                                <td><span class="status process">Pending</span></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <img src="frontend/assets/images/human icon.png" alt="Student">
-                                    <p>Johnie Doe</p>
-                                </td>
-                                <td>01-10-2021</td>
-                                <td><span class="status pending">Pending</span></td>
+                                <td><p>.....</p></td>
+                                <td><p>username</p></td>
+                                <td><p>logs dito</p></td>
+                                <td><p>Actions met ditoy</p></td>
                             </tr>
 							<tr>
 								<td>
 									<img src="frontend/assets/images/human icon.png" alt="Student">
-									<p>Janie Doe</p>
+                                    <p>0000005</p>
 								</td>
-								<td>01-10-2021</td>
-								<td><span class="status completed">Admitted</span></td> 
-							</tr>
+                                <td><p>.....</p></td>
+                                <td><p>username</p></td>
+                                <td><p>logs dito</p></td>
+                                <td><p>Actions met ditoy</p></td>
+                            </tr>
 						</tbody>
 					</table>
 				</div>
-				<div class="todo">
-					<div class="head">
-						<h3>Todos</h3>
-						<i class='bx bx-plus' ></i>
-						<i class='bx bx-filter' ></i>
-					</div>
-					<ul class="todo-list">
-						<li class="completed">
-							<p>Todo List</p>
-							<i class='bx bx-dots-vertical-rounded' ></i>
-						</li>
-						<li class="completed">
-							<p>Todo List</p>
-							<i class='bx bx-dots-vertical-rounded' ></i>
-						</li>
-						<li class="not-completed">
-							<p>Todo List</p>
-							<i class='bx bx-dots-vertical-rounded' ></i>
-						</li>
-						<li class="completed">
-							<p>Todo List</p>
-							<i class='bx bx-dots-vertical-rounded' ></i>
-						</li>
-						<li class="not-completed">
-							<p>Todo List</p>
-							<i class='bx bx-dots-vertical-rounded' ></i>
-						</li>
-					</ul>
-				</div>
-			</div>
+            </div>
+				<!--Staff Member-->
+                	
+                <!--Application List-->
+                    <div class="head-title-application">
+                        <div class="left">
+                            <h1>Manage Accounts</h1>
+                            <ul class="breadcrumb">
+                                <li>
+                                    <a href="#">Dashboard</a>
+                                </li>
+                                <li><i class='bx bx-chevron-right'></i></li>
+                                <li>
+                                    <a class="active" href="#">Home</a>
+                                </li>
+                            </ul>
+                        </div>
+                       
+                    </div>
+        
+                    <ul class="box-info-application">
+                        <li>
+                            <i class='bx bx-group'></i>
+                            <span class="text">
+                                <h3>1020</h3>
+                                <p> Members</p>
+                            </span>
+                        </li>
+                        <li>
+                            <i class='bx bx-list-ul'></i>
+                            <span class="text">
+                                <h3>1020</h3>
+                                <p>Reviewed students</p>
+                            </span>
+                        </li>
+                        <li>
+                            <i class='bx bx-calendar'></i>
+                            <span class="text">
+                                <h3>2834</h3>
+                                <p>Admission Calendar</p>
+                            </span>
+                        </li>
+                        <li>
+                            <i class='bx bx-user'></i>
+                            <span class="text">
+                                <h3>2543</h3>
+                                <p>Faculty</p>
+                            </span>
+                        </li>
+                    </ul>
+                    
+                
+        
+                    <div class="table-data-application">
+                        <div class="order">
+                        <div class="head">
+                                <h3>Application List</h3>
+                               
+                                
+                                <i class='bx bx-search' id="searchIcon"></i>
+                                <div class="search-box" id="searchBox">
+                                    <input type="text" placeholder="Search...">
+                                </div>
+                                <i class='bx bx-sort'></i>
+                        </div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Application Number</th>
+                                    <th>College</th>
+                                    <th>Depertment</th>
+                                    <th>Date Application</th>
+                                    <th>Interview Schedule</th>
+                                    <th>Edit</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                     <img src="frontend/assets/images/human icon.png" alt="Student">
+                                        <p>0000001</p>
+                                    </td>
+                                    <td><p>College</p></td>
+                                    <td><p>Depertment</p></td>
+                                    <td><p>01-02-23</p></td>
+                                    <td><p>01-05-23</p></td>
+                                    <td><p>edit ditoy</p></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="frontend/assets/images/human icon.png" alt="Student">
+                                           <p>0000001</p>
+                                       </td>
+                                       <td><p>College</p></td>
+                                       <td><p>Depertment</p></td>
+                                       <td><p>01-02-23</p></td>
+                                       <td><p>01-05-23</p></td>
+                                       <td><p>edit ditoy</p></td>
+                                 </tr>
+                                <tr>
+                                    <td>
+                                        <img src="frontend/assets/images/human icon.png" alt="Student">
+                                           <p>0000001</p>
+                                       </td>
+                                       <td><p>College</p></td>
+                                       <td><p>Depertment</p></td>
+                                       <td><p>01-02-23</p></td>
+                                       <td><p>01-05-23</p></td>
+                                       <td><p>edit ditoy</p></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="frontend/assets/images/human icon.png" alt="Student">
+                                           <p>0000001</p>
+                                       </td>
+                                       <td><p>College</p></td>
+                                       <td><p>Depertment</p></td>
+                                       <td><p>01-02-23</p></td>
+                                       <td><p>01-05-23</p></td>
+                                       <td><p>edit ditoy</p></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="frontend/assets/images/human icon.png" alt="Student">
+                                           <p>0000001</p>
+                                       </td>
+                                       <td><p>College</p></td>
+                                       <td><p>Depertment</p></td>
+                                       <td><p>01-02-23</p></td>
+                                       <td><p>01-05-23</p></td>
+                                       <td><p>edit ditoy</p></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        </div>
+                    </div>
+                    <!--Application List-->
 		</main>
 		<!-- MAIN -->
 
@@ -370,6 +486,6 @@
 </div>
 	
 	<!-- CONTENT -->
-      <script src="frontend/assets/js/fac.js"></script>
+      <script src="frontend/assets/js/admin.js"></script>
   </body>
 </html>
