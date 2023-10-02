@@ -14,6 +14,7 @@ Table of contents
 10. preloader
 11. search
 12. portfolio
+13.Login Form
 
 --------------------------------------------- */
 /* 
@@ -36,6 +37,7 @@ figure, header, nav, section, article, aside, footer, figcaption {
   border: 0;
   outline: 0;
 }
+
 
 .clearfix:after {
   content: ".";
@@ -1424,39 +1426,61 @@ end of application form
   }
 }
 
-/* 
----------------------------------------------
-Log in form
---------------------------------------------- 
-*/
 
-#dmain {
-  box-shadow: 0px 0px 14px #999999;
-  border-radius: 5px;
-  border-color: #d3d3d3;
-  border-width: 1px;
-  border-style: solid;
-  background-color: white;
-  width: 450px;
-  height: 400px;
-  margin-left: 270px;
-  margin-top: 30px;
+.login-box {
+	width: 280px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: #191970;
 }
 
-/* 
----------------------------------------------
-Sign in form
---------------------------------------------- 
-*/
-#ddown {
-  height: 440px;
-  width: 1338px;
-  display: block;
+.login-box h1 {
+	float: left;
+	font-size: 40px;
+	border-bottom: 4px solid #191970;
+	margin-bottom: 50px;
+	padding: 13px;
 }
 
-#drig {
+.textbox {
+	width: 100%;
+	overflow: hidden;
+	font-size: 20px;
+	padding: 8px 0;
+	margin: 8px 0;
+	border-bottom: 1px solid #191970;
+}
 
-  height: 470px;
-  width: 1338px;
-  display: block;
+.fa {
+	width: px;
+	float: left;
+	text-align: center;
+}
+
+.textbox input {
+	border: none;
+	outline: none;
+	background: none;
+	font-size: 18px;
+	float: left;
+	margin: 0 10px;
+}
+
+.button {
+	width: 100%;
+	padding: 8px;
+	color: #ffffff;
+	background: none #191970;
+	border: none;
+	border-radius: 6px;
+	font-size: 18px;
+	cursor: pointer;
+	margin: 12px 0;
+}
+
+.img {
+	position: center;
+
 }

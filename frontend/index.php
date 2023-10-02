@@ -9,76 +9,38 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <header>
-        <h2 class="logo"> Benguet State University</h2>
-        <nav class="navigation">
-            <a href="#">Home</a>
-            <a href="#">Admission</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
-            <button class="btnLogin-popup">Login</button>
-        </nav>        
-    </header>
-    <div class="wrapper">
-        <span class="icon-close">
-            <ion-icon name="close"></ion-icon>
-        </span>
-            <!--Login-->
-            <div class="form-box login">
-                <h2>Login</h2>
-                <form action="">
-                    <div class="input-box">
-                        <span class="icon"><ion-icon name="mail-unread"></ion-icon></span>
-                        <input type="email" required>
-                        <label for="">Email</label>
+<div class="container">
+        <div class="forms">
+            <div class="form login">
+                <span class="title">Login</span>
+
+                <form action="index.php" method="post">
+                    <div class="input-field">
+                        <input type="text" name="username" placeholder="Enter your username" required>
+                        <i class="uil uil-envelope icon"></i>
                     </div>
-                    <div class="input-box">
-                        <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-                        <input type="password" required>
-                        <label for="">Password</label>
+                    <div class="input-field">
+                        <input type="password" name="password" class="password" placeholder="Enter your password" required>
+                        <i class="uil uil-lock icon"></i>
+                        <i class="uil uil-eye-slash showHidePw"></i>
                     </div>
-                    <div class="remember-forgot">
-                        <label for=""><input type="checkbox">Remember me</label>
-                        <a href="">Forgot Password?</a>
+
+                    <div class="checkbox-text">
+                        <div class="checkbox-content">
+                            <input type="checkbox" id="logCheck">
+                            <label for="logCheck" class="text">Remember me</label>
+                        </div>
+
+                        <a href="#" class="text">Forgot password?</a>
                     </div>
-                    <button type="submit" class="btn">Login</button>
-                    <div class="login-register">
-                        <p>Not yet Signed Up? <a href="" class="register-link" >Register</a></p>
+                    <div class="input-field button">
+                       <button><input type="submit" name="login" value="Login"></button> 
                     </div>
                 </form>
             </div>
-            <!--Register-->
-            <div class="form-box register">
-                <h2>Registration</h2>
-                <form action="">
-                    <div class="input-box">
-                        <span class="icon"><ion-icon name="person"></ion-icon></span>
-                        <input type="text" required>
-                        <label for="">Username</label>
-                    </div>
-                    <div class="input-box">
-                        <span class="icon"><ion-icon name="mail-unread"></ion-icon></span>
-                        <input type="email" required>
-                        <label for="">Email</label>
-                    </div>
-                    <div class="input-box">
-                        <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-                        <input type="password" required>
-                        <label for="">Password</label>
-                    </div>
-                    <div class="remember-forgot">
-                        <label for=""><input type="checkbox">I agree to the Terms & Conditions</label>
-                    </div>
-                    <button type="submit" class="btn">Register</button>
-                    <div class="login-register">
-                        <p>Already Signed Up? <a href="" class="login-link">Login</a></p>
-                    </div>
-                </form>
-            </div>
-         </div>
         </div>
-    <script type="" src="frontend/login.js"></script>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    </div>
+
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
