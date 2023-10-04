@@ -21,27 +21,6 @@ menuBar.addEventListener('click', function () {
 	sidebar.classList.toggle('hide');
 })
 
-document.addEventListener('DOMContentLoaded', function () {
-    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
-
-    dropdownToggles.forEach(function (toggle) {
-        toggle.addEventListener('click', function (e) {
-            e.preventDefault();
-            const dropdownContent = toggle.nextElementSibling;
-            const chevronIcon = toggle.querySelector('.bx-chevron-down');
-
-            // Toggle the visibility of the dropdown content
-            if (dropdownContent.style.display === 'block') {
-                dropdownContent.style.display = 'none';
-                chevronIcon.style.transform = 'rotate(0deg)';
-            } else {
-                dropdownContent.style.display = 'block';
-                chevronIcon.style.transform = 'rotate(180deg)';
-            }
-        });
-    });
-});
-
 
 
 //search bar
@@ -111,33 +90,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 //side bar
-document.addEventListener('DOMContentLoaded', function () {
-    const dropdownItems = document.querySelectorAll('#courses-dropdown .dropdown-content li a');
-
-    dropdownItems.forEach(function (item) {
-        const fullText = item.getAttribute('data-fulltext');
-        const abbreviation = item.querySelector('.text');
-
-        // Save the original abbreviation
-        const originalAbbreviation = abbreviation.textContent;
-
-        item.addEventListener('mouseover', function () {
-            // Apply a smaller font size and show the full text on two lines when hovering
-            abbreviation.style.fontSize = '12px';
-            abbreviation.style.whiteSpace = 'normal'; // Allow multiple lines
-            abbreviation.textContent = fullText;
-        });
-
-        item.addEventListener('mouseout', function () {
-            // Restore the original state when not hovering
-            abbreviation.style.fontSize = ''; // Empty string resets to the default size
-            abbreviation.style.whiteSpace = 'nowrap'; // Display on one line
-            abbreviation.textContent = originalAbbreviation;
-        });
-    });
-});
-
-//side bar
 
 
 //clock
@@ -184,41 +136,6 @@ function showTime() {
 showTime();
 //clock
 
-//student list search
-document.addEventListener('DOMContentLoaded', function () {
-    const searchIcon = document.getElementById('searchIcon');
-    const searchBox = document.getElementById('searchBox');
-    const studentList = document.querySelectorAll('.table-data .order tbody tr');
-
-    // Hide the search box initially
-    searchBox.style.display = 'none';
-
-    searchIcon.addEventListener('click', function () {
-        // Toggle the display of the search box
-        searchBox.style.display = searchBox.style.display === 'none' ? 'flex' : 'none';
-    });
-
-    // Handle input in the search box
-    const searchInput = document.getElementById('searchInput');
-    
-    searchInput.addEventListener('input', function () {
-        const searchTerm = searchInput.value.trim().toLowerCase();
-
-        // Hide all students initially
-        studentList.forEach(function (student) {
-            student.style.display = 'none';
-        });
-
-        // Show only the students whose names match the search term
-        studentList.forEach(function (student) {
-            const studentName = student.querySelector('td:first-child p').textContent.toLowerCase();
-            if (studentName.includes(searchTerm)) {
-                student.style.display = 'table-row';
-            }
-        });
-    });
-});
-//student list search
 
 
 //popup message
@@ -323,6 +240,20 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 //popup message
 
+//main 
+const tableData = document.querySelector("#content main .table-data");
+const boxInfo = document.querySelector("#content main .box-info");
 
-//pressing side bars
+window.addEventListener("scroll", () => {
+    const boxInfoRect = boxInfo.getBoundingClientRect();
 
+    if (boxInfoRect.top <= 0) {
+        tableData.style.position = "relative";
+        tableData.style.top = "0";
+    } else {
+        tableData.style.position = "sticky";
+        tableData.style.top = `${boxInfoRect.height}px`;
+    }
+});
+
+//main 
