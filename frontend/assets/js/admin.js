@@ -92,6 +92,9 @@ document.addEventListener('DOMContentLoaded', function () {
 //side bar
 
 
+//side bar
+
+
 //clock
 // Calling showTime function at every second
 setInterval(showTime, 1000);
@@ -137,49 +140,6 @@ showTime();
 //clock
 
 
-
-//popup message
-// Function to get the current time in the Philippines without GMT+8 offset
-function getPhilippineTime() {
-    const currentTime = new Date();
-    const timeZoneOffset = 480; // Philippines Standard Time (UTC+8) offset in minutes
-    const philippinesTime = new Date(currentTime.getTime() + timeZoneOffset * 60000);
-
-    const hours = philippinesTime.getHours().toString().padStart(2, "0");
-    const minutes = philippinesTime.getMinutes().toString().padStart(2, "0");
-    const seconds = philippinesTime.getSeconds().toString().padStart(2, "0");
-
-    return `${hours}:${minutes}:${seconds}`;
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-    const messageButton = document.querySelector("#message-button");
-    const messagePopup = document.querySelector(".message-popup");
-    const closeButton = document.querySelector("#close-button");
-    
-    // Update timestamps with the current Philippine time
-    const timestamp1 = document.querySelector("#timestamp1");
-    const timestamp2 = document.querySelector("#timestamp2");
-    timestamp1.textContent = getPhilippineTime();
-    timestamp2.textContent = getPhilippineTime();
-    
-    // Toggle the display of the message popup when the message button is clicked
-    messageButton.addEventListener("click", function () {
-        // Toggle the visibility of the message popup
-        messagePopup.style.display = messagePopup.style.display === "block" ? "none" : "block";
-    });
-    
-    // Close the message popup when the close button is clicked
-  
-    
-    // Close the message popup when the user clicks outside the popup
-    document.addEventListener("click", function (event) {
-        if (!messageButton.contains(event.target) && !messagePopup.contains(event.target)) {
-            messagePopup.style.display = "none";
-        }
-    });
-});
-
 document.addEventListener("DOMContentLoaded", function () {
     const notificationButton = document.querySelector("#notification-button");
     const notificationPopup = document.querySelector("#notification-popup");
@@ -213,47 +173,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-document.addEventListener('DOMContentLoaded', function () {
-        const conversationList = document.querySelector('.conversations');
-        const chatContainer = document.querySelector('.chat-container');
 
-        // Attach click event to conversation items
-        conversationList.addEventListener('click', function (event) {
-            const listItem = event.target.closest('li');
-            if (listItem) {
-                // Toggle active class to highlight selected conversation
-                const activeItem = conversationList.querySelector('.active');
-                if (activeItem) {
-                    activeItem.classList.remove('active');
-                }
-                listItem.classList.add('active');
 
-                // Update chat content (replace with actual messages)
-                const selectedUser = listItem.querySelector('.user-name').innerText;
-                const selectedUserElement = chatContainer.querySelector('.selected-user');
-                selectedUserElement.innerText = selectedUser;
+//pressing side bars
 
-                // Show the chat container
-                chatContainer.style.display = 'flex';
-            }
-        });
-    });
-//popup message
-
-//main 
-const tableData = document.querySelector("#content main .table-data");
-const boxInfo = document.querySelector("#content main .box-info");
-
-window.addEventListener("scroll", () => {
-    const boxInfoRect = boxInfo.getBoundingClientRect();
-
-    if (boxInfoRect.top <= 0) {
-        tableData.style.position = "relative";
-        tableData.style.top = "0";
-    } else {
-        tableData.style.position = "sticky";
-        tableData.style.top = `${boxInfoRect.height}px`;
-    }
-});
-
-//main 
