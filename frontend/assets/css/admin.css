@@ -40,8 +40,6 @@ li {
 	--li-grey: #ccc;
 	--gray:#c4bfbf;
 	--light-hover: #f0f2f5; 
-    --tgreen:rgba(47, 229, 47, 0.5);
-
 	
 }
 
@@ -191,7 +189,89 @@ justify-content: center;
 }
 
 
+
+
+
+
+
+
+
+
+.dropdown-content {
+    border-radius: 48px 0 0 48; 
+	
+}
+#sidebar .side-menu li.active::before {
+	content: '';
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	top: -40px;
+	right: 0;
+	box-shadow: 20px 20px 0 var(--grey);
+	z-index: -1;
+}
+/* Style the dropdown menu */
+.dropdown-content ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%; /* Add this to ensure the ul extends the full width */
+	
+}
+
+.dropdown-content li {
+    padding: 60px;
+    background-color: var(--dark);
+    border-radius: 0; 
+}
+
+.dropdown-content a {
+    text-decoration: none;
+    color: var(--light);
+    display: block;
+    transition: background-color 0.2s;
+}
+
+/* Style the dropdown toggle */
+.dropdown-toggle:hover .dropdown-content {
+    display: block;
+    border-radius: 48px 0 0 48px; /* Adjust border-radius when the dropdown is open */
+}
+
+/* Tooltip styles */
+[data-tooltip] {
+    position: relative;
+    cursor: pointer;
+}
+
+[data-tooltip]:before {
+    content: attr(data-tooltip);
+    position: absolute;
+    background: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s;
+    bottom: 100%; /* Position the tooltip above the text */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+[data-tooltip]:hover:before {
+    opacity: 1;
+    visibility: visible;
+    bottom: 120%; /* Adjust the distance from the text */
+}
+
+
+
 /* SIDEBAR */
+
 
 
 /*popups n.m.p */
@@ -1046,6 +1126,71 @@ nav {
 
 
 
+/* MAIN */
+#content main {
+	width: 100%;
+	padding: 10px 24px;
+	font-family: var(--poppins);
+	max-height: calc(100vh - 56px);
+	overflow-y: auto;
+}
+#content main .head-title {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	grid-gap: 16px;
+	flex-wrap: wrap;
+}
+
+#content main .head-title .left h1 {
+	font-size: 36px;
+	font-weight: 600;
+	margin-bottom: 10px;
+	color: var(--dark);
+}
+#content main .head-title .left .breadcrumb {
+	display: flex;
+	align-items: center;
+	grid-gap: 16px;
+}
+#content main .head-title .left .breadcrumb li {
+	color: var(--dark);
+}
+#content main .head-title .left .breadcrumb li a {
+	color: var(--dark-grey);
+	pointer-events: none;
+}
+#content main .head-title .left .breadcrumb li a.active {
+	color: var(--blue);
+	pointer-events: unset;
+
+
+}
+#clock {
+    font-size: 24px;
+	height: 36px;
+	margin-left: 18px;
+	position:center;
+	width: 150px;
+	padding: 0 16px;
+	left: 50px;
+	border-radius: 36px;
+	background: none;
+	color: var(--dark);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	grid-gap: 10px;
+	font-weight: 500;
+}
+
+
+
+
+
+  
+ 
+
 
 
 
@@ -1057,9 +1202,8 @@ nav {
 	max-height: calc(100vh - 56px);
 	overflow-y: auto;
 }
-
 #content main .head-title {
-	display: fixed;
+	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	grid-gap: 16px;
@@ -1115,29 +1259,12 @@ nav {
 #content main .head-title .btn-download:hover {
 	background: var(--blue);
 }
-/* Apply this CSS to your elements inside <main> */
-.main-content {
-    position: sticky;
-    top: 70px; /* Adjust this value based on the height of your .head-title */
-    z-index: 1; /* Adjust the z-index as needed to control stacking order */
-}
-
-/* Make the <main> element scrollable */
-main {
-    overflow-y: scroll;
-    height: calc(100vh - 70px); /* Adjust this value based on the height of your .head-title */
-}
-
-
 
 #content main .box-info {
-	position: sticky;
-    top: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    grid-gap: 24px;
-    margin-top: 36px;
-   z-index: 1; /* Set z-index higher to keep it above other content */
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+	grid-gap: 24px;
+	margin-top: 36px;
 }
 #content main .box-info li {
 	padding: 24px;
@@ -1146,11 +1273,6 @@ main {
 	display: flex;
 	align-items: center;
 	grid-gap: 24px;
-}
-#content main .box-info li:nth-child(1){
-	background: var(--tgreen);/*members*/
-	
-	
 }
 #content main .box-info li .bx {
 	width: 80px;
@@ -1212,59 +1334,30 @@ main {
 }
 
 
-.table-container {
-    max-height: 300px; /* Set the maximum height for the tbody */
-    overflow-y: auto; /* Enable vertical scrolling */
-}
-
-.table-container table {
-    width: 100%; /* Ensure the table takes the full width of the container */
-    border-collapse: collapse; /* Collapse table borders */
-}
-
-.table-container table thead {
-    background-color: var(--light); /* Header background color */
-    position: sticky;
-    top: 0;
-    z-index: 1; /* Ensure the header appears above the tbody */
-}
-
-.table-container table th {
-    /* Header cell styles */
-    padding: 10px;
-    text-align: left;
-    font-weight: bold;
-}
-
 
 
 
 #content main .table-data {
-    flex-grow: 1;
-    flex-basis: 350px; /* Updated value */
-    position: sticky;
-    top: 150px; /* Adjust this value based on the height of your .head-title */
+	flex-grow: 1;
+    flex-basis: 300px; /* Updated value */
     display: flex;
     flex-wrap: wrap;
     grid-gap: 24px;
     margin-top: 24px;
     width: 100%;
     color: var(--dark);
-	height: calc(75vh - 80px);
 }
 #content main .table-data > div {
-    border-radius: 20px;
-    background: var(--light);
-    padding: 24px;
-    overflow-x: auto;
+	border-radius: 20px;
+	background: var(--light);
+	padding: 24px;
+	overflow-x: auto;
 }
-
 #content main .table-data .head {
 	display: flex;
 	align-items: center;
 	grid-gap: 16px;
 	margin-bottom: 24px;
- 
 }
 #content main .table-data .head h3 {
 	margin-right: auto;
@@ -1304,12 +1397,6 @@ main {
 	border-radius: 50%;
 	object-fit: cover;
 }
-
-#content main .table-data tbody {
-    max-height: 300px; /* Set a maximum height for scrolling */
-    overflow-y: auto; /* Add a vertical scrollbar when content overflows */
-}
-
 #content main .table-data .order table tbody tr:hover {
 	background: var(--grey);
 }
@@ -1360,8 +1447,14 @@ main {
 #content main .table-data .todo .todo-list li:last-child {
 	margin-bottom: 0;
 }
+/* MAIN */
+/* CONTENT */
 
-/*application List*/
+
+
+
+
+
 
 
 
@@ -1449,6 +1542,17 @@ main {
         outline: none;
     }
 
+
+
+	#sidebar .brand .adminprofile{
+		height:31px;
+		width: 32px;
+		align-items: center;
+		margin:15px;
+		margin-inline-end: 23px;
+		display: flex;
+		justify-content: center;
+		}
 
 }
 
