@@ -1449,11 +1449,11 @@ nav {
 #content main .table-data .order table tr td .status.completed {
 	background: var(--blue);
 }
-#content main .table-data .order table tr td .status.process {
+#content main .table-data .order table tr td .status.pending {
 	background: var(--yellow);
 }
-#content main .table-data .order table tr td .status.pending {
-	background: var(--orange);
+#content main .table-data .order table tr td .status.process {
+	background: var(--redlight);
 }
 
 
