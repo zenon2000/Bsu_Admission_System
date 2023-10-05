@@ -19,16 +19,14 @@
         </a>
 
         <ul class="side-menu top">
-            <div class="dashboard-content"></div>
             <li class="active">
-                <a href="#">
+                <a href="#" id="dashboard-link">
                     <i class='bx bxs-dashboard'></i>
                     <span class="text">Dashboard</span>
                 </a>
             </li>
-           
             <li id="manage-accounts-link">
-                <a href="#">
+                <a href="#" id="approve-applicants-link">
                     <i class='bx bx-group'></i>
                     <span class="text">Approve Applicants</span>
                 </a>
@@ -91,62 +89,61 @@
 
         <!-- MAIN -->
         <main>
-               	<!--Staff member-->   
-            
-            <div class="head-title">
-                <div class="left">
-                    <h1>Dashboard</h1>
-                    <ul class="breadcrumb">
-                        <li>
-                            <a href="#">Dashboard</a>
-                        </li>
-                        <li><i class='bx bx-chevron-right'></i></li>
-                        <li>
-                            <a class="active" href="#">Home</a>
-                        </li>
-                    </ul>
-                </div>
-               
-            </div>
-       
-            <ul class="box-info">
+               	<!--dashboard-->   
+<div id="dashboard-content">
+    <div class="head-title">
+        <div class="left">
+            <h1>Dashboard</h1>
+            <ul class="breadcrumb">
                 <li>
-                    <i class='bx bx-group'></i>
-                    <span class="text">
-                        <h3>1020</h3>
-                        <p> Verified Application</p>
-                    </span>
+                    <a href="#">Dashboard</a>
                 </li>
+                <li><i class='bx bx-chevron-right'></i></li>
                 <li>
-                    <i class='bx bx-list-ul'></i>
-                    <span class="text">
-                        <h3>1020</h3>
-                        <p>To be reviewed</p>
-                    </span>
-                </li>
-                <li>
-                    <i class='bx bx-calendar'></i>
-                    <span class="text">
-                        <h3>2834</h3>
-                        <p>Results</p>
-                    </span>
-                </li>
-                <li>
-                    <i class='bx bx-user'></i>
-                    <span class="text">
-                        <h3>2543</h3>
-                        <p>Faculty</p>
-                    </span>
+                    <a class="active" href="#">Home</a>
                 </li>
             </ul>
+        </div>
+    </div>
+
+    <ul class="box-info">
+        <li id="verified-application">
+            <i class='bx bx-group'></i>
+            <span class="text">
+                <h3>1020</h3>
+                <p>Verified Application</p>
+            </span>
+        </li>
+        <li id="to-be-reviewed">
+            <i class='bx bx-street-view'></i>
+            <span class="text">
+                <h3>1020</h3>
+                <p>To be reviewed</p>
+            </span>
+        </li>
+        <li id="results-item">
+            <i class='bx bx-chart' ></i>
+            <span class="text">
+                <h3>2834</h3>
+                <p>Results</p>
+            </span>
+        </li>
+        <li id="faculty-item">
+            <i class='bx bx-user'></i>
+            <span class="text">
+                <h3>2543</h3>
+                <p>Faculty</p>
+            </span>
+        </li>
+    </ul>
+
             
         
 
-            <div class="table-data" >
+            <div id="verified" class="table-data" style="display: none;">
                 <div class="order">
-                
-                <div class="table-container">
-                    <table>
+                    <div class="table-container">
+                        <table>
                       
                         <thead>
                             <tr>
@@ -171,7 +168,7 @@
                                 <td><p>logs dito</p></td>
                                 <td><p>Actions met ditoy</p></td>
                                 <td><p>logs dito</p></td>
-                                <td><p>Actions met ditoy</p></td>
+                                <td><p>verified</p></td>
                                 
                             </tr>
                             <tr>
@@ -243,13 +240,11 @@
                 </div>
                 </div>
             </div>
-                   <!--Interview Schedule-->
-                   <div class="table-data" >
+                   <!--To be reviewed-->
+                   <div id="reviewed" class="table-data" style="display: none;">
                     <div class="order">
-                    
-                    <div class="table-container">
-                        <table>
-                          
+                        <div class="table-container">
+                            <table>
                             <thead>
                                 <tr>
                                 <th>Colleges</th>
@@ -259,6 +254,191 @@
                                 <th>Middle Name</th>
                                 <th>First Name</th>
                                 <th>Status</th>
+                                
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                     <img src="frontend/assets/images/human icon.png" alt="Student">
+                                        <p>0000001</p>
+                                    </td>
+                                    <td><p>.....</p></td>
+                                    <td><p>username</p></td>
+                                    <td><p>logs dito</p></td>
+                                    <td><p>Actions met ditoy</p></td>
+                                    <td><p>logs dito</p></td>
+                                    <td><p>pending</p></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="frontend/assets/images/human icon.png" alt="Student">
+                                        <p>0000002</p>
+                                    </td>
+                                    <td><p>.....</p></td>
+                                    <td><p>username</p></td>
+                                    <td><p>logs dito</p></td>
+                                    <td><p>Actions met ditoy</p></td>
+                                 </tr>
+                                <tr>
+                                    <td>
+                                        <img src="frontend/assets/images/human icon.png" alt="Student">
+                                        <p>0000003</p>
+                                    </td>
+                                    <td><p>.....</p></td>
+                                    <td><p>username</p></td>
+                                    <td><p>logs dito</p></td>
+                                    <td><p>Actions met ditoy</p></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="frontend/assets/images/human icon.png" alt="Student">
+                                        <p>0000004</p>
+                                    </td>
+                                    <td><p>.....</p></td>
+                                    <td><p>username</p></td>
+                                    <td><p>logs dito</p></td>
+                                    <td><p>Actions met ditoy</p></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="frontend/assets/images/human icon.png" alt="Student">
+                                        <p>0000004</p>
+                                    </td>
+                                    <td><p>.....</p></td>
+                                    <td><p>username</p></td>
+                                    <td><p>logs dito</p></td>
+                                    <td><p>Actions met ditoy</p></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="frontend/assets/images/human icon.png" alt="Student">
+                                        <p>0000004</p>
+                                    </td>
+                                    <td><p>.....</p></td>
+                                    <td><p>username</p></td>
+                                    <td><p>logs dito</p></td>
+                                    <td><p>Actions met ditoy</p></td>
+                                </tr>
+                                    
+                               
+    
+                            </tbody>
+                        </table>
+
+                    </div>
+                    </div>
+                   </div>
+                   
+            <!--Interview Schedule-->
+            <div id="resultsT" class="table-data" >
+                <div class="order">
+                
+                <div class="table-container">
+                    <table>
+                      
+                        <thead>
+                            <tr>
+                            <th>Colleges</th>
+                            <th>Department</th>
+                            <th>Application #</th>
+                            <th>Last Name</th>
+                            <th>Middle Name</th>
+                            <th>First Name</th>
+                            <th>Status</th>
+                            
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                 <img src="frontend/assets/images/human icon.png" alt="Student">
+                                    <p>0000001</p>
+                                </td>
+                                <td><p>.....</p></td>
+                                <td><p>username</p></td>
+                                <td><p>logs dito</p></td>
+                                <td><p>Actions met ditoy</p></td>
+                                <td><p>logs dito</p></td>
+                                <td><p>complete</p></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="frontend/assets/images/human icon.png" alt="Student">
+                                    <p>0000002</p>
+                                </td>
+                                <td><p>.....</p></td>
+                                <td><p>username</p></td>
+                                <td><p>logs dito</p></td>
+                                <td><p>Actions met ditoy</p></td>
+                             </tr>
+                            <tr>
+                                <td>
+                                    <img src="frontend/assets/images/human icon.png" alt="Student">
+                                    <p>0000003</p>
+                                </td>
+                                <td><p>.....</p></td>
+                                <td><p>username</p></td>
+                                <td><p>logs dito</p></td>
+                                <td><p>Actions met ditoy</p></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="frontend/assets/images/human icon.png" alt="Student">
+                                    <p>0000004</p>
+                                </td>
+                                <td><p>.....</p></td>
+                                <td><p>username</p></td>
+                                <td><p>logs dito</p></td>
+                                <td><p>Actions met ditoy</p></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="frontend/assets/images/human icon.png" alt="Student">
+                                    <p>0000004</p>
+                                </td>
+                                <td><p>.....</p></td>
+                                <td><p>username</p></td>
+                                <td><p>logs dito</p></td>
+                                <td><p>Actions met ditoy</p></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="frontend/assets/images/human icon.png" alt="Student">
+                                    <p>0000004</p>
+                                </td>
+                                <td><p>.....</p></td>
+                                <td><p>username</p></td>
+                                <td><p>logs dito</p></td>
+                                <td><p>Actions met ditoy</p></td>
+                            </tr>
+                                
+                           
+
+                        </tbody>
+                    </table>
+
+                </div>
+                </div>
+               </div>
+
+                <!--Faculty-->
+                <div id="faculty" class="table-data" >
+                    <div class="order">
+                    
+                    <div class="table-container">
+                        <table>
+                          
+                            <thead>
+                                <tr>
+                                <th>Colleges</th>
+                                <th>Department</th>
+                                <th>Username</th>
+                                <th>Last Name</th>
+                                <th>Email Address</th>
+                                <th>password</th>
+                                
                                 
                                 </tr>
                             </thead>
@@ -329,16 +509,440 @@
     
                             </tbody>
                         </table>
-    
+
                     </div>
                     </div>
-                </div>
-            
-    
+                   </div>
                
+                </div>
 
+	<!--dashboard-->   
+    <div id="ApproveApplicant-content">
+        <div class="head-title">
+            <div class="left">
+                <h1>Approve Applicants</h1>
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="#">Approve Applicants</a>
+                    </li>
+                    <li><i class='bx bx-chevron-right'></i></li>
+                    <li>
+                        <a class="active" href="#">Home</a>
+                    </li>
+                </ul>
+            </div>
+           
+        </div>
+   
+        <ul class="box-info">
+            <li id="verified-application">
+                <i class='bx bx-group'></i>
+                <span class="text">
+                    <h3>1020</h3>
+                    <p>Verified Application</p>
+                </span>
+            </li>
+            <li id="to-be-reviewed">
+                <i class='bx bx-street-view'></i>
+                <span class="text">
+                    <h3>1020</h3>
+                    <p>To be reviewed</p>
+                </span>
+            </li>
+            <li id="results-item">
+                <i class='bx bx-chart' ></i>
+                <span class="text">
+                    <h3>2834</h3>
+                    <p>Results</p>
+                </span>
+            </li>
+            <li id="faculty-item">
+                <i class='bx bx-user'></i>
+                <span class="text">
+                    <h3>2543</h3>
+                    <p>Faculty</p>
+                </span>
+            </li>
+        </ul>
+        
+    
 
-<!--Application List-->
+        <div id="verified" class="table-data" style="display: none;">
+            <div class="order">
+                <div class="table-container">
+                    <table>
+                  
+                    <thead>
+                        <tr>
+                            <th>Colleges</th>
+                            <th>Department</th>
+                            <th>Application #</th>
+                            <th>Last Name</th>
+                            <th>Middle Name</th>
+                            <th>First Name</th>
+                            <th>Status</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                             <img src="frontend/assets/images/human icon.png" alt="Student">
+                                <p>0000001</p>
+                            </td>
+                            <td><p>.....</p></td>
+                            <td><p>username</p></td>
+                            <td><p>logs dito</p></td>
+                            <td><p>Actions met ditoy</p></td>
+                            <td><p>logs dito</p></td>
+                            <td><p>verified</p></td>
+                            
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="frontend/assets/images/human icon.png" alt="Student">
+                                <p>0000002</p>
+                            </td>
+                            <td><p>.....</p></td>
+                            <td><p>username</p></td>
+                            <td><p>logs dito</p></td>
+                            <td><p>Actions met ditoy</p></td>
+                            <td><p>logs dito</p></td>
+                            <td><p>Actions met ditoy</p></td>
+                         </tr>
+                        <tr>
+                            <td>
+                                <img src="frontend/assets/images/human icon.png" alt="Student">
+                                <p>0000003</p>
+                            </td>
+                            <td><p>.....</p></td>
+                            <td><p>username</p></td>
+                            <td><p>logs dito</p></td>
+                            <td><p>Actions met ditoy</p></td>
+                            <td><p>logs dito</p></td>
+                            <td><p>Actions met ditoy</p></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="frontend/assets/images/human icon.png" alt="Student">
+                                <p>0000004</p>
+                            </td>
+                            <td><p>.....</p></td>
+                            <td><p>username</p></td>
+                            <td><p>logs dito</p></td>
+                            <td><p>Actions met ditoy</p></td>
+                            <td><p>logs dito</p></td>
+                            <td><p>Actions met ditoy</p></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="frontend/assets/images/human icon.png" alt="Student">
+                                <p>0000004</p>
+                            </td>
+                            <td><p>.....</p></td>
+                            <td><p>username</p></td>
+                            <td><p>logs dito</p></td>
+                            <td><p>Actions met ditoy</p></td>
+                            <td><p>logs dito</p></td>
+                            <td><p>Actions met ditoy</p></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="frontend/assets/images/human icon.png" alt="Student">
+                                <p>0000004</p>
+                            </td>
+                            <td><p>.....</p></td>
+                            <td><p>username</p></td>
+                            <td><p>logs dito</p></td>
+                            <td><p>Actions met ditoy</p></td>
+                            <td><p>logs dito</p></td>
+                            <td><p>Actions met ditoy</p></td>
+                        </tr>
+                            
+                       
+
+                    </tbody>
+                </table>
+
+            </div>
+            </div>
+        </div>
+               <!--To be reviewed-->
+               <div id="reviewed" class="table-data" style="display: none;">
+                <div class="order">
+                    <div class="table-container">
+                        <table>
+                        <thead>
+                            <tr>
+                            <th>Colleges</th>
+                            <th>Department</th>
+                            <th>Application #</th>
+                            <th>Last Name</th>
+                            <th>Middle Name</th>
+                            <th>First Name</th>
+                            <th>Status</th>
+                            
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                 <img src="frontend/assets/images/human icon.png" alt="Student">
+                                    <p>0000001</p>
+                                </td>
+                                <td><p>.....</p></td>
+                                <td><p>username</p></td>
+                                <td><p>logs dito</p></td>
+                                <td><p>Actions met ditoy</p></td>
+                                <td><p>logs dito</p></td>
+                                <td><p>pending</p></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="frontend/assets/images/human icon.png" alt="Student">
+                                    <p>0000002</p>
+                                </td>
+                                <td><p>.....</p></td>
+                                <td><p>username</p></td>
+                                <td><p>logs dito</p></td>
+                                <td><p>Actions met ditoy</p></td>
+                             </tr>
+                            <tr>
+                                <td>
+                                    <img src="frontend/assets/images/human icon.png" alt="Student">
+                                    <p>0000003</p>
+                                </td>
+                                <td><p>.....</p></td>
+                                <td><p>username</p></td>
+                                <td><p>logs dito</p></td>
+                                <td><p>Actions met ditoy</p></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="frontend/assets/images/human icon.png" alt="Student">
+                                    <p>0000004</p>
+                                </td>
+                                <td><p>.....</p></td>
+                                <td><p>username</p></td>
+                                <td><p>logs dito</p></td>
+                                <td><p>Actions met ditoy</p></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="frontend/assets/images/human icon.png" alt="Student">
+                                    <p>0000004</p>
+                                </td>
+                                <td><p>.....</p></td>
+                                <td><p>username</p></td>
+                                <td><p>logs dito</p></td>
+                                <td><p>Actions met ditoy</p></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="frontend/assets/images/human icon.png" alt="Student">
+                                    <p>0000004</p>
+                                </td>
+                                <td><p>.....</p></td>
+                                <td><p>username</p></td>
+                                <td><p>logs dito</p></td>
+                                <td><p>Actions met ditoy</p></td>
+                            </tr>
+                                
+                           
+
+                        </tbody>
+                    </table>
+
+                </div>
+                </div>
+               </div>
+               
+        <!--Interview Schedule-->
+        <div id="resultsT" class="table-data" >
+            <div class="order">
+            
+            <div class="table-container">
+                <table>
+                  
+                    <thead>
+                        <tr>
+                        <th>Colleges</th>
+                        <th>Department</th>
+                        <th>Application #</th>
+                        <th>Last Name</th>
+                        <th>Middle Name</th>
+                        <th>First Name</th>
+                        <th>Status</th>
+                        
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                             <img src="frontend/assets/images/human icon.png" alt="Student">
+                                <p>0000001</p>
+                            </td>
+                            <td><p>.....</p></td>
+                            <td><p>username</p></td>
+                            <td><p>logs dito</p></td>
+                            <td><p>Actions met ditoy</p></td>
+                            <td><p>logs dito</p></td>
+                            <td><p>complete</p></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="frontend/assets/images/human icon.png" alt="Student">
+                                <p>0000002</p>
+                            </td>
+                            <td><p>.....</p></td>
+                            <td><p>username</p></td>
+                            <td><p>logs dito</p></td>
+                            <td><p>Actions met ditoy</p></td>
+                         </tr>
+                        <tr>
+                            <td>
+                                <img src="frontend/assets/images/human icon.png" alt="Student">
+                                <p>0000003</p>
+                            </td>
+                            <td><p>.....</p></td>
+                            <td><p>username</p></td>
+                            <td><p>logs dito</p></td>
+                            <td><p>Actions met ditoy</p></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="frontend/assets/images/human icon.png" alt="Student">
+                                <p>0000004</p>
+                            </td>
+                            <td><p>.....</p></td>
+                            <td><p>username</p></td>
+                            <td><p>logs dito</p></td>
+                            <td><p>Actions met ditoy</p></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="frontend/assets/images/human icon.png" alt="Student">
+                                <p>0000004</p>
+                            </td>
+                            <td><p>.....</p></td>
+                            <td><p>username</p></td>
+                            <td><p>logs dito</p></td>
+                            <td><p>Actions met ditoy</p></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="frontend/assets/images/human icon.png" alt="Student">
+                                <p>0000004</p>
+                            </td>
+                            <td><p>.....</p></td>
+                            <td><p>username</p></td>
+                            <td><p>logs dito</p></td>
+                            <td><p>Actions met ditoy</p></td>
+                        </tr>
+                            
+                       
+
+                    </tbody>
+                </table>
+
+            </div>
+            </div>
+           </div>
+
+            <!--Faculty-->
+            <div id="faculty" class="table-data" >
+                <div class="order">
+                
+                <div class="table-container">
+                    <table>
+                      
+                        <thead>
+                            <tr>
+                            <th>Colleges</th>
+                            <th>Department</th>
+                            <th>Username</th>
+                            <th>Last Name</th>
+                            <th>Email Address</th>
+                            <th>password</th>
+                            
+                            
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                 <img src="frontend/assets/images/human icon.png" alt="Student">
+                                    <p>0000001</p>
+                                </td>
+                                <td><p>.....</p></td>
+                                <td><p>username</p></td>
+                                <td><p>logs dito</p></td>
+                                <td><p>Actions met ditoy</p></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="frontend/assets/images/human icon.png" alt="Student">
+                                    <p>0000002</p>
+                                </td>
+                                <td><p>.....</p></td>
+                                <td><p>username</p></td>
+                                <td><p>logs dito</p></td>
+                                <td><p>Actions met ditoy</p></td>
+                             </tr>
+                            <tr>
+                                <td>
+                                    <img src="frontend/assets/images/human icon.png" alt="Student">
+                                    <p>0000003</p>
+                                </td>
+                                <td><p>.....</p></td>
+                                <td><p>username</p></td>
+                                <td><p>logs dito</p></td>
+                                <td><p>Actions met ditoy</p></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="frontend/assets/images/human icon.png" alt="Student">
+                                    <p>0000004</p>
+                                </td>
+                                <td><p>.....</p></td>
+                                <td><p>username</p></td>
+                                <td><p>logs dito</p></td>
+                                <td><p>Actions met ditoy</p></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="frontend/assets/images/human icon.png" alt="Student">
+                                    <p>0000004</p>
+                                </td>
+                                <td><p>.....</p></td>
+                                <td><p>username</p></td>
+                                <td><p>logs dito</p></td>
+                                <td><p>Actions met ditoy</p></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="frontend/assets/images/human icon.png" alt="Student">
+                                    <p>0000004</p>
+                                </td>
+                                <td><p>.....</p></td>
+                                <td><p>username</p></td>
+                                <td><p>logs dito</p></td>
+                                <td><p>Actions met ditoy</p></td>
+                            </tr>
+                                
+                           
+
+                        </tbody>
+                    </table>
+
+                </div>
+                </div>
+               </div>
+           
+            </div>
+
            
 		</main>
 		<!-- MAIN -->

@@ -175,5 +175,73 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-//pressing side bars
+//pressing box-info
 
+document.addEventListener('DOMContentLoaded', function () {
+    const verifiedAppItem = document.getElementById('verified-application');
+    const toBeReviewedItem = document.getElementById('to-be-reviewed');
+    const resultsItem = document.getElementById('results-item'); // Updated ID
+    const facultyItem = document.getElementById('faculty-item'); // Added Faculty item
+    const verifiedTable = document.getElementById('verified');
+    const reviewedTable = document.getElementById('reviewed');
+    const resultsTable = document.getElementById('resultsT'); // Updated ID
+    const facultyTable = document.getElementById('faculty'); // Added Faculty table
+
+    verifiedAppItem.addEventListener('click', function () {
+        // Show the "Verified" table and hide the "To be reviewed," "Results," and "Faculty" tables
+        verifiedTable.style.display = 'block';
+        reviewedTable.style.display = 'none';
+        resultsTable.style.display = 'none';
+        facultyTable.style.display = 'none';
+    });
+
+    toBeReviewedItem.addEventListener('click', function () {
+        // Show the "To be reviewed" table and hide the "Verified," "Results," and "Faculty" tables
+        reviewedTable.style.display = 'block';
+        verifiedTable.style.display = 'none';
+        resultsTable.style.display = 'none';
+        facultyTable.style.display = 'none';
+    });
+
+    resultsItem.addEventListener('click', function () {
+        // Show the "Results" table and hide the "Verified," "To be reviewed," and "Faculty" tables
+        resultsTable.style.display = 'block';
+        verifiedTable.style.display = 'none';
+        reviewedTable.style.display = 'none';
+        facultyTable.style.display = 'none';
+    });
+
+    facultyItem.addEventListener('click', function () {
+        // Show the "Faculty" table and hide the "Verified," "To be reviewed," and "Results" tables
+        facultyTable.style.display = 'block';
+        verifiedTable.style.display = 'none';
+        reviewedTable.style.display = 'none';
+        resultsTable.style.display = 'none';
+    });
+});
+
+
+//pressing sidebar
+document.addEventListener('DOMContentLoaded', function () {
+    const dashboardLink = document.getElementById('dashboard-link');
+    const dashboardContent = document.getElementById('dashboard-content');
+    const approveApplicantsLink = document.getElementById('approve-applicants-link');
+    const approveApplicantContent = document.getElementById('ApproveApplicant-content');
+
+    // Initially hide the content divs
+    dashboardContent.style.display = 'block';
+    approveApplicantContent.style.display = 'none';
+
+    // Add event listeners to the links
+    dashboardLink.addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent the default link behavior
+        dashboardContent.style.display = 'block'; // Show the dashboard content
+        approveApplicantContent.style.display = 'none'; // Hide the approve applicants content
+    });
+
+    approveApplicantsLink.addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent the default link behavior
+        dashboardContent.style.display = 'none'; // Hide the dashboard content
+        approveApplicantContent.style.display = 'block'; // Show the approve applicants content
+    });
+});
