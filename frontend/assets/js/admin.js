@@ -173,6 +173,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+//search head in table
+
+
 
 
 //pressing box-info

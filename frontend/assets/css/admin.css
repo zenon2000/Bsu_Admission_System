@@ -1149,6 +1149,7 @@ nav {
     display: flex;
     align-items: center;
     margin-right: 20px; /* Add some margin for spacing */
+	
 }
 
 /* Adjust the input box styles */
@@ -1159,11 +1160,12 @@ nav {
     outline: none;
     font-size: 14px;
     width: 200px; /* Adjust the width as needed */
+	background-color: var(--light-gray);
 }
 
 /* Adjust the margin between the icon and input */
 #searchIcon {
-    margin-right: -8px; 
+    margin-right: -5px; 
 	color:  var(--dark);
 }
 
