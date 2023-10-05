@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BSU Faculty</title>
+    <title>BSU Admin</title>
     <link rel="icon" href="frontend/assets/images/BSU Logo1.png" type="image/x-icon">
     <link rel="stylesheet" href="frontend/assets/css//admin.css" />
     <!-- Boxicons -->
@@ -31,20 +31,20 @@
                     <span class="text">Approve Applicants</span>
                 </a>
             </li>
-            <li id="manage-schedule-link">
-                <a href="#">
+            <li>
+                <a href="#" id="manage-schedule-link">
                     <i class='bx bx-calendar'></i>
                     <span class="text">Manage Schedule</span>
                 </a>
             </li>
-            <li id="manage-faculty-link">
-                <a href="#">
+            <li>
+                <a href="#" id="manage-faculty-link">
                     <i class='bx bx-list-ul'></i>
                     <span class="text">Manage Faculty</span>
                 </a>
             </li>
-            <li id="view-request-link"> 
-                <a href="#">
+            <li> 
+                <a href="#" id="view-request-link">
                     <i class='bx bx-export'></i>
                     <span class="text">View Request</span>
                 </a>
@@ -140,9 +140,9 @@
             
        
             <!--verified-->
-            <div>
-            <div id="verified" class="table-data" style="display: none;">
-                <div class="order">
+                <div>
+                 <div id="verified" class="table-data" style="display: none;">
+                   <div class="order">
                     <div class="head">
                         <i class='bx bx-search' id="searchIcon"></i>
                         <div class="search-box" id="searchBox-verified">
@@ -176,9 +176,9 @@
 						</tbody>
 					</table>
 
-                </div>
-                </div>
-               
+                  </div>
+                  </div>
+                
                    <!--reviewed-->
                    <div id="reviewed" class="table-data" >
                     <div class="order">
@@ -260,7 +260,7 @@
                         </table>
                     </div>
                     </div>
-                   </div>
+                 </div>
         
                     <!--Faculty-->
                     <div id="faculty" class="table-data" >
@@ -339,9 +339,9 @@
                       
                         <thead>
                             <tr>
-                            <th>Application Number</th>
-                            <th>College</th>
-                            <th>Course</th>
+                            <th>Colleges</th>
+                            <th>Department</th>
+                            <th>Username</th>
                             <th>Last Name</th>
                             <th>First Name</th>
                             <th>Middle Name</th>
@@ -352,7 +352,10 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td><p>0000001</p></td>
+                                <td>
+                                 <img src="frontend/assets/images/human icon.png" alt="Student">
+                                    <p>0000001</p>
+                                </td>
                                 <td><p>College of Information Sciences</p></td>
                                 <td><p>Bachelor of Sciences in Information Technology</p></td>
                                 <td><p>Lee</p></td>
@@ -362,7 +365,10 @@
                                 
                             </tr>
                             <tr>
-                                <td><p>0000002</p></td>
+                                <td>
+                                    <img src="frontend/assets/images/human icon.png" alt="Student">
+                                    <p>0000002</p>
+                                </td>
                                 <td><p>College of Teacher Education</p></td>
                                 <td><p>Bachelor of Secondary Education</p></td>
                                 <td><p>Wang</p></td>

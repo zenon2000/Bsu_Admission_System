@@ -178,6 +178,56 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+//pressing box-info
+document.addEventListener('DOMContentLoaded', function () {
+    const verifiedAppItem = document.getElementById('verified-application');
+    const toBeReviewedItem = document.getElementById('to-be-reviewed');
+    const resultsItem = document.getElementById('results-item');
+    const facultyItem = document.getElementById('faculty-item');
+    const verifiedTable = document.getElementById('verified');
+    const reviewedTable = document.getElementById('reviewed');
+    const resultsTable = document.getElementById('resultsT');
+    const facultyTable = document.getElementById('faculty');
+
+    // Hide all tables initially
+    verifiedTable.style.display = 'none';
+    reviewedTable.style.display = 'none';
+    resultsTable.style.display = 'none';
+    facultyTable.style.display = 'none';
+
+    verifiedAppItem.addEventListener('click', function () {
+        // Show the "Verified" table and hide others
+        verifiedTable.style.display = 'block';
+        reviewedTable.style.display = 'none';
+        resultsTable.style.display = 'none';
+        facultyTable.style.display = 'none';
+    });
+
+    toBeReviewedItem.addEventListener('click', function () {
+        // Show the "To be reviewed" table and hide others
+        reviewedTable.style.display = 'block';
+        verifiedTable.style.display = 'none';
+        resultsTable.style.display = 'none';
+        facultyTable.style.display = 'none';
+    });
+
+    resultsItem.addEventListener('click', function () {
+        // Show the "Results" table and hide others
+        resultsTable.style.display = 'block';
+        verifiedTable.style.display = 'none';
+        reviewedTable.style.display = 'none';
+        facultyTable.style.display = 'none';
+    });
+
+    facultyItem.addEventListener('click', function () {
+        // Show the "Faculty" table and hide others
+        facultyTable.style.display = 'block';
+        verifiedTable.style.display = 'none';
+        reviewedTable.style.display = 'none';
+        resultsTable.style.display = 'none';
+    });
+});
+
 
 
 //pressing sidebar
@@ -244,55 +294,5 @@ document.addEventListener('DOMContentLoaded', function () {
         manageScheduleContent.style.display = 'none'; // Hide Manage Schedule content
         manageFacultyContent.style.display = 'none'; // Hide Manage Faculty content
         viewRequestContent.style.display = 'block'; // Show View Request content
-    });
-});
-
-//pressing box-info
-document.addEventListener('DOMContentLoaded', function () {
-    const verifiedAppItem = document.getElementById('verified-application');
-    const toBeReviewedItem = document.getElementById('to-be-reviewed');
-    const resultsItem = document.getElementById('results-item');
-    const facultyItem = document.getElementById('faculty-item');
-    const verifiedTable = document.getElementById('verified');
-    const reviewedTable = document.getElementById('reviewed');
-    const resultsTable = document.getElementById('resultsT');
-    const facultyTable = document.getElementById('faculty');
-
-    // Hide all tables initially
-    verifiedTable.style.display = 'none';
-    reviewedTable.style.display = 'none';
-    resultsTable.style.display = 'none';
-    facultyTable.style.display = 'none';
-
-    verifiedAppItem.addEventListener('click', function () {
-        // Show the "Verified" table and hide others
-        verifiedTable.style.display = 'block';
-        reviewedTable.style.display = 'none';
-        resultsTable.style.display = 'none';
-        facultyTable.style.display = 'none';
-    });
-
-    toBeReviewedItem.addEventListener('click', function () {
-        // Show the "To be reviewed" table and hide others
-        reviewedTable.style.display = 'block';
-        verifiedTable.style.display = 'none';
-        resultsTable.style.display = 'none';
-        facultyTable.style.display = 'none';
-    });
-
-    resultsItem.addEventListener('click', function () {
-        // Show the "Results" table and hide others
-        resultsTable.style.display = 'block';
-        verifiedTable.style.display = 'none';
-        reviewedTable.style.display = 'none';
-        facultyTable.style.display = 'none';
-    });
-
-    facultyItem.addEventListener('click', function () {
-        // Show the "Faculty" table and hide others
-        facultyTable.style.display = 'block';
-        verifiedTable.style.display = 'none';
-        reviewedTable.style.display = 'none';
-        resultsTable.style.display = 'none';
     });
 });

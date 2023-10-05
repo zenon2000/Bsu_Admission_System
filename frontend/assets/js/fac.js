@@ -91,23 +91,7 @@ switchMode.addEventListener('change', function () {
 		document.body.classList.remove('dark');
 	}
 })
-document.addEventListener('DOMContentLoaded', function () {
-    const searchForm = document.getElementById('search-form');
-    const searchInput = document.getElementById('search-input');
 
-    searchForm.addEventListener('submit', function (event) {
-        event.preventDefault(); // Prevent the form from submitting traditionally
-
-        const searchTerm = searchInput.value.trim();
-
-        // Perform your search logic here
-        if (searchTerm !== '') {
-            alert('Performing search for: ' + searchTerm);
-            // Add your search results handling logic here
-        }
-    });
-});
-//search bar
 
 
 //side bar
@@ -184,84 +168,7 @@ function showTime() {
 showTime();
 //clock
 
-//student list search
-document.addEventListener('DOMContentLoaded', function () {
-    const searchIcon = document.getElementById('searchIcon');
-    const searchBox = document.getElementById('searchBox');
-    const studentList = document.querySelectorAll('.table-data .order tbody tr');
 
-    // Hide the search box initially
-    searchBox.style.display = 'none';
-
-    searchIcon.addEventListener('click', function () {
-        // Toggle the display of the search box
-        searchBox.style.display = searchBox.style.display === 'none' ? 'flex' : 'none';
-    });
-
-    // Handle input in the search box
-    const searchInput = document.getElementById('searchInput');
-    
-    searchInput.addEventListener('input', function () {
-        const searchTerm = searchInput.value.trim().toLowerCase();
-
-        // Hide all students initially
-        studentList.forEach(function (student) {
-            student.style.display = 'none';
-        });
-
-        // Show only the students whose names match the search term
-        studentList.forEach(function (student) {
-            const studentName = student.querySelector('td:first-child p').textContent.toLowerCase();
-            if (studentName.includes(searchTerm)) {
-                student.style.display = 'table-row';
-            }
-        });
-    });
-});
-//student list search
-
-
-//popup message
-// Function to get the current time in the Philippines without GMT+8 offset
-function getPhilippineTime() {
-    const currentTime = new Date();
-    const timeZoneOffset = 480; // Philippines Standard Time (UTC+8) offset in minutes
-    const philippinesTime = new Date(currentTime.getTime() + timeZoneOffset * 60000);
-
-    const hours = philippinesTime.getHours().toString().padStart(2, "0");
-    const minutes = philippinesTime.getMinutes().toString().padStart(2, "0");
-    const seconds = philippinesTime.getSeconds().toString().padStart(2, "0");
-
-    return `${hours}:${minutes}:${seconds}`;
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-    const messageButton = document.querySelector("#message-button");
-    const messagePopup = document.querySelector(".message-popup");
-    const closeButton = document.querySelector("#close-button");
-    
-    // Update timestamps with the current Philippine time
-    const timestamp1 = document.querySelector("#timestamp1");
-    const timestamp2 = document.querySelector("#timestamp2");
-    timestamp1.textContent = getPhilippineTime();
-    timestamp2.textContent = getPhilippineTime();
-    
-    // Toggle the display of the message popup when the message button is clicked
-    messageButton.addEventListener("click", function () {
-        // Toggle the visibility of the message popup
-        messagePopup.style.display = messagePopup.style.display === "block" ? "none" : "block";
-    });
-    
-    // Close the message popup when the close button is clicked
-  
-    
-    // Close the message popup when the user clicks outside the popup
-    document.addEventListener("click", function (event) {
-        if (!messageButton.contains(event.target) && !messagePopup.contains(event.target)) {
-            messagePopup.style.display = "none";
-        }
-    });
-});
 
 document.addEventListener("DOMContentLoaded", function () {
     const notificationButton = document.querySelector("#notification-button");
@@ -296,30 +203,50 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+
+//pressing the box info
+
 document.addEventListener('DOMContentLoaded', function () {
-        const conversationList = document.querySelector('.conversations');
-        const chatContainer = document.querySelector('.chat-container');
+    const waitlistItem = document.getElementById('wait-info');
+    const rejectedItem = document.getElementById('rejected-info');
+    const admittedItem = document.getElementById('admitted-info');
+   
+    const waitTable = document.getElementById('wait-list');
+    const rejectedTable = document.getElementById('Rejected');
+    const admittedTable = document.getElementById('admitted');
+    const overallTable = document.getElementById('over-all');
+    // Hide all tables initially
+    waitTable.style.display = 'none';
+    rejectedTable.style.display = 'none';
+    admittedTable.style.display = 'none';
+    overallTable.style.display = 'block';
 
-        // Attach click event to conversation items
-        conversationList.addEventListener('click', function (event) {
-            const listItem = event.target.closest('li');
-            if (listItem) {
-                // Toggle active class to highlight selected conversation
-                const activeItem = conversationList.querySelector('.active');
-                if (activeItem) {
-                    activeItem.classList.remove('active');
-                }
-                listItem.classList.add('active');
-
-                // Update chat content (replace with actual messages)
-                const selectedUser = listItem.querySelector('.user-name').innerText;
-                const selectedUserElement = chatContainer.querySelector('.selected-user');
-                selectedUserElement.innerText = selectedUser;
-
-                // Show the chat container
-                chatContainer.style.display = 'flex';
-            }
-        });
+    waitlistItem.addEventListener('click', function () {
+        // Show the "waitlist" table and hide others
+        waitTable.style.display = 'block';
+        rejectedTable.style.display = 'none';
+        overallTable.style.display = 'none';
+        overallTable.style.display = 'none';
+       
     });
-//popup message
+
+    rejectedItem.addEventListener('click', function () {
+        // Show the "rejected" table and hide others
+        rejectedTable.style.display = 'block';
+        waitTable.style.display = 'none';
+        admittedTable.style.display = 'none';
+        overallTable.style.display = 'none';
+    });
+
+    admittedItem.addEventListener('click', function () {
+        // Show the "admitted" table and hide others
+        admittedTable.style.display = 'block';
+        rejectedTable.style.display = 'none';
+        waitTable.style.display = 'none';
+        overallTable.style.display = 'none';
+    });
+
+});
+
+
 
