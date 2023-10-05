@@ -176,19 +176,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 //pressing box-info
-
 document.addEventListener('DOMContentLoaded', function () {
     const verifiedAppItem = document.getElementById('verified-application');
     const toBeReviewedItem = document.getElementById('to-be-reviewed');
-    const resultsItem = document.getElementById('results-item'); // Updated ID
-    const facultyItem = document.getElementById('faculty-item'); // Added Faculty item
+    const resultsItem = document.getElementById('results-item');
+    const facultyItem = document.getElementById('faculty-item');
     const verifiedTable = document.getElementById('verified');
     const reviewedTable = document.getElementById('reviewed');
-    const resultsTable = document.getElementById('resultsT'); // Updated ID
-    const facultyTable = document.getElementById('faculty'); // Added Faculty table
+    const resultsTable = document.getElementById('resultsT');
+    const facultyTable = document.getElementById('faculty');
+
+    // Hide all tables initially
+    verifiedTable.style.display = 'none';
+    reviewedTable.style.display = 'none';
+    resultsTable.style.display = 'none';
+    facultyTable.style.display = 'none';
 
     verifiedAppItem.addEventListener('click', function () {
-        // Show the "Verified" table and hide the "To be reviewed," "Results," and "Faculty" tables
+        // Show the "Verified" table and hide others
         verifiedTable.style.display = 'block';
         reviewedTable.style.display = 'none';
         resultsTable.style.display = 'none';
@@ -196,7 +201,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     toBeReviewedItem.addEventListener('click', function () {
-        // Show the "To be reviewed" table and hide the "Verified," "Results," and "Faculty" tables
+        // Show the "To be reviewed" table and hide others
         reviewedTable.style.display = 'block';
         verifiedTable.style.display = 'none';
         resultsTable.style.display = 'none';
@@ -204,7 +209,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     resultsItem.addEventListener('click', function () {
-        // Show the "Results" table and hide the "Verified," "To be reviewed," and "Faculty" tables
+        // Show the "Results" table and hide others
         resultsTable.style.display = 'block';
         verifiedTable.style.display = 'none';
         reviewedTable.style.display = 'none';
@@ -212,7 +217,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     facultyItem.addEventListener('click', function () {
-        // Show the "Faculty" table and hide the "Verified," "To be reviewed," and "Results" tables
+        // Show the "Faculty" table and hide others
         facultyTable.style.display = 'block';
         verifiedTable.style.display = 'none';
         reviewedTable.style.display = 'none';
@@ -221,27 +226,54 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+
 //pressing sidebar
 document.addEventListener('DOMContentLoaded', function () {
     const dashboardLink = document.getElementById('dashboard-link');
     const dashboardContent = document.getElementById('dashboard-content');
     const approveApplicantsLink = document.getElementById('approve-applicants-link');
     const approveApplicantContent = document.getElementById('ApproveApplicant-content');
+    const manageScheduleLink = document.querySelector('li:nth-child(3) a'); // Select the third menu item
+    const manageScheduleContent = document.getElementById('ManageSchedule-content'); // ID for Manage Schedule content
+    const manageFacultyLink = document.querySelector('li:nth-child(4) a'); // Select the fourth menu item
+    const manageFacultyContent = document.getElementById('ManageFaculty-content'); // ID for Manage Faculty content
 
     // Initially hide the content divs
     dashboardContent.style.display = 'block';
     approveApplicantContent.style.display = 'none';
+    manageScheduleContent.style.display = 'none'; // Hide Manage Schedule content by default
+    manageFacultyContent.style.display = 'none'; // Hide Manage Faculty content by default
 
     // Add event listeners to the links
     dashboardLink.addEventListener('click', function (event) {
         event.preventDefault(); // Prevent the default link behavior
         dashboardContent.style.display = 'block'; // Show the dashboard content
         approveApplicantContent.style.display = 'none'; // Hide the approve applicants content
+        manageScheduleContent.style.display = 'none'; // Hide Manage Schedule content
+        manageFacultyContent.style.display = 'none'; // Hide Manage Faculty content
     });
 
     approveApplicantsLink.addEventListener('click', function (event) {
         event.preventDefault(); // Prevent the default link behavior
         dashboardContent.style.display = 'none'; // Hide the dashboard content
         approveApplicantContent.style.display = 'block'; // Show the approve applicants content
+        manageScheduleContent.style.display = 'none'; // Hide Manage Schedule content
+        manageFacultyContent.style.display = 'none'; // Hide Manage Faculty content
+    });
+
+    manageScheduleLink.addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent the default link behavior
+        dashboardContent.style.display = 'none'; // Hide the dashboard content
+        approveApplicantContent.style.display = 'none'; // Hide the approve applicants content
+        manageScheduleContent.style.display = 'block'; // Show Manage Schedule content
+        manageFacultyContent.style.display = 'none'; // Hide Manage Faculty content
+    });
+
+    manageFacultyLink.addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent the default link behavior
+        dashboardContent.style.display = 'none'; // Hide the dashboard content
+        approveApplicantContent.style.display = 'none'; // Hide the approve applicants content
+        manageScheduleContent.style.display = 'none'; // Hide Manage Schedule content
+        manageFacultyContent.style.display = 'block'; // Show Manage Faculty content
     });
 });
