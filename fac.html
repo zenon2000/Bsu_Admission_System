@@ -135,11 +135,7 @@
                 <span class="num">8</span>
                 <div class="circle"></div>
             </a>
-             <a href="#" class="message" id="message-button">
-              <i class='bx bxs-message-dots'></i>
-             <span class="num">8</span>
-             <div class="circle"></div>
-            </a>
+             
             <a href="#" class="profile" id="profile-button">
                 <img src="frontend/assets/images/human icon.png" alt="User Profile">
             </a>
@@ -164,36 +160,37 @@
                         </li>
                     </ul>
                 </div>
-                
+               
             </div>
 
             <ul class="box-info">
-                <li>
+                <li id="wait-info">
                     <i class='bx bxs-group'></i>
                     <span class="text">
                         <h3>1020</h3>
                         <p>WaitList</p>
                     </span>
-                </li>
-                <li>
-                    <i class='bx bxs-group'></i>
-                    <span class="text">
-                        <h3>1020</h3>
-                        <p>Slots Left</p>
-                    </span>
-                </li>
-                <li>
+                </li>                
+                
+                <li id="rejected-info">
                     <i class='bx bxs-group'></i>
                     <span class="text">
                         <h3>2834</h3>
                         <p>Rejected</p>
                     </span>
                 </li>
-                <li>
+                <li id="admitted-info">
                     <i class='bx bxs-group'></i>
                     <span class="text">
                         <h3>2543</h3>
                         <p>Admitted</p>
+                    </span>
+                </li>
+                <li id="slots-info">
+                    <i class='bx bxs-group'></i>
+                    <span class="text">
+                        <h3>1020</h3>
+                        <p>Slots Left</p>
                     </span>
                 </li>
             </ul>
@@ -223,7 +220,7 @@
                                     <p>John Doe</p>
                                 </td>
                                 <td>01-10-2021</td>
-                                <td><span class="status completed">Admitted</span></td>
+                                <td><span class="status admitted">Admitted</span></td>
                             </tr>
                             <tr>
                                 <td>
@@ -231,7 +228,7 @@
                                     <p>Jane Doe</p>
                                 </td>
                                 <td>01-10-2021</td>
-                                <td><span class="status pending">Rejected</span></td>
+                                <td><span class="status rejected">Rejected</span></td>
                             </tr>
                             <tr>
                                 <td>
@@ -239,7 +236,7 @@
                                     <p>Johny Doe</p>
                                 </td>
                                 <td>01-10-2021</td>
-                                <td><span class="status process">Pending</span></td>
+                                <td><span class="status pending">Pending</span></td>
                             </tr>
                             <tr>
                                 <td>
@@ -255,7 +252,7 @@
 									<p>Janie Doe</p>
 								</td>
 								<td>01-10-2021</td>
-								<td><span class="status completed">Admitted</span></td> 
+								<td><span class="status admitted">Admitted</span></td> 
 							</tr>
 						</tbody>
 					</table>
@@ -263,13 +260,21 @@
 				<div class="todo">
 					<div class="head">
 						<h3>Student Data</h3>
-						
+                       
+                            <a href="#" class="btn-download">
+                                <i class='bx bxs-cloud-download'></i>
+                                <span class="text">Download PDF</span>
+                            </a>
+                      
 					</div>
+                   
 					<ul class="todo-list">
+
 						<li class="completed">
 							<p>Information List</p>
 							
 						</li>
+                        
 						
 					</ul>
 				</div>
@@ -301,7 +306,7 @@
                                     <p>John Doe</p>
                                 </td>
                                 <td>01-10-2021</td>
-                                <td><span class="status completed">Admitted</span></td>
+                                <td><span class="status pending">pending</span></td>
                             </tr>
                             <tr>
                                 <td>
@@ -309,7 +314,7 @@
                                     <p>Jane Doe</p>
                                 </td>
                                 <td>01-10-2021</td>
-                                <td><span class="status pending">Rejected</span></td>
+                                <td><span class="status pending">pending</span></td>
                             </tr>
                             <tr>
                                 <td>
@@ -317,7 +322,7 @@
                                     <p>Johny Doe</p>
                                 </td>
                                 <td>01-10-2021</td>
-                                <td><span class="status process">Pending</span></td>
+                                <td><span class="status pending">pending</span></td>
                             </tr>
                             <tr>
                                 <td>
@@ -325,7 +330,7 @@
                                     <p>Johnie Doe</p>
                                 </td>
                                 <td>01-10-2021</td>
-                                <td><span class="status pending">Pending</span></td>
+                                <td><span class="status pending">pending</span></td>
                             </tr>
 							<tr>
 								<td>
@@ -333,7 +338,7 @@
 									<p>Janie Doe</p>
 								</td>
 								<td>01-10-2021</td>
-								<td><span class="status completed">Admitted</span></td> 
+								<td><span class="status pending">pending</span></td> 
 							</tr>
 						</tbody>
 					</table>
@@ -341,7 +346,10 @@
 				<div class="todo">
 					<div class="head">
 						<h3>Student Data</h3>
-						
+                        <a href="#" class="btn-download">
+                            <i class='bx bxs-cloud-download'></i>
+                            <span class="text">Download PDF</span>
+                        </a>
 					</div>
 					<ul class="todo-list">
 						<li class="completed">
@@ -353,84 +361,176 @@
 				</div>
 			</div>
         </div>
+        
+         <!--Rejected-->
+         <div id="Rejected">
+            <div class="table-data">
+                <div class="order">
+                    <div class="head">
+                        <h3>Rejected Students</h3>
+                        <i class='bx bx-search' id="searchIcon"></i>
+                        <div class="search-box" id="searchBox-overall">
+                            <input type="text" placeholder="Search...">
+                        </div>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Student</th>
+                                <th>Date of Admission</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <img src="frontend/assets/images/human icon.png" alt="Student">
+                                    <p>John Doe</p>
+                                </td>
+                                <td>01-10-2021</td>
+                                <td><span class="status rejected">rejected</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="frontend/assets/images/human icon.png" alt="Student">
+                                    <p>Jane Doe</p>
+                                </td>
+                                <td>01-10-2021</td>
+                                <td><span class="status rejected">rejected</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="frontend/assets/images/human icon.png" alt="Student">
+                                    <p>Johny Doe</p>
+                                </td>
+                                <td>01-10-2021</td>
+                                <td><span class="status rejected">rejected</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="frontend/assets/images/human icon.png" alt="Student">
+                                    <p>Johnie Doe</p>
+                                </td>
+                                <td>01-10-2021</td>
+                                <td><span class="status rejected">rejected</span></td>
+                            </tr>
+							<tr>
+								<td>
+									<img src="frontend/assets/images/human icon.png" alt="Student">
+									<p>Janie Doe</p>
+								</td>
+								<td>01-10-2021</td>
+								<td><span class="status rejected">rejected</span></td> 
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="todo">
+					<div class="head">
+						<h3>Student Data</h3>
+                        <a href="#" class="btn-download">
+                            <i class='bx bxs-cloud-download'></i>
+                            <span class="text">Download PDF</span>
+                        </a>
+					</div>
+					<ul class="todo-list">
+						<li class="completed">
+							<p>Information List</p>
+							
+						</li>
+						
+					</ul>
+				</div>
+			</div>
+        </div>
+             <!--admitted-->
+             <div id="admitted">
+                <div class="table-data">
+                    <div class="order">
+                        <div class="head">
+                            <h3>Admitted Students</h3>
+                            <i class='bx bx-search' id="searchIcon"></i>
+                            <div class="search-box" id="searchBox-overall">
+                                <input type="text" placeholder="Search...">
+                            </div>
+                        </div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Student</th>
+                                    <th>Date of Admission</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <img src="frontend/assets/images/human icon.png" alt="Student">
+                                        <p>John Doe</p>
+                                    </td>
+                                    <td>01-10-2021</td>
+                                    <td><span class="status admitted">Admitted</span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="frontend/assets/images/human icon.png" alt="Student">
+                                        <p>Jane Doe</p>
+                                    </td>
+                                    <td>01-10-2021</td>
+                                    <td><span class="status admitted">Admitted</span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="frontend/assets/images/human icon.png" alt="Student">
+                                        <p>Johny Doe</p>
+                                    </td>
+                                    <td>01-10-2021</td>
+                                    <td><span class="status admitted">Admitted</span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="frontend/assets/images/human icon.png" alt="Student">
+                                        <p>Johnie Doe</p>
+                                    </td>
+                                    <td>01-10-2021</td>
+                                    <td><span class="status admitted">Admitted</span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="frontend/assets/images/human icon.png" alt="Student">
+                                        <p>Janie Doe</p>
+                                    </td>
+                                    <td>01-10-2021</td>
+                                    <td><span class="status admitted">Admitted</span></td> 
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="todo">
+                        <div class="head">
+                            <h3>Student Data</h3>
+                            <a href="#" class="btn-download">
+                                <i class='bx bxs-cloud-download'></i>
+                                <span class="text">Download PDF</span>
+                            </a>
+                        </div>
+                        <ul class="todo-list">
+                            <li class="completed">
+                                <p>Information List</p>
+                                
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
 		</main>
 		<!-- MAIN -->
 
 
 
 	</section>
-	<!-- Add the message popup container here -->
-	<div class="message-popup" id="message-popup">
-    <!-- Popup header -->
-    <div class="popup-header">
-        <span class="popup-title">Messages</span>
-        <button class="close-button">×</button>
-    </div>
-    <!-- Search bar -->
-    <div class="search-container">
-        <i class='bx bx-search'></i>
-        <input type="text" id="search-convo" placeholder="Search conversation...">
-    </div>
-
-    <!-- List of recent conversations -->
-    <ul class="conversations">
-        <li class="active">
-            <img src="frontend/assets/images/human icon.png" alt="User 1">
-            <div class="conversation-info">
-                <span class="user-name">User 1</span>
-                <p class="last-message">
-                    <span class="message-text">Hello there!</span>
-                    <span class="timestamp" id="timestamp1">8:10:45</span>
-                </p>
-            </div>
-        </li>
-        <li>
-            <img src="frontend/assets/images/human icon.png" alt="User 2">
-            <div class="conversation-info">
-                <span class="user-name">User 2</span>
-                <p class="last-message">
-                    <span class="message-text">Hi! How are you doing?</span>
-                    <span class="timestamp" id="timestamp2">8:15:30</span>
-                </p>
-            </div>
-        </li>
-        <li>
-            <img src="frontend/assets/images/human icon.png" alt="User 2">
-            <div class="conversation-info">
-                <span class="user-name">Bea Pintas</span>
-                <p class="last-message">
-                    <span class="message-text">mwehehe </span>
-                    <span class="timestamp">09:15:30</span>
-                </p>
-            </div>
-        </li>
-
-        <!-- Add more conversation items as needed -->
-    </ul>
-    <!-- Chat container -->
-    <div class="chat-container">
-        <div class="chat-header">
-            <img src="frontend/assets/images/human icon.png" alt="Selected User">
-            <span class="selected-user">User 1</span>
-        </div>
-        <ul class="messages">
-            <li class="sent">
-                <p>Hello!</p>
-                <span class="timestamp">8:10 AM</span>
-            </li>
-            <li class="received">
-                <p>Hi there!</p>
-                <span class="timestamp">8:12 AM</span>
-            </li>
-            <!-- Add more messages as needed -->
-        </ul>
-        <div class="message-input-container">
-            <input type="text" id="message-input" placeholder="Type your message...">
-            <button id="send-button">Send</button>
-        </div>
-    </div>
-</div>
-	 <!-- Chat box container -->
+	
 
       <!-- NOTIFICATION container -->
      <div class="notification-popup" id="notification-popup">
@@ -448,7 +548,7 @@
             <div class="notification-item">
                 <img src="frontend/assets/images/human icon.png" alt="User Avatar">
                 <div class="notification-text">
-                    <p><strong>User 2</strong> requested for a copy of addmited BSIT Students</p>
+                    <p><strong>User 2</strong> requested for a copy of admitted BSIT Students</p>
                     <span class="timestamp">5 hours ago</span>
                 </div>
             </div>
