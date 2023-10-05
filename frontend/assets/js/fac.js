@@ -249,4 +249,26 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+//pressing the side bar
+document.addEventListener("DOMContentLoaded", function () {
+    const cahLink = document.getElementById("course-cah");
+    const studentRows = document.querySelectorAll("#dashboard-content table tbody tr");
+
+    cahLink.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        // Get the value of the data-fulltext attribute
+        const collegeFilter = cahLink.getAttribute("data-fulltext");
+
+        // Loop through all student rows and hide/show them based on the data-college attribute
+        studentRows.forEach(function (row) {
+            const college = row.getAttribute("data-college");
+            if (college === collegeFilter) {
+                row.style.display = ""; // Show the matching rows
+            } else {
+                row.style.display = "none"; // Hide the non-matching rows
+            }
+        });
+    });
+});
 

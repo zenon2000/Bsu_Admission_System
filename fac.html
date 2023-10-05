@@ -19,57 +19,57 @@
 
         <ul class="side-menu top">
             <li class="active">
-                <a href="#">
+                <a href="#" id="dashboard-link">
                     <i class='bx bxs-dashboard'></i>
                     <span class="text">Dashboard</span>
                 </a>
             </li>
             <li class="dropdown" id="courses-dropdown">
-                <a href="#" class="dropdown-toggle">
+                <a href="#" class="dropdown-toggle" id="course-link">
                     <i class='bx bxs-graduation'></i>
-                    <span class="text">Courses</span>
+                    <span class="text">Colleges</span>
 					<i class="bx bx-chevron-down" id="chevron-icon"></i> <!-- Dropdown indicator -->
                  
                 </a>
                 <ul class="dropdown-content">
                     <li>
-                        <a href="#" data-fulltext="College of Arts and Humanities">
+                        <a id="course-cah" href="#" data-fulltext="College of Arts and Humanities">
                             <i class='bx bx-hive'></i>
                             <span class="text">CAH</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#" data-fulltext="College of Engineering and Applied Technology">
+                        <a id="course-ceat" href="#" data-fulltext="College of Engineering and Applied Technology">
                             <i class='bx bx-hive'></i>
                             <span class="text">CEAT</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#" data-fulltext="College of Forestry">
+                        <a id="course-cf" href="#" data-fulltext="College of Forestry">
                             <i class='bx bx-hive'></i>
                             <span class="text">CF</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#" data-fulltext="College of Agriculture">
+                        <a id="course-ca" href="#" data-fulltext="College of Agriculture">
                             <i class='bx bx-hive'></i>
                             <span class="text">CA</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#" data-fulltext="College of Home Economics and Technology">
+                        <a id="course-chet" href="#" data-fulltext="College of Home Economics and Technology">
                             <i class='bx bx-hive'></i>
                             <span class="text">CHET</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#" data-fulltext="College of Information Sciences">
+                        <a id="course-cis" href="#" data-fulltext="College of Information Sciences">
                             <i class='bx bx-hive'></i>
                             <span class="text">CIS</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#" data-fulltext="College of Natural Sciences">
+                        <a id="course-cns"href="#" data-fulltext="College of Natural Sciences">
                             <i class='bx bx-hive'></i>
                             <span class="text">CNS</span>
                         </a>
@@ -147,6 +147,7 @@
 
         <!-- MAIN -->
         <main>
+            <div id="dashboard-content">
             <div class="head-title">
                 <div class="left">
                     <h1>Dashboard</h1>
@@ -209,16 +210,18 @@
                         <thead>
                             <tr>
                                 <th>Student</th>
+                                <th>Colleges</th>
                                 <th>Date of Admission</th>
                                 <th>Status</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                            <tr data-college="CAH">
                                 <td>
                                     <img src="frontend/assets/images/human icon.png" alt="Student">
                                     <p>John Doe</p>
                                 </td>
+                                <td>CAH</td>
                                 <td>01-10-2021</td>
                                 <td><span class="status admitted">Admitted</span></td>
                             </tr>
@@ -227,14 +230,16 @@
                                     <img src="frontend/assets/images/human icon.png" alt="Student">
                                     <p>Jane Doe</p>
                                 </td>
+                                <td>CIS</td>
                                 <td>01-10-2021</td>
                                 <td><span class="status rejected">Rejected</span></td>
                             </tr>
-                            <tr>
+                            <tr data-college="CAH">
                                 <td>
                                     <img src="frontend/assets/images/human icon.png" alt="Student">
                                     <p>Johny Doe</p>
                                 </td>
+                                <td>CEAT</td>
                                 <td>01-10-2021</td>
                                 <td><span class="status pending">Pending</span></td>
                             </tr>
@@ -243,6 +248,7 @@
                                     <img src="frontend/assets/images/human icon.png" alt="Student">
                                     <p>Johnie Doe</p>
                                 </td>
+                                <td>CF</td>
                                 <td>01-10-2021</td>
                                 <td><span class="status pending">Pending</span></td>
                             </tr>
@@ -251,6 +257,7 @@
 									<img src="frontend/assets/images/human icon.png" alt="Student">
 									<p>Janie Doe</p>
 								</td>
+                                <td>CHET</td>
 								<td>01-10-2021</td>
 								<td><span class="status admitted">Admitted</span></td> 
 							</tr>
@@ -295,6 +302,7 @@
                         <thead>
                             <tr>
                                 <th>Student</th>
+                                <th>Colleges</th>
                                 <th>Date of Admission</th>
                                 <th>Status</th>
                             </tr>
@@ -305,6 +313,7 @@
                                     <img src="frontend/assets/images/human icon.png" alt="Student">
                                     <p>John Doe</p>
                                 </td>
+                                <td>CEAT</td>
                                 <td>01-10-2021</td>
                                 <td><span class="status pending">pending</span></td>
                             </tr>
@@ -313,6 +322,7 @@
                                     <img src="frontend/assets/images/human icon.png" alt="Student">
                                     <p>Jane Doe</p>
                                 </td>
+                                <td>CEAT</td>
                                 <td>01-10-2021</td>
                                 <td><span class="status pending">pending</span></td>
                             </tr>
@@ -321,6 +331,7 @@
                                     <img src="frontend/assets/images/human icon.png" alt="Student">
                                     <p>Johny Doe</p>
                                 </td>
+                                <td>CEAT</td>
                                 <td>01-10-2021</td>
                                 <td><span class="status pending">pending</span></td>
                             </tr>
@@ -329,6 +340,7 @@
                                     <img src="frontend/assets/images/human icon.png" alt="Student">
                                     <p>Johnie Doe</p>
                                 </td>
+                                <td>CEAT</td>
                                 <td>01-10-2021</td>
                                 <td><span class="status pending">pending</span></td>
                             </tr>
@@ -337,6 +349,7 @@
 									<img src="frontend/assets/images/human icon.png" alt="Student">
 									<p>Janie Doe</p>
 								</td>
+                                <td>CEAT</td>
 								<td>01-10-2021</td>
 								<td><span class="status pending">pending</span></td> 
 							</tr>
@@ -377,6 +390,7 @@
                         <thead>
                             <tr>
                                 <th>Student</th>
+                                <th>Colleges</th>
                                 <th>Date of Admission</th>
                                 <th>Status</th>
                             </tr>
@@ -387,6 +401,7 @@
                                     <img src="frontend/assets/images/human icon.png" alt="Student">
                                     <p>John Doe</p>
                                 </td>
+                                <td>CHET</td>
                                 <td>01-10-2021</td>
                                 <td><span class="status rejected">rejected</span></td>
                             </tr>
@@ -395,6 +410,7 @@
                                     <img src="frontend/assets/images/human icon.png" alt="Student">
                                     <p>Jane Doe</p>
                                 </td>
+                                <td>CHET</td>
                                 <td>01-10-2021</td>
                                 <td><span class="status rejected">rejected</span></td>
                             </tr>
@@ -403,6 +419,7 @@
                                     <img src="frontend/assets/images/human icon.png" alt="Student">
                                     <p>Johny Doe</p>
                                 </td>
+                                <td>CHET</td>
                                 <td>01-10-2021</td>
                                 <td><span class="status rejected">rejected</span></td>
                             </tr>
@@ -411,6 +428,7 @@
                                     <img src="frontend/assets/images/human icon.png" alt="Student">
                                     <p>Johnie Doe</p>
                                 </td>
+                                <td>CHET</td>
                                 <td>01-10-2021</td>
                                 <td><span class="status rejected">rejected</span></td>
                             </tr>
@@ -419,6 +437,7 @@
 									<img src="frontend/assets/images/human icon.png" alt="Student">
 									<p>Janie Doe</p>
 								</td>
+                                <td>CHET</td>
 								<td>01-10-2021</td>
 								<td><span class="status rejected">rejected</span></td> 
 							</tr>
@@ -458,6 +477,7 @@
                             <thead>
                                 <tr>
                                     <th>Student</th>
+                                    <th>Courses</th>
                                     <th>Date of Admission</th>
                                     <th>Status</th>
                                 </tr>
@@ -468,6 +488,7 @@
                                         <img src="frontend/assets/images/human icon.png" alt="Student">
                                         <p>John Doe</p>
                                     </td>
+                                    <td>CHET</td>
                                     <td>01-10-2021</td>
                                     <td><span class="status admitted">Admitted</span></td>
                                 </tr>
@@ -476,6 +497,7 @@
                                         <img src="frontend/assets/images/human icon.png" alt="Student">
                                         <p>Jane Doe</p>
                                     </td>
+                                    <td>CNAS</td>
                                     <td>01-10-2021</td>
                                     <td><span class="status admitted">Admitted</span></td>
                                 </tr>
@@ -484,6 +506,7 @@
                                         <img src="frontend/assets/images/human icon.png" alt="Student">
                                         <p>Johny Doe</p>
                                     </td>
+                                    <td>CNAS</td>
                                     <td>01-10-2021</td>
                                     <td><span class="status admitted">Admitted</span></td>
                                 </tr>
@@ -492,6 +515,7 @@
                                         <img src="frontend/assets/images/human icon.png" alt="Student">
                                         <p>Johnie Doe</p>
                                     </td>
+                                    <td>CHET</td>
                                     <td>01-10-2021</td>
                                     <td><span class="status admitted">Admitted</span></td>
                                 </tr>
@@ -500,6 +524,7 @@
                                         <img src="frontend/assets/images/human icon.png" alt="Student">
                                         <p>Janie Doe</p>
                                     </td>
+                                    <td>CNAS</td>
                                     <td>01-10-2021</td>
                                     <td><span class="status admitted">Admitted</span></td> 
                                 </tr>
@@ -524,58 +549,63 @@
                     </div>
                 </div>
             </div>
-		</main>
-		<!-- MAIN -->
-
-
-
-	</section>
-	
-
-      <!-- NOTIFICATION container -->
-     <div class="notification-popup" id="notification-popup">
-        <div class="popup-header">
-            <span class="popup-title">Notifications</span>
         </div>
-        <div class="popup-content" id="notification-content">
-            <div class="notification-item">
-                <img src="frontend/assets/images/human icon.png" alt="User Avatar">
-                <div class="notification-text">
-                    <p><strong>User 1</strong> submitted an application for BACOM admission</p>
-                    <span class="timestamp">2 hours ago</span>
-                </div>
-            </div>
-            <div class="notification-item">
-                <img src="frontend/assets/images/human icon.png" alt="User Avatar">
-                <div class="notification-text">
-                    <p><strong>User 2</strong> requested for a copy of admitted BSIT Students</p>
-                    <span class="timestamp">5 hours ago</span>
-                </div>
-            </div>
-            <!-- Add more notification items as needed -->
-        </div>
+
+
+        
+	</main>
+    <!-- MAIN -->
+
+
+
+</section>
+
+
+
+  <!-- NOTIFICATION container -->
+ <div class="notification-popup" id="notification-popup">
+    <div class="popup-header">
+        <span class="popup-title">Notifications</span>
     </div>
-    
-    <!-- Add the profile popup container here -->
-   
-<!-- Add the profile popup container here -->
-<div class="profile-popup" id="profile-popup">
-    <!-- Popup content -->
-    <div class="popup-content" id="profile-content">
-        <div class="profile-header">
-            <img src="frontend/assets/images/human icon.png" alt="User Profile Picture" class="profile-picture">
-            <p class="profile-name">John Doe</p>
+    <div class="popup-content" id="notification-content">
+        <div class="notification-item">
+            <img src="frontend/assets/images/human icon.png" alt="User Avatar">
+            <div class="notification-text">
+                <p><strong>User 1</strong> submitted an application for BACOM admission</p>
+                <span class="timestamp">2 hours ago</span>
+            </div>
         </div>
-        <hr>
-        <div class="profile-menu">
-            <a href="#" id="settings" class="profile-item"><i class='bx bx-cog'></i> Settings</a>
-            <a href="#" id="help" class="profile-item"><i class='bx bx-question-mark'></i> Help and Support</a>
-            <a href="#" id="logout" class="profile-item"><i class='bx bx-log-out'></i> Logout</a>
+        <div class="notification-item">
+            <img src="frontend/assets/images/human icon.png" alt="User Avatar">
+            <div class="notification-text">
+                <p><strong>User 2</strong> requested for a copy of addmited BSIT Students</p>
+                <span class="timestamp">5 hours ago</span>
+            </div>
         </div>
+        <!-- Add more notification items as needed -->
     </div>
 </div>
-	
-	<!-- CONTENT -->
-      <script src="frontend/assets/js/fac.js"></script>
-  </body>
+
+<!-- Add the profile popup container here -->
+
+<!-- Add the profile popup container here -->
+<div class="profile-popup" id="profile-popup">
+<!-- Popup content -->
+<div class="popup-content" id="profile-content">
+    <div class="profile-header">
+        <img src="frontend/assets/images/human icon.png" alt="User Profile Picture" class="profile-picture">
+        <p class="profile-name">John Doe</p>
+    </div>
+    <hr>
+    <div class="profile-menu">
+        <a href="#" id="settings" class="profile-item"><i class='bx bx-cog'></i> Settings</a>
+        <a href="#" id="help" class="profile-item"><i class='bx bx-question-mark'></i> Help and Support</a>
+        <a href="#" id="logout" class="profile-item"><i class='bx bx-log-out'></i> Logout</a>
+    </div>
+</div>
+</div>
+
+<!-- CONTENT -->
+  <script src="frontend/assets/js/fac.js"></script>
+</body>
 </html>
