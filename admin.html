@@ -31,19 +31,19 @@
                     <span class="text">Approve Applicants</span>
                 </a>
             </li>
-            <li>
+            <li id="manage-schedule-link">
                 <a href="#">
                     <i class='bx bx-calendar'></i>
                     <span class="text">Manage Schedule</span>
                 </a>
             </li>
-            <li>
+            <li id="manage-faculty-link">
                 <a href="#">
                     <i class='bx bx-list-ul'></i>
                     <span class="text">Manage Faculty</span>
                 </a>
             </li>
-            <li>
+            <li id="view-request-link"> 
                 <a href="#">
                     <i class='bx bx-export'></i>
                     <span class="text">View Request</span>
@@ -144,9 +144,7 @@
                 <div class="order">
                     <div class="table-container">
                         <div class="head">
-                          
                             <i class='bx bx-search' id="searchIcon"></i>
-                            <i class='bx bx-filter'></i>
                             <div class="search-box" id="searchBox">
                                 <input type="text" placeholder="Search...">
                             </div>
@@ -251,6 +249,12 @@
                    <!--reviewed-->
                    <div id="reviewed" class="table-data" >
                     <div class="order">
+                        <div class="head">
+                            <i class='bx bx-search' id="searchIcon"></i>
+                            <div class="search-box" id="searchBox">
+                                <input type="text" placeholder="Search...">
+                            </div>
+                        </div>
                     
                     <div class="table-container">
                         <table>
@@ -340,7 +344,12 @@
                    <!--result-->
                    <div id="resultsT" class="table-data" >
                     <div class="order">
-                    
+                        <div class="head">
+                            <i class='bx bx-search' id="searchIcon"></i>
+                            <div class="search-box" id="searchBox">
+                                <input type="text" placeholder="Search...">
+                            </div>
+                        </div>
                     <div class="table-container">
                         <table>
                           
@@ -428,7 +437,12 @@
                     <!--Faculty-->
                     <div id="faculty" class="table-data" >
                         <div class="order">
-                        
+                            <div class="head">
+                                <i class='bx bx-search' id="searchIcon"></i>
+                                <div class="search-box" id="searchBox">
+                                    <input type="text" placeholder="Search...">
+                                </div>
+                            </div>
                         <div class="table-container">
                             <table>
                               
@@ -542,7 +556,12 @@
             <!--approve-->
             <div id="faculty" class="table-data" >
                 <div class="order">
-                
+                    <div class="head">
+                        <i class='bx bx-search' id="searchIcon"></i>
+                        <div class="search-box" id="searchBox">
+                            <input type="text" placeholder="Search...">
+                        </div>
+                    </div>
                 <div class="table-container">
                     <table>
                       
@@ -651,7 +670,12 @@
             <!--approve-->
             <div id="faculty" class="table-data" >
                 <div class="order">
-                
+                    <div class="head">
+                        <i class='bx bx-search' id="searchIcon"></i>
+                        <div class="search-box" id="searchBox">
+                            <input type="text" placeholder="Search...">
+                        </div>
+                    </div>
                 <div class="table-container">
                     <table>
                       
@@ -818,6 +842,89 @@
                 </table>
             </div>
             </div>
+            </div>
+
+             <!--View Request-->   
+    <div id="ViewRequest-content">
+        <div class="head-title">
+            <div class="left">
+                <h1>View Request</h1>
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="#">View Request</a>
+                    </li>
+                    
+                    <li>
+                        <a class="active" href="#">Home</a>
+                    </li>
+                </ul>
+            </div>
+           
+        </div>
+        <div class="table-data">
+            <div class="order">
+                <div class="head">
+                  
+                    <i class='bx bx-search' id="searchIcon"></i>
+                    <i class='bx bx-filter'></i>
+                    <div class="search-box" id="searchBox">
+                        <input type="text" placeholder="Search...">
+                    </div>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Student</th>
+                            <th>Date of Admission</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <img src="frontend/assets/images/human icon.png" alt="Student">
+                                <p>John Doe</p>
+                            </td>
+                            <td>01-10-2021</td>
+                            <td><span class="status completed">Admitted</span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="frontend/assets/images/human icon.png" alt="Student">
+                                <p>Jane Doe</p>
+                            </td>
+                            <td>01-10-2021</td>
+                            <td><span class="status pending">Rejected</span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="frontend/assets/images/human icon.png" alt="Student">
+                                <p>Johny Doe</p>
+                            </td>
+                            <td>01-10-2021</td>
+                            <td><span class="status process">Pending</span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="frontend/assets/images/human icon.png" alt="Student">
+                                <p>Johnie Doe</p>
+                            </td>
+                            <td>01-10-2021</td>
+                            <td><span class="status pending">Pending</span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="frontend/assets/images/human icon.png" alt="Student">
+                                <p>Janie Doe</p>
+                            </td>
+                            <td>01-10-2021</td>
+                            <td><span class="status completed">Admitted</span></td> 
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            </div>
+    </div>
 		</main>
 		<!-- MAIN -->
 
