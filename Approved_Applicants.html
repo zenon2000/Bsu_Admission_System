@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BSU Faculty</title>
+    <link rel="icon" href="frontend/assets/images/BSU Logo1.png" type="image/x-icon">
+    <link rel="stylesheet" href="frontend/assets/css//admin.css" />
+    <!-- Boxicons -->
+    
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+	 <!-- SIDEBAR -->
+	<section id="sidebar">
+        <a href="#" class="brand">
+            <img class="bsulogo" src="frontend/assets/images/BSU Logo1.png" alt="BSU LOGO">
+            <span class="text">ADMIN</span>
+        </a>
+
+        <ul class="side-menu top">
+            <div class="dashboard-content"></div>
+            <li class="active">
+                <a href="admin.html">
+                    <i class='bx bxs-dashboard'></i>
+                    <span class="text">Dashboard</span>
+                </a>
+            </li>
+           
+            <li id="manage-accounts-link">
+                <a href="Approved_Applicants.html">
+                    <i class='bx bx-group'></i>
+                    <span class="text">Approve Applicants</span>
+                </a>
+            </li>
+            <li>
+                <a href="Manage_Schedule.html">
+                    <i class='bx bx-calendar'></i>
+                    <span class="text">Manage Schedule</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-list-ul'></i>
+                    <span class="text">Manage Faculty</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-export'></i>
+                    <span class="text">View Request</span>
+                </a>
+            </li>
+          
+
+
+                </ul>
+            </li>
+        </ul>
+    </section>
+    <!-- SIDEBAR -->
+    <!-- CONTENT -->
+    <section id="content">
+        <!-- NAVBAR -->
+        <nav>
+            <i class='bx bx-menu'></i>
+            <a href="#" class="nav-link">Categories</a>
+            <form id="search-form">
+        <div class="form-input">
+            <input type="text" id="searchInput" placeholder="Search...">
+            <button type="submit" class="search-btn"><i class='bx bx-search'></i></button>
+        </div>
+    </form>
+            <div id="clock">8:10:45</div>
+            <input type="checkbox" id="switch-mode" hidden>
+            <label for="switch-mode" class="switch-mode"></label>
+            <a href="#" class="notification" id="notification-button">
+                <i class='bx bxs-bell'></i>
+                <span class="num">8</span>
+                <div class="circle"></div>
+            </a>
+           
+            <a href="#" class="profile" id="profile-button">
+                <img src="frontend/assets/images/human icon.png" alt="User Profile">
+            </a>
+            
+        </nav>
+
+        
+        <!-- NAVBAR -->
+
+        <!-- MAIN -->
+        <main>
+               	<!--Staff member-->   
+            
+            <div class="head-title">
+                <div class="left">
+                    <h1>Approve Applicants</h1>
+                    <ul class="breadcrumb">
+                        <li>
+                            <a href="#">Approve Applicants</h1>
+                                <ul class="breadcrumb"</a>
+                        </li>
+                        <li><i class='bx bx-chevron-right'></i></li>
+                        <li>
+                            <a class="active" href="#">Home</a>
+                        </li>
+                    </ul>
+                </div>
+               
+            </div>
+       
+            <ul class="box-info">
+                <li>
+                    <i class='bx bx-group'></i>
+                    <span class="text">
+                        <h3>1020</h3>
+                        <p> Verified Application</p>
+                    </span>
+                </li>
+                <li>
+                    <i class='bx bx-list-ul'></i>
+                    <span class="text">
+                        <h3>1020</h3>
+                        <p>To be reviewed</p>
+                    </span>
+                </li>
+                <li>
+                    <i class='bx bx-calendar'></i>
+                    <span class="text">
+                        <h3>2834</h3>
+                        <p>Results</p>
+                    </span>
+                </li>
+                <li>
+                    <i class='bx bx-user'></i>
+                    <span class="text">
+                        <h3>2543</h3>
+                        <p>Faculty</p>
+                    </span>
+                </li>
+            </ul>
+            
+        
+
+            <div class="table-data" >
+                <div class="order">
+                
+                <div class="table-container">
+                    <table>
+                      
+                        <thead>
+                            <tr>
+                                <th>Application Number</th>
+                                <th>Position</th>
+                                <th>Username</th>
+                                <th>Logs</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                 <img src="frontend/assets/images/human icon.png" alt="Student">
+                                    <p>0000001</p>
+                                </td>
+                                <td><p>.....</p></td>
+                                <td><p>username</p></td>
+                                <td><p>logs dito</p></td>
+                                <td><p>Actions met ditoy</p></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="frontend/assets/images/human icon.png" alt="Student">
+                                    <p>0000002</p>
+                                </td>
+                                <td><p>.....</p></td>
+                                <td><p>username</p></td>
+                                <td><p>logs dito</p></td>
+                                <td><p>Actions met ditoy</p></td>
+                             </tr>
+                            <tr>
+                                <td>
+                                    <img src="frontend/assets/images/human icon.png" alt="Student">
+                                    <p>0000003</p>
+                                </td>
+                                <td><p>.....</p></td>
+                                <td><p>username</p></td>
+                                <td><p>logs dito</p></td>
+                                <td><p>Actions met ditoy</p></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="frontend/assets/images/human icon.png" alt="Student">
+                                    <p>0000004</p>
+                                </td>
+                                <td><p>.....</p></td>
+                                <td><p>username</p></td>
+                                <td><p>logs dito</p></td>
+                                <td><p>Actions met ditoy</p></td>
+                            </tr>
+							<tr>
+                                <td>
+                                    <img src="frontend/assets/images/human icon.png" alt="Student">
+                                    <p>0000004</p>
+                                </td>
+                                <td><p>.....</p></td>
+                                <td><p>username</p></td>
+                                <td><p>logs dito</p></td>
+                                <td><p>Actions met ditoy</p></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="frontend/assets/images/human icon.png" alt="Student">
+                                    <p>0000004</p>
+                                </td>
+                                <td><p>.....</p></td>
+                                <td><p>username</p></td>
+                                <td><p>logs dito</p></td>
+                                <td><p>Actions met ditoy</p></td>
+                            </tr>
+								
+                           
+
+						</tbody>
+					</table>
+
+                </div>
+                </div>
+            </div>
+                   <!--Interview Schedule-->
+                   <div class="table-data" >
+                    <div class="order">
+                    
+                    <div class="table-container">
+                        <table>
+                          
+                            <thead>
+                                <tr>
+                                    <th>Colleges</th>
+                                    <th>Department</th>
+                                    <th>Application #</th>
+                                    <th>Last</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                     <img src="frontend/assets/images/human icon.png" alt="Student">
+                                        <p>0000001</p>
+                                    </td>
+                                    <td><p>.....</p></td>
+                                    <td><p>username</p></td>
+                                    <td><p>logs dito</p></td>
+                                    <td><p>Actions met ditoy</p></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="frontend/assets/images/human icon.png" alt="Student">
+                                        <p>0000002</p>
+                                    </td>
+                                    <td><p>.....</p></td>
+                                    <td><p>username</p></td>
+                                    <td><p>logs dito</p></td>
+                                    <td><p>Actions met ditoy</p></td>
+                                 </tr>
+                                <tr>
+                                    <td>
+                                        <img src="frontend/assets/images/human icon.png" alt="Student">
+                                        <p>0000003</p>
+                                    </td>
+                                    <td><p>.....</p></td>
+                                    <td><p>username</p></td>
+                                    <td><p>logs dito</p></td>
+                                    <td><p>Actions met ditoy</p></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="frontend/assets/images/human icon.png" alt="Student">
+                                        <p>0000004</p>
+                                    </td>
+                                    <td><p>.....</p></td>
+                                    <td><p>username</p></td>
+                                    <td><p>logs dito</p></td>
+                                    <td><p>Actions met ditoy</p></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="frontend/assets/images/human icon.png" alt="Student">
+                                        <p>0000004</p>
+                                    </td>
+                                    <td><p>.....</p></td>
+                                    <td><p>username</p></td>
+                                    <td><p>logs dito</p></td>
+                                    <td><p>Actions met ditoy</p></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="frontend/assets/images/human icon.png" alt="Student">
+                                        <p>0000004</p>
+                                    </td>
+                                    <td><p>.....</p></td>
+                                    <td><p>username</p></td>
+                                    <td><p>logs dito</p></td>
+                                    <td><p>Actions met ditoy</p></td>
+                                </tr>
+                                    
+                               
+    
+                            </tbody>
+                        </table>
+    
+                    </div>
+                    </div>
+                </div>
+            
+    
+               
+
+
+<!--Application List-->
+           
+		</main>
+		<!-- MAIN -->
+
+
+
+	</section>
+    
+	
+
+      <!-- NOTIFICATION container -->
+     <div class="notification-popup" id="notification-popup">
+        <div class="popup-header">
+            <span class="popup-title">Notifications</span>
+        </div>
+        <div class="popup-content" id="notification-content">
+            <div class="notification-item">
+                <img src="frontend/assets/images/human icon.png" alt="User Avatar">
+                <div class="notification-text">
+                    <p><strong>User 1</strong> submitted an application for BACOM admission</p>
+                    <span class="timestamp">2 hours ago</span>
+                </div>
+            </div>
+            <div class="notification-item">
+                <img src="frontend/assets/images/human icon.png" alt="User Avatar">
+                <div class="notification-text">
+                    <p><strong>User 2</strong> requested for a copy of addmited BSIT Students</p>
+                    <span class="timestamp">5 hours ago</span>
+                </div>
+            </div>
+            <!-- Add more notification items as needed -->
+        </div>
+    </div>
+    
+    <!-- Add the profile popup container here -->
+   
+<!-- Add the profile popup container here -->
+<div class="profile-popup" id="profile-popup">
+    <!-- Popup content -->
+    <div class="popup-content" id="profile-content">
+        <div class="profile-header">
+            <img src="frontend/assets/images/human icon.png" alt="User Profile Picture" class="profile-picture">
+            <p class="profile-name">John Doe</p>
+        </div>
+        <hr>
+        <div class="profile-menu">
+            <a href="#" id="settings" class="profile-item"><i class='bx bx-cog'></i> Settings</a>
+            <a href="#" id="help" class="profile-item"><i class='bx bx-question-mark'></i> Help and Support</a>
+            <a href="#" id="logout" class="profile-item"><i class='bx bx-log-out'></i> Logout</a>
+        </div>
+    </div>
+</div>
+	
+	<!-- CONTENT -->
+      <script src="frontend/assets/js/admin.js"></script>
+  </body>
+</html>
