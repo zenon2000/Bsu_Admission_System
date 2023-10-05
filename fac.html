@@ -164,12 +164,7 @@
                         </li>
                     </ul>
                 </div>
-                <li>
-                    <a href="#" class="btn-download">
-                        <i class='bx bxs-cloud-download'></i>
-                        <span class="text">Download PDF</span>
-                    </a>
-                </li>
+                
             </div>
 
             <ul class="box-info">
@@ -202,14 +197,14 @@
                     </span>
                 </li>
             </ul>
-
+            <!--over-all-->
+            <div id="over-all">
             <div class="table-data">
                 <div class="order">
                     <div class="head">
                         <h3>Student Lists</h3>
                         <i class='bx bx-search' id="searchIcon"></i>
-                        <i class='bx bx-filter'></i>
-                        <div class="search-box" id="searchBox">
+                        <div class="search-box" id="searchBox-overall">
                             <input type="text" placeholder="Search...">
                         </div>
                     </div>
@@ -267,34 +262,97 @@
 				</div>
 				<div class="todo">
 					<div class="head">
-						<h3>Todos</h3>
-						<i class='bx bx-plus' ></i>
-						<i class='bx bx-filter' ></i>
+						<h3>Student Data</h3>
+						
 					</div>
 					<ul class="todo-list">
 						<li class="completed">
-							<p>Todo List</p>
-							<i class='bx bx-dots-vertical-rounded' ></i>
+							<p>Information List</p>
+							
 						</li>
-						<li class="completed">
-							<p>Todo List</p>
-							<i class='bx bx-dots-vertical-rounded' ></i>
-						</li>
-						<li class="not-completed">
-							<p>Todo List</p>
-							<i class='bx bx-dots-vertical-rounded' ></i>
-						</li>
-						<li class="completed">
-							<p>Todo List</p>
-							<i class='bx bx-dots-vertical-rounded' ></i>
-						</li>
-						<li class="not-completed">
-							<p>Todo List</p>
-							<i class='bx bx-dots-vertical-rounded' ></i>
-						</li>
+						
 					</ul>
 				</div>
 			</div>
+        </div>
+         <!--Wait List-->
+         <div id="wait-list">
+            <div class="table-data">
+                <div class="order">
+                    <div class="head">
+                        <h3>Wait Lists</h3>
+                        <i class='bx bx-search' id="searchIcon"></i>
+                        <div class="search-box" id="searchBox-overall">
+                            <input type="text" placeholder="Search...">
+                        </div>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Student</th>
+                                <th>Date of Admission</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <img src="frontend/assets/images/human icon.png" alt="Student">
+                                    <p>John Doe</p>
+                                </td>
+                                <td>01-10-2021</td>
+                                <td><span class="status completed">Admitted</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="frontend/assets/images/human icon.png" alt="Student">
+                                    <p>Jane Doe</p>
+                                </td>
+                                <td>01-10-2021</td>
+                                <td><span class="status pending">Rejected</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="frontend/assets/images/human icon.png" alt="Student">
+                                    <p>Johny Doe</p>
+                                </td>
+                                <td>01-10-2021</td>
+                                <td><span class="status process">Pending</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="frontend/assets/images/human icon.png" alt="Student">
+                                    <p>Johnie Doe</p>
+                                </td>
+                                <td>01-10-2021</td>
+                                <td><span class="status pending">Pending</span></td>
+                            </tr>
+							<tr>
+								<td>
+									<img src="frontend/assets/images/human icon.png" alt="Student">
+									<p>Janie Doe</p>
+								</td>
+								<td>01-10-2021</td>
+								<td><span class="status completed">Admitted</span></td> 
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="todo">
+					<div class="head">
+						<h3>Student Data</h3>
+						
+					</div>
+					<ul class="todo-list">
+						<li class="completed">
+							<p>Information List</p>
+							
+						</li>
+						
+					</ul>
+				</div>
+			</div>
+        </div>
 		</main>
 		<!-- MAIN -->
 
