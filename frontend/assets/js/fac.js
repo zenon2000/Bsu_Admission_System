@@ -247,28 +247,50 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 });
-
-
-//pressing the side bar
 document.addEventListener("DOMContentLoaded", function () {
-    const cahLink = document.getElementById("course-cah");
-    const studentRows = document.querySelectorAll("#dashboard-content table tbody tr");
+    // Get references to college links and the student list container
+    const collegeLinks = document.querySelectorAll(".dropdown-content a");
+    const studentList = document.querySelector("#student-list tbody");
 
-    cahLink.addEventListener("click", function (e) {
-        e.preventDefault();
+    // Sample student data
+    const students = [
+        { name: "John Doe", college: "CAH" },
+        { name: "Jane Doe", college: "CEAT" },
+        { name: "Johny Doe", college: "CEAT" },
+        { name: "Johnie Doe", college: "CF" },
+        { name: "Janie Doe", college: "CHET" },
+        // Add more student data
+    ];
 
-        // Get the value of the data-fulltext attribute
-        const collegeFilter = cahLink.getAttribute("data-fulltext");
+    // Function to filter and display students
+    function displayStudents(collegeId) {
+        // Clear the existing student list
+        studentList.innerHTML = "";
 
-        // Loop through all student rows and hide/show them based on the data-college attribute
-        studentRows.forEach(function (row) {
-            const college = row.getAttribute("data-college");
-            if (college === collegeFilter) {
-                row.style.display = ""; // Show the matching rows
-            } else {
-                row.style.display = "none"; // Hide the non-matching rows
-            }
+        // Filter students based on the selected college
+        const filteredStudents = students.filter(student => student.college === collegeId);
+
+        // Create and append rows to the student list
+        filteredStudents.forEach(student => {
+            const row = studentList.insertRow();
+            const nameCell = row.insertCell(0);
+            const collegeCell = row.insertCell(1);
+
+            nameCell.textContent = student.name;
+            collegeCell.textContent = student.college;
+        });
+    }
+
+    // Add click event listeners to college links
+    collegeLinks.forEach(link => {
+        link.addEventListener("click", function (event) {
+            event.preventDefault();
+
+            // Get the ID of the selected college
+            const collegeId = link.id.replace("course-", "");
+
+            // Display students for the selected college
+            displayStudents(collegeId);
         });
     });
 });
-
