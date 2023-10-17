@@ -204,18 +204,19 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-//pressing the box info
+//pressing the box info and dashboard
 
 document.addEventListener('DOMContentLoaded', function () {
     const waitlistItem = document.getElementById('wait-info');
     const rejectedItem = document.getElementById('rejected-info');
     const admittedItem = document.getElementById('admitted-info');
-   
+    const overallItem = document.getElementById('dashboard-link');
+
     const waitTable = document.getElementById('wait-list');
     const rejectedTable = document.getElementById('Rejected');
     const admittedTable = document.getElementById('admitted');
     const overallTable = document.getElementById('over-all');
-    // Hide all tables initially
+    // Hide all tables initially excepts the over-all
     waitTable.style.display = 'none';
     rejectedTable.style.display = 'none';
     admittedTable.style.display = 'none';
@@ -225,7 +226,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Show the "waitlist" table and hide others
         waitTable.style.display = 'block';
         rejectedTable.style.display = 'none';
-        overallTable.style.display = 'none';
+        admittedTable.style.display = 'none';
         overallTable.style.display = 'none';
        
     });
@@ -245,52 +246,15 @@ document.addEventListener('DOMContentLoaded', function () {
         waitTable.style.display = 'none';
         overallTable.style.display = 'none';
     });
-
-});
-document.addEventListener("DOMContentLoaded", function () {
-    // Get references to college links and the student list container
-    const collegeLinks = document.querySelectorAll(".dropdown-content a");
-    const studentList = document.querySelector("#student-list tbody");
-
-    // Sample student data
-    const students = [
-        { name: "John Doe", college: "CAH" },
-        { name: "Jane Doe", college: "CEAT" },
-        { name: "Johny Doe", college: "CEAT" },
-        { name: "Johnie Doe", college: "CF" },
-        { name: "Janie Doe", college: "CHET" },
-        // Add more student data
-    ];
-
-    // Function to filter and display students
-    function displayStudents(collegeId) {
-        // Clear the existing student list
-        studentList.innerHTML = "";
-
-        // Filter students based on the selected college
-        const filteredStudents = students.filter(student => student.college === collegeId);
-
-        // Create and append rows to the student list
-        filteredStudents.forEach(student => {
-            const row = studentList.insertRow();
-            const nameCell = row.insertCell(0);
-            const collegeCell = row.insertCell(1);
-
-            nameCell.textContent = student.name;
-            collegeCell.textContent = student.college;
-        });
-    }
-
-    // Add click event listeners to college links
-    collegeLinks.forEach(link => {
-        link.addEventListener("click", function (event) {
-            event.preventDefault();
-
-            // Get the ID of the selected college
-            const collegeId = link.id.replace("course-", "");
-
-            // Display students for the selected college
-            displayStudents(collegeId);
-        });
+  overallItem.addEventListener('click', function () {
+        // Show the "admitted" table and hide others
+        overallTable.style.display = 'block';
+        admittedTable.style.display = 'none';
+        rejectedTable.style.display = 'none';
+        waitTable.style.display = 'none';
+      
     });
+
 });
+
+//pressing courses
