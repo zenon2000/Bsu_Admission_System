@@ -23,8 +23,16 @@
           </div>
           <div class="user-input-box">
             <label for="civilStatus">Civil Status</label>
-            <input type="text" id="civilStatus" name="civilStatus" placeholder="Enter Civil Status" required />
-          </div>
+            <select id="civilStatus" name="civilStatus" class="gender-category" required>
+                <option value=""disabled selected>Select Civil Status</option>
+                <option value="single">Single</option>
+                <option value="married">Married</option>
+                <option value="widowed">Widowed</option>
+                <option value="separated">Separated</option>
+                <option value="divorced">Divorced</option>
+           
+            </select>
+        </div>
           <div class="user-input-box">
             <label for="birthdate">Birthdate</label>
             <input type="date" id="birthdate" name="birthdate" required />
@@ -48,7 +56,7 @@
           <div class="user-input-box">
             <label for="gender">Gender</label>
             <select id="gender" name="gender" class="gender-category" required>
-                <option value="">Select Gender</option>
+                <option value=""disabled selected>Select Gender</option>
                 <option value="male">Male</option>
                 <option value="female">Female</option>
             </select>
