@@ -2,40 +2,37 @@
 <html lang="en">
 <head>
   <title>Home</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="home.css">
 </head>
 <body>
     <div class="main"> 
         <div class="navbar">
-            <img src="assets/images/">
             <div class="icon">
-              
-                <li><h2 class="logo" >Benguet State University</h2></li> 
-                <ul> <li></li>
-            </ul>
-        </div>
-        <div class="menu">
-            <ul>
-                <li><a href="#">HOME</a></li>
-                <li><a href="#">ABOUT</a></li>
-                <li><a href="#">SERVICE</a></li>
-                <li><a href="#">OFFERS</a></li>
-                <li><a href="#">CONTACT</a></li>
-            </ul>
-        </div>
+                <a href="#" class="logo"><img src="assets/images/BSU Logo1.png" alt="BSU Logo"></a>
+                <li><h2 class="scname" >Benguet State University</h2></li> 
+            </div>
+            <div >
+                <ul class="menu">
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">ABOUT</a></li>
+                    <li><a href="#">SERVICE</a></li>
+                    <li><a href="#">OFFERS</a></li>
+                    <li><a href="#">CONTACT</a></li>
+                </ul>
+            </div>
 
-        <div class="search">
-            <input class="srch" type="search" name="" placeholder="Type To text">
-            <a href="#"> <button class="btn">Search</button></a>
-        </div>
+            <div class="search">
+                <input class="srch" type="search" name="" placeholder="search... ">
+                <a href="#"><button class="btn">Search</button></a>
+            </div>
 
-    </div> 
-    <div class="content">
-        <h1>Welcome to<br><span>Benguet State</span> <br>University</h1>
-        <p class="par">BLA BLA BLA BLA </p>
+        </div> 
+        <div class="content">
+            <h1>Welcome to<br><span>Benguet State <br>University </span> <br>Admission</h1>
+           
 
-            <button class="cn"><a href="#">JOIN US</a></button>
-
+            <button class="cn" id="joinUsButton">JOIN US</button>
+           
             <div class="form">
                 <h2>BSU ADMISSION</h2>
                 <input type="email" name="email" placeholder="Username">
@@ -54,12 +51,35 @@
                     <a href="http://www.bsu.edu.ph/"><ion-icon name="logo-google"></ion-icon></a>
                     <a href="#"><ion-icon name="logo-skype"></ion-icon></a>
                 </div>
-
             </div>
+            <div class="register">
+            <div class="form-register">
+                <h2>BSU ADMISSION</h2>
+            <input type="text" placeholder="First Name" required>
+            <input type="text" placeholder="Last Name" required>
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Password" required>
+            <input type="password" placeholder="Confirm Password" required>
+            
+                <button class="btnn"><a href="#">Register</a></button>
+
+                <p class="link">Already have an account<br>
+                <a href="#">Login</a> here</a></p>
+                <p class="liw">Contact us on</p>
+
+                <div class="icons">
+                    <a href="https://www.facebook.com/BenguetStateUniversity"><ion-icon name="logo-facebook"></ion-icon></a>
+                    <a href="https://www.instagram.com/benguetstateuniversityofficial/?hl=en"><ion-icon name="logo-instagram"></ion-icon></a>
+                    <a href="https://twitter.com/benguetstateu?lang=en"><ion-icon name="logo-twitter"></ion-icon></a>
+                    <a href="http://www.bsu.edu.ph/"><ion-icon name="logo-google"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-skype"></ion-icon></a>
                 </div>
             </div>
+        </div>
+    </div> 
+       
     </div>
-</div>
-<script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script src="home.js"></script>
 </body>
 </html>
