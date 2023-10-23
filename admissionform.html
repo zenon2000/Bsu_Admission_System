@@ -53,15 +53,29 @@
        
             <div class="personal-information">
                 <form>
-                    <p class="name"></p>
-                    <label for="first-name">First Name:</label>
-                    <input type="text" id="first-name" name="first-name" required>
+                    <label for="name">NAME</label>
+                    <input type="text" id="last-name" name="last-name"  placeholder="Last Name" required>
+                    <input type="text" id="first-name" name="first-name" placeholder="First Name"  required>
+                    <input type="text" id="middle-name" name="middle-name" placeholder="Middle Name" required>
             
-                    <label for="middle-name">Middle Name:</label>
-                    <input type="text" id="middle-name" name="middle-name" required>
-            
-                    <label for="last-name">Last Name:</label>
-                    <input type="text" id="last-name" name="last-name" required>
+                    <label for="gender">Gender at birth</label>
+                    <select id="gender" name="gender" required>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>  
+                     <br>
+                     <br>
+                   <label for="birthdate">Birthdate:</label>
+                   <input type="date" id="birthdate" name="birthdate" required>
+                  
+                   <label for="birthplace">BIRTHPLACE</label>
+                   <input type="text" id="municipality-city" name="municipality-city" placeholder="Municipality/City" required>
+                   <input type="text" id="province" name="province" placeholder="Province" required>
+                   <input type="text" id="country" name="country" placeholder="Country" required>
+             
+
+                    </select>
+                   
                 </form>
             </div> </div>
     <script src="admissionform.js"></script>
