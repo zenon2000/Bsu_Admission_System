@@ -1,4 +1,7 @@
-// JavaScript for ID photo validation (size and dimensions)
+document.getElementById('submit-button').addEventListener('click', function () {
+    document.getElementById('id-photo').click();
+});
+
 document.getElementById('id-photo').addEventListener('change', function () {
     const fileInput = this;
     if (fileInput.files.length > 0) {
