@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission Application</title>
+    <link rel="stylesheet" href="assets\css\admissionform.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo-brand-container">
+            <div class="logo">
+                <img src="assets\images\BSU Logo1.png" alt="Logo">
+            </div>
+            <div class="brand">
+                <h1>BENGUET STATE UNIVERSITY</h1>
+            </div>
+        </div>
+    </header>
+   
+    <div class="application-section">
+        <div class="title">
+            <p class="admission-text">APPLICATION FOR ADMISSION</p>
+        </div>
+    </div>
+    <div class="outer">
+        <div class="background-info-section">
+            <h2>Background Information of Applicant</h2>
+        </div>
+        <div class="grid-container">
+            <div class="grid-item">
+                <div class="image-upload-container">
+                    <label class="id-photo" for="id-photo">Submit recent 2x2 ID Picture <br>
+                     with signature over printed name</label>
+      
+                    
+                    <img id="selected-id-photo" src="" alt="Selected ID Photo" style="max-width: 100%; display: none;">
+                    <input class="id-photo-sbmt" type="file" id="id-photo" name="id-photo" accept=".jpg, .jpeg, .png" required>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+<script src="admissionform.js"></script>
+</body>
+
+</html>
