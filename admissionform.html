@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admission Application</title>
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="icon" href="frontend/assets/images/BSU Logo1.png" type="image/x-icon">
+    <link rel="icon" href="assets/images/BSU Logo1.png" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/admissionform.css">
 </head>
 <body>
@@ -23,7 +23,7 @@
     </header>
     
     <div class="wrapper">
-     
+        <p class="center-text">APPLICATION FOR ADMISSION</p>
 
         <div class="form-head">
             <ul>
@@ -44,27 +44,225 @@
                 </li>
             </ul>
         </div>
-        <p class="center-text">APPLICATION FOR ADMISSION</p>
+     
+        
         <div class="form_wrap">
             <div class="form_1 data_info">
-                <h2>Signup Info</h2>
+                <h2>Background Information of Applicant</h2>
+                
                 <form>
-                    <div class="form_container">
-                        <div class="input_wrap">
-                            <label for="email">Email Address</label>
-                            <input type="text" name="Email Address" class="input" id="email">
+                    <div class="id-wrapper" id="id_container">
+                        <div class="id_wrap">
+                            <div class="text-placeholder">
+                              <br>  Submit recent 2x2 ID Picture<br>with signature over printed name
+                            </div>
+                            <label for="display_picture"></label>
+                            <div class="display-picture-box">
+                                <img id="display_picture" alt="">
+                            </div>
                         </div>
-                        <div class="input_wrap">
-                            <label for="password">Password</label>
-                            <input type="password" name="password" class="input" id="password">
+                        <div class="submit_id">
+                            <label for="profile_picture" style="cursor: pointer;">
+                                <i class="bx bx-cloud-download" id="submit-button"></i>
+                            </label>
+                            <input type="file" name="profile_picture" accept="image/*" class="input" id="profile_picture" style="display: none;">
                         </div>
-                        <div class="input_wrap">
-                            <label for="confirm_password">Confirm Password</label>
-                            <input type="password" name="confirm password" class="input" id="confirm_password">
+                        
+                        
+                    </div>
+                    <br><br>
+                    <br><br>
+                    <br><br>
+                    <div>
+                        <p class="head_information"> Personal Information</p>
+                    </div>
+                    <br>
+                    <div class="form_container" id="full-name">
+                      <div class="input_wrap" style="width: 20%;"> <!-- Add margin-bottom to create space -->
+                        <label for="last_name">Full Name</label>
+                        <input type="text" name="last_name" class="input" id="last_name" placeholder="Last Name" required>
+                    </div>
+                        
+                     <div class="input_wrap" style="width: 20%;">
+                        <label for="first_name">&nbsp</label>
+                         <input type="text" name="first_name" class="input" id="first_name" placeholder="First Name" required>
+                     </div>
+                        
+                        <div class="input_wrap" style="width: 20%;">
+                            <label for="middle_name">&nbsp</label>
+                            <input type="text" name="middle_name" class="input" id="middle_name" placeholder="Middle Name" required>
+                        </div>      
+                        <div class="input_wrap" id="gender" style="width: 15%;">
+                            <label for="gender">Gender at birth</label>
+                            <select name="gender" class="input" id="gender">
+                                <option value=""disabled selected>Select Gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </div>
+                        <div class="input_wrap" id="birthdate" style="width: 15%;">
+                            <label for="birthdate">Birthdate</label>
+                            <input type="date" name="birthdate" class="input" id="birthdate" required>
                         </div>
                     </div>
+                    
+                   
+                    <div class="form_container" id="birthplace" ">
+                        <div class="input_wrap" style="width: 20%;"> <!-- Add margin-bottom to create space -->
+                            <label for="birthplace">Birthplace</label>
+                            <input type="text" name="birthplace_municipality" class="input" id="birthplace_municipality" placeholder="Municipality/City" required>
+                        </div>
+                          
+                          <div class="input_wrap" style="width: 20%;">
+                              <label for="">&nbsp</label>
+                              <input type="text" name="birthplace_province" class="input" id="birthplace_province" placeholder="Province" required>
+                            </div>
+                          
+                          <div class="input_wrap" style="width: 20%;">
+                              <label for="">&nbsp</label>
+                              <input type="text" name="birthplace_country" class="input" id="birthplace_country" placeholder="Country" required>
+                          </div>    
+                          <div class="input_wrap" style="width: 15%;">
+                            <label for="age">Age</label>
+                            <input type="number" name="age" class="input" id="age" placeholder="Age" required>
+                        </div>  
+                        <div class="input_wrap" style="width: 15%;">
+                            <label for="civil_status">Civil Status</label>
+                            <select name="civil_status" class="input" id="civil_status" required>
+                                <option value="" disabled selected>Select Civil Status</option>
+                                <option value="single">Single</option>
+                                <option value="married">Married</option>
+                            </select>
+                        </div>
+                      </div>
+                      <div class="form_container">
+                        
+                        <div class="input_wrap" style="width: 28%;">
+                            <label for="citizenship">Citizenship</label>
+                            <input type="text" name="citizenship" class="input" id="citizenship" placeholder="Citizenship" required>
+                        </div>
+                        <div class="input_wrap" style="width: 28%;">
+                            <label for="nationality">Nationality</label>
+                            <input type="text" name="nationality" class="input" id="nationality" placeholder="Nationality" required>
+                        </div>
+                    </div>
+                    <p class="head_information">Permanent Home Address</p>
+                 <br>
+                 <div class="form_container" id="address">
+                    <div class="input_wrap" style="width: 15%;">
+                        <label for="house_street">House # & Street</label>
+                        <input type="text" name="house_street" class="input" id="house_street" placeholder="House # & Street" required>
+                    </div>
+                    <div class="input_wrap" style="width: 15%;">
+                        <label for="barangay_subdivision">Barangay/Subdivision</label>
+                        <input type="text" name="barangay_subdivision" class="input" id="barangay_subdivision" placeholder="Barangay/Subdivision" required>
+                    </div>
+                    <div class="input_wrap" style="width: 15%;">
+                        <label for="municipality_city">Municipality(town)/City</label>
+                        <input type="text" name "municipality_city" class="input" id="municipality_city" placeholder="Municipality(town)/City" required>
+                    </div>
+                    <div class="input_wrap" style="width: 15%;">
+                        <label for="province">Province</label>
+                        <input type="text" name="province" class="input" id="province" placeholder="Province" required>
+                    </div>
+                    <div class="input_wrap" style="width: 15%;">
+                        <label for="country_state">Country/State</label>
+                        <input type="text" name="country_state" class="input" id="country_state" placeholder="Country/State" required>
+                    </div>
+                    <div class="input_wrap" style="width: 15%;">
+                        <label for="zip_code">Zip Code</label>
+                        <input type="text" name="zip_code" class="input" id="zip_code" placeholder="Zip Code" required>
+                    </div>
+                </div>
+                
+                
+                
+                    <p class="head_information">Contact Information</p>
+                 <br>
+                 <div class="form_container" id="contact">
+                    <div class="input_wrap">
+                        <label for="phone">Telephone/Mobile No.</label>
+                        <input type="tel" name="phone" class="input" id="phone" placeholder="telephone or mobile number" required>
+                    </div>
+                    <div class="input_wrap">
+                        <label for="facebook">Facebook Account Name</label>
+                        <input type="text" name="facebook" class="input" id="facebook" placeholder="registered account should be your name" required>
+                    </div>
+                    <div class="input_wrap">
+                        <label for="email">Email Address</label>
+                        <input type="email" name="email" class="input" id="email" placeholder="Enter active email address" required>
+                    </div>
+                </div>
+
+                <p class="head_information">Contact person(s) in case of emergency</p>
+                <div class="form_container" id="contact_person">
+                    <div class="input_wrap">
+                        <label for="contact_name">Contact Person's Name</label>
+                        <input type="text" name="contact_name" class="input" id="contact_name" placeholder="Full Name" required>
+                    </div>
+                    <div class="input_wrap">
+                        <label for="contact_mobile">Mobile Number</label>
+                        <input type="tel" name="contact_mobile" class="input" id="contact_mobile" placeholder="Mobile Number" required>
+                    </div>
+                    <div class="input_wrap">
+                        <label for="relationship">Relationship with Contact Person</label>
+                        <input type="text" name="relationship" class="input" id="relationship" placeholder="Relationship" required>
+                    </div>
+                </div>
+                <div class="form_container" id="contact_person">
+                    <div class="input_wrap">
+                        <label for="contact_name">Contact Person's Name</label>
+                        <input type="text" name="contact_name" class="input" id="contact_name" placeholder="Full Name" required>
+                    </div>
+                    <div class="input_wrap">
+                        <label for="contact_mobile">Mobile Number</label>
+                        <input type="tel" name="contact_mobile" class="input" id="contact_mobile" placeholder="Mobile Number" required>
+                    </div>
+                    <div class="input_wrap">
+                        <label for="relationship">Relationship with Contact Person</label>
+                        <input type="text" name="relationship" class="input" id="relationship" placeholder="Relationship" required>
+                    </div>
+                </div>
+                <p class="head_information">Academic Classification</p>
+                <div class="input_wrap" id="academic_classification" style="float: ;" >
+                   <select name="academic_classification" class="input" id="academic_classification" required>
+                        <option value="" disabled selected>Select Academic Classification</option>
+                        <option value="grade_12">Currently enrolled as Grade 12 student (Graduating for the current year)</option>
+                        <option value="shs_graduate">Senior High School Graduate (who did not enroll in any other school after graduation)</option>
+                        <option value="hs_graduate">High School Graduate (who did not enroll in any other school after graduation)</option>
+                        <option value="als_pept_passer">ALS A&E SHS level passer/ PEPT Passer</option>
+                        <option value="transferee">Transferee (previously enrolled as a college student from another school)</option>
+                        <option value="vocational_completers">Vocational/Technical-Vocational Completers</option>
+                        <option value="second_degree">Second (2nd) Degree</option>
+                    </select>
+                </div>
+               
+                <p class="head_information">Academic Background <i style="font-weight: normal; font-size: 14px;">(Fill out ALL that is applicable): (Data will be used to counter-check correctness of academic information)</i></p>
+<br>
+                <div class="form_container" id="academic_background">
+                 
+                    <div class="input_wrap" style="width: 20%;">
+                        <label for="high_school_name_address">Name and Address of High School/Senior High School:</label>
+                        <input type="text" name="high_school_name_address" class="input" id="high_school_name_address" required placeholder="Enter Name and Address">
+                    </div>
+                    <div class="input_wrap" style="width: 20%;">
+                        <label for="als_pept_name_address">Name and Address of where ALS/PEPT was taken:</label>
+                        <input type="text" name="als_pept_name_address" class="input" id="als_pept_name_address" required placeholder="Enter Name and Address">
+                    </div>
+                    <div class="input_wrap" style="width: 20%;">
+                        <label for="college_name_address">Name and Address of College/University:</label>
+                        <input type="text" name="college_name_address" class="input" id="college_name_address" required placeholder="Enter Name and Address">
+                    </div>
+                    <div class="input_wrap" style="width: 20%;">
+                        <label for="lrn">Learner's Reference Number (LRN):</label>
+                        <input type="text" name="lrn" class="input" id="lrn" required placeholder="Enter LRN">
+                    </div>
+                </div>
+                
                 </form>
             </div>
+
+
             <div class="form_2 data_info" style="display: none;">
                 <h2>Personal Info</h2>
                 <form>

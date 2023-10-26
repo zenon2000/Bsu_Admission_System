@@ -1,3 +1,4 @@
+
 var form_1 = document.querySelector(".form_1");
 var form_2 = document.querySelector(".form_2");
 var form_3 = document.querySelector(".form_3");
@@ -68,36 +69,42 @@ shadow.addEventListener("click", function(){
 	modal_wrapper.classList.remove("active");
 })
 
-document.getElementById('submit-button').addEventListener('click', function () {
-    document.getElementById('id-photo').click();
-});
 
-document.getElementById('id-photo').addEventListener('change', function () {
-    const fileInput = this;
-  
-    if (fileInput.files.length > 0) {
-        const uploadedFile = fileInput.files[0];
-        if (uploadedFile.size > 300000) { // 300 KB = 300,000 bytes
-            alert('File size exceeds the maximum allowed (300 KB).');
-            fileInput.value = ''; // Clear the file input
-        } else {
+
+const profilePictureInput = document.getElementById("profile_picture");
+const displayPicture = document.getElementById("display_picture");
+const textPlaceholder = document.querySelector(".text-placeholder");
+profilePictureInput.addEventListener("change", function () {
+    const file = profilePictureInput.files[0];
+
+    if (file) {
+        // Check file size (in bytes)
+        if (file.size > 25 * 1024 * 1024) { // 25MB
+            alert("Please select an image smaller than 25MB.");
+            profilePictureInput.value = ''; // Clear the input field
+            return;
+        }
+
+        const reader = new FileReader();
+        reader.onload = function (e) {
             const img = new Image();
-            img.src = URL.createObjectURL(uploadedFile);
-            img.onload = function () {
-                if (img.width === 602 && img.height === 602) {
-                    // The image has the correct dimensions (2x2 inches)
-                    const gridItem = document.querySelector('.grid-item');
-                    gridItem.innerHTML = ''; // Clear any previous content
-                    img.className = 'id-photo-image'; // Add a class to the image
-                    gridItem.appendChild(img);
+            img.src = e.target.result;
 
-                    // Hide the label with the class "id-photo"
-                    document.querySelector('.id-photo').style.display = 'none';
+            img.onload = function () {
+                // Check image dimensions
+                if (img.width < 600 || img.width > 610 || img.height < 600 || img.height > 610) {
+                    alert("Please select only a 2x2 ID.");
+                    profilePictureInput.value = ''; // Clear the input field
                 } else {
-                    alert('Please upload a 2x2 (602x602 pixels) ID photo.');
-                    fileInput.value = ''; // Clear the file input
+                    displayPicture.src = e.target.result;
+                    textPlaceholder.style.display = "none";
                 }
             };
-        }
+        };
+
+        reader.readAsDataURL(file);
+    } else {
+        displayPicture.src = "";
+        textPlaceholder.style.display = "block";
     }
 });
