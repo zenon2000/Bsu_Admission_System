@@ -16,15 +16,19 @@
                     <img src="assets/images/BSU Logo1.png" alt="Logo">
                 </div>
                 <div class="brand">
-                    <h1>BENGUET STATE UNIVERSITY</h1>
+                    <p style="font: 'Times New Roman', Times, serif;">Republic of the Philippines</p>
+                    <h1 style="font-family: algerian;">BENGUET STATE UNIVERSITY</h1>
+                    <p><i>       OFFICE OF UNIVERSITY REGISTRAR</i></p>
+                    <p>   La Trinidad, Benguet</p>
+                    
                 </div>
             </div>
         </div>
     </header>
     
     <div class="wrapper">
-        <p class="center-text">APPLICATION FOR ADMISSION</p>
-
+        
+    
         <div class="form-head">
             <ul>
                 <li class="active form_1_progessbar">
@@ -48,7 +52,21 @@
         
         <div class="form_wrap">
             <div class="form_1 data_info">
-                <h2>Background Information of Applicant</h2>
+                <h2>General Guidelines:</h2>
+                
+                <form>
+                    <div class="guidelines">
+                  
+                </div>
+                <br><br><br><br>
+                
+                </form>
+            </div>
+
+
+            <div class="form_2 data_info" style="display: none;">
+                <p class="center-text">APPLICATION FOR ADMISSION</p>
+                
                 
                 <form>
                     <div class="id-wrapper" id="id_container">
@@ -56,15 +74,15 @@
                             <div class="text-placeholder">
                               <br>  Submit recent 2x2 ID Picture<br>with signature over printed name
                             </div>
-                            <label for="display_picture"></label>
+                            <label class="small-label" for="display_picture"></label class="small-label">
                             <div class="display-picture-box">
                                 <img id="display_picture" alt="">
                             </div>
                         </div>
                         <div class="submit_id">
-                            <label for="profile_picture" style="cursor: pointer;">
+                            <label class="small-label" for="profile_picture" style="cursor: pointer;">
                                 <i class="bx bx-cloud-download" id="submit-button"></i>
-                            </label>
+                            </label class="small-label">
                             <input type="file" name="profile_picture" accept="image/*" class="input" id="profile_picture" style="display: none;">
                         </div>
                         
@@ -73,27 +91,28 @@
                     <br><br>
                     <br><br>
                     <br><br>
+                    <h2>Background Information of Applicant</h2>
                     <div>
                         <p class="head_information"> Personal Information</p>
                     </div>
                     <br>
                     <div class="form_container" id="full-name">
                       <div class="input_wrap" style="width: 20%;"> <!-- Add margin-bottom to create space -->
-                        <label for="last_name">Full Name</label>
+                        <label class="small-label" class="small-label class="small-label"" for="last_name">Full Name</label class="small-label">
                         <input type="text" name="last_name" class="input" id="last_name" placeholder="Last Name" required>
                     </div>
                         
                      <div class="input_wrap" style="width: 20%;">
-                        <label for="first_name">&nbsp</label>
+                        <label class="small-label" class="small-label class="small-label"" for="first_name">&nbsp</label class="small-label">
                          <input type="text" name="first_name" class="input" id="first_name" placeholder="First Name" required>
                      </div>
                         
                         <div class="input_wrap" style="width: 20%;">
-                            <label for="middle_name">&nbsp</label>
+                            <label class="small-label" for="middle_name">&nbsp</label class="small-label">
                             <input type="text" name="middle_name" class="input" id="middle_name" placeholder="Middle Name" required>
                         </div>      
                         <div class="input_wrap" id="gender" style="width: 15%;">
-                            <label for="gender">Gender at birth</label>
+                            <label class="small-label" class="small-label class="small-label"" for="gender">Gender at birth</label class="small-label">
                             <select name="gender" class="input" id="gender">
                                 <option value=""disabled selected>Select Gender</option>
                                 <option value="male">Male</option>
@@ -101,7 +120,7 @@
                             </select>
                         </div>
                         <div class="input_wrap" id="birthdate" style="width: 15%;">
-                            <label for="birthdate">Birthdate</label>
+                            <label class="small-label" class="small-label class="small-label"" for="birthdate">Birthdate</label class="small-label">
                             <input type="date" name="birthdate" class="input" id="birthdate" required>
                         </div>
                     </div>
@@ -109,25 +128,25 @@
                    
                     <div class="form_container" id="birthplace" ">
                         <div class="input_wrap" style="width: 20%;"> <!-- Add margin-bottom to create space -->
-                            <label for="birthplace">Birthplace</label>
+                            <label class="small-label" class="small-label class="small-label"" for="birthplace">Birthplace</label class="small-label">
                             <input type="text" name="birthplace_municipality" class="input" id="birthplace_municipality" placeholder="Municipality/City" required>
                         </div>
                           
                           <div class="input_wrap" style="width: 20%;">
-                              <label for="">&nbsp</label>
+                              <label class="small-label" for="">&nbsp</label class="small-label">
                               <input type="text" name="birthplace_province" class="input" id="birthplace_province" placeholder="Province" required>
                             </div>
                           
                           <div class="input_wrap" style="width: 20%;">
-                              <label for="">&nbsp</label>
+                              <label class="small-label" for="">&nbsp</label class="small-label">
                               <input type="text" name="birthplace_country" class="input" id="birthplace_country" placeholder="Country" required>
                           </div>    
                           <div class="input_wrap" style="width: 15%;">
-                            <label for="age">Age</label>
+                            <label class="small-label" for="age">Age</label class="small-label">
                             <input type="number" name="age" class="input" id="age" placeholder="Age" required>
                         </div>  
                         <div class="input_wrap" style="width: 15%;">
-                            <label for="civil_status">Civil Status</label>
+                            <label class="small-label" for="civil_status">Civil Status</label class="small-label">
                             <select name="civil_status" class="input" id="civil_status" required>
                                 <option value="" disabled selected>Select Civil Status</option>
                                 <option value="single">Single</option>
@@ -135,14 +154,14 @@
                             </select>
                         </div>
                       </div>
-                      <div class="form_container">
+                      <div class="form_container" style   >
                         
                         <div class="input_wrap" style="width: 28%;">
-                            <label for="citizenship">Citizenship</label>
+                            <label class="small-label" for="citizenship">Citizenship</label class="small-label">
                             <input type="text" name="citizenship" class="input" id="citizenship" placeholder="Citizenship" required>
                         </div>
                         <div class="input_wrap" style="width: 28%;">
-                            <label for="nationality">Nationality</label>
+                            <label class="small-label" for="nationality">Nationality</label class="small-label">
                             <input type="text" name="nationality" class="input" id="nationality" placeholder="Nationality" required>
                         </div>
                     </div>
@@ -150,28 +169,28 @@
                  <br>
                  <div class="form_container" id="address">
                     <div class="input_wrap" style="width: 15%;">
-                        <label for="house_street">House # & Street</label>
+                        <label class="small-label" for="house_street">House # & Street</label class="small-label">
                         <input type="text" name="house_street" class="input" id="house_street" placeholder="House # & Street" required>
                     </div>
                     <div class="input_wrap" style="width: 15%;">
-                        <label for="barangay_subdivision">Barangay/Subdivision</label>
+                        <label class="small-label" for="barangay_subdivision">Barangay/Subdivision</label class="small-label">
                         <input type="text" name="barangay_subdivision" class="input" id="barangay_subdivision" placeholder="Barangay/Subdivision" required>
                     </div>
                     <div class="input_wrap" style="width: 15%;">
-                        <label for="municipality_city">Municipality(town)/City</label>
+                        <label class="small-label" for="municipality_city">Municipality(town)/City</label class="small-label">
                         <input type="text" name "municipality_city" class="input" id="municipality_city" placeholder="Municipality(town)/City" required>
                     </div>
                     <div class="input_wrap" style="width: 15%;">
-                        <label for="province">Province</label>
+                        <label class="small-label" for="province">Province</label class="small-label">
                         <input type="text" name="province" class="input" id="province" placeholder="Province" required>
                     </div>
                     <div class="input_wrap" style="width: 15%;">
-                        <label for="country_state">Country/State</label>
+                        <label class="small-label" for="country_state">Country/State</label class="small-label">
                         <input type="text" name="country_state" class="input" id="country_state" placeholder="Country/State" required>
                     </div>
                     <div class="input_wrap" style="width: 15%;">
-                        <label for="zip_code">Zip Code</label>
-                        <input type="text" name="zip_code" class="input" id="zip_code" placeholder="Zip Code" required>
+                        <label class="small-label" for="zip_code">Zip Code</label class="small-label">
+                        <input type="number" name="zip_code" class="input" id="zip_code" placeholder="Zip Code" required>
                     </div>
                 </div>
                 
@@ -181,124 +200,271 @@
                  <br>
                  <div class="form_container" id="contact">
                     <div class="input_wrap">
-                        <label for="phone">Telephone/Mobile No.</label>
+                        <label class="small-label" for="phone">Telephone/Mobile No.</label class="small-label">
                         <input type="tel" name="phone" class="input" id="phone" placeholder="telephone or mobile number" required>
                     </div>
                     <div class="input_wrap">
-                        <label for="facebook">Facebook Account Name</label>
+                        <label class="small-label" for="facebook">Facebook Account Name</label class="small-label">
                         <input type="text" name="facebook" class="input" id="facebook" placeholder="registered account should be your name" required>
                     </div>
                     <div class="input_wrap">
-                        <label for="email">Email Address</label>
+                        <label class="small-label" for="email">Email Address</label class="small-label">
                         <input type="email" name="email" class="input" id="email" placeholder="Enter active email address" required>
                     </div>
                 </div>
-
+    
                 <p class="head_information">Contact person(s) in case of emergency</p>
+                <br>
                 <div class="form_container" id="contact_person">
                     <div class="input_wrap">
-                        <label for="contact_name">Contact Person's Name</label>
+                        <label class="small-label" for="contact_name" ">Contact Person's Name</label class="small-label">
                         <input type="text" name="contact_name" class="input" id="contact_name" placeholder="Full Name" required>
                     </div>
                     <div class="input_wrap">
-                        <label for="contact_mobile">Mobile Number</label>
-                        <input type="tel" name="contact_mobile" class="input" id="contact_mobile" placeholder="Mobile Number" required>
+                        <label class="small-label" for="contact_mobile">Mobile Number</label class="small-label">
+                        <input type="tel" name="contact_mobile" class="input" id="contact_mobile" placeholder="Mobile Number" required >
                     </div>
                     <div class="input_wrap">
-                        <label for="relationship">Relationship with Contact Person</label>
-                        <input type="text" name="relationship" class="input" id="relationship" placeholder="Relationship" required>
+                        <label class="small-label" for="relationship_with_contact_person">Relationship with Contact Person</label class="small-label">
+                        <select name="relationship_with_contact_person" class="input" id="relationship_with_contact_person" required>
+                            <option value="" disabled selected>Select Relationship</option>
+                            <option value="parent">Parent</option>
+                            <option value="guardian">Guardian</option>
+                        </select>
                     </div>
                 </div>
                 <div class="form_container" id="contact_person">
                     <div class="input_wrap">
-                        <label for="contact_name">Contact Person's Name</label>
+                        <label class="small-label" for="contact_name">Contact Person's Name</label class="small-label">
                         <input type="text" name="contact_name" class="input" id="contact_name" placeholder="Full Name" required>
                     </div>
                     <div class="input_wrap">
-                        <label for="contact_mobile">Mobile Number</label>
+                        <label class="small-label" for="contact_mobile">Mobile Number</label class="small-label">
                         <input type="tel" name="contact_mobile" class="input" id="contact_mobile" placeholder="Mobile Number" required>
                     </div>
                     <div class="input_wrap">
-                        <label for="relationship">Relationship with Contact Person</label>
-                        <input type="text" name="relationship" class="input" id="relationship" placeholder="Relationship" required>
+                        <label class="small-label" for="relationship_with_contact_person">Relationship with Contact Person</label class="small-label">
+                        <select name="relationship_with_contact_person" class="input" id="relationship_with_contact_person" required>
+                            <option value="" disabled selected>Select Relationship</option>
+                            <option value="parent">Parent</option>
+                            <option value="guardian">Guardian</option>
+                        </select>
                     </div>
                 </div>
-                <p class="head_information">Academic Classification</p>
-                <div class="input_wrap" id="academic_classification" style="float: ;" >
-                   <select name="academic_classification" class="input" id="academic_classification" required>
-                        <option value="" disabled selected>Select Academic Classification</option>
-                        <option value="grade_12">Currently enrolled as Grade 12 student (Graduating for the current year)</option>
-                        <option value="shs_graduate">Senior High School Graduate (who did not enroll in any other school after graduation)</option>
-                        <option value="hs_graduate">High School Graduate (who did not enroll in any other school after graduation)</option>
-                        <option value="als_pept_passer">ALS A&E SHS level passer/ PEPT Passer</option>
-                        <option value="transferee">Transferee (previously enrolled as a college student from another school)</option>
-                        <option value="vocational_completers">Vocational/Technical-Vocational Completers</option>
-                        <option value="second_degree">Second (2nd) Degree</option>
-                    </select>
+                <p class="head_information">Academic Classification:</p>
+              <br>
+                <div class="form_container" id="academic_classification">
+                    <div class="input_wrap" style="width: 50%;">
+                        <label class="small-label" for="academic_classification">Academic Classification</label class="small-label">
+                        <select name="academic_classification" class="input" id="academic_classification" required>
+                            <option value="" disabled selected>Select Academic Classification</option>
+                            <option value="grade_12">Currently enrolled as Grade 12 student (Graduating for the current year)</option>
+                            <option value="shs_graduate">Senior High School Graduate (who did not enroll in any other school after graduation)</option>
+                            <option value="hs_graduate">High School Graduate (who did not enroll in any other school after graduation)</option>
+                            <option value="als_pept_passer">ALS A&E SHS level passer/ PEPT Passer</option>
+                            <option value="transferee">Transferee (previously enrolled as a college student from another school)</option>
+                            <option value="vocational_completers">Vocational/Technical-Vocational Completers</option>
+                            <option value="second_degree">Second (2nd) Degree</option>
+                        </select>
+                    </div>
                 </div>
-               
+                <br>
                 <p class="head_information">Academic Background <i style="font-weight: normal; font-size: 14px;">(Fill out ALL that is applicable): (Data will be used to counter-check correctness of academic information)</i></p>
-<br>
+    <br>
                 <div class="form_container" id="academic_background">
                  
                     <div class="input_wrap" style="width: 20%;">
-                        <label for="high_school_name_address">Name and Address of High School/Senior High School:</label>
+                        <label class="small-label" for="high_school_name_address" style="white-space: nowrap;" >High School/Senior High School:</label class="small-label">
                         <input type="text" name="high_school_name_address" class="input" id="high_school_name_address" required placeholder="Enter Name and Address">
                     </div>
+
                     <div class="input_wrap" style="width: 20%;">
-                        <label for="als_pept_name_address">Name and Address of where ALS/PEPT was taken:</label>
+                        <label class="small-label" for="als_pept_name_address" style="white-space: nowrap;">ALS/PEPT was taken:</label class="small-label">
                         <input type="text" name="als_pept_name_address" class="input" id="als_pept_name_address" required placeholder="Enter Name and Address">
                     </div>
+                   
                     <div class="input_wrap" style="width: 20%;">
-                        <label for="college_name_address">Name and Address of College/University:</label>
+                        <label class="small-label" for="college_name_address">College/University:</label class="small-label">
                         <input type="text" name="college_name_address" class="input" id="college_name_address" required placeholder="Enter Name and Address">
                     </div>
                     <div class="input_wrap" style="width: 20%;">
-                        <label for="lrn">Learner's Reference Number (LRN):</label>
-                        <input type="text" name="lrn" class="input" id="lrn" required placeholder="Enter LRN">
+                        <label class="small-label" for="lrn">Learner's Reference Number (LRN):</label>
+                        <input type="number" name="lrn" class="input" id="lrn" required placeholder="Enter LRN" pattern="[0-9]*" maxlength="12">
                     </div>
                 </div>
-                
-                </form>
-            </div>
 
-
-            <div class="form_2 data_info" style="display: none;">
-                <h2>Personal Info</h2>
-                <form>
-                    <div class="form_container">
-                        <div class="input_wrap">
-                            <label for="user_name">User Name</label>
-                            <input type="text" name="User Name" class="input" id="user_name">
-                        </div>
-                        <div class="input_wrap">
-                            <label for="first_name">First Name</label>
-                            <input type="text" name="First Name" class="input" id="first_name">
-                        </div>
-                        <div class="input_wrap">
-                            <label for="last_name">Last Name</label>
-                            <input type="text" name="Last Name" class="input" id="last_name">
-                        </div>
+                <div class="form_container" id="academic_classification">
+                    <div class="input_wrap" style="width: 65%;">
+                        <p class="head_information">Degree</p>
+                        <br>
+                        <label class="small-label" for="degree_applied">Degree Applied For in BSU</label>
+                        <input type="text" name="degree_applied" class="input" id="degree_applied" required placeholder="Enter Degree Applied For">
                     </div>
-                </form>
+               
+                <div class="input_wrap" style="width: 25%;">
+                    <p class="head_information">Nature of Degree Program</p>
+                 <br>
+                    <label class="small-label" for="nature_of_degree" style="white-space: nowrap;">(Indicate in the list of Degree Program offered by BSU)</label>
+                    <select name="nature_of_degree" class="input" id="nature_of_degree" required>
+                        <option value="" disabled selected>Select nature of degree</option>
+                        <option value="board" id="board">Board</option>
+                        <option value="non-board" id="non-board">Non-Board</option>
+                    </select>
+            </div>
+        </div>
+        <div class="form_container" id="attestation_and_consent">
+            <div class="input_wrap" style="width: 100%;" >
+                <p class="head_information" style="text-align: center;">Attestation and Consent</p>
+                <br>
+                <div style="background-color: rgba(235, 235, 235, 0.212); border: 2px solid #0de02d; border-radius: 15px; padding: 10px; color: rgb(0, 0, 0);">
+                    <p>I affirm that I have read and understood all the instructions contained in this application form that the information suplied are true. I affirm that I have read and understood all the instructions contained in this application form that the information suplied are true. I affirm that I have read and understood all the instructions contained in this application form that the information suplied are true.I affirm that I have read and understood all the instructions contained in this application form that the information suplied are true.</p>
+                   
+            </div>
+            <br> <br>
+            </div>
+            </div>
+            <div class="form_container" id="signature_over_printed_name" style="float: right;">
+                <div class="container">
+                    <div class="input_wrap">
+                        <i class="bx bx-cloud-download" id="signature-submit-button" style="cursor: pointer;align-self: center;"></i> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                        <img id="signature-preview" alt="" style="max-width:30%; max-height: 100px;">
+                        <input type="file" name="signature_image" id="signature_image" accept="image/*" required style="display: none;">
+                      
+                            
+                       
+                        <hr>
+                        <p class="head_information" style="white-space: nowrap;">Signature Over Printed Name</p>
+                    </div>
+                  
+                </div>
+              
+            </div>
+            <br><br><br><br><br><br>
+            <br><br><br>
+                 </form>
+               
+
             </div>
             <div class="form_3 data_info" style="display: none;">
-                <h2>Professional Info</h2>
+                <h2>ACKNOWLEDGEMENT SLIP OF APPLICATION FOR ADMISSION</h2>
+                
                 <form>
+                    <div class="table-container">
+                   <table>
+                    <tr>
+                        <td>Document
+                            Code:
+                            </td>
+                        <td>QF-ADM-
+                            08
+                            </td>
+                        <td>Rev.
+                            No.:
+                            </td>
+                        <td>01&nbsp</td>
+                    </tr>
+                    <tr>
+                        <td>Effectivity
+                            Date:
+                            
+                            </td>
+                        <td>January 5,
+                            2023
+                            </td>
+                        <td colspan="2">&nbsp</td>
+                    </tr>
+               
+                   </table>
+                </div>
+                <br>
+                <br><br> <br><br>
+                <div class="content">
+                    <h3 class="privacy-heading">PRIVACY NOTICE:</h3>
+                    <br>
+                    <p class="privacy-notice">
+                    Pursuant to the Data Privacy Act of 2012 and the BSU Data Policy from the Office of the University Registrar, concerned Personnel of BSU La Trinidad, BSU Buguias Campus, and Bokod Campus are committed to keep with utmost confidentiality all sensitive personal information collected from applicants. Personal information is collected, accessed, used, and disclosed on a "need to know basis" and only as reasonably required. Confidential information either within or outside the University will not be communicated except to persons authorized to receive such information. Authorized hardware, software, or other authorized equipment shall be used only in accessing, processing, and transmitting such information. Read more on BSU Data Privacy Notice: <a href="http://www.bsu.edu.ph/dpa/bsu-data-privacy-notice-students">http://www.bsu.edu.ph/dpa/bsu-data-privacy-notice-students</a>.
+                </p>
+                </div>
+                <br>
+                <div class="Applicant_fill_out">
+                    <p class="head_information"> To be filled-out by Applicant</p>
                     <div class="form_container">
                         <div class="input_wrap">
-                            <label for="company">Current Company</label>
-                            <input type="text" name="Current Company" class="input" id="company">
+                            <label for="applicant_name">Name of Applicant</label>
+                            <input type="text" name="applicant_name" class="input" id="applicant_name" placeholder="ENTER FULL-NAME" required>
+                       </div>
+                        <div class="input_wrap">
+                            <label for="slip_degree">Degree applied for</label>
+                            <input type="text" name="slip_degree" class="input" id="slip_degree" placeholder="ENTER DEGREE">
                         </div>
                         <div class="input_wrap">
-                            <label for="experience">Total Experience</label>
-                            <input type="text" name="Total Experience" class="input" id="experience">
-                        </div>
-                        <div class="input_wrap">
-                            <label for="designation">Designation</label>
-                            <input type="text" name="Designation" class="input" id="designation">
+                            <label for="application_date">Date of Application</label>
+                            <input type="date" name="application_date" class="input" id="application_date" required>
                         </div>
                     </div>
+                </div>
+                <div class="consent">
+                    <div class="form_container" id="attestation_and_consent">
+                        <div class="input_wrap" style="width: 100%;" >
+                            <p class="head_information" style="text-align: center;">Attestation and Consent</p>
+                            <br>
+                            <div style="background-color: rgba(235, 235, 235, 0.212); border: 2px solid #0de02d; border-radius: 15px; padding: 10px; color: rgb(0, 0, 0);">
+                                <p>I affirm that I have read and understood all the instructions contained in this application form that the information suplied are true. I affirm that I have read and understood all the instructions contained in this application form that the information suplied are true. I affirm that I have read and understood all the instructions contained in this application form that the information suplied are true.I affirm that I have read and understood all the instructions contained in this application form that the information suplied are true.</p>
+                               
+                        </div>
+                        <br> <br>
+                        </div>
+                        </div>
+                        <div class="form_container" id="signature_over_printed_name" style="float: right;">
+                            <div class="container">
+                                <div class="input_wrap">
+                                    <i class="bx bx-cloud-download" id="signature-submit-button" style="cursor: pointer;align-self: center;"></i> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                    <img id="signature-preview" alt="" style="max-width:30%; max-height: 100px;">
+                                    <input type="file" name="signature_image" id="signature_image" accept="image/*" required style="display: none;">
+                                  
+                                        
+                                   
+                                    <hr>
+                                    <p class="head_information" style="white-space: nowrap;">Signature Over Printed Name</p>
+                                </div>
+                              
+                            </div>
+                            
+                          
+                        </div>
+                        <br> <br> <br> <br><br> <br>
+                        <div class="applicant_number">
+                            <label for="applicant_number" class="applicant_number"> Applicant Number: </label>
+                            <input type="text" name="applicant_number" id="applicant_number" readonly>
+                        </div>
+                        <br>
+                        <div style="background-color: rgba(235, 235, 235, 0.212); border: 2px solid #0de02d; border-radius: 15px; padding: 10px; color: rgb(0, 0, 0);">
+                            <p>I acknowledge that I have received the application form with complete requirements of the Applicant.
+
+                            </p>
+                           
+                    </div>
+                </div>
+                <br><br>
+                <div class="form_container" id="signature_over_printed_name" style="float: right;">
+                    <div class="container">
+                        <div class="input_wrap">
+                            <i class="bx bx-cloud-download" id="signature-submit-button" style="cursor: pointer;align-self: center;"></i> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                            <img id="signature-preview" alt="" style="max-width:30%; max-height: 100px;">
+                            <input type="file" name="signature_image" id="signature_image" accept="image/*" required style="display: none;">
+                          
+                                
+                           
+                            <hr>
+                            <p class="head_information" style="white-space: nowrap;">Signature Over Printed Name</p>
+                        </div>
+                      
+                    </div>
+                    
+                  
+                </div>
+                <br><br><br><br>
+                
                 </form>
             </div>
         </div>

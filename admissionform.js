@@ -108,3 +108,75 @@ profilePictureInput.addEventListener("change", function () {
         textPlaceholder.style.display = "block";
     }
 });
+
+// Get the cloud download button element
+const cloudDownloadButton = document.getElementById("signature-submit-button");
+
+// Add a click event listener to handle file download
+cloudDownloadButton.addEventListener("click", function () {
+    // Trigger a click on the hidden file input element
+    const signatureImageInput = document.getElementById("signature_image");
+    signatureImageInput.click();
+});
+
+// Get the signature image input element
+const signatureImageInput = document.getElementById('signature_image');
+
+// Get the signature image preview element
+const signatureImagePreview = document.getElementById('signature-preview');
+
+// Add an event listener to the input element
+signatureImageInput.addEventListener('change', function () {
+    const file = signatureImageInput.files[0];
+
+    // Check if a file was selected
+    if (file) {
+        const reader = new FileReader();
+
+        reader.onload = function (e) {
+            // Set the source of the img tag to the selected image
+            signatureImagePreview.src = e.target.result;
+        };
+
+        // Read the image as a data URL
+        reader.readAsDataURL(file);
+    }
+});
+
+function checkFileSize(input) {
+        if (input.files.length > 0) {
+            const fileSize = input.files[0].size; // Size in bytes
+            const maxSize = 25 * 1024 * 1024; // 25MB in bytes
+
+            if (fileSize > maxSize) {
+                alert("File size exceeds 25MB. Please select a smaller file.");
+                input.value = ''; // Clear the input field
+            }
+        }
+    }
+    //server-side solution with a database(unique number)
+   // generate the Application number
+// Function to generate a zero-padded 4-digit number
+ // Function to generate a zero-padded 4-digit number
+ function generateZeroPaddedNumber(num) {
+    return num.toString().padStart(2, '0');
+}
+
+// Get the current date
+const currentDate = new Date();
+const month = currentDate.getMonth() + 1; // Adding 1 because months are 0-based
+const day = currentDate.getDate();
+
+// Check if the applicant number is stored in the session
+let applicantNumber = sessionStorage.getItem('applicantNumber');
+
+// If not, generate a new applicant number
+if (applicantNumber === null) {
+    applicantNumber = `${generateZeroPaddedNumber(month)}-${generateZeroPaddedNumber(day)}-0001`;
+
+    // Save the generated applicant number to the session
+    sessionStorage.setItem('applicantNumber', applicantNumber);
+}
+
+// Assign the generated applicant number to the input field
+document.getElementById("applicant_number").value = applicantNumber;

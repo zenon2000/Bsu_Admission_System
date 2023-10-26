@@ -100,7 +100,7 @@ body{
     margin-right: 0;
 }
 .wrapper{
-	width:210vh;
+	width:190vh;
 	max-width: 100%;
 	background: var(--white);
 	margin: 15px auto 0;
@@ -188,6 +188,16 @@ body{
 	margin-bottom: 0;
 }
 
+/* Add this CSS code for smaller label fonts */
+.small-label {
+    font-size: 14px; /* Adjust the font size as needed */
+}
+
+/* Apply the 'small-label' class to labels where you want smaller fonts */
+.wrapper .form_wrap .input_wrap label.small-label {
+    font-size: 14px; /* Apply the smaller font size to specific labels */
+}
+
 .wrapper .form_wrap .input_wrap label{
 	display: block;
 	margin-bottom: 5px;
@@ -195,7 +205,7 @@ body{
 
 .wrapper .form_wrap .input_wrap .input{
 	border: 2px solid var(--secondary);
-	border-radius: 25px;
+	border-radius: 15px;
 	padding: 10px;
 	display: flex;
 	width: 100%;	
@@ -340,8 +350,8 @@ body{
 }
 .submit_id {
     position: absolute;
-    top: calc(100% + 0);
-	right: 95px;
+	float: right;
+	padding-left: 48px;
     z-index: 2; /* Set the z-index value for submit_id */
     label {
         display: block;
@@ -383,3 +393,47 @@ body{
     transition: transform 0.3s; /* Add a transition for smooth scaling */
 }
 
+
+#signature-submit-button {
+    font-size: 48px;
+    color: #8c9297;
+    cursor: pointer;
+    transition: color 0.3s, transform 0.3s; /* Add a transition for color and scale change on hover */
+}
+
+#signature-submit-button:hover {
+    color: #22ff00; /* Change the color when hovered */
+    transform: scale(1.1); /* Increase the size by 10% when hovered */
+}
+
+/* table form3 */
+
+table {
+    width: 100%;
+    height: 10px;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+.table-container {
+    float: right;
+}
+
+/* styles.css */
+p.privacy-notice {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 18px; /* You can adjust the size as needed */
+    font-style: italic;
+    border: 2px solid #0de02d; /* Add green border */
+    background-color:  rgba(235, 235, 235, 0.212); /* Add gray background */
+    padding: 10px; /* Add padding for spacing inside the border */
+	border-radius: 10px;
+}
+h3.privacy-heading {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 24px; /* You can adjust the size as needed */
+    font-weight: bold; /* Add this to make it bold */
+}
