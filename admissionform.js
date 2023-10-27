@@ -69,7 +69,16 @@ shadow.addEventListener("click", function(){
 	modal_wrapper.classList.remove("active");
 })
 
+const academicClassificationSelect = document.getElementById("academic_classification");
+const pictureSubmissionsDiv = document.getElementById("picture_submissions");
 
+academicClassificationSelect.addEventListener("change", function () {
+    if (academicClassificationSelect.value === "grade_12") {
+        pictureSubmissionsDiv.style.display = "block";
+    } else {
+        pictureSubmissionsDiv.style.display = "none";
+    }
+});
 
 const profilePictureInput = document.getElementById("profile_picture");
 const displayPicture = document.getElementById("display_picture");
@@ -108,6 +117,7 @@ profilePictureInput.addEventListener("change", function () {
         textPlaceholder.style.display = "block";
     }
 });
+
 
 // Get the cloud download button element
 const cloudDownloadButton = document.getElementById("signature-submit-button");
@@ -180,3 +190,5 @@ if (applicantNumber === null) {
 
 // Assign the generated applicant number to the input field
 document.getElementById("applicant_number").value = applicantNumber;
+
+//submitting requirements

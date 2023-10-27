@@ -100,7 +100,7 @@ body{
     margin-right: 0;
 }
 .wrapper{
-	width:190vh;
+	width:210vh;
 	max-width: 100%;
 	background: var(--white);
 	margin: 15px auto 0;
@@ -436,4 +436,138 @@ h3.privacy-heading {
     font-family: "Times New Roman", Times, serif;
     font-size: 24px; /* You can adjust the size as needed */
     font-weight: bold; /* Add this to make it bold */
+}
+/* styles.css */
+.form_1_wrap {
+    width:200vh; /* Set your desired width in pixels */
+   
+	margin: 0 auto; /* Center horizontally */
+   align-items: center; /* Center vertically */
+   border: 2px solid #0de02d; /* Add a green border */
+   background-color:rgba(235, 235, 235, 0.212); /* Set a gray background color */
+   border-radius: 3px;
+   padding: 15px;
+}
+
+.form_2_wrap {
+    width:200vh; /* Set your desired width in pixels */
+    /* Set your desired height */
+	margin: 0 auto; /* Center horizontally */
+   align-items: center; /* Center vertically */
+   border: 2px solid #0de02d; /* Add a green border */
+   background-color:rgba(235, 235, 235, 0.212); /* Set a gray background color */
+   border-radius: 3px;
+   padding: 10px;
+}
+.form_3_wrap {
+    width:200vh; /* Set your desired width in pixels */
+    /* Set your desired height */
+	margin: 0 auto; /* Center horizontally */
+   align-items: center; /* Center vertically */
+   border: 2px solid #0de02d; /* Add a green border */
+   background-color:rgba(235, 235, 235, 0.212); /* Set a gray background color */
+   border-radius: 3px;
+   padding: 15px;
+}
+
+.ins-text {
+	font-size: 20px; /* Increase the font size for the paragraphs inside .guidelines */
+    font-family: 'Times New Roman', Times, serif; 
+    padding-left: 10px;
+	margin-bottom: 10px;
+}
+
+
+/* Additional styling for the form content can be added here */
+
+/* styles.css */
+.guidelines p {
+    font-size: 20px; /* Increase the font size for the paragraphs inside .guidelines */
+    font-family: 'Times New Roman', Times, serif; 
+    padding-left: 10px;
+	margin-bottom: 10px;
+}
+.numbered-list {
+    list-style-type: none; /* Remove the default list style */
+	padding-bottom: 10px;
+}
+
+.numbered-list li {
+    list-style: decimal inside; /* Add decimal numbering */
+	font-size: 18px; /* Increase the font size for the paragraphs inside .guidelines */
+    font-family: 'Times New Roman', Times, serif; /* Set the font-family for paragraphs */
+    margin-left: 25px;
+	padding-bottom: 10px;
+	padding: 5px;
+}
+.applicant-classification-text {
+	font-size: 18px; /* Increase the font size for the paragraphs inside .guidelines */
+	font-family: 'Times New Roman', Times, serif;
+    color: #000;
+	padding-bottom: 10px;
+	padding: 5px;
+}
+.applicant-classification-list {
+	list-style-type: none; /* Remove the default list style */
+	padding-bottom: 10px;
+}
+
+.applicant-classification-list li {
+    list-style: decimal inside; /* Add decimal numbering */
+	font-size: 18px; /* Increase the font size for the paragraphs inside .guidelines */
+    font-family: 'Times New Roman', Times, serif; /* Set the font-family for paragraphs */
+    margin-left: 25px;
+	padding-bottom: 10px;
+	padding: 5px;
+}
+
+.Classification-requirements p {
+	font-size: 18px; /* Increase the font size for the paragraphs inside .guidelines */
+	font-family: 'Times New Roman', Times, serif;
+    color: #000;
+	padding-bottom: 10px;
+	padding: 5px;
+}
+
+.Classification-requirements strong {
+	font-size: 18px; /* Increase the font size for the paragraphs inside .guidelines */
+	font-family: 'Times New Roman', Times, serif;
+    
+	padding-bottom: 10px;
+	padding: 5px;
+}
+.Classification-requirements li {
+    font-size: 16px; /* You can adjust the font size as needed */
+    margin-left: 20px; 
+	font-family: 'Times New Roman', Times, serif;
+	margin-bottom: 5px;
+}
+.Classification-requirements ul {
+    list-style-type: disc; /* Use a disc bullet point */
+    margin-top: 8px; /* Add some spacing between list items */
+}
+.Classification-requirements ol {
+    counter-reset: custom-counter; /* Reset the counter for custom numbering */
+}
+.Classification-requirements ol > li {
+    font-size: 18px; /* You can adjust the font size as needed */
+    counter-increment: custom-counter; /* Increment the counter for custom numbering */
+}
+
+.note {
+    border: 2px solid #111312; /* Add green border */
+    background-color:  rgba(0, 255, 0, 0.808); /* Add gray background */
+    padding: 10px;
+	color: #000000;
+	text-align: center;
+}
+.form_2_privacynotice {
+   padding: 10px;
+
+   width: 70%;
+}
+.privacy-notice-text {
+    font-size: 18px;
+	font-family: 'Times New Roman', Times, serif;
+	padding: 5px;
 }
