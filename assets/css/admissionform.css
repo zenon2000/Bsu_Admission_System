@@ -553,7 +553,7 @@ h3.privacy-heading {
     font-size: 18px; /* You can adjust the font size as needed */
     counter-increment: custom-counter; /* Increment the counter for custom numbering */
 }
-
+ 
 .note {
     border: 2px solid #111312; /* Add green border */
     background-color:  rgba(0, 255, 0, 0.808); /* Add gray background */

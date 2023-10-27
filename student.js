@@ -5,7 +5,7 @@ allSideMenu.forEach(item=> {
 
 	item.addEventListener('click', function () {
 		allSideMenu.forEach(i=> {
-			i.parentElement.classList.remove('active'); 
+			i.parentElement.classList.remove('active');
 		})
 		li.classList.add('active');
 	})
@@ -21,6 +21,7 @@ menuBar.addEventListener('click', function () {
 	sidebar.classList.toggle('hide');
 })
 
+//dropdown
 document.addEventListener('DOMContentLoaded', function () {
     const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
 
@@ -41,7 +42,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
-
 
 
 //search bar
@@ -91,7 +91,23 @@ switchMode.addEventListener('change', function () {
 		document.body.classList.remove('dark');
 	}
 })
+document.addEventListener('DOMContentLoaded', function () {
+    const searchForm = document.getElementById('search-form');
+    const searchInput = document.getElementById('search-input');
 
+    searchForm.addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevent the form from submitting traditionally
+
+        const searchTerm = searchInput.value.trim();
+
+        // Perform your search logic here
+        if (searchTerm !== '') {
+            alert('Performing search for: ' + searchTerm);
+            // Add your search results handling logic here
+        }
+    });
+});
+//search bar
 
 
 //side bar
@@ -169,7 +185,6 @@ showTime();
 //clock
 
 
-
 document.addEventListener("DOMContentLoaded", function () {
     const notificationButton = document.querySelector("#notification-button");
     const notificationPopup = document.querySelector("#notification-popup");
@@ -203,58 +218,128 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+//search head in table
 
-//pressing the box info and dashboard
 
+
+
+//pressing box-info
 document.addEventListener('DOMContentLoaded', function () {
-    const waitlistItem = document.getElementById('wait-info');
-    const rejectedItem = document.getElementById('rejected-info');
-    const admittedItem = document.getElementById('admitted-info');
-    const overallItem = document.getElementById('dashboard-link');
+    const verifiedAppItem = document.getElementById('verified-application');
+    const toBeReviewedItem = document.getElementById('to-be-reviewed');
+    const resultsItem = document.getElementById('results-item');
+    const facultyItem = document.getElementById('faculty-item');
+    const verifiedTable = document.getElementById('verified');
+    const reviewedTable = document.getElementById('reviewed');
+    const resultsTable = document.getElementById('resultsT');
+    const facultyTable = document.getElementById('faculty');
 
-    const waitTable = document.getElementById('wait-list');
-    const rejectedTable = document.getElementById('Rejected');
-    const admittedTable = document.getElementById('admitted');
-    const overallTable = document.getElementById('over-all');
-    // Hide all tables initially excepts the over-all
-    waitTable.style.display = 'none';
-    rejectedTable.style.display = 'none';
-    admittedTable.style.display = 'none';
-    overallTable.style.display = 'block';
+    // Hide all tables initially
+    verifiedTable.style.display = 'none';
+    reviewedTable.style.display = 'none';
+    resultsTable.style.display = 'none';
+    facultyTable.style.display = 'none';
 
-    waitlistItem.addEventListener('click', function () {
-        // Show the "waitlist" table and hide others
-        waitTable.style.display = 'block';
-        rejectedTable.style.display = 'none';
-        admittedTable.style.display = 'none';
-        overallTable.style.display = 'none';
-       
+    verifiedAppItem.addEventListener('click', function () {
+        // Show the "Verified" table and hide others
+        verifiedTable.style.display = 'block';
+        reviewedTable.style.display = 'none';
+        resultsTable.style.display = 'none';
+        facultyTable.style.display = 'none';
     });
 
-    rejectedItem.addEventListener('click', function () {
-        // Show the "rejected" table and hide others
-        rejectedTable.style.display = 'block';
-        waitTable.style.display = 'none';
-        admittedTable.style.display = 'none';
-        overallTable.style.display = 'none';
+    toBeReviewedItem.addEventListener('click', function () {
+        // Show the "To be reviewed" table and hide others
+        reviewedTable.style.display = 'block';
+        verifiedTable.style.display = 'none';
+        resultsTable.style.display = 'none';
+        facultyTable.style.display = 'none';
     });
 
-    admittedItem.addEventListener('click', function () {
-        // Show the "admitted" table and hide others
-        admittedTable.style.display = 'block';
-        rejectedTable.style.display = 'none';
-        waitTable.style.display = 'none';
-        overallTable.style.display = 'none';
-    });
-  overallItem.addEventListener('click', function () {
-        // Show the "admitted" table and hide others
-        overallTable.style.display = 'block';
-        admittedTable.style.display = 'none';
-        rejectedTable.style.display = 'none';
-        waitTable.style.display = 'none';
-      
+    resultsItem.addEventListener('click', function () {
+        // Show the "Results" table and hide others
+        resultsTable.style.display = 'block';
+        verifiedTable.style.display = 'none';
+        reviewedTable.style.display = 'none';
+        facultyTable.style.display = 'none';
     });
 
+    facultyItem.addEventListener('click', function () {
+        // Show the "Faculty" table and hide others
+        facultyTable.style.display = 'block';
+        verifiedTable.style.display = 'none';
+        reviewedTable.style.display = 'none';
+        resultsTable.style.display = 'none';
+    });
 });
 
-//pressing courses
+
+
+
+
+//pressing sidebar
+document.addEventListener('DOMContentLoaded', function () {
+    const dashboardLink = document.getElementById('student-profile-link');
+    const dashboardContent = document.getElementById('profile-content');
+    const announcementssLink = document.getElementById('announcements-link');
+    const announcementsContent = document.getElementById('announcements-content');
+    const manageScheduleLink = document.querySelector('li:nth-child(3) a'); // Select the third menu item
+    const manageScheduleContent = document.getElementById('result-content'); // ID for Manage Schedule content
+    const manageFacultyLink = document.querySelector('li:nth-child(4) a'); // Select the fourth menu item
+    const manageFacultyContent = document.getElementById('ManageFaculty-content'); // ID for Manage Faculty content
+    const viewRequestLink = document.querySelector('li:nth-child(5) a'); // Select the fifth menu item
+    const viewRequestContent = document.getElementById('ViewRequest-content'); // ID for View Request content
+
+    // Initially hide the content divs
+    dashboardContent.style.display = 'block';
+    announcementsContent.style.display = 'none';
+    manageScheduleContent.style.display = 'none'; // Hide Manage Schedule content by default
+    manageFacultyContent.style.display = 'none'; // Hide Manage Faculty content by default
+    viewRequestContent.style.display = 'none'; // Hide View Request content by default
+
+    // Add event listeners to the links
+    dashboardLink.addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent the default link behavior
+        dashboardContent.style.display = 'block'; // Show the dashboard content
+        announcementsContent.style.display = 'none'; // Hide the approve applicants content
+        manageScheduleContent.style.display = 'none'; // Hide Manage Schedule content
+        manageFacultyContent.style.display = 'none'; // Hide Manage Faculty content
+        viewRequestContent.style.display = 'none'; // Hide View Request content
+    });
+
+    announcementssLink.addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent the default link behavior
+        dashboardContent.style.display = 'none'; // Hide the dashboard content
+        announcementsContent.style.display = 'block'; // Show the approve applicants content
+        manageScheduleContent.style.display = 'none'; // Hide Manage Schedule content
+        manageFacultyContent.style.display = 'none'; // Hide Manage Faculty content
+        viewRequestContent.style.display = 'none'; // Hide View Request content
+    });
+
+    manageScheduleLink.addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent the default link behavior
+        dashboardContent.style.display = 'none'; // Hide the dashboard content
+        announcementsContent.style.display = 'none'; // Hide the approve applicants content
+        manageScheduleContent.style.display = 'block'; // Show Manage Schedule content
+        manageFacultyContent.style.display = 'none'; // Hide Manage Faculty content
+        viewRequestContent.style.display = 'none'; // Hide View Request content
+    });
+
+    manageFacultyLink.addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent the default link behavior
+        dashboardContent.style.display = 'none'; // Hide the dashboard content
+        announcementsContent.style.display = 'none'; // Hide the approve applicants content
+        manageScheduleContent.style.display = 'none'; // Hide Manage Schedule content
+        manageFacultyContent.style.display = 'block'; // Show Manage Faculty content
+        viewRequestContent.style.display = 'none'; // Hide View Request content
+    });
+
+    viewRequestLink.addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent the default link behavior
+        dashboardContent.style.display = 'none'; // Hide the dashboard content
+        announcementsContent.style.display = 'none'; // Hide the approve applicants content
+        manageScheduleContent.style.display = 'none'; // Hide Manage Schedule content
+        manageFacultyContent.style.display = 'none'; // Hide Manage Faculty content
+        viewRequestContent.style.display = 'block'; // Show View Request content
+    });
+});
