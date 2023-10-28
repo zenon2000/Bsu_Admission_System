@@ -207,51 +207,69 @@ document.addEventListener("DOMContentLoaded", function () {
 //pressing the box info and dashboard
 
 document.addEventListener('DOMContentLoaded', function () {
-    const waitlistItem = document.getElementById('wait-info');
-    const rejectedItem = document.getElementById('rejected-info');
-    const admittedItem = document.getElementById('admitted-info');
+    const AvailableItem = document.getElementById('available-box');
+    const AdmittedItem = document.getElementById('admitted-box');
+    const ReadmittedItem = document.getElementById('readmitted-box');
+    const NonqualifiedItem = document.getElementById('nonqualified-box');
     const overallItem = document.getElementById('dashboard-link');
 
-    const waitTable = document.getElementById('wait-list');
-    const rejectedTable = document.getElementById('Rejected');
-    const admittedTable = document.getElementById('admitted');
+    const AvailableTable = document.getElementById('available-slot');
+    const AdmittedTable = document.getElementById('admitted');
+    const ReadmittedTable = document.getElementById('readmitted');
+    const NonqualifiedTable = document.getElementById('nonqualified');
     const overallTable = document.getElementById('over-all');
+  
     // Hide all tables initially excepts the over-all
-    waitTable.style.display = 'none';
-    rejectedTable.style.display = 'none';
-    admittedTable.style.display = 'none';
+    AvailableTable.style.display = 'none';
+    AdmittedTable.style.display = 'none';
+    ReadmittedTable.style.display = 'none';
+    NonqualifiedTable.style.display = 'none';
     overallTable.style.display = 'block';
 
-    waitlistItem.addEventListener('click', function () {
-        // Show the "waitlist" table and hide others
-        waitTable.style.display = 'block';
-        rejectedTable.style.display = 'none';
-        admittedTable.style.display = 'none';
+    AvailableItem.addEventListener('click', function () {
+        // Show the "Available" table and hide others
+        AvailableTable.style.display = 'block';
+        AdmittedTable.style.display = 'none';
+        ReadmittedTable.style.display = 'none';
+        NonqualifiedTable.style.display = 'none';
         overallTable.style.display = 'none';
        
     });
 
-    rejectedItem.addEventListener('click', function () {
-        // Show the "rejected" table and hide others
-        rejectedTable.style.display = 'block';
-        waitTable.style.display = 'none';
-        admittedTable.style.display = 'none';
+    AdmittedItem.addEventListener('click', function () {
+        // Show the "Admitted" table and hide others
+        AvailableTable.style.display = 'none';
+        AdmittedTable.style.display = 'block';
+        ReadmittedTable.style.display = 'none';
+        NonqualifiedTable.style.display = 'none';
         overallTable.style.display = 'none';
     });
 
-    admittedItem.addEventListener('click', function () {
-        // Show the "admitted" table and hide others
-        admittedTable.style.display = 'block';
-        rejectedTable.style.display = 'none';
-        waitTable.style.display = 'none';
+    ReadmittedItem.addEventListener('click', function () {
+        // Show the "Readmitted" table and hide others
+        AvailableTable.style.display = 'none';
+        AdmittedTable.style.display = 'none';
+        ReadmittedTable.style.display = 'block';
+        NonqualifiedTable.style.display = 'none';
         overallTable.style.display = 'none';
     });
+
+    NonqualifiedItem.addEventListener('click', function () {
+        // Show the "Nonqualified" table and hide others
+        AvailableTable.style.display = 'none';
+        AdmittedTable.style.display = 'none';
+        ReadmittedTable.style.display = 'none';
+        NonqualifiedTable.style.display = 'block';
+        overallTable.style.display = 'none';
+    });
+
   overallItem.addEventListener('click', function () {
-        // Show the "admitted" table and hide others
+        // Show the "Overall" table and hide others
+        AvailableTable.style.display = 'none';
+        AdmittedTable.style.display = 'none';
+        ReadmittedTable.style.display = 'none';
+        NonqualifiedTable.style.display = 'none';
         overallTable.style.display = 'block';
-        admittedTable.style.display = 'none';
-        rejectedTable.style.display = 'none';
-        waitTable.style.display = 'none';
       
     });
 

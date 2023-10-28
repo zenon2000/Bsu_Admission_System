@@ -165,33 +165,33 @@
             </div>
 
             <ul class="box-info">
-                <li id="wait-info">
-                    <i class='bx bxs-group'></i>
+                <li id="available-box">
+                    <i class='bx bx-clipboard'></i>
                     <span class="text">
                         <h3>1020</h3>
-                        <p>WaitList</p>
+                        <p>Available Slots</p>
                     </span>
                 </li>                
                 
-                <li id="rejected-info">
+                <li id="admitted-box">
                     <i class='bx bxs-group'></i>
                     <span class="text">
                         <h3>2834</h3>
-                        <p>Rejected</p>
+                        <p>Students For Admission</p>
                     </span>
                 </li>
-                <li id="admitted-info">
-                    <i class='bx bxs-group'></i>
+                <li id="readmitted-box">
+                    <i class='bx bxs-log-in'></i>
                     <span class="text">
                         <h3>2543</h3>
-                        <p>Admitted</p>
+                        <p>Students For Readmission</p>
                     </span>
                 </li>
-                <li id="slots-info">
-                    <i class='bx bxs-group'></i>
+                <li id="nonqualified-box">
+                    <i class='bx bxs-log-out' ></i>
                     <span class="text">
                         <h3>1020</h3>
-                        <p>Slots Left</p>
+                        <p>Non-Qualified Applicants</p>
                     </span>
                 </li>
             </ul>
@@ -209,111 +209,20 @@
                     <table>
                         <thead>
                             <tr>
-                                <th>Student</th>
-                                <th>Colleges</th>
-                                <th>Date of Admission</th>
-                                <th>Status</th>
+                                <th>College</th>
+                                <th>Program</th>
+                                <th>Total Slot</th>
+                                <th>Available Slots</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr data-college="CAH">
-                                <td>
-                                    <img src="frontend/assets/images/human icon.png" alt="Student">
-                                    <p>John Doe</p>
-                                </td>
-                                <td>CAH</td>
-                                <td>01-10-2021</td>
-                                <td><span class="status admitted">Admitted</span></td>
-                            </tr>
                             <tr>
                                 <td>
-                                    <img src="frontend/assets/images/human icon.png" alt="Student">
-                                    <p>Jane Doe</p>
+                                    <p>College of Information Sciences</p>
                                 </td>
-                                <td>CIS</td>
-                                <td>01-10-2021</td>
-                                <td><span class="status rejected">Rejected</span></td>
-                            </tr>
-                            <tr data-college="CEAT">
-                                <td>
-                                    <img src="frontend/assets/images/human icon.png" alt="Student">
-                                    <p>Johny Doe</p>
-                                </td>
-                                <td>CEAT</td>
-                                <td>01-10-2021</td>
-                                <td><span class="status pending">Pending</span></td>
-                            </tr>
-                            <tr  data-college="CF">
-                                <td>
-                                    <img src="frontend/assets/images/human icon.png" alt="Student">
-                                    <p>Johnie Doe</p>
-                                </td>
-                                <td>CF</td>
-                                <td>01-10-2021</td>
-                                <td><span class="status pending">Pending</span></td>
-                            </tr>
-							<tr  data-college="CHET">
-								<td>
-									<img src="frontend/assets/images/human icon.png" alt="Student">
-									<p>Janie Doe</p>
-								</td>
-                                <td>CHET</td>
-								<td>01-10-2021</td>
-								<td><span class="status admitted">Admitted</span></td> 
-							</tr>
-                            <tr data-college="CA">
-                                <td>
-                                    <img src="frontend/assets/images/human icon.png" alt="Student">
-                                    <p>John Doe</p>
-                                </td>
-                                <td>CA</td>
-                                <td>01-10-2021</td>
-                                <td><span class="status admitted">Admitted</span></td>
-                            </tr>
-                            <tr data-college="CNS">
-                                <td>
-                                    <img src="frontend/assets/images/human icon.png" alt="Student">
-                                    <p>John Doe</p>
-                                </td>
-                                <td>CNS</td>
-                                <td>01-10-2021</td>
-                                <td><span class="status admitted">Admitted</span></td>
-                            </tr>
-                            <tr data-college="CNAS">
-                                <td>
-                                    <img src="frontend/assets/images/human icon.png" alt="Student">
-                                    <p>John Doe</p>
-                                </td>
-                                <td>CNAS</td>
-                                <td>01-10-2021</td>
-                                <td><span class="status admitted">Admitted</span></td>
-                            </tr>
-                            <tr data-college="CPAG">
-                                <td>
-                                    <img src="frontend/assets/images/human icon.png" alt="Student">
-                                    <p>John Doe</p>
-                                </td>
-                                <td>CPAG</td>
-                                <td>01-10-2021</td>
-                                <td><span class="status admitted">Admitted</span></td>
-                            </tr>
-                            <tr data-college="CSS">
-                                <td>
-                                    <img src="frontend/assets/images/human icon.png" alt="Student">
-                                    <p>John Doe</p>
-                                </td>
-                                <td>CSS</td>
-                                <td>01-10-2021</td>
-                                <td><span class="status admitted">Admitted</span></td>
-                            </tr>
-                            <tr data-college="CVM">
-                                <td>
-                                    <img src="frontend/assets/images/human icon.png" alt="Student">
-                                    <p>John Doe</p>
-                                </td>
-                                <td>CVM</td>
-                                <td>01-10-2021</td>
-                                <td><span class="status admitted">Admitted</span></td>
+                                <td>Bachelor of Information Technology</td>
+                                <td>100</td>
+                                <td>50</td>
                             </tr>
 						</tbody>
 					</table>
@@ -341,12 +250,12 @@
 				</div>
 			</div>
         </div>
-         <!--Wait List-->
-         <div id="wait-list">
+         <!--Available Slots-->
+         <div id="available-slot">
             <div class="table-data">
                 <div class="order">
                     <div class="head">
-                        <h3>Wait Lists</h3>
+                        <h3>Available Slots</h3>
                         <i class='bx bx-search' id="searchIcon"></i>
                         <div class="search-box" id="searchBox-overall">
                             <input type="text" placeholder="Search...">
@@ -354,59 +263,22 @@
                     </div>
                     <table>
                         <thead>
-                            <tr>
-                                <th>Student</th>
-                                <th>Colleges</th>
-                                <th>Date of Admission</th>
-                                <th>Status</th>
+                            <tr  data-college="CIS">
+                                <th>College</th>
+                                <th>Program</th>
+                                <th>Total Slots</th>
+                                <th>Available Slots</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr  data-college="CEAT">
+                            <tr>
                                 <td>
-                                    <img src="frontend/assets/images/human icon.png" alt="Student">
-                                    <p>John Doe</p>
+                                    <p>College of Information Sciences</p>
                                 </td>
-                                <td>CEAT</td>
-                                <td>01-10-2021</td>
-                                <td><span class="status pending">pending</span></td>
+                                <td>Bachelor of Science in Information Technology</td>
+                                <td>100</td>
+                                <td>50</td>
                             </tr>
-                            <tr  data-college="CEAT">
-                                <td>
-                                    <img src="frontend/assets/images/human icon.png" alt="Student">
-                                    <p>Jane Doe</p>
-                                </td>
-                                <td>CEAT</td>
-                                <td>01-10-2021</td>
-                                <td><spa n class="status pending">pending</span></td>
-                            </tr>
-                            <tr  data-college="CEAT">
-                                <td>
-                                    <img src="frontend/assets/images/human icon.png" alt="Student">
-                                    <p>Johny Doe</p>
-                                </td>
-                                <td>CEAT</td>
-                                <td>01-10-2021</td>
-                                <td><span class="status pending">pending</span></td>
-                            </tr>
-                            <tr  data-college="CEAT">
-                                <td>
-                                    <img src="frontend/assets/images/human icon.png" alt="Student">
-                                    <p>Johnie Doe</p>
-                                </td>
-                                <td>CEAT</td>
-                                <td>01-10-2021</td>
-                                <td><span class="status pending">pending</span></td>
-                            </tr>
-							<tr>
-								<td>
-									<img src="frontend/assets/images/human icon.png" alt="Student">
-									<p>Janie Doe</p>
-								</td>
-                                <td>CEAT</td>
-								<td>01-10-2021</td>
-								<td><span class="status pending">pending</span></td> 
-							</tr>
 						</tbody>
 					</table>
 				</div>
@@ -429,12 +301,12 @@
 			</div>
         </div>
         
-         <!--Rejected-->
-         <div id="Rejected">
+         <!--Admitted-->
+         <div id="admitted">
             <div class="table-data">
                 <div class="order">
                     <div class="head">
-                        <h3>Rejected Students</h3>
+                        <h3>Students For Admission</h3>
                         <i class='bx bx-search' id="searchIcon"></i>
                         <div class="search-box" id="searchBox-overall">
                             <input type="text" placeholder="Search...">
@@ -443,58 +315,23 @@
                     <table>
                         <thead>
                             <tr>
+                                <th>College</th>
+                                <th>Programs</th>
                                 <th>Student</th>
-                                <th>Colleges</th>
-                                <th>Date of Admission</th>
-                                <th>Status</th>
+                                <th>Rank</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr  data-college="CHET">
+                            <tr  data-college="CIS">
                                 <td>
-                                    <img src="frontend/assets/images/human icon.png" alt="Student">
-                                    <p>John Doe</p>
+                                    <p>College of Information Sciences</p>
                                 </td>
-                                <td>CHET</td>
-                                <td>01-10-2021</td>
-                                <td><span class="status rejected">rejected</span></td>
+                                <td>Bachelor of Science in Information Technology</td>
+                                <td>Gojo Satoru</td>
+                                <td>1</td>
+                                <td>Notice of Admission</td>
                             </tr>
-                            <tr>
-                                <td>
-                                    <img src="frontend/assets/images/human icon.png" alt="Student">
-                                    <p>Jane Doe</p>
-                                </td>
-                                <td>CHET</td>
-                                <td>01-10-2021</td>
-                                <td><span class="status rejected">rejected</span></td>
-                            </tr>
-                            <tr  data-college="CHET">
-                                <td>
-                                    <img src="frontend/assets/images/human icon.png" alt="Student">
-                                    <p>Johny Doe</p>
-                                </td>
-                                <td>CHET</td>
-                                <td>01-10-2021</td>
-                                <td><span class="status rejected">rejected</span></td>
-                            </tr>
-                            <tr data-college="CHET">
-                                <td>
-                                    <img src="frontend/assets/images/human icon.png" alt="Student">
-                                    <p>Johnie Doe</p>
-                                </td>
-                                <td>CHET</td>
-                                <td>01-10-2021</td>
-                                <td><span class="status rejected">rejected</span></td>
-                            </tr>
-							<tr data-college="CHET">
-								<td>
-									<img src="frontend/assets/images/human icon.png" alt="Student">
-									<p>Janie Doe</p>
-								</td>
-                                <td>CHET</td>
-								<td>01-10-2021</td>
-								<td><span class="status rejected">rejected</span></td> 
-							</tr>
 						</tbody>
 					</table>
 				</div>
@@ -516,12 +353,12 @@
 				</div>
 			</div>
         </div>
-             <!--admitted-->
-             <div id="admitted">
+             <!--Readmitted-->
+             <div id="readmitted">
                 <div class="table-data">
                     <div class="order">
                         <div class="head">
-                            <h3>Admitted Students</h3>
+                            <h3>Students For Readmission</h3>
                             <i class='bx bx-search' id="searchIcon"></i>
                             <div class="search-box" id="searchBox-overall">
                                 <input type="text" placeholder="Search...">
@@ -530,57 +367,22 @@
                         <table>
                             <thead>
                                 <tr>
+                                    <th>College</th>
+                                    <th>Program</th>
                                     <th>Student</th>
-                                    <th>Courses</th>
-                                    <th>Date of Admission</th>
-                                    <th>Status</th>
+                                    <th>Rank</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr data-college="CHET">
+                                <tr data-college="CIS">
                                     <td>
-                                        <img src="frontend/assets/images/human icon.png" alt="Student">
-                                        <p>John Doe</p>
+                                        <p>College of Information Sciences</p>
                                     </td>
-                                    <td>CHET</td>
-                                    <td>01-10-2021</td>
-                                    <td><span class="status admitted">Admitted</span></td>
-                                </tr>
-                                <tr data-college="CNAS">
-                                    <td>
-                                        <img src="frontend/assets/images/human icon.png" alt="Student">
-                                        <p>Jane Doe</p>
-                                    </td>
-                                    <td>CNAS</td>
-                                    <td>01-10-2021</td>
-                                    <td><span class="status admitted">Admitted</span></td>
-                                </tr>
-                                <tr data-college="CNAS">
-                                    <td>
-                                        <img src="frontend/assets/images/human icon.png" alt="Student">
-                                        <p>Johny Doe</p>
-                                    </td>
-                                    <td>CNAS</td>
-                                    <td>01-10-2021</td>
-                                    <td><span class="status admitted">Admitted</span></td>
-                                </tr>
-                                <tr  data-college="CHET">
-                                    <td>
-                                        <img src="frontend/assets/images/human icon.png" alt="Student">
-                                        <p>Johnie Doe</p>
-                                    </td>
-                                    <td>CHET</td>
-                                    <td>01-10-2021</td>
-                                    <td><span class="status admitted">Admitted</span></td>
-                                </tr>
-                                <tr  data-college="CNAS">
-                                    <td>
-                                        <img src="frontend/assets/images/human icon.png" alt="Student">
-                                        <p>Janie Doe</p>
-                                    </td>
-                                    <td>CNAS</td>
-                                    <td>01-10-2021</td>
-                                    <td><span class="status admitted">Admitted</span></td> 
+                                    <td>Bachelor of Science in Information Technology</td>
+                                    <td>Megumi Fushiguro</td>
+                                    <td>101</td>
+                                    <td>Notice of Result</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -605,7 +407,59 @@
             </div>
         </div>
 
-
+ <!--Nonqualified-->
+ <div id="nonqualified">
+    <div class="table-data">
+        <div class="order">
+            <div class="head">
+                <h3>Non-Qualified Applicants</h3>
+                <i class='bx bx-search' id="searchIcon"></i>
+                <div class="search-box" id="searchBox-overall">
+                    <input type="text" placeholder="Search...">
+                </div>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>College</th>
+                        <th>Program</th>
+                        <th>Student</th>
+                        <th>Rank</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-college="CIS">
+                        <td>
+                            <p>College of Information Sciences</p>
+                        </td>
+                        <td>Bachelor of Science in Information Technology</td>
+                        <td>YuJi Itadori</td>
+                        <td>500</td>
+                        <td>Notice of Result</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="todo">
+            <div class="head">
+                <h3>Student Data</h3>
+                <a href="#" class="btn-download">
+                    <i class='bx bxs-cloud-download'></i>
+                    <span class="text">Download PDF</span>
+                </a>
+            </div>
+            <ul class="todo-list">
+                <li class="completed">
+                    <p>Information List</p>
+                    
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
         
 	</main>
     <!-- MAIN -->
