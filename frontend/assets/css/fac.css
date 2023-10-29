@@ -394,11 +394,7 @@ justify-content: center;
     color: var(--dark-grey);
 }
 
-.bx-search {
-    font-size: 25px;
-    color: var(--dark-grey);
-    margin-right: 5px;
-}
+
  /* Additional styles for chat container */
 
  /* ... your existing CSS code ... */

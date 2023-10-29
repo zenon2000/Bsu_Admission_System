@@ -294,4 +294,71 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
-//pressing courses
+//pressing Sidebar
+document.addEventListener('DOMContentLoaded', function () {
+    const dashboardLink = document.getElementById('dashboard-link');
+    const dashboardContent = document.getElementById('dashboard-content');
+    const StudentDataLink = document.getElementById('student-data-link');
+    const StudentDataContent = document.getElementById('student-data-content');
+    const StudentResultLink = document.querySelector('student-result-link'); // Select the third menu item
+    const StudentResultContent = document.getElementById('student-result-content'); // ID for Manage Schedule content
+    const ImportLink = document.querySelector('import-link'); // Select the fourth menu item
+    const ImportContent = document.getElementById('import-content'); // ID for Manage Faculty content
+    const ExportLink = document.querySelector('export-link'); // Select the fifth menu item
+    const ExportContent = document.getElementById('export-content'); // ID for View Request content
+    const StudentFormLink = document.querySelector('student-form-link'); // Select the fifth menu item
+    const StudentFormContent = document.getElementById('student-form-content'); // ID for View Request content
+
+    // Initially hide the content divs
+    dashboardContent.style.display = 'block';
+    approveApplicantContent.style.display = 'none';
+    manageScheduleContent.style.display = 'none'; // Hide Manage Schedule content by default
+    manageFacultyContent.style.display = 'none'; // Hide Manage Faculty content by default
+    viewRequestContent.style.display = 'none'; // Hide View Request content by default
+
+    // Add event listeners to the links
+    dashboardLink.addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent the default link behavior
+        dashboardContent.style.display = 'block'; // Show the dashboard content
+        approveApplicantContent.style.display = 'none'; // Hide the approve applicants content
+        manageScheduleContent.style.display = 'none'; // Hide Manage Schedule content
+        manageFacultyContent.style.display = 'none'; // Hide Manage Faculty content
+        viewRequestContent.style.display = 'none'; // Hide View Request content
+    });
+
+    approveApplicantsLink.addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent the default link behavior
+        dashboardContent.style.display = 'none'; // Hide the dashboard content
+        approveApplicantContent.style.display = 'block'; // Show the approve applicants content
+        manageScheduleContent.style.display = 'none'; // Hide Manage Schedule content
+        manageFacultyContent.style.display = 'none'; // Hide Manage Faculty content
+        viewRequestContent.style.display = 'none'; // Hide View Request content
+    });
+
+    manageScheduleLink.addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent the default link behavior
+        dashboardContent.style.display = 'none'; // Hide the dashboard content
+        approveApplicantContent.style.display = 'none'; // Hide the approve applicants content
+        manageScheduleContent.style.display = 'block'; // Show Manage Schedule content
+        manageFacultyContent.style.display = 'none'; // Hide Manage Faculty content
+        viewRequestContent.style.display = 'none'; // Hide View Request content
+    });
+
+    manageFacultyLink.addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent the default link behavior
+        dashboardContent.style.display = 'none'; // Hide the dashboard content
+        approveApplicantContent.style.display = 'none'; // Hide the approve applicants content
+        manageScheduleContent.style.display = 'none'; // Hide Manage Schedule content
+        manageFacultyContent.style.display = 'block'; // Show Manage Faculty content
+        viewRequestContent.style.display = 'none'; // Hide View Request content
+    });
+
+    viewRequestLink.addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent the default link behavior
+        dashboardContent.style.display = 'none'; // Hide the dashboard content
+        approveApplicantContent.style.display = 'none'; // Hide the approve applicants content
+        manageScheduleContent.style.display = 'none'; // Hide Manage Schedule content
+        manageFacultyContent.style.display = 'none'; // Hide Manage Faculty content
+        viewRequestContent.style.display = 'block'; // Show View Request content
+    });
+});
