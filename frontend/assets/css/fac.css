@@ -1517,8 +1517,6 @@ nav {
 		min-width: 420px;
 	}
 	
-
-	
 	#sidebar .brand .adminprofile{
 		height:31px;
 		width: 32px;
@@ -1528,7 +1526,7 @@ nav {
 		display: flex;
 		justify-content: center;
 		}
-
+	
 }
 
 
