@@ -300,22 +300,102 @@ document.addEventListener('DOMContentLoaded', function () {
     const dashboardContent = document.getElementById('dashboard-content');
     const StudentProfileLink = document.getElementById('student-profile-link');
     const StudentProfileContent = document.getElementById('student-profile-content');
-    
+    const StudentResultLink = document.getElementById('student-result-link'); 
+    const StudentResultContent = document.getElementById('student-result-content');
+    const ImportLink = document.getElementById('import-link'); 
+    const ImportContent = document.getElementById('import-content'); 
+    const ExportLink = document.getElementById('export-link');
+    const ExportContent = document.getElementById('export-content'); 
+    const StudentFormLink = document.getElementById('student-form-link'); 
+    const StudentFormContent = document.getElementById('student-form-content');
+    const CollegeCoursesLink = document.getElementById('college-courses-link'); 
+    const CollegeCoursesContent = document.getElementById('college-courses-content'); 
+
     // Initially hide the content divs by default
     dashboardContent.style.display = 'block';
     StudentProfileContent.style.display = 'none';
-   
+    StudentResultContent.style.display = 'none';
+    ImportContent.style.display = 'none'; 
+    ExportContent.style.display = 'none';
+    StudentFormContent.style.display = 'none'; 
+    CollegeCoursesContent.style.display = 'none'; 
 
     // Add event listeners to the links
     dashboardLink.addEventListener('click', function (event) {
         event.preventDefault(); // Prevent the default link behavior
         dashboardContent.style.display = 'block';
         StudentProfileContent.style.display = 'none';
+        StudentResultContent.style.display = 'none';
+        ImportContent.style.display = 'none'; 
+        ExportContent.style.display = 'none';
+        StudentFormContent.style.display = 'none'; 
+        CollegeCoursesContent.style.display = 'none';
     });
 
     StudentProfileLink.addEventListener('click', function (event) {
         event.preventDefault(); // Prevent the default link behavior
         dashboardContent.style.display = 'none';
         StudentProfileContent.style.display = 'block';
+        StudentResultContent.style.display = 'none'; 
+        ImportContent.style.display = 'none'; 
+        ExportContent.style.display = 'none';
+        StudentFormContent.style.display = 'none'; 
+        CollegeCoursesContent.style.display = 'none';
+    
+    });
+
+    StudentResultLink.addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent the default link behavior
+        dashboardContent.style.display = 'none';
+        StudentProfileContent.style.display = 'none';
+        StudentResultContent.style.display = 'block';
+        ImportContent.style.display = 'none'; 
+        ExportContent.style.display = 'none';
+        StudentFormContent.style.display = 'none';
+        CollegeCoursesContent.style.display = 'none';
+    });
+
+    ImportLink.addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent the default link behavior
+        dashboardContent.style.display = 'none';
+        StudentProfileContent.style.display = 'none';
+        StudentResultContent.style.display = 'none'; 
+        ImportContent.style.display = 'block'; 
+        ExportContent.style.display = 'none';
+        StudentFormContent.style.display = 'none';
+        CollegeCoursesContent.style.display = 'none';
+    });
+
+    ExportLink.addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent the default link behavior
+        dashboardContent.style.display = 'none';
+        StudentProfileContent.style.display = 'none';
+        StudentResultContent.style.display = 'none'; 
+        ImportContent.style.display = 'none'; 
+        ExportContent.style.display = 'block';
+        StudentFormContent.style.display = 'none';
+        CollegeCoursesContent.style.display = 'none';
+    });
+
+    StudentFormLink.addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent the default link behavior
+        dashboardContent.style.display = 'none';
+        StudentProfileContent.style.display = 'none';
+        StudentResultContent.style.display = 'none'; 
+        ImportContent.style.display = 'none'; 
+        ExportContent.style.display = 'none';
+        StudentFormContent.style.display = 'block';
+        CollegeCoursesContent.style.display = 'none';
+    });
+
+    CollegeCoursesLink.addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent the default link behavior
+        dashboardContent.style.display = 'none';
+        StudentProfileContent.style.display = 'none';
+        StudentResultContent.style.display = 'none'; 
+        ImportContent.style.display = 'none'; 
+        ExportContent.style.display = 'none';
+        StudentFormContent.style.display = 'none';
+        CollegeCoursesContent.style.display = 'block';
     });
 });
