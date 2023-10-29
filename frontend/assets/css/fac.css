@@ -1098,6 +1098,31 @@ nav {
 	max-height: calc(100vh - 56px);
 	overflow-y: auto;
 }
+
+/* Add this CSS to adjust the search box and icon */
+.search-box {
+    display: flex;
+    align-items: center;
+    margin-right: 20px; /* Add some margin for spacing */
+	
+}
+
+/* Adjust the input box styles */
+.search-box input[type="text"] {
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    outline: none;
+    font-size: 14px;
+    width: 200px; /* Adjust the width as needed */
+	background-color: var(--light-gray);
+}
+
+/* Adjust the margin between the icon and input */
+#searchIcon {
+    margin-right: -5px; 
+	color:  var(--dark);
+} 
 #content main .head-title {
 	display: flex;
 	align-items: center;
@@ -1497,27 +1522,7 @@ nav {
 	}
 	
 
-	/* search box for students */
-    .search-box {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: #fff;
-        box-shadow: 0 2px 5pxv var(--light);
-        z-index: 1;
-    }
-
-    .search-box input {
-        width: 100%;
-        padding: 8px;
-        border: none;
-        outline: none;
-    }
-
-
-
+	
 	#sidebar .brand .adminprofile{
 		height:31px;
 		width: 32px;
