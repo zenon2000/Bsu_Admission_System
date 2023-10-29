@@ -1170,15 +1170,6 @@ nav {
 }
 
 
-
-
-
-  
- 
-
-
-
-
 /* MAIN */
 #content main {
 	width: 100%;
@@ -1187,6 +1178,42 @@ nav {
 	max-height: calc(100vh - 56px);
 	overflow-y: auto;
 }
+
+#content main .button {
+	border: none;
+	border-radius: 10px;
+	color:var(--light);
+	padding: 8px 10px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 12px;
+	margin: 20px 2px;
+	cursor: pointer;
+	transition-duration: 0.4s;
+	float: right;
+}
+
+#content main .button.save {
+	background-color: var(--yellow);
+	color:var(--dark);
+}
+
+#content main .button.save:hover {
+	background-color: var(--light-yellow);
+  	color: var(--gray);
+}
+
+#content main .button.send {
+	background-color: var(--orange); 
+ 	color: var(--dark); 
+}
+
+#content main .button.send:hover {
+	background-color: var(--light-orange);
+  	color:var(--gray);
+}
+
 #content main .head-title {
 	display: flex;
 	align-items: center;
@@ -1412,6 +1439,40 @@ nav {
 	background: var(--yellow);
 }
 
+#content main .table-data .order table tr td .button {
+	border: none;
+	border-radius: 10px;
+	color:var(--light);
+	padding: 4px 8px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 12px;
+	margin: 1px 1px;
+	cursor: pointer;
+	transition-duration: 0.4s;
+	
+}
+
+#content main .table-data .order table tr td .button.edit {
+	background-color: var(--blue);
+	color:var(--light);
+}
+
+#content main .table-data .order table tr td .button.edit:hover {
+	background-color: var(--lighter-grey);
+  	color: var(--gray);
+}
+
+#content main .table-data .order table tr td .button.delete {
+	background-color: var(--red); 
+ 	color: var(--light); 
+}
+
+#content main .table-data .order table tr td .button.delete:hover {
+	background-color: var(--lighter-grey);
+  	color:var(--gray);
+}
 
 #content main .table-data .todo {
 	flex-grow: 1;
@@ -1526,7 +1587,7 @@ nav {
 		display: flex;
 		justify-content: center;
 		}
-	
+
 }
 
 
