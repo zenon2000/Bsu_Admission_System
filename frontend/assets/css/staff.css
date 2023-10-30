@@ -1090,6 +1090,9 @@ nav {
 	overflow-y: auto;
 }
 
+/*search bar for export*/
+
+
 /* Add this CSS to adjust the search box and icon */
 .search-box {
     display: flex;
@@ -1174,18 +1177,12 @@ nav {
 	overflow-y: auto;
 }
 
-/*#content main .importform {
-	margin: 20px;
-	font-size: 16px;
-  }
-*/ 
-
 .importform {
 	display: flex;
 	flex-direction: row;
 	align-items: baseline;
 	padding: 10px;
-	border: 10px solid var(--gray);
+	border: 2px solid var(--gray);
 	border-radius: 5px;
 	font-size: 18px;
 	margin-top: 20px;
@@ -1214,8 +1211,7 @@ nav {
   button[type="submit"]:hover {
 	background-color: var(--gray);
   }
-  
-
+ 
  #content main .button {
 	border: none;
 	border-radius: 10px;
@@ -1253,6 +1249,16 @@ nav {
 
 #content main .button.import:hover {
 	background-color: var(--light-yellow);
+  	color: var(--gray);
+}
+
+#content main .button.export {
+	background-color: var(--blue);
+	color:var(--dark);
+}
+
+#content main .button.export:hover {
+	background-color: var(--light-blue);
   	color: var(--gray);
 }
 
@@ -1630,7 +1636,7 @@ nav {
 		display: flex;
 		justify-content: center;
 		}
-
+  
 }
 
 

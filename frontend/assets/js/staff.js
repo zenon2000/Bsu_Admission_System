@@ -399,11 +399,32 @@ document.addEventListener('DOMContentLoaded', function () {
         CollegeCoursesContent.style.display = 'block';
     });
 
-    //import files
-
+//import files
     var importElement = document.querySelector('link[rel="import"]');
-var importedHTML = importElement.import;
+    var importedHTML = importElement.import;
 
 // Access the contents of the imported HTML file.
 var paragraphElement = importedHTML.querySelector('p');
+
+
+//export files
+      function exportToExcel() {
+        let table = document.getElementById("table");
+        let html = table.outerHTML;
+
+        // Replace special characters to avoid Excel issues
+        html = html.replace(/ /g, "%20");
+        html = html.replace(/<tr>/g, "<tr>\r\n");
+
+        let uri = "data:application/vnd.ms-excel," + encodeURIComponent(html);
+
+        let link = document.createElement("a");
+        link.href = uri;
+        link.style = "visibility:hidden";
+        link.download = "data.xls";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }
+      
 });
