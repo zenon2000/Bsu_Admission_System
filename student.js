@@ -188,7 +188,7 @@ showTime();
 document.addEventListener("DOMContentLoaded", function () {
     const notificationButton = document.querySelector("#notification-button");
     const notificationPopup = document.querySelector("#notification-popup");
-    const profileButton = document.querySelector("#profile-button");
+    const profileButton = document.querySelector("#student-profile-button");
     const profilePopup = document.querySelector("#profile-popup");
 
     // Toggle the display of the notification popup when the button is clicked

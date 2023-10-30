@@ -191,4 +191,11 @@ if (applicantNumber === null) {
 // Assign the generated applicant number to the input field
 document.getElementById("applicant_number").value = applicantNumber;
 
-//submitting requirements
+//pressing done
+const doneButton = document.getElementById("doneButton");
+
+// Add an event listener to the "Done" button
+doneButton.addEventListener("click", function() {
+    // Redirect to the "student.html" page
+    window.location.href = "student.html";
+});
