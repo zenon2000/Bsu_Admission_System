@@ -398,4 +398,12 @@ document.addEventListener('DOMContentLoaded', function () {
         StudentFormContent.style.display = 'none';
         CollegeCoursesContent.style.display = 'block';
     });
+
+    //import files
+
+    var importElement = document.querySelector('link[rel="import"]');
+var importedHTML = importElement.import;
+
+// Access the contents of the imported HTML file.
+var paragraphElement = importedHTML.querySelector('p');
 });

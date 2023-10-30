@@ -58,13 +58,8 @@ body {
 	overflow-x: hidden;
 }
 
-
-
-
-
 /* SIDEBAR */
 
-  
 #sidebar {
 	position: fixed;
 	top: 0;
@@ -1179,7 +1174,12 @@ nav {
 	overflow-y: auto;
 }
 
-#content main .button {
+#content main .importform {
+	margin: 20px;
+	font-size: 16px;
+  }
+
+ #content main .button {
 	border: none;
 	border-radius: 10px;
 	color:var(--light);
@@ -1193,7 +1193,6 @@ nav {
 	transition-duration: 0.4s;
 	float: right;
 }
-
 #content main .button.save {
 	background-color: var(--yellow);
 	color:var(--dark);
@@ -1212,6 +1211,11 @@ nav {
 #content main .button.send:hover {
 	background-color: var(--light-orange);
   	color:var(--gray);
+}
+
+#content main .button.import:hover {
+	background-color: var(--light-yellow);
+  	color: var(--gray);
 }
 
 #content main .head-title {
