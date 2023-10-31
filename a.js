@@ -1,143 +1,160 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const forms = document.querySelectorAll('.data_info form');
+// Default tab
+$(".tab").css("display", "none");
+$("#tab-1").css("display", "block");
 
-    const formNextButtons = document.querySelectorAll('.btn_next');
+// Initialize an array to keep track of completed steps
+var completedSteps = [];
 
-    let currentFormIndex = 0;
+function run(hideTab, showTab) {
+    if (hideTab < showTab) { // If not pressing the previous button
+        // Validation if pressing the next button
+        var currentTab = 0;
+        x = $('#tab-' + hideTab);
+        y = $(x).find("input");
 
-    function validateForm() {
-        const currentForm = forms[currentFormIndex];
-        const inputs = currentForm.querySelectorAll('input');
+        if (hideTab === 1) {
+            // Validate the checkbox in Tab 1
+            if (!document.getElementById("read-guidelines").checked) {
+                alert("Please check the box to confirm that you have read the guidelines.");
+                return false;
+            }
+        } else if (hideTab === 2) {
+            // Validate the picture input
+            var pictureInput = $('input[name="id_picture"]');
+            if (pictureInput[0].files.length === 0) {
+                alert("Please upload an ID picture.");
+                return false;
+            }
 
-        for (let input of inputs) {
-            if (input.value.trim() === '') {
+            // Validate the e-signature
+            if (signaturePad.isEmpty()) {
+                alert("Please provide your e-signature.");
+                return false;
+            }
+        } else if (hideTab === 3) {
+            // Validating the applicant's e-signature in Tab 3
+            if (applicantSignaturePad.isEmpty()) {
+                alert("Please provide the applicant's e-signature.");
                 return false;
             }
         }
-        return true;
+
+        for (i = 0; i < y.length; i++) {
+            if (y[i].value === "") {
+                $(y[i]).css("background", "#ffdddd");
+                y[i].placeholder = "Please fill up the field";
+                return false;
+            }
+        }
+        // Mark the step as completed
+        completedSteps[hideTab - 1] = true;
     }
 
-    function showNextForm() {
-        if (validateForm()) {
-            currentFormIndex++;
-            showForm();
-        } else {
-            alert('Please fill in all fields before proceeding.');
+    // Progress bar
+    for (i = 1; i < showTab; i++) {
+        $("#step-" + i).css("opacity", "1");
+        if (completedSteps[i - 1]) {
+            $("#step-" + i).html('<i class="fas fa-check"></i>'); // Add a checkmark
         }
     }
 
-    function showPreviousForm() {
-        currentFormIndex--;
-        showForm();
+    // Switch tab
+    $("#tab-" + hideTab).css("display", "none");
+    $("#tab-" + showTab).css("display", "block");
+    $("input").css("background", "#fff");
+}
+
+// Handle the file input label click
+$('label[for="id_picture"]').click(function () {
+    $('input[name="id_picture"]').click();
+});
+
+// Display the selected file name
+$('input[name="id_picture"]').change(function () {
+    var fileName = $(this).val().split("\\").pop();
+    $('label[for="id_picture"]').text(fileName);
+});
+
+
+
+
+// Handle clicking the image preview to change the image
+document.getElementById('id_picture_preview_container').addEventListener('click', function () {
+    document.getElementById('id_picture').click();
+});
+
+// Handle the file input change event
+document.getElementById('id_picture').addEventListener('change', function (e) {
+    const fileInput = e.target;
+    const imagePreview = document.getElementById('id_picture_preview_img');
+    const uploadInstructions = document.getElementById('upload-instructions');
+
+    if (fileInput.files.length > 0) {
+        const file = fileInput.files[0];
+
+        // Display the selected file as the image preview
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            imagePreview.src = e.target.result;
+
+            // Hide the upload instructions
+            uploadInstructions.style.display = 'none';
+        };
+        reader.readAsDataURL(file);
     }
-
-    function showForm() {
-        for (let i = 0; i < forms.length; i++) {
-            if (i === currentFormIndex) {
-                forms[i].style.display = 'block';
-            } else {
-                forms[i].style.display = 'none';
-            }
-        }
-
-        const allNextButtons = document.querySelectorAll('.btn_next');
-        const allBackButtons = document.querySelectorAll('.btn_back');
-        const allDoneButtons = document.querySelectorAll('.btn_done');
-
-        for (let i = 0; i < allNextButtons.length; i++) {
-            if (currentFormIndex === 0) {
-                allBackButtons[i].style.display = 'none';
-            } else {
-                allBackButtons[i].style.display = 'inline-block';
-            }
-
-            if (currentFormIndex === forms.length - 1) {
-                allNextButtons[i].style.display = 'none';
-                allDoneButtons[i].style.display = 'inline-block';
-            } else {
-                allNextButtons[i].style.display = 'inline-block';
-                allDoneButtons[i].style.display = 'none';
-            }
-        }
-    }
-
-    for (let i = 0; i < formNextButtons.length; i++) {
-        formNextButtons[i].addEventListener('click', showNextForm);
-    }
-
-    const formBackButtons = document.querySelectorAll('.btn_back');
-    for (let backButton of formBackButtons) {
-        backButton.addEventListener('click', showPreviousForm);
-    }
-
-    showForm();
-});
-var form_1 = document.querySelector(".form_1");
-var form_2 = document.querySelector(".form_2");
-var form_3 = document.querySelector(".form_3");
-
-
-var form_1_btns = document.querySelector(".form_1_btns");
-var form_2_btns = document.querySelector(".form_2_btns");
-var form_3_btns = document.querySelector(".form_3_btns");
-
-
-var form_1_next_btn = document.querySelector(".form_1_btns .btn_next");
-var form_2_back_btn = document.querySelector(".form_2_btns .btn_back");
-var form_2_next_btn = document.querySelector(".form_2_btns .btn_next");
-var form_3_back_btn = document.querySelector(".form_3_btns .btn_back");
-
-var form_2_progessbar = document.querySelector(".form_2_progessbar");
-var form_3_progessbar = document.querySelector(".form_3_progessbar");
-
-var btn_done = document.querySelector(".btn_done");
-var modal_wrapper = document.querySelector(".modal_wrapper");
-var shadow = document.querySelector(".shadow");
-
-form_1_next_btn.addEventListener("click", function(){
-	form_1.style.display = "none";
-	form_2.style.display = "block";
-
-	form_1_btns.style.display = "none";
-	form_2_btns.style.display = "flex";
-
-	form_2_progessbar.classList.add("active");
 });
 
-form_2_back_btn.addEventListener("click", function(){
-	form_1.style.display = "block";
-	form_2.style.display = "none";
 
-	form_1_btns.style.display = "flex";
-	form_2_btns.style.display = "none";
+// Initialize the Signature Pad
+var signaturePad = new SignaturePad(document.querySelector("#signature-pad canvas"));
+//  handle the second signature
+var applicantSignaturePad = new SignaturePad(document.querySelector("#applicant-signature-pad canvas"));
 
-	form_2_progessbar.classList.remove("active");
+// Clear the e-signature without reloading the page
+document.getElementById("clear-signature").addEventListener("click", function (e) {
+    e.preventDefault(); // Prevent the default form submission behavior
+    signaturePad.clear();
+});
+// Clear the applicant's e-signature without reloading the page
+document.getElementById("clear-applicant-signature").addEventListener("click", function (e) {
+    e.preventDefault(); // Prevent the default form submission behavior
+    applicantSignaturePad.clear();
 });
 
-form_2_next_btn.addEventListener("click", function(){
-	form_2.style.display = "none";
-	form_3.style.display = "block";
 
-	form_3_btns.style.display = "flex";
-	form_2_btns.style.display = "none";
 
-	form_3_progessbar.classList.add("active");
-});
+// Function to submit the form with both e-signatures
+function submitForm() {
+    var userSignatureData = signaturePad.toDataURL(); // Get the user's e-signature as data URL
+    var applicantSignatureData = applicantSignaturePad.toDataURL(); // Get the applicant's e-signature as data URL
 
-form_3_back_btn.addEventListener("click", function(){
-	form_2.style.display = "block";
-	form_3.style.display = "none";
+    // You can send the signature data to the server or handle it as needed
+    // For demonstration, we'll log it to the console
+    console.log("User's E-Signature Data: ", userSignatureData);
+    console.log("Applicant's E-Signature Data: ", applicantSignatureData);
+    alert("Form submitted with e-signatures. Check the console for the e-signature data.");
+}
 
-	form_3_btns.style.display = "none";
-	form_2_btns.style.display = "flex";
-
-	form_3_progessbar.classList.remove("active");
-});
-
-btn_done.addEventListener("click", function(){
-	modal_wrapper.classList.add("active");
-})
-
-shadow.addEventListener("click", function(){
-	modal_wrapper.classList.remove("active");
-})
+function jsPDFLoaded() {
+    document.getElementById('myForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent the default form submission
+  
+      // Get form data
+      const formData = new FormData(this);
+  
+      // Prepare the content for the PDF
+      let content = '';
+      for (let pair of formData.entries()) {
+        content += `${pair[0]}: ${pair[1]}\n`;
+      }
+  
+      // Create a new PDF document
+      const doc = new jsPDF();
+  
+      // Add content to the PDF
+      doc.text(content, 10, 10);
+  
+      // Save the PDF file
+      doc.save('form_submission.pdf');
+    });
+  }
