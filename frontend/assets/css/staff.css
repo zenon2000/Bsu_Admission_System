@@ -1112,6 +1112,36 @@ nav {
 	background-color: var(--light-gray);
 }
 
+/*Tab like button for Student Result*/
+.tab-button {
+  padding: 10px 20px;
+  background-color: var(--lighter-grey);
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  margin-top: 20px;
+  border-radius: 3px;
+}
+
+.tab-button:hover {
+	background-color: var(--light-green);
+	color:var(--gray);
+  }
+  
+.tab-button.active {
+  background-color: var(--green);
+}
+
+/* Style for tab content */
+.tab-content {
+	display: none;
+  }
+  
+  /* Display the active tab content */
+  .tab-content.active {
+	display: block;
+  }
+
 /* Adjust the margin between the icon and input */
 #searchIcon {
     margin-right: -5px; 
