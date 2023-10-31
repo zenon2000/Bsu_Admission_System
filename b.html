@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating PDF from HTML</title>
+    <link rel="stylesheet" href="b.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.debug.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js" ></script>
+</head>
+<body>
+    <div id="whatToPrint" ">
+        <div class="form_wrap">
+            <div class="form_1 data_info">
+                <h2>General Guidelines</h2>
+                
+                <form>
+                    <div class="form_1_wrap">
+                        <div class="gen-instructions">
+                            <p class="ins-text"><strong><u>GENERAL INSTRUCTIONS</u></strong></p>
+                            <ol class="numbered-list">
+                                <li>Read and understand the Admission Guidelines and requirements before proceeding to the next step.</li>
+                                <li>Fill out all the fields completely and accurately in this application form for admission.</li>
+                                <li>Submit the Application form with complete requirements.</li>
+                            </ol>
+                        </div>
+                       
+                    
+                    <div class="guidelines">
+                        <p>• Submitted documents in compliance with the application for admission shall become the property of BSU and will not be returned to the applicant. As such, required photocopies of documents must be submitted and not original documents.</p>
+                        
+                        <p> • <i><u>Admission to the university is based on:</u></i></p>
+                      
+                        <ol class="numbered-list">
+                            <li>General Weighted Average (GWA) requirement: 86% or better for degree programs with licensure examination ("board programs"), and 80% or better for degree programs not requiring a licensure examination ("non-board programs").</li>
+                            <li>Grade requirement of 86% or better for courses (subjects) English, Math, and Science for degree programs with licensure examination ("board programs").</li>
+                            <li>Result of an interview of qualified Applicants (Qualifiers) by the College or Campus offering the degree program chosen (Interview based on grades).</li>
+                            <li>Extracurricular activities may be considered in the qualification of the applicant.</li>
+                            <li>Quota requirement (limit on the maximum number of students/sections that may be admitted per degree program) of the various degrees of the different colleges and campuses where the ranking of an applicant among all other applicants is considered.</li>
+                        </ol>
+                        <p>•	Notice of result of application for admission shall be announced through the FB page of Admission-Benguet State University or the BSU website. For data privacy purposes, the Control Number of the Applicant shall be the data that will be posted.</p>
+                    </div>
+                    
+                    <div class="applicant_classification">
+                        <p class="applicant-classification-text"><i><b>Classification of the applicant.</b></i> An Applicant may only be classified in one category (except for second degree transferee):</p>
+                        <ol class="applicant-classification-list">
+                            <li>Senior High School Graduates - those who did not enroll in any technical/vocational/college degree program in any other school after graduation.</li>
+                            <li>High School of the Old High school curriculum - those who did not enroll in any college degree program in any other school after graduation from high school.</li>
+                            <li>Grade 12 as of application period - those who are currently enrolled as Grade 12.</li>
+                            <li>ALS/PEPT Completers - those whose ALS/PEPT Certificate of Rating indicates that they are eligible for College Admission/Rating is equivalent to Senior High and similar terms.</li>
+                            <li>Transferees - those who started college schooling in another school and intend to continue schooling in BSU.</li>
+                            <li>Second Degree - those who have already graduated from a degree program in College. This may either be Second degree (BSU graduate of a Baccalaureate program) or Second Degree-transferees (Graduates of a Baccalaureate degree from another school who will enroll another degree in BSU).</li>
+                        </ol>
+                    </div>
+                    <div class="Classification-requirements">
+                        <p><strong><u><i>Requirements per application classification:</i></u></strong></p>
+                        <ol>
+                            <li><strong>I. Senior High School Graduate who did not enroll in any college degree program/technical/vocational/degree program in any other school after graduation and will only enroll for the immediately following School Year:</strong>
+                                <ul class="document-list">
+                                    <li>a. Photocopy /scanned copy of PSA (formerly NSO) Birth Certificate</li>
+                                    <li>b. Photocopy /scanned copy of PSA (formerly NSO) Marriage Certificate for married females using the family name/surname of the husband</li>
+                                    <li>c. Hard copy One (1) 2x2 recent formal studio "type" photo (not necessarily taken in a studio) with nametag</li>
+                                    <li>d. Certified true copy of Grade 12 Report Card. Photocopy /scanned copy will suffice if the applicant can present the original copy for comparison purposes.</li>
+                                    <li>e. Certification of Enrollment from the last school attended (most recent).</li>
+                                </ul>
+                            </li>
+                    
+                            <li><strong>II. High School Graduate of the Old High School curriculum who did not enroll in any college degree program in any other school after graduation from high school and will only enroll this S.Y. 2021-2022:</strong>
+                                <ul class="document-list">
+                                    <li>a. Photocopy /scanned copy of PSA (formerly NSO) Birth Certificate</li>
+                                    <li>b. Photocopy /scanned copy of PSA (formerly NSO) Marriage Certificate for married females using the family name/surname of the husband</li>
+                                    <li>c. Hard copy One (1) 2x2 recent formal studio "type" photo (not necessarily taken in a studio) with nametag</li>
+                                    <li>d. Certified true copy of High School Card/Form 138. Photocopy /scanned copy will suffice if the applicant can present the original copy for comparison purposes.</li>
+                                    <li>e. Certification of Enrollment from the last school attended (most recent).</li>
+                                </ul>
+                            </li>
+                    
+                            <li><strong>III. Grade 12 as of application period (Currently enrolled as Grade 12):</strong>
+                                <ul class="document-list">
+                                    <li>a. Photocopy /scanned copy of PSA (formerly NSO) Birth Certificate</li>
+                                    <li>b. Photocopy /scanned copy of PSA (formerly NSO) Marriage Certificate for married females using the family name/surname of the husband</li>
+                                    <li>c. Hard copy One (1) 2x2 recent formal studio "type" photo (not necessarily taken in a studio) with nametag</li>
+                                    <li>d. Certified photocopy of Grade 11 Card</li>
+                                    <li>e. Certification of Enrollment from the last school attended.</li>
+                                </ul>
+                            </li>
+                    
+                            <li><strong>IV. ALS/PEPT Completer:</strong>
+                                <ul class="document-list">
+                                    <li>a. Photocopy /scanned copy of PSA (formerly NSO) Birth Certificate</li>
+                                    <li>b. Photocopy /scanned copy of PSA (formerly NSO) Marriage Certificate for married females using the family name/surname of the husband</li>
+                                    <li>c. Hard copy One (1) 2x2 recent formal studio "type" photo (not necessarily taken in a studio) with nametag</li>
+                                    <li>d. Certified true copy ALS Certificate of Rating – For completers of Alternative Learning System (ALS) OR PEPT. Photocopy /scanned copy will suffice if the applicant can present the original copy for comparison purposes.</li>
+                                    <li>e. Certification of Enrollment from the last school attended (most recent).</li>
+                                </ul>
+                            </li>
+                    
+                            <li><strong>V. Transferee:</strong>
+                                <ul class="document-list">
+                                    <li>a. Photocopy /scanned copy of PSA (formerly NSO) Birth Certificate</li>
+                                    <li>b. Photocopy /scanned copy of PSA (formerly NSO) Marriage Certificate for married females using the family name/surname of the husband</li>
+                                    <li>c. Hard copy One (1) 2x2 recent formal studio "type" photo (not necessarily taken in a studio) with nametag</li>
+                                    <li>d. Certified true copy of Copy of Grades or Transcript of Records (Applicable only for Second Degree Transferees). Photocopy /scanned copy will suffice if the applicant can present the original copy for comparison purposes.</li>
+                                    <li>e. Certification of Enrollment from the last school attended (most recent) or presently enrolled in.</li>
+                                    <li>f. Certification of General Weighted Average (GWA) issued by the Registrar's Office/equivalent Office of your previous School.</li>
+                                </ul>
+                            </li>
+                    
+                            <li><strong>VI. Second Degree:</strong>
+                                <ul class="document-list">
+                                    <li>a. Photocopy /scanned copy of PSA (formerly NSO) Birth Certificate</li>
+                                    <li>b. Photocopy /scanned copy of PSA (formerly NSO) Marriage Certificate for married females using the family name/surname of the husband</li>
+                                    <li>c. Hard copy One (1) 2x2 recent formal studio "type" photo (not necessarily taken in a studio) with nametag</li>
+                                    <li>d. Certified true copy of Copy of Grades or Transcript of Records (Applicable only for Second Degree Transferees). Photocopy /scanned copy will suffice if the applicant can present the original copy for comparison purposes.</li>
+                                    <li>e. Photocopy/scanned copy of Grades or Transcript of Records for graduates Where BSU is the last school attended</li>
+                                    <li>f. Certification of Enrollment from the last school attended (most recent) or presently enrolled in.</li>
+                                    <li>g. Certification of General Weighted Average (GWA) issued by the Registrar's Office/equivalent Office of your previous School.</li>
+                                </ul>
+                            </li>
+                           
+                        </ol>
+                    </div>
+                    <br>
+                    <div class="note">
+                        <p>                        NOTE:PROCEED ONLY TO THE NEXT STEP IF ALL REQUIREMENTS ARE COMPLETE!
+                        </p>
+                    </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                <br><br>
+              </div>
+
+                </form>
+            </div>
+        <a href="javascript:generatePDF()" id="downloadButton">Click to download</a>
+    </div>
+
+    <script>
+        async function generatePDF() {
+            document.getElementById("downloadButton").innerHTML = "Currently downloading, please wait";
+
+            //Downloading
+            var downloading = document.getElementById("whatToPrint");
+            var doc = new jsPDF('l', 'pt');
+
+            await html2canvas(downloading, {
+                //allowTaint: true,
+                //useCORS: true,
+                width: 530
+            }).then((canvas) => {
+                //Canvas (convert to PNG)
+                doc.addImage(canvas.toDataURL("image/png"), 'PNG', 5, 5, 500, 200);
+            })
+
+            doc.save("Document.pdf");
+
+            //End of downloading
+
+            document.getElementById("downloadButton").innerHTML = "Click to download";
+        }
+    </script>
+</body>
+</html>
+
+<!--
+
+HTML + CSS -> PNG (html2canvas)
+PNG -> Add to PDF (jsPDF)
+Download PDF (jsPDF)
+
+-->

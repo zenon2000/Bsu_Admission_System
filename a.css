@@ -35,10 +35,11 @@
         }
 
         /* CSS for the "BENGUET STATE UNIVERSITY" heading */
-        .brand h2 {
+        .brand h1 {
             font-family: Algerian, sans-serif;
             font-size: 36px;
             margin: 0;
+            letter-spacing: 5px;
         }
         form{
             background: #ffffff;
@@ -63,6 +64,7 @@
           
           .index-btn-wrapper{
             display: flex;
+            margin-top: 20px;
           }
           
           .index-btn{
@@ -179,15 +181,26 @@ input[type="file"] {
   }
   
   /* Styles for the signature pad */
+  
+  .applicant-signature-container {
+    display: flex;
+    justify-content: flex-end; /* Align to the right */
+}
+
+.signature-label {
+    text-align: right; /* Align the text to the right */
+    margin-bottom: 10px; /* Add margin at the bottom */
+}
+
 .signature-pad {
-    border:2px dashed #666;
-    width:60.5vh;
+    border: 2px dashed #666;
+    width: 60.5vh;
     height: 150px;
 }
 
 .signature-pad canvas {
     border: 0;
-    width:60.5vh;
+    width: 60.5vh;
     height: 150px;
 }
 
@@ -198,6 +211,10 @@ input[type="file"] {
     border: none;
     cursor: pointer;
     margin-top: 10px;
+}
+
+.applicant-signature-container #clear-applicant-signature {
+    margin-left: auto; /* Align the clear button to the right */
 }
 
 #clear-signature:hover {
@@ -232,4 +249,99 @@ input[type="file"] {
     font-size: 14px;
     margin: 0;
     ;
+}
+
+h2 {
+  text-align: center;
+}
+
+.table-3-class {
+  border-collapse: collapse;
+  width: 20%;
+  margin-top: 20px;
+  float: right; /* Align to the left */
+  font-size: 12px; /* Adjust font size */
+}
+.table-3-class td {
+  border: 1px solid #000;
+  padding: 4px;
+  text-align: right; /* Align text to the left */
+}
+.table-3-class tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+.privacy-heading {
+  font-size: 25px; /* Adjust the font size as needed */
+  margin-top: 120px; /* Add margin to separate from the table */
+}
+
+p.privacy-notice {
+  text-align: justify; /* Justify align the text */
+  font-size: 16px; /* Adjust the font size as needed */
+  line-height: 1.5; /* Adjust the line height for readability */
+}
+
+.form-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px; /* Adjust the gap between form groups */
+}
+
+.form-group {
+  flex: 1; /* Make the form groups occupy available space */
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: -6px;
+}
+
+.form-group input {
+  width: 100%; /* Input fields occupy the available width */
+  margin-bottom: 10px;
+  border-radius: 5px; /* Adding border radius */
+  padding: 8px; /* Optional: Adjust padding for better appearance */
+  border: 1px solid #ccc; /* Optional: Border for input fields */
+}
+
+p.to-be-filled{
+  font-weight: bold;
+  font-size: 24px; /* You can adjust the size as needed */
+
+  margin-top: 15px;
+
+}
+p.attestation-head {
+  text-align: center; /* Center align the text */
+  font-size: 28px; /* Adjust the font size as needed */
+  font-weight: bold; /* Make the font bold */
+  margin: 20px; /* Add margin at the bottom */
+
+}
+
+p.attestation-note {
+  text-align: justify; /* Justify align the text */
+  font-size: 17px; /* Adjust the font size as needed */
+  line-height: 1.5; /* Adjust the line height for readability */
+}
+
+.applicant_number {
+  display: flex;
+  align-items: center;
+}
+
+.applicant_number label {
+  width: 150px; /* Adjust the width of the label */
+}
+
+.applicant_number input {
+  width: 100px; /* Adjust the width of the input */
+  margin-left: 10px; /* Add margin between label and input */
+  border: none; /* Remove the border */
+}
+p.acknowledge-text {
+  font-size: 16px; /* Adjust the font size as needed */
+  line-height: 1.6; /* Adjust the line height for readability */
+  margin: 10px 0; /* Add margin for spacing */
 }

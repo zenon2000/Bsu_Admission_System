@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="icon" href="frontend/assets/images/BSU Logo1.png" type="image/x-icon">
     <link rel="stylesheet" href="a.css">
+    <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
 
 </head>
 
@@ -43,7 +44,7 @@
             <span class="step" id="step-4">4</span>
         </div>
 
-        <div class="tab" id="tab-1">
+        <div class="tab" id="tab-3">
             <h1 align="center">GENERAL GUIDELINES</h1>
         
             <p>Read and understand the Admission Guidelines and requirements before proceeding to the next step.</p>
@@ -99,19 +100,75 @@
 
     
     <!--Form 3-->
-<div class="tab" id="tab-3">
-    <h2 align="center"> ACKNOWLEDGEMENT SLIP OF APPLICATION FOR ADMISSION</h2>
-    <p>Birthday:</p>
-    <input type="text" placeholder="dd" name="dd">
-    <input type="text" placeholder="mm" name="mm">
-    <input type="text" placeholder="yy" name="yy">
-    
-    <p>Applicant's E-Signature:</p>
-    <div id="applicant-signature-pad" class="signature-pad">
-        <canvas></canvas>
-        <button class="clear-signature" id="clear-applicant-signature">Clear</button>
+<div class="tab" id="tab-1">
+    <br>
+    <h2>ACKNOWLEDGEMENT SLIP OF APPLICATION FOR ADMISSION</h2>
+   
+    <table class="table-3-class">
+        <tr>
+            <td>Document
+                Code:
+                </td>
+            <td>QF-ADM-
+                08
+                </td>
+            <td>Rev.
+                No.:
+                </td>
+            <td>01&nbsp</td>
+        </tr>
+        <tr>
+            <td>Effectivity
+                Date:
+                
+                </td>
+            <td>January 5,
+                2023
+                </td>
+            <td colspan="2">&nbsp</td>
+        </tr>
+   
+       </table>
+       <h3 class="privacy-heading">PRIVACY NOTICE</h3>
+         <p class="privacy-notice">
+        Pursuant to the Data Privacy Act of 2012 and the BSU Data Policy from the Office of the University Registrar, concerned Personnel of BSU La Trinidad, BSU Buguias Campus, and Bokod Campus are committed to keep with utmost confidentiality all sensitive personal information collected from applicants. Personal information is collected, accessed, used, and disclosed on a "need to know basis" and only as reasonably required. Confidential information either within or outside the University will not be communicated except to persons authorized to receive such information. Authorized hardware, software, or other authorized equipment shall be used only in accessing, processing, and transmitting such information. Read more on BSU Data Privacy Notice: <a href="http://www.bsu.edu.ph/dpa/bsu-data-privacy-notice-students">http://www.bsu.edu.ph/dpa/bsu-data-privacy-notice-students</a>.
+    </p>
+   
+    <p class="to-be-filled">To be filled-out by Applicant</p>
+      
+    <div class="form-container">
+        <div class="form-group">
+            <label for="applicant_name">Name of Applicant</label>
+            <input type="text" placeholder="Enter Full Name" name="applicant_name">
+        </div>
+        <div class="form-group">
+            <label for="slip_degree">Degree applied for</label>
+            <input type="text" name="slip_degree" class="input" id="slip_degree" placeholder="Enter Degree">
+        </div>
+        <div class="form-group">
+            <label for="application_date">Date of Application</label>
+            <input type="date" name="application_date" class="input" id="application_date" required>
+        </div>
     </div>
-
+    <p class="attestation-head" style="text-align: center;">Attestation and Consent</p>
+                           
+    <p class="attestation-note">I affirm that I have read and understood all the instructions contained in this application form that the information suplied are true. I affirm that I have read and understood all the instructions contained in this application form that the information suplied are true. I affirm that I have read and understood all the instructions contained in this application form that the information suplied are true.I affirm that I have read and understood all the instructions contained in this application form that the information suplied are true.</p>
+                         
+    <div class="applicant_number">
+        <label for="applicant_number" class="applicant_number"> Applicant Number: </label>
+        <input type="text" name="applicant_number" id="applicant_number" readonly>
+    </div>
+    
+    
+    <p class="signature-label">Applicant's E-Signature:</p>
+    <div class="applicant-signature-container">
+        <div id="applicant-signature-pad" class="signature-pad">
+            <canvas></canvas>
+            <i class='bx bx-x'></i> 
+        </button>
+        </div>
+    </div>
+    
     <div class="index-btn-wrapper">
         <div class="index-btn" onclick="run(3, 2);">Previous</div>
         <div class="index-btn" onclick="run(3, 4);">Next</div>
