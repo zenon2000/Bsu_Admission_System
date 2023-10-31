@@ -1,0 +1,127 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: rgba(44, 41, 41, 0.166);
+    background-size: cover;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    background: rgba(255, 255, 255, 0.852);
+    padding: 28px;
+    margin: 0 15px;
+    border-radius: 10px;
+    box-shadow: 0 5px rgb(249, 249, 249);
+}
+
+.form-title {
+    font-size: 26px;
+    font-weight: 600;
+    text-align: center;
+    padding-bottom: 6px;
+    color: rgb(0, 0, 0);
+    border-bottom: solid 1px rgb(0, 0, 0);
+}
+
+.main-user-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 5px 0;
+    margin-top: -10px;
+}
+
+.user-input-box {
+    display: flex;
+    flex-wrap: wrap;
+    width: calc(50% - 10px);
+    padding-bottom: 15px;
+}
+
+.user-input-box:nth-child(2n) {
+    margin-right: 0;
+}
+
+.user-input-box label {
+    width: 100%;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    font-weight: 400;
+    margin: 5px 0;
+}
+
+.user-input-box input,
+.user-input-box select {
+    height: 40px;
+    width: 100%;
+    border-radius: 7px;
+    outline: none;
+    border: 1px solid grey;
+    padding: 0 10px;
+    margin-top: 5px;
+}
+
+.gender-category {
+    margin-top: 5px;
+}
+
+.gender-category label,
+.gender-category select,
+.form-submit-btn input {
+    cursor: pointer;
+}
+
+.form-submit-btn {
+    margin-top: 40px;
+}
+
+.form-submit-btn input {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    font-size: 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    color: rgb(255, 255, 255);
+    background: rgba(64, 230, 106, 0.7);
+}
+
+.form-submit-btn input:hover {
+    background: rgba(56, 204, 93, 0.7);
+}
+
+
+.user-input-box i{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgb(68, 71, 70);
+    font-size: 23px;
+    transition: all 0.2s ease;
+    padding: 8px 5px 0px 8px;    
+}
+
+.user-input-box input:is(:focus, :valid) ~ i{
+    color: rgb(36, 26, 174);
+}
+
+.user-input-box i.icon{
+    left: 0;
+}
+.user-input-box i.showHidePw {
+    right: 0;
+    cursor: pointer;
+    padding: 10px;
+}
