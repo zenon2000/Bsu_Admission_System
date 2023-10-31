@@ -135,26 +135,4 @@ function submitForm() {
     alert("Form submitted with e-signatures. Check the console for the e-signature data.");
 }
 
-function jsPDFLoaded() {
-    document.getElementById('myForm').addEventListener('submit', function(event) {
-      event.preventDefault(); // Prevent the default form submission
-  
-      // Get form data
-      const formData = new FormData(this);
-  
-      // Prepare the content for the PDF
-      let content = '';
-      for (let pair of formData.entries()) {
-        content += `${pair[0]}: ${pair[1]}\n`;
-      }
-  
-      // Create a new PDF document
-      const doc = new jsPDF();
-  
-      // Add content to the PDF
-      doc.text(content, 10, 10);
-  
-      // Save the PDF file
-      doc.save('form_submission.pdf');
-    });
-  }
+

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admission Application</title>
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <link rel="icon" href="assets/images/BSU Logo1.png" type="image/x-icon">
-    <link rel="stylesheet" href="assets/css/admissionform.css">
+    <link rel="stylesheet" href="frontend\assets\css\admissionform.css">
 </head>
 <body>
     <header class="header">
@@ -172,7 +172,7 @@
                     
                     
                 <br><br>
-            </div>
+              </div>
 
                 </form>
             </div>
@@ -182,15 +182,15 @@
                 <p class="center-text">APPLICATION FOR ADMISSION</p>
                 
                 
-                <form>
-                    <div class="form_2_wrap">
+                <form id="applicationform" onsubmit="return validateForm()"> 
+                    <div class="form_2_wrap" >
                         
                     <div class="id-wrapper" id="id_container">
                         <div class="id_wrap">
                             <div class="text-placeholder">
                               <br>  Submit recent 2x2 ID Picture<br>with signature over printed name
                             </div>
-                            <label class="small-label" for="display_picture"></label>
+                           
                             <div class="display-picture-box">
                                 <img id="display_picture" alt="">
                             </div>
@@ -199,7 +199,7 @@
                             <label class="small-label" for="profile_picture" style="cursor: pointer;">
                                 <i class="bx bx-cloud-download" id="submit-button"></i>
                             </label>
-                            <input type="file" name="profile_picture" accept="image/*" class="input" id="profile_picture" style="display: none;">
+                            <input type="file" name="profile_picture" accept="image/*" class="input" id="profile_picture" style="display: none;" required>
                         </div>
                        
                         
@@ -219,52 +219,52 @@
                     <br>
                     <div class="form_container" id="full-name">
                       <div class="input_wrap" style="width: 20%;"> <!-- Add margin-bottom to create space -->
-                        <label class="small-label" class="small-label class="small-label"" for="last_name">Full Name</label>
+                        <label class="small-label"  for="last_name">Full Name</label>
                         <input type="text" name="last_name" class="input" id="last_name" placeholder="Last Name" required>
                     </div>
                         
                      <div class="input_wrap" style="width: 20%;">
-                        <label class="small-label" class="small-label class="small-label"" for="first_name">&nbsp</label>
-                         <input type="text" name="first_name" class="input" id="first_name" placeholder="First Name" required>
+                        <label class="small-label" for="first_name">&nbsp</label>
+                         <input type="text" name="first_name" class="input" id="first_name" placeholder="First Name" autocomplete="name" required>
                      </div>
                         
                         <div class="input_wrap" style="width: 20%;">
                             <label class="small-label" for="middle_name">&nbsp</label>
                             <input type="text" name="middle_name" class="input" id="middle_name" placeholder="Middle Name" required>
                         </div>      
-                        <div class="input_wrap" id="gender" style="width: 15%;">
-                            <label class="small-label" class="small-label class="small-label"" for="gender">Gender at birth</label>
-                            <select name="gender" class="input" id="gender">
+                        <div class="input_wrap" style="width: 15%;">
+                            <label class="small-label" for="gender">Gender at birth</label>
+                            <select name="gender" class="input" id="gender" required>
                                 <option value=""disabled selected>Select Gender</option>
                                 <option value="male">Male</option>
                                 <option value="female">Female</option>
                             </select>
                         </div>
-                        <div class="input_wrap" id="birthdate" style="width: 15%;">
-                            <label class="small-label" class="small-label class="small-label"" for="birthdate">Birthdate</label>
+                        <div class="input_wrap" id="birthdate_wrap" style="width: 15%;">
+                            <label class="small-label" for="birthdate" >Birthdate</label>
                             <input type="date" name="birthdate" class="input" id="birthdate" required>
                         </div>
                     </div>
                     
                    
-                    <div class="form_container" id="birthplace" ">
-                        <div class="input_wrap" style="width: 20%;"> <!-- Add margin-bottom to create space -->
-                            <label class="small-label" class="small-label class="small-label"" for="birthplace">Birthplace</label>
-                            <input type="text" name="birthplace_municipality" class="input" id="birthplace_municipality" placeholder="Municipality/City" required>
+                    <div class="form_container" >
+                        <div class="input_wrap" id="birthplace_wrap" style="width: 20%;"> <!-- Add margin-bottom to create space -->
+                            <label class="small-label" for="birthplace-municipality">Birthplace</label>
+                            <input type="text" name="birthplace-municipality" class="input" id="birthplace-municipality" placeholder="Municipality/City" required>
                         </div>
                           
                           <div class="input_wrap" style="width: 20%;">
-                              <label class="small-label" for="">&nbsp</label>
-                              <input type="text" name="birthplace_province" class="input" id="birthplace_province" placeholder="Province" required>
+                              <label class="small-label" for="birthplace-province">&nbsp</label>
+                              <input type="text" name="birthplace-province" class="input" id="birthplace-province" placeholder="Province" required>
                             </div>
                           
                           <div class="input_wrap" style="width: 20%;">
-                              <label class="small-label" for="">&nbsp</label>
+                              <label class="small-label" for="birthplace_country">&nbsp</label>
                               <input type="text" name="birthplace_country" class="input" id="birthplace_country" placeholder="Country" required>
                           </div>    
                           <div class="input_wrap" style="width: 15%;">
                             <label class="small-label" for="age">Age</label>
-                            <input type="number" name="age" class="input" id="age" placeholder="Age" required>
+                            <input type="number" name="age" class="input" id="age" placeholder="Age"  required>
                         </div>  
                         <div class="input_wrap" style="width: 15%;">
                             <label class="small-label" for="civil_status">Civil Status</label>
@@ -322,7 +322,7 @@
                  <div class="form_container" id="contact">
                     <div class="input_wrap">
                         <label class="small-label" for="phone">Telephone/Mobile No.</label>
-                        <input type="tel" name="phone" class="input" id="phone" placeholder="telephone or mobile number" required>
+                        <input type="tel" name="phone" class="input" id="phone" placeholder="telephone or mobile number"  autocomplete="number" required>
                     </div>
                     <div class="input_wrap">
                         <label class="small-label" for="facebook">Facebook Account Name</label>
@@ -330,42 +330,42 @@
                     </div>
                     <div class="input_wrap">
                         <label class="small-label" for="email">Email Address</label>
-                        <input type="email" name="email" class="input" id="email" placeholder="Enter active email address" required>
+                        <input type="email" name="email" class="input" id="email" placeholder="Enter active email address" autocomplete="email:" required>
                     </div>
                 </div>
     
-                <p class="head_information">Contact person(s) in case of emergency</p>
+                <p class="head_information">First contact person(s) in case of emergency</p>
                 <br>
-                <div class="form_container" id="contact_person">
+                <div class="form_container" id="first_first_contact_person">
                     <div class="input_wrap">
-                        <label class="small-label" for="contact_name" ">Contact Person's Name</label>
-                        <input type="text" name="contact_name" class="input" id="contact_name" placeholder="Full Name" required>
+                        <label class="small-label" for="first_contact_name">first_contact Person's Name</label>
+                        <input type="text" name="first_contact_name" class="input" id="first_contact_name" placeholder="Full Name" required>
                     </div>
                     <div class="input_wrap">
-                        <label class="small-label" for="contact_mobile">Mobile Number</label>
-                        <input type="tel" name="contact_mobile" class="input" id="contact_mobile" placeholder="Mobile Number" required >
+                        <label class="small-label" for="first_contact_mobile">Mobile Number</label>
+                        <input type="tel" name="first_contact_mobile" class="input" id="first_contact_mobile" placeholder="Mobile Number" required >
                     </div>
                     <div class="input_wrap">
-                        <label class="small-label" for="relationship_with_contact_person">Relationship with Contact Person</label>
-                        <select name="relationship_with_contact_person" class="input" id="relationship_with_contact_person" required>
+                        <label class="small-label" for="relationship-first">Relationship with Contact Person</label>
+                        <select name="relationship-first" class="input" id="relationship-first" required>
                             <option value="" disabled selected>Select Relationship</option>
                             <option value="parent">Parent</option>
                             <option value="guardian">Guardian</option>
                         </select>
                     </div>
                 </div>
-                <div class="form_container" id="contact_person">
+                <div class="form_container" id="second_contact_person">
                     <div class="input_wrap">
-                        <label class="small-label" for="contact_name">Contact Person's Name</label>
-                        <input type="text" name="contact_name" class="input" id="contact_name" placeholder="Full Name" required>
+                        <label class="small-label" for="second_contact_name">Contact Person's Name</label>
+                        <input type="text" name="second_contact_name" class="input" id="second_contact_name" placeholder="Full Name" required>
                     </div>
                     <div class="input_wrap">
-                        <label class="small-label" for="contact_mobile">Mobile Number</label>
-                        <input type="tel" name="contact_mobile" class="input" id="contact_mobile" placeholder="Mobile Number" required>
+                        <label class="small-label" for="second_contact_mobile">Mobile Number</label>
+                        <input type="tel" name="second_contact_mobile" class="input" id="second_contact_mobile" placeholder="Mobile Number" required>
                     </div>
                     <div class="input_wrap">
-                        <label class="small-label" for="relationship_with_contact_person">Relationship with Contact Person</label>
-                        <select name="relationship_with_contact_person" class="input" id="relationship_with_contact_person" required>
+                        <label class="small-label" for="relationship-second">Relationship with Contact Person</label>
+                        <select name="relationship-second" class="input" id="relationship-second" required>
                             <option value="" disabled selected>Select Relationship</option>
                             <option value="parent">Parent</option>
                             <option value="guardian">Guardian</option>
@@ -374,7 +374,7 @@
                 </div>
                 <p class="head_information">Academic Classification:</p>
               <br>
-                <div class="form_container" id="academic_classification">
+                <div class="form_container" id="academic_classification_container">
                     <div class="input_wrap" style="width: 50%;">
                         <label class="small-label" for="academic_classification">Academic Classification</label>
                         <select name="academic_classification" class="input" id="academic_classification" required>
@@ -390,8 +390,33 @@
                     </div>
                 </div>
                 <br>
+                <div class="form_container" id="picture_submissions" style="display: none;">
+                    <p class="head_information">Picture Submissions:</p>
+                    <br>
+                    <div class="input_wrap">
+                        <label class="small-label" id="PSA" for="psa_birth_certificate">PSA (formerly NSO) Birth Certificate</label>
+                        <input type="file" name="psa_birth_certificate" class="input" id="psa_birth_certificate">
+                    </div>
+                    <div class="input_wrap">
+                        <label class="small-label" for="psa_marriage_certificate">PSA (formerly NSO) Marriage Certificate for married females using the family name/surname of the husband</label>
+                        <input type="file" name="psa_marriage_certificate" class="input" id="psa_marriage_certificate">
+                    </div>
+                    <div class="input_wrap">
+                        <label class="small-label" for="photo">One (1) 2x2 recent formal studio "type" photo (not necessarily taken in a studio) with nametag</label>
+                        <input type="file" name="photo" class="input" id="photo">
+                    </div>
+                    <div class="input_wrap">
+                        <label class="small-label" for="grade_12_report_card">Certified true copy of Grade 12 Report Card</label>
+                        <input type="file" name="grade_12_report_card" class="input" id="grade_12_report_card">
+                    </div>
+                    <div class="input_wrap">
+                        <label class="small-label" for="enrollment_certification">Certification of Enrollment from the last school attended (most recent)</label>
+                        <input type="file" name="enrollment_certification" class="input" id="enrollment_certification">
+                    </div>
+                </div>
+                
                 <p class="head_information">Academic Background <i style="font-weight: normal; font-size: 14px;">(Fill out ALL that is applicable): (Data will be used to counter-check correctness of academic information)</i></p>
-    <br>
+               <br>
                 <div class="form_container" id="academic_background">
                  
                     <div class="input_wrap" style="width: 20%;">
@@ -419,8 +444,87 @@
                         <p class="head_information">Degree</p>
                         <br>
                         <label class="small-label" for="degree_applied">Degree Applied For in BSU</label>
-                        <input type="text" name="degree_applied" class="input" id="degree_applied" required placeholder="Enter Degree Applied For">
+                        <select name="degree_applied" class="input" id="degree_applied" required>
+                            <option value="">Select Degree Applied For</option>
+                
+                            <optgroup label="College of Agriculture">
+                                <option value="Bachelor of Science in Agriculture (BSA)">Bachelor of Science in Agriculture (BSA)</option>
+                                <option value="Bachelor of Science in Agribusiness (BSAB)">Bachelor of Science in Agribusiness (BSAB)</option>
+                            </optgroup>
+                
+                            <optgroup label="College of Teacher Education">
+                                <option value="Bachelor of Secondary Education (BSE)">Bachelor of Secondary Education (BSE)</option>
+                                <option value="Bachelor of Elementary Education (BEE)">Bachelor of Elementary Education (BEE)</option>
+                                <option value="Bachelor of Early Childhood Education">Bachelor of Early Childhood Education</option>
+                                <option value="Bachelor of Technology and Livelihood Education">Bachelor of Technology and Livelihood Education</option>
+                            </optgroup>
+                
+                            <optgroup label="College of Arts and Humanities">
+                                <option value="Bachelor of Arts in Communication">Bachelor of Arts in Communication</option>
+                                <option value="Bachelor of Arts in English Language">Bachelor of Arts in English Language</option>
+                                <option value="Bachelor of Arts in Filipino Language">Bachelor of Arts in Filipino Language</option>
+                            </optgroup>
+                
+                            <optgroup label="College of Natural Sciences">
+                                <option value="Bachelor of Science in Biology">Bachelor of Science in Biology</option>
+                                <option value="Bachelor of Science in Environmental Science">Bachelor of Science in Environmental Science</option>
+                                <option value="Bachelor of Science in Chemistry">Bachelor of Science in Chemistry</option>
+                            </optgroup>
+                
+                            <optgroup label="College of Numeracy and Applied Sciences">
+                                <option value="Bachelor of Science in Mathematics">Bachelor of Science in Mathematics</option>
+                                <option value="Bachelor of Science in Statistics">Bachelor of Science in Statistics</option>
+                            </optgroup>
+                
+                            <optgroup label="College of Social Sciences">
+                                <option value="Bachelor of Arts in History">Bachelor of Arts in History</option>
+                                <option value="Bachelor of Arts in Psychology">Bachelor of Arts in Psychology</option>
+                            </optgroup>
+                
+                            <optgroup label="College of Home Economics and Technology">
+                                <option value="Bachelor of Science in Hospitality Management">Bachelor of Science in Hospitality Management</option>
+                                <option value="Bachelor of Science in Nutrition and Dietetics">Bachelor of Science in Nutrition and Dietetics</option>
+                                <option value="Bachelor of Science in Entrepreneurship specialized in Apparel & Fashion Enterprise">Bachelor of Science in Entrepreneurship specialized in Apparel & Fashion Enterprise</option>
+                                <option value="Bachelor of Science in Food Technology">Bachelor of Science in Food Technology</option>
+                                <option value="Bachelor of Science in Tourism Management">Bachelor of Science in Tourism Management</option>
+                                <option value="Bachelor of Science in Entrepreneurship specialized in Food Enterprise">Bachelor of Science in Entrepreneurship specialized in Food Enterprise</option>
+                            </optgroup>
+                
+                            <optgroup label="College of Public Administration and Governance">
+                                <option value="Bachelor in Public Administration">Bachelor in Public Administration</option>
+                                <option value="Diploma in Public Administration">Diploma in Public Administration</option>
+                                <option value="Certificate in Public Administration">Certificate in Public Administration</option>
+                            </optgroup>
+                
+                            <optgroup label="College of Human Kinetics">
+                                <option value="Bachelor of Science in Exercise and Sports Science">Bachelor of Science in Exercise and Sports Science</option>
+                                <option value="Bachelor in Physical Education">Bachelor in Physical Education</option>
+                            </optgroup>
+                
+                            <optgroup label="College of Engineering">
+                                <option value="Bachelor of Science in Agricultural and Biosystems Engineering">Bachelor of Science in Agricultural and Biosystems Engineering</option>
+                                <option value="Bachelor of Science in Civil Engineering">Bachelor of Science in Civil Engineering</option>
+                                <option value="Bachelor of Science in Industrial Engineering">Bachelor of Science in Industrial Engineering</option>
+                                <option value="Bachelor of Science in Electrical Engineering">Bachelor of Science in Electrical Engineering</option>
+                            </optgroup>
+                
+                            <optgroup label="College of Information Sciences">
+                                <option value="Bachelor of Library and Information Science (BLIS)">Bachelor of Library and Information Science (BLIS)</option>
+                                <option value="Bachelor of Science in Information Technology (BSIT)">Bachelor of Science in Information Technology (BSIT)</option>
+                                <option value="Bachelor of Science in Development Communication (BSCD) major in:">Bachelor of Science in Development Communication (BSCD) major in:</option>
+                            </optgroup>
+                
+                            <optgroup label="">
+                                <option value="Bachelor of Science in Forestry (BSF)">Bachelor of Science in Forestry (BSF)</option>
+                                <option value="Bachelor of Science in Nursing (BSN)">Bachelor of Science in Nursing (BSN)</option>
+                                <option value="Doctor of Veterinary Medicine (DVM)">Doctor of Veterinary Medicine (DVM)</option>
+                            </optgroup>
+                        </select>
                     </div>
+               
+                
+                
+                
                
                 <div class="input_wrap" style="width: 25%;">
                     <p class="head_information">Nature of Degree Program</p>
@@ -465,7 +569,7 @@
             <br><br><br>
            
                  </form>
-               
+                 <p id="error" class="error"></p>
 
             </div>
             <div class="form_3 data_info" style="display: none;">
@@ -598,11 +702,11 @@
             </div>
             <div class="common_btns form_2_btns" style="display: none;">
                 <button type="button" class="btn_back"><span class="icon"><ion-icon name="arrow-back-sharp"></ion-icon></span>Back</button>
-                <button type="button" class="btn_next">Next <span class="icon"><ion-icon name="arrow-forward-sharp"></ion-icon></span></button>
+                <button type="submit"  class="btn_next"  value="submit">Next <span class="icon"><ion-icon name="arrow-forward-sharp"></ion-icon></span></button>
             </div>
             <div class="common_btns form_3_btns" style="display: none;">
                 <button type="button" class="btn_back"><span class="icon"><ion-icon name="arrow-back-sharp"></ion-icon></span>Back</button>
-                <button type="button" class="btn_done">Done</button>
+                <button type="submit" value="submit" class="btn_done" id="doneButton">Done</button>
             </div>
         </div>
     </div>
@@ -617,6 +721,6 @@
   
       
            
-    <script src="admissionform.js"></script>
+    <script src="frontend\assets\js\admissionform.js"></script>
 </body>
 </html>
