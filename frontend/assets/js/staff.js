@@ -201,7 +201,10 @@ document.addEventListener("DOMContentLoaded", function () {
             profilePopup.style.display = "none";
         }
     });
+
+    
 });
+
 
 
 //pressing the box info and dashboard
@@ -294,6 +297,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
+ 
 //pressing Sidebar
 document.addEventListener('DOMContentLoaded', function () {
     const dashboardLink = document.getElementById('dashboard-link');
@@ -426,4 +430,26 @@ document.addEventListener('DOMContentLoaded', function () {
         link.click();
         document.body.removeChild(link);
       }   //to be fixed
+
+// tab like for Student Results
+  const tabButtons = document.querySelectorAll('.tab-button');
+  const tabContents = document.querySelectorAll('.tab-content');
+
+  tabButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const tabId = button.getAttribute('data-tab');
+
+      tabButtons.forEach((btn) => {
+        btn.classList.remove('active');
+      });
+
+      tabContents.forEach((content) => {
+        content.classList.remove('active');
+      });
+
+      button.classList.add('active');
+      document.getElementById(tabId).classList.add('active');
+    });
+
+}); 
 });

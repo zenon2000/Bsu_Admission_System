@@ -520,7 +520,15 @@
             </ul>
         </div>
     </div>
- <!--result(NOA)-->
+
+    <div class="tabs">
+        <button class="tab-button active" data-tab="tab1">Notice of Admission</button>
+        <button class="tab-button" data-tab="tab2">Notice of Result</button>
+        <button class="button send">Send</button> <button class="button save">Save</button>
+      </div>
+      
+      <div class="tab-content" id="tab1">
+       <!--result(NOA)-->
  <div id="student-result-noa">
     <div class="table-data">
         <div class="order">
@@ -538,6 +546,7 @@
                         <th>College</th>
                         <th>Program</th>
                         <th>Name</th>
+                        <th>Email</th>
                         <th>Birth Date</th>
                         <th>Sex</th>
                         <th>GWA</th>
@@ -554,6 +563,7 @@
                         <td>CIS</td>
                         <td>BSIT</td>
                         <td>Toge Jugon Inumaki</td>
+                        <td>inumakitoge@gmail.com</td>
                         <td>10-03-2003</td>
                         <td>Male</td>
                         <td>90%</td>
@@ -567,8 +577,12 @@
             </table>
         </div>
     </div>
-    <button class="button send">Send</button> <button class="button save">Save</button>
-<!--result (NOR)-->
+    
+    </div>
+      </div>
+      
+<div class="tab-content" id="tab2">
+        <!--result (NOR)-->
 <div id="student-result-nor">
     <div class="table-data">
         <div class="order">
@@ -586,6 +600,7 @@
                         <th>College</th>
                         <th>Program</th>
                         <th>Name</th>
+                        <th>Email</th>
                         <th>Birth Date</th>
                         <th>Sex</th>
                         <th>GWA</th>
@@ -602,6 +617,7 @@
                         <td>CIS</td>
                         <td>BSIT</td>
                         <td>Nobara Kugisaki</td>
+                        <td>kugisakinobara@gmail.com</td>
                         <td>08-07-2004</td>
                         <td>Female</td>
                         <td>83%</td>
@@ -615,11 +631,12 @@
             </table>
         </div>
     </div>
-    <button class="button send">Send</button> <button class="button save">Save</button>
+   
 </div>
+      </div>
+      
 </div>
 
-</div>
 <!-- Import -->
 <div id="import-content">
     <div class="head-title">
@@ -654,9 +671,9 @@
             </ul>
         </div>
     </div>
-
+    <button class="button export" onclick="exportToExcel()">Export to Excel</button>
  <!--export-->
- <div id="student-result-nor">
+ <div id="student-export">
     <div class="table-data">
         <div class="order">
             <div class="head">
@@ -673,6 +690,7 @@
                         <th>College</th>
                         <th>Program</th>
                         <th>Name</th>
+                        <th>Email</th>
                         <th>Birth Date</th>
                         <th>Sex</th>
                         <th>GWA</th>
@@ -689,6 +707,7 @@
                         <td>CIS</td>
                         <td>BSIT</td>
                         <td>Nobara Kugisaki</td>
+                        <td>kugisakinobara@gmail.com</td>
                         <td>08-07-2004</td>
                         <td>Female</td>
                         <td>83%</td>
@@ -702,7 +721,7 @@
             </table>
         </div>
     </div>
-  <button class="button export" onclick="exportToExcel()">Export to Excel</button>
+  
 </div>
 
 <!-- Student Forms -->
