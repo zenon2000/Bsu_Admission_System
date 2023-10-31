@@ -401,10 +401,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
 //import files
     var importElement = document.querySelector('link[rel="import"]');
-    var importedHTML = importElement.import;
+    var importedHTML = importElement.import; //to be fixed
 
 // Access the contents of the imported HTML file.
-var paragraphElement = importedHTML.querySelector('p');
+   // var paragraphElement = importedHTML.querySelector('p');
 
 
 //export files
@@ -425,6 +425,5 @@ var paragraphElement = importedHTML.querySelector('p');
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
-      }
-      
+      }   //to be fixed
 });
