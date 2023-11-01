@@ -1090,9 +1090,6 @@ nav {
 	overflow-y: auto;
 }
 
-/*search bar for export*/
-
-
 /* Add this CSS to adjust the search box and icon */
 .search-box {
     display: flex;
@@ -1112,10 +1109,10 @@ nav {
 	background-color: var(--light-gray);
 }
 
-/*Tab like button for Student Result*/
+/*Tab like button for Student Result and Forms*/
 .tab-button {
   padding: 10px 20px;
-  background-color: var(--lighter-grey);
+  background-color: var(--dark-grey);
   border: none;
   cursor: pointer;
   font-size: 18px;

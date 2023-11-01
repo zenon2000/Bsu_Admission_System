@@ -431,7 +431,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.body.removeChild(link);
       }   //to be fixed
 
-// tab like for Student Results
+// tab like buttons for Student Result and Forms
   const tabButtons = document.querySelectorAll('.tab-button');
   const tabContents = document.querySelectorAll('.tab-content');
 
