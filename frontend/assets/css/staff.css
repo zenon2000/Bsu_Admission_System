@@ -1292,6 +1292,16 @@ nav {
   	color: var(--gray);
 }
 
+#content main .button.edit {
+	background-color: var(--blue);
+	color:var(--dark);
+}
+
+#content main .button.edit:hover {
+	background-color: var(--light-blue);
+  	color: var(--gray);
+}
+
 #content main .head-title {
 	display: flex;
 	align-items: center;

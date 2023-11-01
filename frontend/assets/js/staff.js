@@ -310,8 +310,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const ImportContent = document.getElementById('import-content'); 
     const ExportLink = document.getElementById('export-link');
     const ExportContent = document.getElementById('export-content'); 
-    const StudentFormLink = document.getElementById('student-form-link'); 
-    const StudentFormContent = document.getElementById('student-form-content');
+    const StudentFormsLink = document.getElementById('student-forms-link'); 
+    const StudentFormsContent = document.getElementById('student-forms-content');
     const CollegeCoursesLink = document.getElementById('college-courses-link'); 
     const CollegeCoursesContent = document.getElementById('college-courses-content'); 
 
@@ -321,7 +321,7 @@ document.addEventListener('DOMContentLoaded', function () {
     StudentResultContent.style.display = 'none';
     ImportContent.style.display = 'none'; 
     ExportContent.style.display = 'none';
-    StudentFormContent.style.display = 'none'; 
+    StudentFormsContent.style.display = 'none'; 
     CollegeCoursesContent.style.display = 'none'; 
 
     // Add event listeners to the links
@@ -332,7 +332,7 @@ document.addEventListener('DOMContentLoaded', function () {
         StudentResultContent.style.display = 'none';
         ImportContent.style.display = 'none'; 
         ExportContent.style.display = 'none';
-        StudentFormContent.style.display = 'none'; 
+        StudentFormsContent.style.display = 'none'; 
         CollegeCoursesContent.style.display = 'none';
     });
 
@@ -343,7 +343,7 @@ document.addEventListener('DOMContentLoaded', function () {
         StudentResultContent.style.display = 'none'; 
         ImportContent.style.display = 'none'; 
         ExportContent.style.display = 'none';
-        StudentFormContent.style.display = 'none'; 
+        StudentFormsContent.style.display = 'none'; 
         CollegeCoursesContent.style.display = 'none';
     
     });
@@ -355,7 +355,7 @@ document.addEventListener('DOMContentLoaded', function () {
         StudentResultContent.style.display = 'block';
         ImportContent.style.display = 'none'; 
         ExportContent.style.display = 'none';
-        StudentFormContent.style.display = 'none';
+        StudentFormsContent.style.display = 'none';
         CollegeCoursesContent.style.display = 'none';
     });
 
@@ -366,7 +366,7 @@ document.addEventListener('DOMContentLoaded', function () {
         StudentResultContent.style.display = 'none'; 
         ImportContent.style.display = 'block'; 
         ExportContent.style.display = 'none';
-        StudentFormContent.style.display = 'none';
+        StudentFormsContent.style.display = 'none';
         CollegeCoursesContent.style.display = 'none';
     });
 
@@ -377,18 +377,18 @@ document.addEventListener('DOMContentLoaded', function () {
         StudentResultContent.style.display = 'none'; 
         ImportContent.style.display = 'none'; 
         ExportContent.style.display = 'block';
-        StudentFormContent.style.display = 'none';
+        StudentFormsContent.style.display = 'none';
         CollegeCoursesContent.style.display = 'none';
     });
 
-    StudentFormLink.addEventListener('click', function (event) {
+    StudentFormsLink.addEventListener('click', function (event) {
         event.preventDefault(); // Prevent the default link behavior
         dashboardContent.style.display = 'none';
         StudentProfileContent.style.display = 'none';
         StudentResultContent.style.display = 'none'; 
         ImportContent.style.display = 'none'; 
         ExportContent.style.display = 'none';
-        StudentFormContent.style.display = 'block';
+        StudentFormsContent.style.display = 'block';
         CollegeCoursesContent.style.display = 'none';
     });
 
@@ -399,10 +399,10 @@ document.addEventListener('DOMContentLoaded', function () {
         StudentResultContent.style.display = 'none'; 
         ImportContent.style.display = 'none'; 
         ExportContent.style.display = 'none';
-        StudentFormContent.style.display = 'none';
+        StudentFormsContent.style.display = 'none';
         CollegeCoursesContent.style.display = 'block';
     });
-
+});
 //import files
     var importElement = document.querySelector('link[rel="import"]');
     var importedHTML = importElement.import; //to be fixed
@@ -450,6 +450,4 @@ document.addEventListener('DOMContentLoaded', function () {
       button.classList.add('active');
       document.getElementById(tabId).classList.add('active');
     });
-
-}); 
 });
