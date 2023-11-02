@@ -1513,10 +1513,25 @@ nav {
 	}
 }
 
-
-
-
-
+#result-id-picture {
+	width: 150px; /* Adjust width as needed */
+	height: 150px; /* Adjust height as needed */
+	border: 1px solid #000; /* Example border */
+	display: flex; 
+	justify-content: space-between; /* Align children to start and end */
+    float: right;
+}
+.profile-details {
+	flex: 1; /* Take remaining space */
+	padding-left: 20px; /* Add space between ID picture and details */
+}
+/* Style for the signature */
+#result-signature {
+	border: 1px solid #000;
+	height: 100px;
+	width: 300px;
+	margin-top: 10px;
+}
 
 @media screen and (max-width: 576px) {
 	#content nav form .form-input input {

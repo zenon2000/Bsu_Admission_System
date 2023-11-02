@@ -54,14 +54,16 @@
           }
           
           input{
+            
             margin: 10px 0;
-            padding: 10px;
+         
             box-sizing: border-box;
             width: 100%;
-            font-size: 17px;
-            border: 1px solid #aaaaaa;
-          }
           
+            border: 1px solid #aaaaaa;
+            padding: 2%; /* Use a percentage for padding */
+            font-size: 1em; /* Relative font size */
+          }
           .index-btn-wrapper{
             display: flex;
             margin-top: 20px;
@@ -182,21 +184,28 @@ input[type="file"] {
   
   /* Styles for the signature pad */
   
+
+
   .applicant-signature-container {
     display: flex;
     justify-content: flex-end; /* Align to the right */
+    margin-bottom: 1px;
 }
 
 .signature-label {
     text-align: right; /* Align the text to the right */
-    margin-bottom: 10px; /* Add margin at the bottom */
+    margin-bottom: 15px; /* Add margin at the bottom */
 }
 
 .signature-pad {
     border: 2px dashed #666;
     width: 60.5vh;
     height: 150px;
+    margin-bottom: 3%;
+    align-items: center;
+    justify-content: center;
 }
+
 
 .signature-pad canvas {
     border: 0;
@@ -216,10 +225,68 @@ input[type="file"] {
 .applicant-signature-container #clear-applicant-signature {
     margin-left: auto; /* Align the clear button to the right */
 }
-
-#clear-signature:hover {
-    background-color: #d32f2f;
+.signature-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-bottom: 20px; /* Add margin at the bottom */
 }
+
+.signature-label {
+  text-align: right; /* Align the label text to the right */
+  margin-bottom: 10px; /* Add margin between the label and the signature pad */
+}
+
+#signature-container {
+  display: flex;
+  justify-content: flex-end; /* Align to the right */
+}
+
+.signature-pad {
+  border: 2px dashed #666;
+  width: 100%; /* Adjust width for responsiveness */
+  max-width: 60.5vh; /* Set maximum width */
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center; /* Align the content within the pad */
+}
+
+.signature-pad canvas {
+  border: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.clear-signature {
+  background-color: #f44336;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+  .signature-wrapper {
+    align-items: center;
+  }
+
+  .signature-label {
+    text-align: center;
+  }
+
+  #signature-container {
+    justify-content: center;
+  }
+
+  .signature-pad {
+    max-width: 100%; /* Adjust width for smaller screens */
+  }
+}
+
 
 #id_picture_preview_container {
     width: 150px; /* Set the desired width */
@@ -231,12 +298,13 @@ input[type="file"] {
     transition: border 0.3s, box-shadow 0.3s, transform 0.3s, opacity 0.3s;
     text-align: center;
     margin-left: auto; /* Align to the right */
+    background-color: #ffffff;
 }
 
 #id_picture_preview_container:hover {
     cursor: pointer;
     transform: scale(0.95); /* Shrink the container a bit on hover */
-    opacity: 0.10; /* Fade the container on hover */
+    opacity: 0.5; /* Fade the container on hover */
 }
 
 
@@ -367,9 +435,7 @@ p.acknowledge-text {
 
 .custom-dropdown {
   position: relative;
-  width: calc(100% - 150px); /* Adjust the width to align with other fields */
-  margin-left: 10px; /* Add margin to align with other fields */
-  /* Add margin to lower the dropdown */
+  width: calc(100% - 200px); /* Adjust the width to align with other input fields */
 }
 
 .custom-dropdown::after {
@@ -384,6 +450,27 @@ p.acknowledge-text {
   pointer-events: none;
 }
 
+.custom-dropdown::after {
+  border-color: #ccc; /* Match the border color with other input fields */
+}
+
+.custom-dropdown select {
+  width: 100%; /* Adjust the width to match other input fields */
+  padding: 8px; /* Adjust padding for consistency */
+  margin-top: 15px; /* Match margin with other input fields */
+  border: 1px solid #ccc; /* Match border with other input fields */
+  border-radius: 5px; /* Match border radius with other input fields */
+}
+
+.custom-dropdown::after {
+  border-color: #ccc; /* Match the border color with other input fields */
+}
+
+/* Adjust the width and size of the dropdown */
+#relationship_1,
+#relationship_2 {
+  padding: 9px; /* Adjust the padding as needed */
+}
 #slip_degree:focus + .custom-dropdown::after {
   border-color: #04AA6D;
 }
@@ -452,7 +539,7 @@ p.personal_information {
   padding: 7.4px; /* Adjust the padding as needed */
 }
 #civil_status{
-  padding: 9.4px; /* Adjust the padding as needed */
+  padding: 5px; /* Adjust the padding as needed */
 }
 
         /* Adjust the width and size of the Gender and Birthdate fields */
@@ -495,9 +582,18 @@ p.personal_information {
          /* Style the "Relationship with Contact Person" labels */
   .relationship-label {
     white-space: nowrap; /* Prevent line breaks */
-    
+    width: 200px; /* Adjust the width to align with other labels */
+    margin-bottom: -6px; /* Adjust the margin to match other labels */
   }
-
+  #degree_applied {
+    width: 100%; /* Input fields occupy the available width */
+    padding: 9px; /* Adjust padding for consistency */
+    margin-top: 15px; /* Match margin with other input fields */
+    border: 1px solid #ccc; /* Match border with other input fields */
+    border-radius: 5px; /* Match border radius with other input fields */
+  }
+  
+  
 /* Apply styles to the page container */
 .page-container {
   background-color: #f5f5f5;
@@ -506,7 +602,13 @@ p.personal_information {
   margin: 20px;
   font-family: Arial, sans-serif;
 }
-
+.page-containerr {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border: 1px solid #ccc;
+  margin: 20px;
+  font-family: Arial, sans-serif;
+}
 /* Apply styles to the page container */
 .page-container {
   background-color: #f5f5f5;
@@ -567,4 +669,17 @@ p.personal_information {
   list-style-type: upper-roman;
   margin-left: 5px;
   padding-top: 5px;
+}
+
+/* For smaller devices */
+@media (max-width: 768px) {
+  .form-container {
+    display: block; /* Change layout to stacked for smaller screens */
+  }
+  .form-group {
+    width: 100%; /* Set full width for smaller screens */
+  }
+  .form-group input {
+   width: 100%;
+  }
 }

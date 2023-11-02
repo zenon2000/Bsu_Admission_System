@@ -157,6 +157,7 @@
 
 <!--Form 2-->
 <div class="tab" id="tab-2">
+  <div class="page-containerr">
     <h2 STY align="center">APPLICATION FOR ADMISSION</h2>
 
     
@@ -233,7 +234,7 @@
         <label class="small-label" for="civil_status">Civil Status</label>
         <select name="civil_status" class="input" id="civil_status" required>
             <option value="" disabled selected>Select Civil Status</option>
-            <option value="single">Single</option>
+            <option value="single">Not Married</option>
             <option value="married">Married</option>
         </select>
       </div>
@@ -488,7 +489,7 @@
           <button class="clear-signature" id="clear-signature">Clear</button>
         </div>
       </div>
-
+  </div>
     <br><br>
     <div class="index-btn-wrapper">
         <div class="index-btn" onclick="run(2, 1);">Previous</div>
@@ -641,8 +642,7 @@
     <div class="applicant-signature-container">
         <div id="applicant-signature-pad" class="signature-pad">
             <canvas></canvas>
-            <button class="clear-signature" id="clear-applicant-signature">Clear</button>
-            <i class='bx bx-x'></i> Clear
+            <button class="clear-signature" id="clear-applicant-signature">Clear
         </button>
         </div>
     </div>
