@@ -2,6 +2,8 @@
 window.addEventListener('load', () => {
 
     // Via local Storage
+    //ID Picture
+    const idpicture = localStorage.getItem('IDPICTURE');
     //Fullname
     const firstname = localStorage.getItem('FIRSTNAME');
     const middlename = localStorage.getItem('MIDDLENAME');
@@ -50,40 +52,43 @@ window.addEventListener('load', () => {
     const degree_applied = localStorage.getItem('DEGREE_APPLIED');
     const nature_of_degree = localStorage.getItem('NATURE_OF_DEGREE');
 
-    
-    document.getElementById('result-firstname').innerHTML = firstname;
-    document.getElementById('result-middlename').innerHTML = middlename;
-    document.getElementById('result-lastname').innerHTML = lastname;
-    document.getElementById('result-gender').innerHTML = gender;
-    document.getElementById('result-birthdate').innerHTML = birthdate;
-    document.getElementById('result-birthplacemunicipality').innerHTML = birthplacemunicipality;
-    document.getElementById('result-birhtplaceprovince').innerHTML = birthplaceprovince;
-    document.getElementById('result-birthplacecountry').innerHTML = birthplacecountry;
-    document.getElementById('result-age').innerHTML = age;
-    document.getElementById('result-civilstatus').innerHTML = civilstatus;
-    document.getElementById('result-citizenship').innerHTML = citizenship;
-    document.getElementById('result-nationality').innerHTML = nationality;
-    document.getElementById('result-housestreet').innerHTML = housestreet;
-    document.getElementById('result-barangay_subdivision').innerHTML = barangay_subdivision;
-    document.getElementById('result-municipality_city').innerHTML = municipality_city;
-    document.getElementById('result-province').innerHTML = province;
-    document.getElementById('result-countrystate').innerHTML = countrystate;
-    document.getElementById('result-zipcode').innerHTML = zipcode;
-    document.getElementById('result-phone').innerHTML = phone;
-    document.getElementById('result-facebook').innerHTML = facebook;
-    document.getElementById('result-email').innerHTML = email;
-    document.getElementById('result-contact_person_1').innerHTML = contact_person_1;
-    document.getElementById('result-contact_person_1_mobile').innerHTML = contact_person_1_mobile;
-    document.getElementById('result-relationship_1').innerHTML = relationship_1;
-    document.getElementById('result-contact_person_2').innerHTML = contact_person_2;
-    document.getElementById('result-contact_person_2_mobile').innerHTML = contact_person_2_mobile;
-    document.getElementById('result-relationship_2').innerHTML = relationship_2;
-    document.getElementById('result-academic_classification').innerHTML = academic_classification;
+    const E_Signature = localStorage.getItem('E_Signature');
+
+    document.getElementById('result-id-picture').innerHTML = idpicture;
+    document.getElementById('result-FirstName').innerHTML = firstname;
+    document.getElementById('result-MiddleName').innerHTML = middlename;
+    document.getElementById('result-LastName').innerHTML = lastname;
+    document.getElementById('result-Gender').innerHTML = gender;
+    document.getElementById('result-Girthdate').innerHTML = birthdate;
+    document.getElementById('result-City').innerHTML = birthplacemunicipality;
+    document.getElementById('result-Province').innerHTML = birthplaceprovince;
+    document.getElementById('result-Country').innerHTML = birthplacecountry;
+    document.getElementById('result-Age').innerHTML = age;
+    document.getElementById('result-Civil').innerHTML = civilstatus;
+    document.getElementById('result-Citizenship').innerHTML = citizenship;
+    document.getElementById('result-Nationality').innerHTML = nationality;
+    document.getElementById('result-Street').innerHTML = housestreet;
+    document.getElementById('result-Barangay').innerHTML = barangay_subdivision;
+    document.getElementById('result-Municipality').innerHTML = municipality_city;
+    document.getElementById('result-Province').innerHTML = province;
+    document.getElementById('result-Country').innerHTML = countrystate;
+    document.getElementById('result-ZipCode').innerHTML = zipcode;
+    document.getElementById('result-Telephone').innerHTML = phone;
+    document.getElementById('result-Facebook').innerHTML = facebook;
+    document.getElementById('result-Email').innerHTML = email;
+    document.getElementById('result-ContactOne').innerHTML = contact_person_1;
+    document.getElementById('result-NumberOne').innerHTML = contact_person_1_mobile;
+    document.getElementById('result-RelationshipOne').innerHTML = relationship_1;
+    document.getElementById('result-ContactTwo').innerHTML = contact_person_2;
+    document.getElementById('result-NumberTwo').innerHTML = contact_person_2_mobile;
+    document.getElementById('result-RelationshipTwo').innerHTML = relationship_2;
+    document.getElementById('result-Academic_Classification').innerHTML = academic_classification;
     document.getElementById('result-high_school_name_address').innerHTML = high_school_name_address;
-    document.getElementById('result-als_pept_name_address').innerHTML = als_pept_name_address;
+    document.getElementById('result-ALS').innerHTML = als_pept_name_address;
     document.getElementById('result-college_name_address').innerHTML = college_name_address;
-    document.getElementById('result-lrn').innerHTML = lrn;
-    document.getElementById('result-degree_applied').innerHTML = degree_applied;
-    document.getElementById('result-nature_of_degree').innerHTML = nature_of_degree;
+    document.getElementById('result-LRN').innerHTML = lrn;
+    document.getElementById('result-Degree').innerHTML = degree_applied;
+    document.getElementById('result-natureDegree').innerHTML = nature_of_degree;
+    document.getElementById('result-ESignature').innerHTML = E_Signature;
 
 })
