@@ -336,12 +336,235 @@ p.attestation-note {
 }
 
 .applicant_number input {
-  width: 100px; /* Adjust the width of the input */
+  width: 120px; /* Adjust the width of the input */
   margin-left: 10px; /* Add margin between label and input */
-  border: none; /* Remove the border */
+  border: none; 
 }
 p.acknowledge-text {
   font-size: 16px; /* Adjust the font size as needed */
   line-height: 1.6; /* Adjust the line height for readability */
   margin: 10px 0; /* Add margin for spacing */
+}
+
+/* Styles for the custom label */
+.custom-label {
+  width: 150px; /* Adjust the width of the label to align with other fields */
+ /* Add margin to lower the label */
+}
+
+/* Styles for the custom dropdown using ID */
+#slip_degree {
+  width: 100%; /* Input fields occupy the available width */
+  margin-bottom: 10px;
+  border-radius: 5px; /* Adding border radius */
+  padding: 10px; /* Optional: Adjust padding for better appearance */
+  border: 1px solid #ccc; /* Optional: Border for input fields */
+  margin-top: 10px;
+}
+#slip_degree:focus {
+  border-color: #04AA6D;
+}
+
+.custom-dropdown {
+  position: relative;
+  width: calc(100% - 150px); /* Adjust the width to align with other fields */
+  margin-left: 10px; /* Add margin to align with other fields */
+  /* Add margin to lower the dropdown */
+}
+
+.custom-dropdown::after {
+  content: '\25BC'; /* Unicode down arrow symbol */
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  background: #fff;
+  border: 1px solid #aaaaaa;
+  border-radius: 0 5px 5px 0;
+  pointer-events: none;
+}
+
+#slip_degree:focus + .custom-dropdown::after {
+  border-color: #04AA6D;
+}
+
+
+/*tab2*/
+p.head_information {
+   
+    font-size: 24px; /* Adjust the font size as needed */
+    text-decoration: underline; /* Add an underline */
+    margin-bottom: 10px; /* Add some margin at the bottom */
+}
+
+p.privacy-notice-text {
+    font-size: 16px; /* Adjust the font size for the text */
+    text-align: justify; /* Justify align the text for better readability */
+    line-height: 1.5; /* Adjust the line height for readability */
+    margin: 0; /* Remove margin to style the text closer to the heading */
+}
+
+p.binformation {
+  text-align: center;
+  font-size: 24px; /* Adjust the font size as needed */
+  font-weight: bold; /* Make the text bold */
+  margin: 15px; /* Add some margin at the bottom */
+}
+
+p.personal_information {
+   margin-top:25px;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 1px;
+  
+}
+
+/* Add this CSS for the grid layout with five fields in each row */
+.form-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* Five equal-width columns */
+  gap: 15px; /* Adjust the gap between form groups */
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Optional: Adjust the width of the label and input if needed */
+.small-label {
+  width: 200px; /* Adjust the width as needed */
+}
+
+.input {
+  width: 100%; /* Input fields occupy the available width */
+  padding: 8px;
+  margin-top: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+/* Adjust the width and size of the Gender and Birthdate fields */
+#gender {
+  padding: 10px; /* Adjust the padding as needed */
+}
+
+#birthdate {
+  padding: 7.4px; /* Adjust the padding as needed */
+}
+#civil_status{
+  padding: 9.4px; /* Adjust the padding as needed */
+}
+
+        /* Adjust the width and size of the Gender and Birthdate fields */
+        #gender {
+          padding: 10px; /* Adjust the padding as needed */
+        }
+        
+        #birthdate {
+          padding: 7.4px; /* Adjust the padding as needed */
+        }
+        #civil_status{
+          padding: 9.4px; /* Adjust the padding as needed */
+        }
+        #phone {
+          width: 100%; /* You can adjust the width as needed */
+          padding: 8px;
+          margin-top: 15px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+        }
+        
+        #facebook {
+          width: 100%; /* You can adjust the width as needed */
+          padding: 8px;
+          margin-top: 15px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+        }
+        #facebook::placeholder {
+          font-size: 16px; /* Adjust the font size as needed */
+        }
+        
+        #email {
+          width: 100%; /* You can adjust the width as needed */
+          padding: 8px;
+          margin-top: 15px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+        }
+         /* Style the "Relationship with Contact Person" labels */
+  .relationship-label {
+    white-space: nowrap; /* Prevent line breaks */
+    
+  }
+
+/* Apply styles to the page container */
+.page-container {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border: 1px solid #ccc;
+  margin: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Apply styles to the page container */
+.page-container {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border: 1px solid #ccc;
+  margin: 20px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+/* Style the heading */
+.page-container h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.page-container p.section-title {
+  font-size: 21px;
+  line-height: 1.4;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+/* Style the main instructions */
+.page-container p {
+  font-size: 16px;
+  line-height: 1.4;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+/* Style the sub-instructions */
+.page-container ul {
+  list-style-type: disc;
+  margin-left: 5px;
+}
+
+.page-container li {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+/* Apply different styles to specific elements */
+.page-container ul > li {
+  list-style-type: disc;
+}
+
+/* Add a border to the "NOTE" section */
+.page-container p:last-child {
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+  margin-top: 20px;
+}
+.rac-list li {
+  margin-left: 20px; /* Adjust the indentation as needed */
+}
+.custom-list {
+  list-style-type: upper-roman;
+  margin-left: 5px;
+  padding-top: 5px;
 }

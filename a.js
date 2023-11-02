@@ -10,7 +10,7 @@ function run(hideTab, showTab) {
         // Validation if pressing the next button
         var currentTab = 0;
         x = $('#tab-' + hideTab);
-        y = $(x).find("input");
+        y = $(x).find("input, select");
 
         if (hideTab === 1) {
             // Validate the checkbox in Tab 1
@@ -61,7 +61,7 @@ function run(hideTab, showTab) {
     // Switch tab
     $("#tab-" + hideTab).css("display", "none");
     $("#tab-" + showTab).css("display", "block");
-    $("input").css("background", "#fff");
+    $("input, select").css("background", "#fff");
 }
 
 // Handle the file input label click
@@ -136,3 +136,18 @@ function submitForm() {
 }
 
 
+function generateApplicantNumber() {
+    const now = new Date();
+    const month = String(now.getMonth() + 1).padStart(2, '0'); // Get the current month (1-12) and pad with 0 if needed
+    const day = String(now.getDate()).padStart(2, '0'); // Get the current day (1-31) and pad with 0 if needed
+
+    // In a real scenario, you would replace this part with your logic to get the applicant's sequence number.
+    // For this example, let's generate a random number between 1 and 9999.
+    const sequenceNumber = Math.floor(Math.random() * 9999) + 1;
+
+    const applicantNumber = `${month}-${day}-${sequenceNumber.toString().padStart(4, '0')}`;
+    document.getElementById("applicant_number").value = applicantNumber;
+}
+
+// Call this function to generate the applicant number when needed.
+generateApplicantNumber();
