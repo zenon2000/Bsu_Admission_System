@@ -1506,7 +1506,6 @@ nav {
 #content main .table-data .order {
 	flex-basis: 200px;
 	flex-grow: 1; /* Can grow to fill available space */
-    flex-shrink: 1; /* Can shrink if necessary */
 }
 /*Drop down for College and programs*/
 #content main .table-data .order .custom-dropdown {
@@ -1535,43 +1534,38 @@ nav {
 /**/
 #content main .table-data .order table {
 	width: 100%;
-	border-collapse: collapse;
+	border-collapse: collapse; /* Merge cell borders into a single line */
+	border: 2px solid var(--dark-grey); /* Add a 1px solid border around table headers and data cells */
 }
 #content main .table-data .order table th {
-	padding-bottom: 12px;
-	font-size: 10px;
-	text-align: left;
+	padding-bottom: 1px;
+	font-size: 12px;
 	border-bottom: 1px solid var(--grey);
-	transition: font-size 0.3s;
-}
-/* Apply text enlargement when hovered */
-#content main .table-data .order table th:hover {
-	font-size: 1.2em; /* Change the font size as desired */
+	border: 2px solid var(--dark-grey); /* Add a 1px solid border around table headers and data cells */
+	
 }
 #content main .table-data .order table td {
-	padding: 16px 0;
-	font-size: 8px;
-	transition: font-size 0.3s;
+	padding: 2px 5px;
+	font-size: 10px;
+	border: 2px solid var(--dark-grey); /* Add a 1px solid border around table headers and data cells */
+	
 }
-/* Apply text enlargement when hovered */
-#content main .table-data .order table td:hover {
-	font-size: 1.2em; /* Change the font size as desired */
-}
-#content main .table-data .order table tr td:first-child {
-	display: flex;
-	align-items: center;
-	grid-gap: 12px;
-	padding-left: 6px;
-}
-#content main .table-data .order table td img {
-	width: 36px;
-	height: 36px;
-	border-radius: 50%;
-	object-fit: cover;
-}
-#content main .table-data .order table tbody tr:hover {
-	background: var(--grey);
-}
+#content main .table-data .order table th, td {
+	width: 0px;
+	max-width: 0px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+  }
+  #content main .table-data .order table tr > td:hover {
+	overflow: visible;
+	white-space: unset;
+	font-size: 1.2em; /* Enlarge the text by 20% when hovered */
+    transition: font-size 0.3s; /* Add a smooth transition effect */
+  }
+  #content main .table-data .order table tr:hover {
+	background: var(--li-grey);
+  }
 #content main .table-data .order table tr td .status {
 	font-size: 10px;
 	padding: 6px 16px;
