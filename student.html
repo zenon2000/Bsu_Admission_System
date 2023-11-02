@@ -285,47 +285,56 @@
  <div id="student-profile">
     <div class="table-data">
         <div class="order">
-            <div class="head">
-                <h3>College Name</h3>
-                <i class='bx bx-search' id="searchIcon"></i>
-                <div class="search-box" id="searchBox-form">
-                    <input type="text" placeholder="Search...">
-                </div>
-            </div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Application No.</th>
-                        <th>Program</th>
-                        <th>Last Name</th>
-                        <th>First Name</th>
-                        <th>Middle Name</th>
-                        <th>Birth Date</th>
-                        <th>Sex</th>
-                        <th>GWA</th>
-                        <th>Math</th>
-                        <th>Science</th>
-                        <th>English</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>000001</td>
-                        <td>BSIT</td>
-                        <td>Inumaki</td>
-                        <td>Toge</td>
-                        <td>Jugon</td>
-                        <td>10-03-2003</td>
-                        <td>Male</td>
-                        <td>90%</td>
-                        <td>90%</td>
-                        <td>87%</td>
-                        <td>92%</td>
-                        <td><button class="button edit">Edit</button> <button class="button delete">Delete</button></td>
-                    </tr>
-                </tbody>
-            </table>
+            <h3>Profile</h3>
+                <h2>ID Picture:</h2>
+                <div id="result-id-picture"></div>
+                <h2>Last Name: <span id="result-LastName"></span></h2>
+                <h2>First Name: <span id="result-FirstName"></span></h2>
+                <h2>Middle Name: <span id="result-MiddleName"></span></h2>
+                <h2>Gender at birth: <span id="result-Gender"></span></h2>
+                <h2>Birthdate: <span id="result-Birthdate"></span></h2>
+                <p>Birthplace</p>
+                <h2>Municipality/City: <span id="result-City"></span></h2>
+                <h2>Province: <span id="result-Province"></span></h2>
+                <h2>Country: <span id="result-Country"></span></h2>
+                <h2>Age: <span id="result-Age"></span></h2>
+                <h2>Civil Status: <span id="result-Civil"></span></h2>
+                <h2>Citizenship: <span id="result-Citizenship"></span></h2>
+                <h2>Nationality: <span id="result-Nationality"></span></h2>
+                <h2>Permanent Home Address</h2>
+                <h2>House # & Street: <span id="result-Street"></span></h2>
+                <h2>Municipality(town)/City: <span id="result-Municipality"></span></h2>
+                <h2>Province: <span id="result-Province"></span></h2>
+                <h2>Country: <span id="result-Country"></span></h2>
+                <h2>Zip Code: <span id="result-ZipCode"></span></h2>
+                <p>Contact Information</p>
+                <h2>Telephone/Mobile No.: <span id="result-Telephone"></span></h2>
+                <h2>Facebook Account Name: <span id="result-Facebook"></span></h2>
+                <h2>Email Address: <span id="result-Emai"></span></h2>
+                <p>Contact person(s) in case of emergency</p>
+                <h2>Contact Person: <span id="result-ContactOne"></span></h2>
+                <h2>Mobile Number: <span id="result-NumberOne"></span></h2>
+                <h2>Relationship with Contact Person <span id="result-RelationshipOne"></span></h2>
+                <h2>Contact Person: <span id="result-ContactTwo"></span></h2>
+                <h2>Mobile Number: <span id="result-NumbeTwo"></span></h2>
+                <h2>Relationship with Contact Person <span id="result-RelationshipTwo"></span></h2>
+                <p>Academic Classification</p>
+                <h2>Name and Address of High School/Senior High School
+                    : <span id="result-surname"></span></h2>
+                <h2>Name and Address of Dividion where ALS/PEPT was taken: <span id="result-ALS"></span></h2>
+                <h2>
+                    Name and Address of College/University: <span id="result-surname"></span></h2>
+                <h2>Learner's Reference Number<span id="result-LRN"></span></h2>
+                <h2>Degree: <span id="result-Degree"></span></h2>
+                <h2>major in<span id="result-major"></span></h2>
+                <h2>Nature of degree<span id="result-natureDegree"></span></h2>
+                <h2>E-Signature:</h2>
+                <div id="result-signature"></div>
+               
+                
+
+          
+          
         </div>
     </div>
 </div>
@@ -498,7 +507,10 @@
     </div>
 </div>
 </div>
+<script> 
 
+localStorage.getItem()
+</script>
 <!-- CONTENT -->
   <script src="frontend/assets/js/student.js"></script>
 </body>
