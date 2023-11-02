@@ -156,6 +156,8 @@ generateApplicantNumber();
 //Handle Submit
 function handleSubmit () {
 
+    //ID Picture
+    const idpicture = document.getElementById('id_picture_preview_img').value;
     //Fullname
     const firstname = document.getElementById('first_name').value;
     const middlename = document.getElementById('middle_name').value;
@@ -203,11 +205,14 @@ function handleSubmit () {
     //Course Applying For
     const degree_applied = document.getElementById('degree_applied').value;
     const nature_of_degree = document.getElementById('nature_of_degree').value;
+    //E-signature
+    const E_Signature = document.getElementById('signature-pad').value;
 
     // to set into local storage
+    localStorage.setItem("IDPICTURE", idpicture);
     localStorage.setItem("FIRSTNAME", firstname);
     localStorage.setItem("MIDDLENAME", middlename);
-    localStorage.setItem("LASTNAME", surname);
+    localStorage.setItem("LASTNAME", lastname);
     localStorage.setItem("GENDER", gender);
     localStorage.setItem("BIRTHDATE", birthdate);
     localStorage.setItem("BIRTHPLACE_MUNICIPALITY", birthplacemunicipality);
@@ -239,6 +244,7 @@ function handleSubmit () {
     localStorage.setItem("LRN", lrn);
     localStorage.setItem("DEGREE_APPLIED", degree_applied);
     localStorage.setItem("NATURE_OF_DEGREE", nature_of_degree);
+    localStorage.setItem("ESIGNATURE", E_Signature);
 
     return;
 }

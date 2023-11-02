@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Profile</title>
     <link rel="icon" href="frontend/assets/images/BSU Logo1.png" type="image/x-icon">
-    <link rel="stylesheet" href="frontend/assets/css//student.css" />
+    <link rel="stylesheet" href="for_a/student.css" />
     <!-- script -->
     <script type="text/javascript" src="student.js"></script>
     <!-- Boxicons -->
@@ -287,7 +287,7 @@
  <div id="student-profile">
     <div class="table-data">
         <div class="order">
-          <div class="profile">
+            <h3>Profile</h3>
                 <h2>ID Picture:</h2>
                 <div id="result-id-picture"></div>
                 <h2>Last Name: <span id="result-LastName"></span></h2>
@@ -332,10 +332,12 @@
                 <h2>major in<span id="result-major"></span></h2>
                 <h2>Nature of degree<span id="result-natureDegree"></span></h2>
                 <h2>E-Signature:</h2>
-                <div id="result-signature"> </div>
+                <div id="result-signature"></div>
                
                 
-            </div>
+
+          
+          
         </div>
     </div>
 </div>
@@ -360,7 +362,10 @@
         <div class="order">
             <div class="head">
                 <h3>Notice of Admission (NOA)</h3>
-               
+                <i class='bx bx-search' id="searchIcon"></i>
+                <div class="search-box" id="searchBox-form">
+                    <input type="text" placeholder="Search...">
+                </div>
             </div>
             <table>
                 <thead>
@@ -405,7 +410,10 @@
         <div class="order">
             <div class="head">
                 <h3>Notice of Readmission (NOR)</h3>
-               
+                <i class='bx bx-search' id="searchIcon"></i>
+                <div class="search-box" id="searchBox-form">
+                    <input type="text" placeholder="Search...">
+                </div>
             </div>
             <table>
                 <thead>
@@ -502,7 +510,10 @@
     </div>
 </div>
 </div>
+<script> 
 
+localStorage.getItem()
+</script>
 <!-- CONTENT -->
   <script src="frontend/assets/js/student.js"></script>
 </body>
