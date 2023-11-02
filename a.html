@@ -169,6 +169,7 @@
         </div>
     </div>
     <input type="file" name="id_picture" id="id_picture" accept="image/*" style="display: none">
+    
     <u><p class="head_information"> Privacy Notice</p></u>
     <p class="privacy-notice-text">Persuant to the data Privacy Act of 2012 and BSU Data Privacy, Personnel from the office of the University Registrar,.Persuant to the data Privacy Act of 2012 and BSU Data Privacy, Personnel from the office of the University Registrar,.Persuant to the data Privacy Act of 2012 and BSU Data Privacy, Personnel from the office of the University Registrar,.Persuant to the data Privacy Act of 2012 and BSU Data Privacy, Personnel from the office of the University Registrar,.Persuant to the data Privacy Act of 2012 and BSU Data Privacy, Personnel from the office of the University Registrar,.</p>
 
@@ -176,19 +177,19 @@
   <p class="personal_information"> Personal Information</p>
 <!--Full name-->
 
-  <p>Full Name</p>
+
   <div class="form-container">
     <!-- Full name -->
     <div class="form-group">
-        <label class="small-label" for="last_name">Last Name</label>
+        <label class="small-label" for="last_name">Full Name</label>
         <input type="text" name="last_name" class="input" id="last_name" placeholder="Last Name" required>
     </div>
     <div class="form-group">
-        <label class="small-label" for="first_name">First Name</label>
+        <label class="small-label" for="first_name">&nbsp;</label>
         <input type="text" name="first_name" class="input" id="first_name" placeholder="First Name" autocomplete="name" required>
     </div>
     <div class="form-group">
-        <label class="small-label" for="middle_name">Middle Name</label>
+        <label class="small-label" for="middle_name">&nbsp;</label>
         <input type="text" name="middle_name" class="input" id="middle_name" placeholder="Middle Name"  autocomplete="middle" required>
     </div>
     <!-- Gender and Birthdate -->
@@ -205,20 +206,20 @@
         <input type="date" name="birthdate" class="input" id="birthdate" required>
     </div>
   </div>
-    <p class="birthplace">Birthplace</p>
+    <p class="birthplace"></p>
     <div class="form-container">
       <!-- Birthplace -->
       <div class="form-group">
         
-        <label class="small-label" for="birthplace-municipality">Municipality/City</label>
+        <label class="small-label" for="birthplace-municipality">Birthplace</label>
         <input type="text" name="birthplace-municipality" class="input" id="birthplace-municipality" placeholder="Municipality/City" required>
       </div>
       <div class="form-group">
-        <label class="small-label" for="birthplace-province">Province</label>
+        <label class="small-label" for="birthplace-province">&nbsp;</label>
         <input type="text" name="birthplace-province" class="input" id="birthplace-province" placeholder="Province" required>
      </div>
      <div class="form-group">
-        <label class="small-label" for="birthplace_country">Country</label>
+        <label class="small-label" for="birthplace_country">&nbsp;</label>
         <input type="text" name="birthplace_country" class="input" id="birthplace_country" placeholder="Country" required>
      </div>
      <!-- Age -->
@@ -253,32 +254,32 @@
 <div class="form-container">
   <!-- House # & Street -->
   <div class="form-group">
-    <label class="small-label" for="house_street">House # & Street</label>
+    <label class="small-label" for="house_street">&nbsp;</label>
     <input type="text" name="house_street" class="input" id="house_street" placeholder="House # & Street" required>
   </div>
   <!-- Barangay/Subdivision -->
   <div class="form-group">
-    <label class="small-label" for="barangay_subdivision">Barangay/Subdivision</label>
+    <label class="small-label" for="barangay_subdivision">&nbsp;</label>
     <input type="text" name="barangay_subdivision" class="input" id="barangay_subdivision" placeholder="Barangay/Subdivision" required>
   </div>
     <!--Municipality(town)/City -->
   <div class="form-group">
-    <label class="small-label" for="municipality_city">Municipality(town)/City</label>
+    <label class="small-label" for="municipality_city">&nbsp;</label>
     <input type="text" name="municipality_city" class="input" id="municipality_city" placeholder="Municipality(town)/City" required>
   </div>
   <!-- Province -->
   <div class="form-group">
-    <label class="small-label" for="province">Province</label>
+    <label class="small-label" for="province">&nbsp;</label>
     <input type="text" name="province" class="input" id="province" placeholder="Province" required>
   </div>
  <!-- Country/State -->
   <div class="form-group">
-    <label class="small-label" for="country_state">Country/State</label>
+    <label class="small-label" for="country_state">&nbsp;</label>
     <input type="text" name="country_state" class="input" id="country_state" placeholder="Country/State" required>
   </div>
   <!-- zip-code -->
   <div class="form-group">
-    <label class="small-label" for="zip_code">Zip Code</label>
+    <label class="small-label" for="zip_code">&nbsp;</label>
     <input type="number" name="zip_code" class="input" id="zip_code" placeholder="Zip Code" required>
    </div>
  </div>
@@ -308,7 +309,7 @@
     <!-- Contact Person 1 -->
     <div class="form-group">
       <label class="small-label" for="contact_person_1">Contact Person</label>
-      <input type="text" name="contact_person_1" class="input" id="contact_person_1" placeholder="Name of Contact Person" required>
+      <input type="text" name="contact_person_1" class="input" id="contact_person_1" placeholder="Full Name of Contact Person" required>
     </div>
     <div class="form-group">
       <label class="small-label" for="contact_person_1_mobile">Mobile Number</label>
@@ -318,10 +319,9 @@
       <label class="relationship-label" for="relationship_1">Relationship with Contact Person</label>
       <select name="relationship_1" class="input custom-dropdown" id="relationship_1" required>
         <option value="" disabled selected>Select Relationship</option>
-        <option value="family">Family</option>
-        <option value="friend">Friend</option>
-        <option value="colleague">Colleague</option>
-        <option value="other">Other</option>
+        <option value="parent">Parent</option>
+        <option value="guardian">guardian</option>
+       
       </select>
     </div>
   </div>
@@ -329,7 +329,7 @@
     <!-- Contact Person 2 -->
     <div class="form-group">
       <label class="small-label" for="contact_person_2">Contact Person</label>
-      <input type="text" name="contact_person_2" class="input" id="contact_person_2" placeholder="Name of Contact Person" required>
+      <input type="text" name="contact_person_2" class="input" id="contact_person_2" placeholder="Full Name of Contact Person" required>
     </div>
     <div class="form-group">
       <label class="small-label" for="contact_person_2_mobile">Mobile Number</label>
@@ -339,10 +339,9 @@
       <label class="relationship-label" for="relationship_2">Relationship with Contact Person</label>
       <select name="relationship_2" class="input custom-dropdown" id="relationship_2" required>
         <option value="" disabled selected>Select Relationship</option>
-        <option value="family">Family</option>
-        <option value="friend">Friend</option>
-        <option value="colleague">Colleague</option>
-        <option value="other">Other</option>
+        <option value="parent">Parent</option>
+        <option value="guardian">guardian</option>
+       
       </select>
     </div>
   </div>  
@@ -383,7 +382,7 @@
     </div>
     <div class="form-group">
         <label class="small-label" for="lrn" style="white-space: nowrap;">Learner's Reference Number</label>
-        <input type="number" name="lrn" class="input" id="lrn" required placeholder="Enter LRN" pattern="[0-9]*" maxlength="12">
+        <input type="number" name="lrn" class="input" id="lrn" placeholder="Enter LRN" pattern="[0-9]*" maxlength="12" required >
    </div>
    <div class="form-group">
     <label class="small-label" for="degree_applied">Degree </label>
@@ -464,6 +463,10 @@
         </optgroup>
     </select>
     </div>
+    <div class="form-group">
+      <label class="small-label" for="major" style="white-space: nowrap;">major</label>
+      <input type="text" name="major" class="input" id="major"  placeholder="Major in" required>
+ </div>
     <div class="form-group">
         <label class="small-label" for="nature_of_degree" style="white-space: nowrap;">Nature of degree</label>
         <select name="nature_of_degree" class="input" id="nature_of_degree" required>
@@ -652,13 +655,14 @@
 <div class="tab" id = "tab-4">
     <div class="index-btn-wrapper">
       <div class="index-btn" onclick="run(4, 3);">Previous</div>
-      <button class = "index-btn" type="submit" name="submit" style = "background: blue;">Submit</button>
+      <button class = "index-btn" type="submit" onclick="handleSubmit()" name="submit" style = "background: blue;">Submit</button>
       
 
     </div>
   </div>
 
     </form>
+  
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
   
