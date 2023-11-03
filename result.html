@@ -1,18 +1,58 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Result Page</title>
-    <link rel="stylesheet" href="b.css" />
-    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="frontend/assets/images/BSU Logo1.png" type="image/x-icon">
+    <link rel="stylesheet" href="frontend/assets/css/student.css" />
+    <title>Student Profile</title>
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-    <h1>Result Page</h1>
-    <h2>Name: <span id="result-name"></span></h2>
-    <h2>Surname: <span id="result-surname"></span></h2>
-    <h2>Uploaded Image:</h2>
-    <div id="result-image"></div>
-    <h2>E-Signature:</h2>
-    <div id="result-signature"></div>
+    <div id="student-profile">
+        <div class="table-data">
+            <div class="order">
+                <div class="profile">
+                    <div id="result-id-picture"></div>
+                    <h2>Full Name</h2>
+                    <h2>Last Name: <span id="result-LastName"></span></h2>
+                    <h2>First Name: <span id="result-FirstName"></span></h2>
+                    <h2>Middle Name: <span id="result-MiddleName"></span></h2>
+                    <h2>Gender at birth: <span id="result-Gender"></span></h2>
+                    <h2>Birthdate: <span id="result-Birthdate"></span></h2>
+                    <p>Birthplace</p>
+                    <h2>Municipality/City: <span id="result-City"></span></h2>
+                    <h2>Birth Province: <span id="result-BirthProvince"></span></h2>
+                    <h2>Birth Country: <span id="result-BirthCountry"></span></h2>
+                    <h2>Age: <span id="result-Age"></span></h2>
+                    <h2>Civil Status: <span id="result-Civil"></span></h2>
+                    <h2>Citizenship: <span id="result-Citizenship"></span></h2>
+                    <h2>Nationality: <span id="result-Nationality"></span></h2>
+                    <h2>Permanent Home Address</h2>
+                    <h2>House # & Street: <span id="result-Street"></span></h2>
+                    <h2>Barangay/ Subdivision: <span id="result-Barangay"></span></h2>
+                    <h2>Municipality(town)/City: <span id="result-Municipality"></span></h2>
+                    <h2>Permanent Province: <span id="result-PermanentProvince"></span></h2>
+                    <h2>Permanent Country: <span id="result-PermanentCountry"></span></h2>
+                    <h2>Zip Code: <span id="result-ZipCode"></span></h2>
+                    <p>Contact Information</p>
+                    <h2>Telephone/Mobile No.: <span id="result-Telephone"></span></h2>
+                    <h2>Facebook Account Name: <span id="result-Facebook"></span></h2>
+                    <h2>Email Address: <span id="result-Email"></span></h2>
+                    <p>Contact person(s) in case of emergency</p>
+                    <h2>Contact Person: <span id="result-ContactOne"></span></h2>
+                    <h2>Mobile Number: <span id="result-NumberOne"></span></h2>
+                    <h2>Relationship with first Contact Person <span id="result-RelationshipOne"></span></h2>
+                    <h2>Contact Person2: <span id="result-ContactTwo"></span></h2>
+                    <h2>Mobile Number2: <span id="result-NumberTwo"></span></h2>
+                    <h2>Relationship with second Contact Person2 <span id="result-RelationshipTwo"></span></h2>
+                    
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="result.js"></script>
 </body>
-<script src="result.js"></script>
+<script src="frontend/assets/js/student.js"></script>
 </html>
