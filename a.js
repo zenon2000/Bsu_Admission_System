@@ -206,7 +206,7 @@ function handleSubmit () {
     // to set into local storage
     localStorage.setItem("FIRSTNAME", firstname);
     localStorage.setItem("MIDDLENAME", middlename);
-    localStorage.setItem("LASTNAME", surname);
+    localStorage.setItem("LASTNAME", lastname);
     localStorage.setItem("GENDER", gender);
     localStorage.setItem("BIRTHDATE", birthdate);
     localStorage.setItem("BIRTHPLACE_MUNICIPALITY", birthplacemunicipality);
