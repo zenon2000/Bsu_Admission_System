@@ -171,23 +171,11 @@ showTime();
 
 
 document.addEventListener("DOMContentLoaded", function () {
-    const notificationButton = document.querySelector("#notification-button");
-    const notificationPopup = document.querySelector("#notification-popup");
+  
     const profileButton = document.querySelector("#profile-button");
     const profilePopup = document.querySelector("#profile-popup");
 
-    // Toggle the display of the notification popup when the button is clicked
-    notificationButton.addEventListener("click", function () {
-        // Toggle the visibility of the notification popup
-        notificationPopup.style.display = notificationPopup.style.display === "block" ? "none" : "block";
-    });
 
-    // Close the notification popup when the user clicks outside the popup
-    document.addEventListener("click", function (event) {
-        if (!notificationButton.contains(event.target) && !notificationPopup.contains(event.target)) {
-            notificationPopup.style.display = "none";
-        }
-    });
 
     // Toggle the display of the profile popup when the button is clicked
     profileButton.addEventListener("click", function () {
@@ -265,3 +253,146 @@ document.addEventListener('DOMContentLoaded', function () {
 
   
 });
+document.addEventListener('DOMContentLoaded', () => {
+    // Retrieve data from localStorage and display it in the result page
+    const lastName = localStorage.getItem('lastName');
+    const firstName = localStorage.getItem('firstName');
+    const middleName = localStorage.getItem('middleName');
+    const gender = localStorage.getItem('gender');
+    const birthdate = localStorage.getItem('birthdate');
+    const city = localStorage.getItem('city');
+    const birthprovince = localStorage.getItem('birthprovince'); // Updated variable name
+    const country = localStorage.getItem('country');
+    const age = localStorage.getItem('age');
+    const civilStatus = localStorage.getItem('civilStatus');
+    const citizenship = localStorage.getItem('citizenship');
+    const nationality = localStorage.getItem('nationality');
+    const street = localStorage.getItem('houseStreet');
+    const barangay = localStorage.getItem('barangaySubdivision');
+    const municipality = localStorage.getItem('municipalityCity');
+    const province = localStorage.getItem('province');
+    const countryState = localStorage.getItem('countryState'); // Updated variable name
+    const zipCode = localStorage.getItem('zipCode');
+    const telephone = localStorage.getItem('phone');
+    const facebook = localStorage.getItem('facebook');
+    const email = localStorage.getItem('email');
+    const contactPersonName = localStorage.getItem('contact_person_1');
+    const contactPersonMobile = localStorage.getItem('contact_person_1_mobile');
+    const relationship = localStorage.getItem('relationship_1');
+      // Update the DOM elements for Contact Person 1
+      if (contactPersonName && contactPersonMobile && relationship) {
+        document.getElementById('result-ContactOne').textContent = contactPersonName;
+        document.getElementById('result-NumberOne').textContent = contactPersonMobile;
+        document.getElementById('result-RelationshipOne').textContent = relationship;
+    } else {
+        // Handle case where data is not available in localStorage
+        console.log('Emergency contact person details not found in localStorage');
+    }
+   
+    const contactPerson2Name = localStorage.getItem('contact_person_2');
+    const contactPerson2Mobile = localStorage.getItem('contact_person_2_mobile');
+    const relationship2 = localStorage.getItem('relationship_2');
+
+    if (contactPerson2Name && contactPerson2Mobile && relationship2) {
+        document.getElementById('result-ContactTwo').textContent = contactPerson2Name;
+        document.getElementById('result-NumberTwo').textContent = contactPerson2Mobile;
+        document.getElementById('result-RelationshipTwo').textContent = relationship2;
+    } else {
+        console.log('Emergency contact person 2 details not found in localStorage');
+    }
+    const academicClassification = localStorage.getItem('academicClassification');
+    const highSchoolAddress = localStorage.getItem('highSchoolAddress');
+    const alsPeptAddress = localStorage.getItem('alsPeptAddress');
+    const collegeAddress = localStorage.getItem('collegeAddress');
+    const lrn = localStorage.getItem('lrn');
+    const degreeApplied = localStorage.getItem('degreeApplied');
+    const major = localStorage.getItem('major');
+    const natureOfDegree = localStorage.getItem('natureOfDegree');
+
+    
+    // Display the retrieved data on the result page
+
+    document.getElementById('result-LastName').textContent = lastName;
+    document.getElementById('result-FirstName').textContent = firstName;
+    document.getElementById('result-MiddleName').textContent = middleName;
+    document.getElementById('result-Gender').textContent = gender;
+    document.getElementById('result-Birthdate').textContent = birthdate;
+    document.getElementById('result-City').textContent = city;
+    document.getElementById('result-BirthProvince').textContent = birthprovince;
+    document.getElementById('result-BirthCountry').textContent = country;
+    document.getElementById('result-Age').textContent = age;
+    document.getElementById('result-Civil').textContent = civilStatus;
+    document.getElementById('result-Citizenship').textContent = citizenship;
+    document.getElementById('result-Nationality').textContent = nationality;
+    document.getElementById('result-Street').textContent = street;
+    document.getElementById('result-Barangay').textContent = barangay;
+    document.getElementById('result-Municipality').textContent = municipality;
+    document.getElementById('result-PermanentProvince').textContent = province;
+    document.getElementById('result-PermanentCountry').textContent = countryState;
+    document.getElementById('result-ZipCode').textContent = zipCode;
+    document.getElementById('result-Telephone').textContent = telephone;
+    document.getElementById('result-Facebook').textContent = facebook;
+    document.getElementById('result-Email').textContent = email;
+    document.getElementById('result-classification').textContent = academicClassification;
+    document.getElementById('high_school_name_address').textContent = highSchoolAddress;
+    document.getElementById('result-ALS').textContent = alsPeptAddress;
+    document.getElementById('college_name_address').textContent = collegeAddress;
+    document.getElementById('result-LRN').textContent = lrn;
+    document.getElementById('result-Degree').textContent = degreeApplied;
+    document.getElementById('result-major').textContent = major;
+    document.getElementById('result-natureDegree').textContent = natureOfDegree;
+
+    // Retrieve and display the ID picture if available
+    const idPicture = localStorage.getItem('id_picture');
+
+    if (idPicture) {
+        // Create the image elements
+        const img1 = document.createElement('img');
+        img1.src = idPicture;
+    
+        const img2 = document.createElement('img');
+        img2.src = idPicture;
+    
+        const img3 = document.createElement('img');
+        img3.src = idPicture;
+    
+        // Append the first image to 'result-id-picture'
+        document.getElementById('result-id-picture').appendChild(img1);
+    
+        // Replace the image source inside the 'profile-button' anchor tag
+        const profileImage = document.getElementById('profile-image');
+        profileImage.src = idPicture;
+    
+        // Replace the existing 'profile-button' image with img2
+        profileImage.parentNode.replaceChild(img2, profileImage);
+    
+        // Replace the 'profile-picture' image with img3
+        const profilePicture = document.getElementById('profile-picture');
+        profilePicture.parentNode.replaceChild(img3, profilePicture);
+    } else {
+        console.log('ID picture not found in localStorage');
+    }
+    
+    
+     // Retrieve and display the student's signature
+     const signature = localStorage.getItem('signature');
+     if (signature) {
+         const img = document.createElement('img');
+         img.src = signature;
+         img.style.width = '200px'; // Adjust the size as needed
+         document.getElementById('result-signature').appendChild(img);
+     } else {
+         console.log('E-Signature not found in localStorage');
+     }
+ 
+     // Retrieve and display the applicant's signature
+     const applicantSignature = localStorage.getItem('applicantSignature');
+     if (applicantSignature) {
+         const img = document.createElement('img');
+         img.src = applicantSignature;
+         img.style.width = '200px'; // Adjust the size as needed
+         document.getElementById('result-signature-slip').appendChild(img);
+     } else {
+         console.log("Applicant's E-Signature not found in localStorage");
+     }
+ });

@@ -192,17 +192,6 @@ justify-content: center;
 
 
 
-
-
-
-
-
-
-
-.dropdown-content {
-    border-radius: 48px 0 0 48; 
-	
-}
 #sidebar .side-menu li.active::before {
 	content: '';
 	position: absolute;
@@ -214,304 +203,8 @@ justify-content: center;
 	box-shadow: 20px 20px 0 var(--grey);
 	z-index: -1;
 }
-/* Style the dropdown menu */
-.dropdown-content ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 100%; /* Add this to ensure the ul extends the full width */
-	
-}
-
-.dropdown-content li {
-    padding: 60px;
-    background-color: var(--dark);
-    border-radius: 0; 
-}
-
-.dropdown-content a {
-    text-decoration: none;
-    color: var(--light);
-    display: block;
-    transition: background-color 0.2s;
-}
-
-/* Style the dropdown toggle */
-.dropdown-toggle:hover .dropdown-content {
-    display: block;
-    border-radius: 48px 0 0 48px; /* Adjust border-radius when the dropdown is open */
-}
-
-/* Tooltip styles */
-[data-tooltip] {
-    position: relative;
-    cursor: pointer;
-}
-
-[data-tooltip]:before {
-    content: attr(data-tooltip);
-    position: absolute;
-    background: #333;
-    color: #fff;
-    padding: 5px;
-    border-radius: 5px;
-    white-space: nowrap;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.2s;
-    bottom: 100%; /* Position the tooltip above the text */
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-[data-tooltip]:hover:before {
-    opacity: 1;
-    visibility: visible;
-    bottom: 120%; /* Adjust the distance from the text */
-}
 
 
-
-/* SIDEBAR */
-
-
-
-/*popups n.m.p */
-
-
-
-/* Styles for the conversation info */
-.conversations {
-    list-style: none;
-    padding: 0;
-    overflow-y: auto;
-    max-height: 300px;
-}
-
-.conversations li {
-    /* Style each conversation item (chat) */
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    cursor: pointer;
-    border-bottom: 1px solid var(--li-grey);
-	transition: background-color 0.3s, box-shadow 0.3s; /* Add transitions for smoother hover effect */
-    z-index: 1; /* Set a lower z-index to keep it below the search bar */
-}
-
-/* Remove the line between users */
-.conversations li:not(:last-child) {
-    border-bottom: none;
-}
-
-.conversations li:hover {
-    background-color:rgba(128, 128, 128, 0.248); /* Light background color on hover */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow on hover */
-    border-radius: 10px; /* Add a border radius on hover */
-    z-index: 1; /* Bring the hovered item to the front */
-    transition: background-color 0.3s;
-}
-.conversations li:hover .conversation-info {
-    width: 100%; /* Expand width on hover */
-    max-width: 300px; /* Limit the maximum width */
-}
-
-.conversations img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-right: 10px;
-}
-
-.conversations span {
-    font-weight: bold;
-    font-size: 16px;
-}
-
-/* Styles for the conversation info */
-.conversation-info {
-    flex: 1;
-    margin-left: 10px;
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
-}
-.user-name {
-    font-size: 20px !important; /* Adjust the font size as needed, and use !important */
-    color: var(--dark); /* Change the color to a dark color variable */
-}
-
-.last-message {
-    font-size: 14px !important; /* Adjust the font size to make it smaller, and use !important */
-    margin: 0;
-    display: flex;
-    align-items: center;
-}
-
-.message-text {
-    font-weight: normal; /* Remove bold style */
-    color: var(--dark); /* Change the text color to a dark color variable */
-}
-
-.timestamp {
-    font-size: 12px !important; /* Adjust the font size, and use !important */
-    margin-left: 5px;
-    color: var(--li-grey);
-}
-
-/* Styles for the conversation info */
-#search-convo {
-    /* Style the search bar */
-    width: 100%;
-    padding: 10px; 
-    margin-bottom: 25px auto 10px;
-	border: none;
-    outline: none;
-    flex: 1;
-    padding: 5px;
-    background: transparent;
-	position: relative; /* Add relative positioning */
-    z-index: 4; /* Set a higher z-index to keep it above the messages */
-
-}
-
-.search-container {
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Center-align horizontally */
-    background-color: var(--grey);
-    border-radius: 20px;
-    padding: 3px;
-    margin-bottom: 10px;
-    height: 30px;
-    max-width: 265px; /* Reduce the maximum width */
-    margin: 0 auto; /* Center-align horizontally */
-    margin-top: 10px; /* Adjust this value as needed to move it lower */
-}
-
-
-#search-convo::placeholder {
-    color: var(--dark-grey);
-}
-
-
- /* Additional styles for chat container */
-
- /* ... your existing CSS code ... */
-
-.chat-popup {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 300px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    display: none;
-    z-index: 999;
-}
-
-/* ... your existing CSS code ... */
-
- .chat-container {
-	display: none;
-	flex-direction: column;
-	max-height: calc(100% - 100px);
-	overflow-y: auto;
-}
-
-.chat-header {
-	background-color: var(--grey);
-	padding: 10px;
-	display: flex;
-	align-items: center;
-}
-
-.chat-header img {
-	width: 30px;
-	height: 30px;
-	border-radius: 50%;
-	margin-right: 10px;
-}
-
-.selected-user {
-	font-size: 18px;
-	font-weight: bold;
-}
-
-.messages {
-	list-style: none;
-	padding: 0;
-	margin: 0;
-}
-
-.messages li {
-	max-width: 70%;
-	margin: 10px;
-	padding: 10px;
-	border-radius: 8px;
-}
-
-.sent {
-	background-color: var(--green);
-	align-self: flex-end;
-	color: var(--light);
-}
-
-.received {
-	background-color: var(--grey);
-	align-self: flex-start;
-	color: var(--dark);
-}
-
-.timestamp {
-	font-size: 12px;
-	margin-left: 5px;
-	color: var(--li-grey);
-}
-
-.message-input-container {
-	display: flex;
-	align-items: center;
-	padding: 10px;
-	background-color: var(--grey);
-}
-
-#message-input {
-	flex: 1;
-	padding: 8px;
-	border: none;
-	border-radius: 20px;
-	margin-right: 10px;
-}
-
-#send-button {
-	background-color: var(--green);
-	color: var(--light);
-	border: none;
-	border-radius: 20px;
-	padding: 8px 16px;
-	cursor: pointer;
-}
-
-/* Styles for the notification and profile popups */
-.notification-popup,
-.profile-popup {
-    display: none;
-    position: absolute;
-    right: 0;
-    top: 60px; /* Adjust the distance from the icon */
-    background-color: var(--light);
-    border: 1px solid var(--green);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 200px; /* Adjust the width as needed */
-    border-radius: 10px; /* Adjust the radius as needed */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a shadow for a better visual effect */
-    overflow: hidden;
-    z-index: 1;
-}
-/* Styles for the profile popup */
 #profile-popup {
     display: none;
     position: absolute;
@@ -547,8 +240,8 @@ justify-content: center;
 .profile-name {
     font-size: 16px; /* Adjust the font size as needed */
     font-weight: bold;
+    color: var(--dark); 
 }
-
 hr {
     margin: 15px 0;
     border: 0.5px solid var(--green);
@@ -588,11 +281,7 @@ hr {
 	margin: 0;
 }
 
-.profile-name {
-    font-size: 16px;
-    font-weight: bold;
-    color: var(--dark); 
-}
+ 
 
 .profile-menu a {
 	display: block;
@@ -616,42 +305,7 @@ hr {
 	margin-right: 8px;
 	
 }
-/* Adjust other styles as needed */
 
-/* Additional styles for the notification icon */
-.notification {
-    position: relative;
-}
-
-.notification .num {
-    /* Styles for the notification number badge */
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    background-color: red;
-    color: white;
-    border-radius: 50%;
-    padding: 5px;
-}
-/* Styles for the notification popup */
-#notification-popup {
-    display: none;
-    position: absolute;
-    right: 0;
-    top: 60px; /* Adjust the distance from the notification icon */
-    background-color: var(--light);
-    border: 1px solid var(--green);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 300px; /* Adjust the width as needed */
-    max-height: 400px; /* Adjust the maximum height as needed */
-    border-radius: 10px; /* Adjust the radius as needed */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a shadow for a better visual effect */
-    margin-right: 25px; /* Adjust the margin-right value as needed */
-    overflow-y: auto;
-    z-index: 2; /* Ensure the notification pop-up appears above the message pop-up */
-}
-
-/* Styles for the notification header */
 .popup-header {
     background-color: var(--green); /* Change color as needed */
     color: var(--light);
@@ -665,55 +319,6 @@ hr {
     font-size: 18px;
     font-weight: bold;
 }
-
-/* Styles for the notification content */
-#notification-content {
-    /* Your existing styles for the content */
-    /* ... */
-}
-
-.notification-item {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    cursor: pointer;
-    border-bottom: 1px solid var(--li-grey);
-    transition: background-color 0.3s, box-shadow 0.3s; /* Add transitions for smoother hover effect */
-}
-
-.notification-item:last-child {
-    border-bottom: none; /* Remove border from the last item */
-}
-
-.notification-item:hover {
-    background-color:rgba(128, 128, 128, 0.248); /* Light gray on hover */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow on hover */
-    border-radius: 10px !important; /* Add a border radius on hover */
-    z-index: 1; /* Bring the hovered item to the front */
-    transition: background-color 0.3s;
-}
-
-.notification-item img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-right: 10px;
-}
-
-.notification-text p {
-    margin: 0;
-    color: var(--dark); /* Change the text color to a dark color variable */
-}
-
-.timestamp {
-    font-size: 12px !important;
-    margin-left: auto;
-    color: var(--li-grey);
-}
-
-
-/*popups n.m.p */
-
 
 
 #clock {
@@ -748,37 +353,6 @@ hr {
 }
 
 
-/* Initially hide the dropdown content */
-.dropdown-content {
-    display: none;
-}
-
-/* Style the dropdown menu */
-.dropdown-content ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-.dropdown-content li {
-    padding: 50px;
-    background-color: #222;
-}
-
-.dropdown-content a {
-    text-decoration: none;
-    color: white;
-    display: block;
-    transition: background-color 0.2s;
-}
-
-/* Style the dropdown toggle */
-.dropdown-toggle:hover .dropdown-content {
-    display: block;
-}
-
-
-/* Add more styles as needed */
 
 
 /* NAVBAR */
@@ -861,96 +435,10 @@ nav {
 	outline: none;
 	border-radius: 0 36px 36px 0;
 	cursor: pointer;
-		/*searchbar*/
-
-
 }
-#content nav .notification {
-	font-size: 25px;
-	position: relative;
-}
-#content nav .notification .num {
-	position: absolute;
-	top: -6px;
-	right: -6px;
-	width: 20px;
-	height: 20px;
-	border-radius: 50%;
-	border: 2px solid var(--light);
-	background: var(--red);
-	color: var(--light);
-	font-weight: 700;
-	font-size: 12px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-
-}
-
-/* Add the following styles to your existing CSS file or style block */
 
 nav {
     position: relative;
-}
-
-.notification,
-.message {
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-
-.circle {
-    position: absolute;
-    border-radius: 50%;
-    width: 40px; /* Adjust the size as needed */
-    height: 40px; /* Adjust the size as needed */
-    background-color: var(--grey);
-    transition: background-color 0.3s; /* Add smooth transition for color change */
-    z-index: -1;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* Center the circle */
-}
-
-.notification:hover .circle,
-.message:hover .circle {
-    background-color: var(--gray);
-}
-
-.notification .num,
-.message .num {
-    position: absolute;
-    top: 50%;
-    left: 100%;
-    transform: translate(-50%, -50%);
-    color: var(--light);
-    font-weight: 700;
-    font-size: 12px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-#content nav .message {
-	font-size: 25px;
-	position: relative;
-}
-#content nav .message .num {
-	position: absolute;
-	top: -6px;
-	right: -6px;
-	width: 20px;
-	height: 20px;
-	border-radius: 50%;
-	border: 2px solid var(--light);
-	background: var(--red);
-	color: var(--light);
-	font-weight: 700;
-	font-size: 12px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-
 }
 
 	/*popup menu*/
@@ -986,74 +474,6 @@ nav {
 	opacity: 1;
 	pointer-events: auto; 
 }
-
-/* Styles for the chatbox container */
-.chatbox {
-    display: none;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 300px;
-    background-color: var(--light);
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    z-index: 999;
-}
-
-.chatbox-header {
-    background-color: #333;
-    color: var(--light);
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.chatbox-title {
-    font-size: 16px;
-}
-
-.chatbox-close {
-    font-size: 20px;
-    cursor: pointer;
-}
-
-.chatbox-content {
-    padding: 10px;
-    max-height: 200px;
-    overflow-y: auto;
-}
-
-.chatbox-input {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    border-top: 1px solid #ccc;
-}
-
-#chat-input {
-    flex: 1;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-right: 5px;
-}
-
-#send-button {
-    background-color: #333;
-    color: var(--light);
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-/* Add more styles as needed */
-
-
-
-
 
 /*switch*/
 
@@ -1095,30 +515,7 @@ nav {
 	overflow-y: auto;
 }
 
-/* Add this CSS to adjust the search box and icon */
-.search-box {
-    display: flex;
-    align-items: center;
-    margin-right: 20px; /* Add some margin for spacing */
-	
-}
 
-/* Adjust the input box styles */
-.search-box input[type="text"] {
-    border: none;
-    padding: 5px 10px;
-    border-radius: 4px;
-    outline: none;
-    font-size: 14px;
-    width: 200px; /* Adjust the width as needed */
-	background-color: var(--light-gray);
-}
-
-/* Adjust the margin between the icon and input */
-#searchIcon {
-    margin-right: -5px; 
-	color:  var(--dark);
-} 
 #content main .head-title {
 	display: flex;
 	align-items: center;
@@ -1169,108 +566,6 @@ nav {
 	font-weight: 500;
 }
 
-
-/* MAIN */
-#content main {
-	width: 100%;
-	padding: 10px 24px;
-	font-family: var(--poppins);
-	max-height: calc(100vh - 56px);
-	overflow-y: auto;
-}
-
-#content main .button {
-	border: none;
-	border-radius: 10px;
-	color:var(--light);
-	padding: 8px 10px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 12px;
-	margin: 20px 2px;
-	cursor: pointer;
-	transition-duration: 0.4s;
-	float: right;
-}
-
-#content main .button.save {
-	background-color: var(--yellow);
-	color:var(--dark);
-}
-
-#content main .button.save:hover {
-	background-color: var(--light-yellow);
-  	color: var(--gray);
-}
-
-#content main .button.send {
-	background-color: var(--orange); 
- 	color: var(--dark); 
-}
-
-#content main .button.send:hover {
-	background-color: var(--light-orange);
-  	color:var(--gray);
-}
-
-#content main .head-title {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	grid-gap: 16px;
-	flex-wrap: wrap;
-}
-
-#content main .head-title .left h1 {
-	font-size: 36px;
-	font-weight: 600;
-	margin-bottom: 10px;
-	color: var(--dark);
-}
-#content main .head-title .left .breadcrumb {
-	display: flex;
-	align-items: center;
-	grid-gap: 16px;
-}
-#content main .head-title .left .breadcrumb li {
-	color: var(--dark);
-}
-#content main .head-title .left .breadcrumb li a {
-	color: var(--dark-grey);
-	pointer-events: none;
-}
-#content main .head-title .left .breadcrumb li a.active {
-	color: var(--blue);
-	pointer-events: unset;
-
-	/*button download*/
-}
-
-
-#content main .head-title .left .breadcrumb li a.active {
-	color: var(--blue);
-	pointer-events: unset;
-
-	/*button download*/
-}
-
-
-.btn-download {
-	height: 36px;
-	padding: 0 16px;
-	border-radius: 36px;
-	background: var(--green);
-	color: var(--light);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	grid-gap: 10px;
-	font-weight: 500;
-}
-.btn-download:hover {
-	background: var(--blue);
-}
 
 #content main .box-info {
 	display: grid;
@@ -1487,43 +782,24 @@ nav {
 #content main .table-data .todo .todo-list li:last-child {
 	margin-bottom: 0;
 }
-/* MAIN */
-/* CONTENT */
 
-
-
-
-
-
-
-
-
-@media screen and (max-width: 768px) {
-	#sidebar {
-		width: 200px;
-	}
-
-	#content {
-		width: calc(100% - 60px);
-		left: 200px;
-	}
-
-	#content nav .nav-link {
-		display: none;
-	}
-}
 
 #result-id-picture {
-	width: 150px; /* Adjust width as needed */
-	height: 150px; /* Adjust height as needed */
-	border: 1px solid #000; /* Example border */
+	width: 150px; 
+	height: 150px;
+	border: 3px solid #000; 
 	display: flex; 
-	justify-content: space-between; /* Align children to start and end */
+	justify-content: space-between; 
     float: right;
+	border-radius: 5px;
+	
+	
 }
 .profile-details {
-	flex: 1; /* Take remaining space */
-	padding-left: 20px; /* Add space between ID picture and details */
+	flex: 1; 
+	
+	
+
 }
 /* Style for the signature */
 #result-signature {
@@ -1540,6 +816,31 @@ nav {
 	width: 300px;
 	margin-top: 10px;
 }
+
+.pi {
+	text-align: center; 
+	margin: 0 auto; 
+  }
+
+
+
+
+.profile-info-content {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr); /* 3 equal-width columns */
+	gap: 15px; /* Adjust the gap between form groups */
+   padding-top: 30px;
+  width: 1100px; /* Adjust the maximum width as needed */
+    margin: 0 auto; /* Center the content within the parent container */
+}
+  
+.column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Adjust alignment as needed */
+    padding: 15px; /* Add some spacing around each column */
+}
+  
 
 @media screen and (max-width: 576px) {
 	#content nav form .form-input input {
@@ -1598,3 +899,17 @@ nav {
 }
 
 
+@media screen and (max-width: 768px) {
+	#sidebar {
+		width: 200px;
+	}
+
+	#content {
+		width: calc(100% - 60px);
+		left: 200px;
+	}
+
+	#content nav .nav-link {
+		display: none;
+	}
+}

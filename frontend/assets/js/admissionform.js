@@ -1,201 +1,262 @@
+// Default tab
+$(".tab").css("display", "none");
+$("#tab-1").css("display", "block");
 
-var form_1 = document.querySelector(".form_1");
-var form_2 = document.querySelector(".form_2");
-var form_3 = document.querySelector(".form_3");
- 
+// Initialize an array to keep track of completed steps
+var completedSteps = [];
 
-var form_1_btns = document.querySelector(".form_1_btns");
-var form_2_btns = document.querySelector(".form_2_btns");
-var form_3_btns = document.querySelector(".form_3_btns");
+function run(hideTab, showTab) {
+    if (hideTab < showTab) { // If not pressing the previous button
+        // Validation if pressing the next button
+        var currentTab = 0;
+        x = $('#tab-' + hideTab);
+        y = $(x).find("input, select");
 
+        if (hideTab === 1) {
+            // Validate the checkbox in Tab 1
+            if (!document.getElementById("read-guidelines").checked) {
+                alert("Please check the box to confirm that you have read the guidelines.");
+                return false;
+            }
+        } else if (hideTab === 2) {
+            // Validate the picture input
+            var pictureInput = $('input[name="id_picture"]');
+            if (pictureInput[0].files.length === 0) {
+                alert("Please upload an ID picture.");
+                return false;
+            }
 
-var form_1_next_btn = document.querySelector(".form_1_btns .btn_next");
-var form_2_back_btn = document.querySelector(".form_2_btns .btn_back");
-var form_2_next_btn = document.querySelector(".form_2_btns .btn_next");
-var form_3_back_btn = document.querySelector(".form_3_btns .btn_back");
-
-var form_2_progessbar = document.querySelector(".form_2_progessbar");
-var form_3_progessbar = document.querySelector(".form_3_progessbar");
-
-var btn_done = document.querySelector(".btn_done");
-var modal_wrapper = document.querySelector(".modal_wrapper");
-var shadow = document.querySelector(".shadow");
-
-form_1_next_btn.addEventListener("click", function(){
-	form_1.style.display = "none";
-	form_2.style.display = "block";
-
-	form_1_btns.style.display = "none";
-	form_2_btns.style.display = "flex";
-
-	form_2_progessbar.classList.add("active");
-});
-
-form_2_back_btn.addEventListener("click", function(){
-	form_1.style.display = "block";
-	form_2.style.display = "none";
-
-	form_1_btns.style.display = "flex";
-	form_2_btns.style.display = "none";
-
-	form_2_progessbar.classList.remove("active");
-});
-
-form_2_next_btn.addEventListener("click", function(){
-	form_2.style.display = "none";
-	form_3.style.display = "block";
-
-	form_3_btns.style.display = "flex";
-	form_2_btns.style.display = "none";
-
-	form_3_progessbar.classList.add("active");
-});
-
-form_3_back_btn.addEventListener("click", function(){
-	form_2.style.display = "block";
-	form_3.style.display = "none";
-
-	form_3_btns.style.display = "none";
-	form_2_btns.style.display = "flex";
-
-	form_3_progessbar.classList.remove("active");
-});
-
-btn_done.addEventListener("click", function(){
-	modal_wrapper.classList.add("active");
-})
-
-shadow.addEventListener("click", function(){
-	modal_wrapper.classList.remove("active");
-})
-
-const academicClassificationSelect = document.getElementById("academic_classification");
-const pictureSubmissionsDiv = document.getElementById("picture_submissions");
-
-academicClassificationSelect.addEventListener("change", function () {
-    if (academicClassificationSelect.value === "grade_12") {
-        pictureSubmissionsDiv.style.display = "block";
-    } else {
-        pictureSubmissionsDiv.style.display = "none";
-    }
-});
-
-const profilePictureInput = document.getElementById("profile_picture");
-const displayPicture = document.getElementById("display_picture");
-const textPlaceholder = document.querySelector(".text-placeholder");
-profilePictureInput.addEventListener("change", function () {
-    const file = profilePictureInput.files[0];
-
-    if (file) {
-        // Check file size (in bytes)
-        if (file.size > 25 * 1024 * 1024) { // 25MB
-            alert("Please select an image smaller than 25MB.");
-            profilePictureInput.value = ''; // Clear the input field
-            return;
-        }
-
-        const reader = new FileReader();
-        reader.onload = function (e) {
-            const img = new Image();
-            img.src = e.target.result;
-
-            img.onload = function () {
-                // Check image dimensions
-                if (img.width < 600 || img.width > 610 || img.height < 600 || img.height > 610) {
-                    alert("Please select only a 2x2 ID.");
-                    profilePictureInput.value = ''; // Clear the input field
-                } else {
-                    displayPicture.src = e.target.result;
-                    textPlaceholder.style.display = "none";
-                }
-            };
-        };
-
-        reader.readAsDataURL(file);
-    } else {
-        displayPicture.src = "";
-        textPlaceholder.style.display = "block";
-    }
-});
-
-
-// Get the cloud download button element
-const cloudDownloadButton = document.getElementById("signature-submit-button");
-
-// Add a click event listener to handle file download
-cloudDownloadButton.addEventListener("click", function () {
-    // Trigger a click on the hidden file input element
-    const signatureImageInput = document.getElementById("signature_image");
-    signatureImageInput.click();
-});
-
-// Get the signature image input element
-const signatureImageInput = document.getElementById('signature_image');
-
-// Get the signature image preview element
-const signatureImagePreview = document.getElementById('signature-preview');
-
-// Add an event listener to the input element
-signatureImageInput.addEventListener('change', function () {
-    const file = signatureImageInput.files[0];
-
-    // Check if a file was selected
-    if (file) {
-        const reader = new FileReader();
-
-        reader.onload = function (e) {
-            // Set the source of the img tag to the selected image
-            signatureImagePreview.src = e.target.result;
-        };
-
-        // Read the image as a data URL
-        reader.readAsDataURL(file);
-    }
-});
-
-function checkFileSize(input) {
-        if (input.files.length > 0) {
-            const fileSize = input.files[0].size; // Size in bytes
-            const maxSize = 25 * 1024 * 1024; // 25MB in bytes
-
-            if (fileSize > maxSize) {
-                alert("File size exceeds 25MB. Please select a smaller file.");
-                input.value = ''; // Clear the input field
+            // Validate the e-signature
+            if (signaturePad.isEmpty()) {
+                alert("Please provide your e-signature.");
+                return false;
+            }
+        } else if (hideTab === 3) {
+            // Validating the applicant's e-signature in Tab 3
+            if (applicantSignaturePad.isEmpty()) {
+                alert("Please provide the applicant's e-signature.");
+                return false;
             }
         }
+
+        for (i = 0; i < y.length; i++) {
+            if (y[i].value === "") {
+                $(y[i]).css("background", "#ffdddd");
+                y[i].placeholder = "Please fill up the field";
+                return false;
+            }
+        }
+        // Mark the step as completed
+        completedSteps[hideTab - 1] = true;
     }
-    //server-side solution with a database(unique number)
-   // generate the Application number
-// Function to generate a zero-padded 4-digit number
- // Function to generate a zero-padded 4-digit number
- function generateZeroPaddedNumber(num) {
-    return num.toString().padStart(2, '0');
+
+    // Progress bar
+    for (i = 1; i < showTab; i++) {
+        $("#step-" + i).css("opacity", "1");
+        if (completedSteps[i - 1]) {
+            $("#step-" + i).html('<i class="fas fa-check"></i>'); // Add a checkmark
+        }
+    }
+
+    // Switch tab
+    $("#tab-" + hideTab).css("display", "none");
+    $("#tab-" + showTab).css("display", "block");
+    $("input, select").css("background", "#fff");
 }
 
-// Get the current date
-const currentDate = new Date();
-const month = currentDate.getMonth() + 1; // Adding 1 because months are 0-based
-const day = currentDate.getDate();
-
-// Check if the applicant number is stored in the session
-let applicantNumber = sessionStorage.getItem('applicantNumber');
-
-// If not, generate a new applicant number
-if (applicantNumber === null) {
-    applicantNumber = `${generateZeroPaddedNumber(month)}-${generateZeroPaddedNumber(day)}-0001`;
-
-    // Save the generated applicant number to the session
-    sessionStorage.setItem('applicantNumber', applicantNumber);
-}
-
-// Assign the generated applicant number to the input field
-document.getElementById("applicant_number").value = applicantNumber;
-
-//pressing done
-const doneButton = document.getElementById("doneButton");
-
-// Add an event listener to the "Done" button
-doneButton.addEventListener("click", function() {
-    // Redirect to the "student.html" page
-    window.location.href = "student.html";
+// Handle the file input label click
+$('label[for="id_picture"]').click(function () {
+    $('input[name="id_picture"]').click();
 });
+
+// Display the selected file name
+$('input[name="id_picture"]').change(function () {
+    var fileName = $(this).val().split("\\").pop();
+    $('label[for="id_picture"]').text(fileName);
+});
+
+
+
+
+// Handle clicking the image preview to change the image
+document.getElementById('id_picture_preview_container').addEventListener('click', function () {
+    document.getElementById('id_picture').click();
+});
+
+// Handle the file input change event
+document.getElementById('id_picture').addEventListener('change', function (e) {
+    const fileInput = e.target;
+    const imagePreview = document.getElementById('id_picture_preview_img');
+    const uploadInstructions = document.getElementById('upload-instructions');
+
+    if (fileInput.files.length > 0) {
+        const file = fileInput.files[0];
+
+        // Display the selected file as the image preview
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            imagePreview.src = e.target.result;
+
+            // Hide the upload instructions
+            uploadInstructions.style.display = 'none';
+        };
+        reader.readAsDataURL(file);
+    }
+});
+
+
+// Initialize the Signature Pad
+var signaturePad = new SignaturePad(document.querySelector("#signature-pad canvas"));
+//  handle the second signature
+var applicantSignaturePad = new SignaturePad(document.querySelector("#applicant-signature-pad canvas"));
+
+// Clear the e-signature without reloading the page
+document.getElementById("clear-signature").addEventListener("click", function (e) {
+    e.preventDefault(); // Prevent the default form submission behavior
+    signaturePad.clear();
+});
+// Clear the applicant's e-signature without reloading the page
+document.getElementById("clear-applicant-signature").addEventListener("click", function (e) {
+    e.preventDefault(); // Prevent the default form submission behavior
+    applicantSignaturePad.clear();
+});
+
+
+
+// Function to submit the form with both e-signatures
+function submitForm() {
+    var userSignatureData = signaturePad.toDataURL(); // Get the user's e-signature as data URL
+    var applicantSignatureData = applicantSignaturePad.toDataURL(); // Get the applicant's e-signature as data URL
+
+    // You can send the signature data to the server or handle it as needed
+    // For demonstration, we'll log it to the console
+    console.log("User's E-Signature Data: ", userSignatureData);
+    console.log("Applicant's E-Signature Data: ", applicantSignatureData);
+    alert("Form submitted with e-signatures. Check the console for the e-signature data.");
+}
+
+
+function generateApplicantNumber() {
+    const now = new Date();
+    const month = String(now.getMonth() + 1).padStart(2, '0'); // Get the current month (1-12) and pad with 0 if needed
+    const day = String(now.getDate()).padStart(2, '0'); // Get the current day (1-31) and pad with 0 if needed
+
+    // In a real scenario, you would replace this part with your logic to get the applicant's sequence number.
+    // For this example, let's generate a random number between 1 and 9999.
+    const sequenceNumber = Math.floor(Math.random() * 9999) + 1;
+
+    const applicantNumber = `${month}-${day}-${sequenceNumber.toString().padStart(4, '0')}`;
+    document.getElementById("applicant_number").value = applicantNumber;
+}
+
+// Call this function to generate the applicant number when needed.
+generateApplicantNumber();
+
+
+function handleForm(event) {
+    event.preventDefault();
+
+    // Retrieve and store all form data in localStorage
+    const lastName = document.getElementById('last_name').value;
+    const firstName = document.getElementById('first_name').value;
+    const middleName = document.getElementById('middle_name').value;
+    const gender = document.getElementById('gender').value;
+    const birthdate = document.getElementById('birthdate').value;
+    const city = document.getElementById('birthplace-municipality').value;
+    const birthprovince = document.getElementById('birthplace-province').value;
+    const country = document.getElementById('birthplace_country').value;
+    const age = document.getElementById('age').value;
+    const civilStatus = document.getElementById('civil_status').value;
+    const citizenship = document.getElementById('citizenship').value;
+    const nationality = document.getElementById('nationality').value;
+    const houseStreet = document.getElementById('house_street').value;
+    const barangaySubdivision = document.getElementById('barangay_subdivision').value;
+    const municipalityCity = document.getElementById('municipality_city').value;
+    const province = document.getElementById('province').value;
+    const countryState = document.getElementById('country_state').value;
+    const zipCode = document.getElementById('zip_code').value;
+    const phone = document.getElementById('phone').value;
+    const facebook = document.getElementById('facebook').value;
+    const email = document.getElementById('email').value;
+    const contactPersonName = document.getElementById('contact_person_1').value;
+    const contactPersonMobile = document.getElementById('contact_person_1_mobile').value;
+    const relationship = document.getElementById('relationship_1').value;
+    const contactPerson2Name = document.getElementById('contact_person_2').value;
+    const contactPerson2Mobile = document.getElementById('contact_person_2_mobile').value;
+    const relationship2 = document.getElementById('relationship_2').value;
+    const academicClassification = document.getElementById('academic_classification').value;
+    const highSchoolAddress = document.getElementById('high_school_name_address').value;
+    const alsPeptAddress = document.getElementById('als_pept_name_address').value;
+    const collegeAddress = document.getElementById('college_name_address').value;
+    const lrn = document.getElementById('lrn').value;
+    const degreeApplied = document.getElementById('degree_applied').value;
+    const major = document.getElementById('major').value;
+    const natureOfDegree = document.getElementById('nature_of_degree').value;
+    const canvas = document.querySelector('#signature-pad canvas');
+    const signatureData = canvas.toDataURL();
+    const applicantCanvas = document.querySelector('#applicant-signature-pad canvas');
+    const applicantSignatureData = applicantCanvas.toDataURL();
+   
+    
+    // Store data in localStorage
+    localStorage.setItem('lastName', lastName);
+    localStorage.setItem('firstName', firstName);
+    localStorage.setItem('middleName', middleName);
+    localStorage.setItem('gender', gender);
+    localStorage.setItem('birthdate', birthdate);
+    localStorage.setItem('city', city);
+    localStorage.setItem('birthprovince', birthprovince);
+    localStorage.setItem('country', country);
+    localStorage.setItem('age', age);
+    localStorage.setItem('civilStatus', civilStatus);
+    localStorage.setItem('citizenship', citizenship);
+    localStorage.setItem('nationality', nationality);
+    localStorage.setItem('houseStreet', houseStreet);
+    localStorage.setItem('barangaySubdivision', barangaySubdivision);
+    localStorage.setItem('municipalityCity', municipalityCity);
+    localStorage.setItem('province', province);
+    localStorage.setItem('countryState', countryState);
+    localStorage.setItem('zipCode', zipCode);
+    localStorage.setItem('phone', phone);
+    localStorage.setItem('facebook', facebook);
+    localStorage.setItem('email', email);
+    localStorage.setItem('contact_person_1', contactPersonName);
+    localStorage.setItem('contact_person_1_mobile', contactPersonMobile);
+    localStorage.setItem('relationship_1', relationship);
+    localStorage.setItem('contact_person_1', contactPersonName);
+    localStorage.setItem('contact_person_1_mobile', contactPersonMobile);
+    localStorage.setItem('relationship_1', relationship);
+    localStorage.setItem('contact_person_2', contactPerson2Name);
+    localStorage.setItem('contact_person_2_mobile', contactPerson2Mobile);
+    localStorage.setItem('relationship_2', relationship2);
+    localStorage.setItem('academicClassification', academicClassification);
+    localStorage.setItem('highSchoolAddress', highSchoolAddress);
+    localStorage.setItem('alsPeptAddress', alsPeptAddress);
+    localStorage.setItem('collegeAddress', collegeAddress);
+    localStorage.setItem('lrn', lrn);
+    localStorage.setItem('degreeApplied', degreeApplied);
+    localStorage.setItem('major', major);
+    localStorage.setItem('natureOfDegree', natureOfDegree);
+    localStorage.setItem('signature', signatureData);
+    localStorage.setItem('applicantSignature', applicantSignatureData);
+
+    // Retrieve and save the ID picture
+    const fileInput = document.getElementById('id_picture');
+    if (fileInput.files.length > 0) {
+        const reader = new FileReader();
+
+        reader.onload = function (e) {
+            const idPictureData = e.target.result;
+            localStorage.setItem('id_picture', idPictureData);
+
+            // Redirect to the result page
+            window.location.href = 'student.html';
+        };
+
+        reader.readAsDataURL(fileInput.files[0]);
+    } else {
+        // If no ID picture uploaded, still redirect to the result page
+        window.location.href = 'student.html';
+    }
+}
+
