@@ -45,6 +45,16 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         console.log('Emergency contact person 2 details not found in localStorage');
     }
+    const academicClassification = localStorage.getItem('academicClassification');
+    const highSchoolAddress = localStorage.getItem('highSchoolAddress');
+    const alsPeptAddress = localStorage.getItem('alsPeptAddress');
+    const collegeAddress = localStorage.getItem('collegeAddress');
+    const lrn = localStorage.getItem('lrn');
+    const degreeApplied = localStorage.getItem('degreeApplied');
+    const major = localStorage.getItem('major');
+    const natureOfDegree = localStorage.getItem('natureOfDegree');
+
+    
     // Display the retrieved data on the result page
 
     document.getElementById('result-LastName').textContent = lastName;
@@ -68,7 +78,15 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('result-Telephone').textContent = telephone;
     document.getElementById('result-Facebook').textContent = facebook;
     document.getElementById('result-Email').textContent = email;
- 
+    document.getElementById('result-classification').textContent = academicClassification;
+    document.getElementById('high_school_name_address').textContent = highSchoolAddress;
+    document.getElementById('result-ALS').textContent = alsPeptAddress;
+    document.getElementById('college_name_address').textContent = collegeAddress;
+    document.getElementById('result-LRN').textContent = lrn;
+    document.getElementById('result-Degree').textContent = degreeApplied;
+    document.getElementById('result-major').textContent = major;
+    document.getElementById('result-natureDegree').textContent = natureOfDegree;
+
     // Retrieve and display the ID picture if available
     const idPicture = localStorage.getItem('id_picture');
     if (idPicture) {
@@ -79,4 +97,14 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         console.log('ID picture not found in localStorage');
     }
+      // Retrieve the e-signature from localStorage and display it in the result page
+  const signature = localStorage.getItem('signature');
+  if (signature) {
+    const img = document.createElement('img');
+    img.src = signature;
+    img.style.width = '200px'; // Adjust the size as needed
+    document.getElementById('result-signature').appendChild(img);
+  } else {
+    console.log('E-Signature not found in localStorage');
+  }
 });

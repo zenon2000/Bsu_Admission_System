@@ -1,3 +1,8 @@
+document.getElementById('clear-applicant-signature').addEventListener('click', function () {
+    const canvas = document.querySelector('#applicant-signature-pad canvas');
+    const context = canvas.getContext('2d');
+    context.clearRect(0, 0, canvas.width, canvas.height);
+  });
 function handleForm(event) {
     event.preventDefault();
 
@@ -29,7 +34,17 @@ function handleForm(event) {
     const contactPerson2Name = document.getElementById('contact_person_2').value;
     const contactPerson2Mobile = document.getElementById('contact_person_2_mobile').value;
     const relationship2 = document.getElementById('relationship_2').value;
-
+    const academicClassification = document.getElementById('academic_classification').value;
+    const highSchoolAddress = document.getElementById('high_school_name_address').value;
+    const alsPeptAddress = document.getElementById('als_pept_name_address').value;
+    const collegeAddress = document.getElementById('college_name_address').value;
+    const lrn = document.getElementById('lrn').value;
+    const degreeApplied = document.getElementById('degree_applied').value;
+    const major = document.getElementById('major').value;
+    const natureOfDegree = document.getElementById('nature_of_degree').value;
+    const canvas = document.querySelector('#applicant-signature-pad canvas');
+    const signature = canvas.toDataURL();
+    
     // Store data in localStorage
     localStorage.setItem('lastName', lastName);
     localStorage.setItem('firstName', firstName);
@@ -61,6 +76,16 @@ function handleForm(event) {
     localStorage.setItem('contact_person_2', contactPerson2Name);
     localStorage.setItem('contact_person_2_mobile', contactPerson2Mobile);
     localStorage.setItem('relationship_2', relationship2);
+    localStorage.setItem('academicClassification', academicClassification);
+    localStorage.setItem('highSchoolAddress', highSchoolAddress);
+    localStorage.setItem('alsPeptAddress', alsPeptAddress);
+    localStorage.setItem('collegeAddress', collegeAddress);
+    localStorage.setItem('lrn', lrn);
+    localStorage.setItem('degreeApplied', degreeApplied);
+    localStorage.setItem('major', major);
+    localStorage.setItem('natureOfDegree', natureOfDegree);
+    localStorage.setItem('signature', signature);
+
 
     // Retrieve and save the ID picture
     const fileInput = document.getElementById('id_picture');

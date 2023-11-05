@@ -153,8 +153,10 @@ function generateApplicantNumber() {
 generateApplicantNumber();
 
 //Handle Submit
-function handleSubmit () {
+function handleSubmit() {
 
+    //ID picture
+    const idpicture = document.getElementById('id_picture').value;
     //Fullname
     const firstname = document.getElementById('first_name').value;
     const middlename = document.getElementById('middle_name').value;
@@ -163,9 +165,9 @@ function handleSubmit () {
     const gender = document.getElementById('gender').value;
     //Birth Details
     const birthdate = document.getElementById('birthdate').value;
-    const birthplacemunicipality = document.getElementById('birthplace_municipality').value;
-    const birthplaceprovince = document.getElementById('birthplace_province').value;
-    const birthplacecountry = document.getElementById('birthplace_country').value;
+    const B_municipality = document.getElementById('birthplace_municipality').value;
+    const B_province = document.getElementById('birthplace_province').value;
+    const B_country = document.getElementById('birthplace_country').value;
     //Age
     const age = document.getElementById('age').value;
     //Civil Status
@@ -201,17 +203,19 @@ function handleSubmit () {
     const lrn = document.getElementById('lrn').value;
     //Course Applying For
     const degree_applied = document.getElementById('degree_applied').value;
+    const major = document.getElementById('major').value;
     const nature_of_degree = document.getElementById('nature_of_degree').value;
 
-    // to set into local storage
+   // to set into local storage
+    localStorage.setItem("IDPICTURE", idpicture);
     localStorage.setItem("FIRSTNAME", firstname);
     localStorage.setItem("MIDDLENAME", middlename);
     localStorage.setItem("LASTNAME", lastname);
     localStorage.setItem("GENDER", gender);
     localStorage.setItem("BIRTHDATE", birthdate);
-    localStorage.setItem("BIRTHPLACE_MUNICIPALITY", birthplacemunicipality);
-    localStorage.setItem("BIRHTPLACE_PROVINCE", birthplaceprovince);
-    localStorage.setItem("BIRHTPLACE_COUNTRY", birthplacecountry);
+    localStorage.setItem("BIRTHPLACE_MUNICIPALITY", B_municipality);
+    localStorage.setItem("BIRHTPLACE_PROVINCE", B_province);
+    localStorage.setItem("BIRHTPLACE_COUNTRY", B_country);
     localStorage.setItem("AGE", age);
     localStorage.setItem("CIVIL_STATUS", civilstatus);
     localStorage.setItem("CITIZENSHIP", citizenship);
@@ -237,7 +241,150 @@ function handleSubmit () {
     localStorage.setItem("COLLEGE_NAME_ADDRESS", college_name_address);
     localStorage.setItem("LRN", lrn);
     localStorage.setItem("DEGREE_APPLIED", degree_applied);
+    localStorage.setItem("MAJOR", major);
     localStorage.setItem("NATURE_OF_DEGREE", nature_of_degree);
 
     return;
 }
+
+/* //form
+    const Myform = document.getElementById('myform');
+    //Full Name
+    const firstname = document.getElementById('first_name');
+    const middlename = document.getElementById('middle_name');
+    const lastname = document.getElementById('last_name');
+    //Gender
+    const gender = document.getElementById('gender');
+    //Birth Details
+    const birthdate = document.getElementById('birthdate');
+    const birthplacemunicipality = document.getElementById('birthplace_municipality');
+    const birthplaceprovince = document.getElementById('birthplace_province');
+    const birthplacecountry = document.getElementById('birthplace_country');
+    //Age
+    const age = document.getElementById('age');
+    //Civil Status
+    const civilstatus = document.getElementById('civil_status');
+    //Citizenship
+    const citizenship = document.getElementById('citizenship');
+    //Nationality
+    const nationality = document.getElementById('nationality');
+    //Home Address
+    const housestreet = document.getElementById('house_street');
+    const barangay_subdivision = document.getElementById('barangay_subdivision');
+    const municipality_city = document.getElementById('municipality_city');
+    const province = document.getElementById('province');
+    const countrystate = document.getElementById('country_state');
+    const zipcode = document.getElementById('zip_code');
+    //Contact information
+    const phone = document.getElementById('phone');
+    const facebook = document.getElementById('facebook');
+    const email = document.getElementById('email');
+    //In Case of Emergency
+    const contact_person_1 = document.getElementById('contact_person_1');
+    const contact_person_1_mobile = document.getElementById('contact_person_1_mobile');
+    const relationship_1 = document.getElementById('relationship_1');
+    const contact_person_2 = document.getElementById('contact_person_2');
+    const contact_person_2_mobile = document.getElementById('contact_person_2_mobile');
+    const relationship_2 = document.getElementById('relationship_2');
+    //Educational background
+    const academic_classification = document.getElementById('academic_classification');
+    const high_school_name_address = document.getElementById('high_school_name_address');
+    const als_pept_name_address = document.getElementById('als_pept_name_address');
+    const college_name_address = document.getElementById('college_name_address');
+    //LRN
+    const lrn = document.getElementById('lrn');
+    //Course Applying For
+    const degree_applied = document.getElementById('degree_applied');
+    const major = document.getElementById('major');
+    const nature_of_degree = document.getElementById('nature_of_degree'); */
+
+    /* myform.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        //Full name
+        const firstnameValue = firstname.value;
+        const middlenameValue = middlename.value;
+        const lastnameValue = lastname.value;
+        //Gender
+        const genderValue = gender.value;
+        //Birth Details
+        const birthdateValue = birthdate.value;
+        const birthplacemunicipalityValue = birthplacemunicipality.value;
+        const birthplaceprovinceValue = birthplaceprovince.value;
+        const birthplacecountryValue = birthplacecountry.value;
+        //Age
+        const ageValue = age.value;
+        //Civil Status
+        const civilstatusValue = civilstatus.value;
+        //Citizenship
+        const citizenshipValue = citizenship.value;
+        //Nationality
+        const nationalityValue = nationality.value;
+        //Home Address
+        const housestreetValue = housestreet.value;
+        const barangay_subdivisionValue = barangay_subdivision.value;
+        const municipality_cityValue = municipality_city.value;
+        const provinceValue = province.value;
+        const countrystateValue = countrystate.value;
+        const zipcodeValue = zipcode.value;
+        //Contact information
+        const phoneValue = phone.value;
+        const facebookValue = facebook.value;
+        const emailValue = email.value;
+        //In Case of Emergency
+        const contact_person_1Value = contact_person_1.value;
+        const contact_person_1_mobileValue = contact_person_1_mobile.value;
+        const relationship_1value = relationship_1.value;
+        const contact_person_2Value = contact_person_2.value;
+        const contact_person_2_mobileValue = contact_person_2_mobile.value;
+        const relationship_2Value = relationship_2.value;
+        //Educational background
+        const academic_classificationValue = academic_classification.value;
+        const high_school_name_addressValue = high_school_name_address.value;
+        const als_pept_name_addressValue = als_pept_name_address.value;
+        const college_name_addressValue = college_name_address.value;
+        //LRN
+        const lrnValue = lrn.value;
+        //Course Applying For
+        const degree_appliedValue = degree_applied.value;
+        const majorValue = major.value;
+        const nature_of_degreeValue = nature_of_degree.value;
+
+        localStorage.setItem("FIRSTNAME", firstnameValue);
+        localStorage.setItem("MIDDLENAME", middlenameValue);
+        localStorage.setItem("LASTNAME", lastnameValue);
+        localStorage.setItem("GENDER", genderValue);
+        localStorage.setItem("BIRTHDATE", birthdateValue);
+        localStorage.setItem("BIRTHPLACE_MUNICIPALITY", birthplacemunicipalityValue);
+        localStorage.setItem("BIRHTPLACE_PROVINCE", birthplaceprovinceValue);
+        localStorage.setItem("BIRHTPLACE_COUNTRY", birthplacecountryValue);
+        localStorage.setItem("AGE", ageValue);
+        localStorage.setItem("CIVIL_STATUS", civilstatusValue);
+        localStorage.setItem("CITIZENSHIP", citizenshipValue);
+        localStorage.setItem("NATIONALITY", nationalityValue);
+        localStorage.setItem("HOUSE_STREET", housestreetValue);
+        localStorage.setItem("BARANGAY_SUBDIVISION", barangay_subdivisionValue);
+        localStorage.setItem("MUNICIPALITY_CITY", municipality_cityValue);
+        localStorage.setItem("PROVINCE", provinceValue);
+        localStorage.setItem("COUNTRY_STATE", countrystateValue);
+        localStorage.setItem("ZIPCODE", zipcodeValue);
+        localStorage.setItem("PHONE", phoneValue);
+        localStorage.setItem("FACEBOOK", facebookValue);
+        localStorage.setItem("EMAIL", emailValue);
+        localStorage.setItem("CONTACT_PERSON_1", contact_person_1Value);
+        localStorage.setItem("CONTACT_PERSON_1_MOBILE", contact_person_1_mobileValue);
+        localStorage.setItem("RELATIONSHIP_1", relationship_1value);
+        localStorage.setItem("CONTACT_PERSON_2", contact_person_2Value);
+        localStorage.setItem("CONTACT_PERSON_2_MOBILE", contact_person_2_mobileValue);
+        localStorage.setItem("RELATIONSHIP_2", relationship_2Value);
+        localStorage.setItem("ACADEMIC_CLASSIFICATION", academic_classificationValue);
+        localStorage.setItem("HIGH_SCHOOL_NAME_ADDRESS", high_school_name_addressValue);
+        localStorage.setItem("ALS_PEPT_NAME_ADDRESS", als_pept_name_addressValue);
+        localStorage.setItem("COLLEGE_NAME_ADDRESS", college_name_addressValue);
+        localStorage.setItem("LRN", lrnValue);
+        localStorage.setItem("DEGREE_APPLIED", degree_appliedValue);
+        localStorage.setItem("MAJOR", majorValue);
+        localStorage.setItem("NATURE_OF_DEGREE", nature_of_degreeValue);
+
+        window.location.href = "student.html";
+    }) */

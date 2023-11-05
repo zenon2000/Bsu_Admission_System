@@ -177,6 +177,7 @@
 
             </div>
             <p class="personal_information">Contact person(s) in case of emergency</p>
+            <p class="personal_information">Contact Person 1</p>
 
             <div class="form-container">
                 <!-- Contact Person 1 -->
@@ -221,8 +222,214 @@
                         <option value="guardian">Guardian</option>
                     </select>
                 </div>
-
             </div>
+            <div class="form-container">
+                <div class="form-group">
+                    <label class="small-label" for="academic_classification">Academic Classification</label>
+                    <select name="academic_classification" class="input" id="academic_classification" required>
+                        <option value="" disabled selected>Select Academic Classification</option>
+                        <option value="Currently enrolled as Grade 12 student (Graduating for the current
+                        year)">Currently enrolled as Grade 12 student (Graduating for the current
+                            year)</option>
+                        <option value="Senior High School Graduate (who did not enroll in any other school
+                        after graduation)">Senior High School Graduate (who did not enroll in any other school
+                            after graduation)</option>
+                        <option value="High School Graduate (who did not enroll in any other school after
+                        graduation)">High School Graduate (who did not enroll in any other school after
+                            graduation)</option>
+                        <option value="ALS A&E SHS level passer/ PEPT Passer">ALS A&E SHS level passer/ PEPT Passer
+                        </option>
+                        <option value="Transferee (previously enrolled as a college student from another
+                        school)">Transferee (previously enrolled as a college student from another
+                            school)</option>
+                        <option value="Vocational/Technical-Vocational Completers">Vocational/Technical-Vocational
+                            Completers</option>
+                        <option value="Second (2nd) Degree">Second (2nd) Degree</option>
+                    </select>
+                </div>
+            </div>
+            <p class="personal_information">Academic Background</p>
+            <div class="form-container">
+                <!-- Academic Background -->
+                <div class="form-group">
+                    <label class="small-label" for="high_school_name_address" style="white-space: nowrap;">High
+                        School/Senior High School</label>
+                    <input type="text" name="high_school_name_address" class="input" id="high_school_name_address"
+                        required placeholder="Enter Name and Address">
+                </div>
+                <div class="form-group">
+                    <label class="small-label" for="als_pept_name_address" style="white-space: nowrap;">ALS/PEPT was
+                        taken:</label>
+                    <input type="text" name="als_pept_name_address" class="input" id="als_pept_name_address" required
+                        placeholder="Enter Name and Address">
+                </div>
+                <div class="form-group">
+                    <label class="small-label" for="college_name_address">College/University:</label>
+                    <input type="text" name="college_name_address" class="input" id="college_name_address" required
+                        placeholder="Enter Name and Address">
+                </div>
+                <div class="form-group">
+                    <label class="small-label" for="lrn" style="white-space: nowrap;">Learner's Reference Number</label>
+                    <input type="number" name="lrn" class="input" id="lrn" placeholder="Enter LRN" pattern="[0-9]*"
+                        maxlength="12" required>
+                </div>
+                <div class="form-group">
+                    <label class="small-label" for="degree_applied">Degree</label>
+                    <select name="degree_applied" class="input" id="degree_applied" required>
+                        <option value="">Select Degree Applied For in BSU</option>
+
+                        <optgroup label="College of Agriculture">
+                            <option value="Bachelor of Science in Agriculture (BSA)">Bachelor of Science in Agriculture
+                                (BSA)</option>
+                            <option value="Bachelor of Science in Agribusiness (BSAB)">Bachelor of Science in
+                                Agribusiness (BSAB)</option>
+                        </optgroup>
+
+                        <optgroup label="College of Teacher Education">
+                            <option value="Bachelor of Secondary Education (BSE)">Bachelor of Secondary Education (BSE)
+                            </option>
+                            <option value="Bachelor of Elementary Education (BEE)">Bachelor of Elementary Education
+                                (BEE)</option>
+                            <option value="Bachelor of Early Childhood Education">Bachelor of Early Childhood Education
+                            </option>
+                            <option value="Bachelor of Technology and Livelihood Education">Bachelor of Technology and
+                                Livelihood Education</option>
+                        </optgroup>
+
+                        <optgroup label="College of Arts and Humanities">
+                            <option value="Bachelor of Arts in Communication">Bachelor of Arts in Communication</option>
+                            <option value="Bachelor of Arts in English Language">Bachelor of Arts in English Language
+                            </option>
+                            <option value="Bachelor of Arts in Filipino Language">Bachelor of Arts in Filipino Language
+                            </option>
+                        </optgroup>
+
+                        <optgroup label="College of Natural Sciences">
+                            <option value="Bachelor of Science in Biology">Bachelor of Science in Biology</option>
+                            <option value="Bachelor of Science in Environmental Science">Bachelor of Science in
+                                Environmental Science</option>
+                            <option value="Bachelor of Science in Chemistry">Bachelor of Science in Chemistry</option>
+                        </optgroup>
+
+                        <optgroup label="College of Numeracy and Applied Sciences">
+                            <option value="Bachelor of Science in Mathematics">Bachelor of Science in Mathematics
+                            </option>
+                            <option value="Bachelor of Science in Statistics">Bachelor of Science in Statistics</option>
+                        </optgroup>
+
+                        <optgroup label="College of Social Sciences">
+                            <option value="Bachelor of Arts in History">Bachelor of Arts in History</option>
+                            <option value="Bachelor of Arts in Psychology">Bachelor of Arts in Psychology</option>
+                        </optgroup>
+
+                        <optgroup label="College of Home Economics and Technology">
+                            <option value="Bachelor of Science in Hospitality Management">Bachelor of Science in
+                                Hospitality Management</option>
+                            <option value="Bachelor of Science in Nutrition and Dietetics">Bachelor of Science in
+                                Nutrition and Dietetics</option>
+                            <option
+                                value="Bachelor of Science in Entrepreneurship specialized in Apparel & Fashion Enterprise">
+                                Bachelor of Science in Entrepreneurship specialized in Apparel & Fashion Enterprise
+                            </option>
+                            <option value="Bachelor of Science in Food Technology">Bachelor of Science in Food
+                                Technology</option>
+                            <option value="Bachelor of Science in Tourism Management">Bachelor of Science in Tourism
+                                Management</option>
+                            <option value="Bachelor of Science in Entrepreneurship specialized in Food Enterprise">
+                                Bachelor of Science in Entrepreneurship specialized in Food Enterprise</option>
+                        </optgroup>
+
+                        <optgroup label="College of Public Administration and Governance">
+                            <option value="Bachelor in Public Administration">Bachelor in Public Administration</option>
+                            <option value="Diploma in Public Administration">Diploma in Public Administration</option>
+                            <option value="Certificate in Public Administration">Certificate in Public Administration
+                            </option>
+                        </optgroup>
+
+                        <optgroup label="College of Human Kinetics">
+                            <option value="Bachelor of Science in Exercise and Sports Science">Bachelor of Science in
+                                Exercise and Sports Science</option>
+                            <option value="Bachelor in Physical Education">Bachelor in Physical Education</option>
+                        </optgroup>
+
+                        <optgroup label="College of Engineering">
+                            <option value="Bachelor of Science in Agricultural and Biosystems Engineering">Bachelor of
+                                Science in Agricultural and Biosystems Engineering</option>
+                            <option value="Bachelor of Science in Civil Engineering">Bachelor of Science in Civil
+                                Engineering</option>
+                            <option value="Bachelor of Science in Industrial Engineering">Bachelor of Science in
+                                Industrial Engineering</option>
+                            <option value="Bachelor of Science in Electrical Engineering">Bachelor of Science in
+                                Electrical Engineering</option>
+                        </optgroup>
+
+                        <optgroup label="College of Information Sciences">
+                            <option value="Bachelor of Library and Information Science (BLIS)">Bachelor of Library and
+                                Information Science (BLIS)</option>
+                            <option value="Bachelor of Science in Information Technology (BSIT)">Bachelor of Science in
+                                Information Technology (BSIT)</option>
+                            <option value="Bachelor of Science in Development Communication (BSCD) major in:">Bachelor
+                                of Science in Development Communication (BSCD) major in:</option>
+                        </optgroup>
+
+                        <optgroup label="">
+                            <option value="Bachelor of Science in Forestry (BSF)">Bachelor of Science in Forestry (BSF)
+                            </option>
+                            <option value="Bachelor of Science in Nursing (BSN)">Bachelor of Science in Nursing (BSN)
+                            </option>
+                            <option value="Doctor of Veterinary Medicine (DVM)">Doctor of Veterinary Medicine (DVM)
+                            </option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="small-label" for="major" style="white-space: nowrap;">major</label>
+                    <input type="text" name="major" class="input" id="major" placeholder="Major in" required>
+                </div>
+                <div class="form-group">
+                    <label class="small-label" for="nature_of_degree" style="white-space: nowrap;">Nature of
+                        degree</label>
+                    <select name="nature_of_degree" class="input" id="nature_of_degree" required>
+                        <option value="" disabled selected>Select nature of degree</option>
+                        <option value="board" id="board">Board</option>
+                        <option value="non-board" id="non-board">Non-Board</option>
+                    </select>
+                </div>
+            </div>
+            <p class="attestation-head">Attestation and Consent</p>
+
+            <p class="attestation-note">I affirm that I have read and understood all the instructions contained in this
+                application form that the information suplied are true. I affirm that I have read and understood all the
+                instructions contained in this application form that the information suplied are true. I affirm that I
+                have
+                read and understood all the instructions contained in this application form that the information suplied
+                are
+                true.I affirm that I have read and understood all the instructions contained in this application form
+                that the
+                information suplied are true.</p>
+
+
+            <br><br>
+
+            <p class="signature-label">Student's E-Signature:</p>
+            <div id="signature-container">
+                <div id="signature-pad" class="signature-pad">
+                  <canvas></canvas>
+                  <button class="clear-signature" id="clear-signature">Clear</button>
+                </div>
+              </div>
+              <p class="signature-label">Applicant's E-Signature:</p>
+              <div class="applicant-signature-container">
+                <div id="applicant-signature-pad" class="signature-pad">
+                  <canvas></canvas>
+                  <button class="clear-signature" id="clear-applicant-signature">Clear
+                  </button>
+                </div>
+              </div>
+            
+
+        </div>
+        <br><br>
         </div>
         <input type="submit" onclick="handleSubmit()" />
     </form>
