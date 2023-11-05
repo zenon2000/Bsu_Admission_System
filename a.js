@@ -165,9 +165,9 @@ function handleSubmit() {
     const gender = document.getElementById('gender').value;
     //Birth Details
     const birthdate = document.getElementById('birthdate').value;
-    const birthplacemunicipality = document.getElementById('birthplace_municipality').value;
-    const birthplaceprovince = document.getElementById('birthplace_province').value;
-    const birthplacecountry = document.getElementById('birthplace_country').value;
+    const B_municipality = document.getElementById('birthplace_municipality').value;
+    const B_province = document.getElementById('birthplace_province').value;
+    const B_country = document.getElementById('birthplace_country').value;
     //Age
     const age = document.getElementById('age').value;
     //Civil Status
@@ -213,9 +213,9 @@ function handleSubmit() {
     localStorage.setItem("LASTNAME", lastname);
     localStorage.setItem("GENDER", gender);
     localStorage.setItem("BIRTHDATE", birthdate);
-    localStorage.setItem("BIRTHPLACE_MUNICIPALITY", birthplacemunicipality);
-    localStorage.setItem("BIRHTPLACE_PROVINCE", birthplaceprovince);
-    localStorage.setItem("BIRHTPLACE_COUNTRY", birthplacecountry);
+    localStorage.setItem("BIRTHPLACE_MUNICIPALITY", B_municipality);
+    localStorage.setItem("BIRHTPLACE_PROVINCE", B_province);
+    localStorage.setItem("BIRHTPLACE_COUNTRY", B_country);
     localStorage.setItem("AGE", age);
     localStorage.setItem("CIVIL_STATUS", civilstatus);
     localStorage.setItem("CITIZENSHIP", citizenship);

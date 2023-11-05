@@ -279,9 +279,9 @@ window.addEventListener('load', () => {
     const gender = localStorage.getItem('GENDER');
      //Birth Details
     const birthdate = localStorage.getItem('BIRTHDATE');
-    const birthplacemunicipality = localStorage.getItem('BIRTHPLACE_MUNICIPALITY');
-    const birthplaceprovince = localStorage.getItem('BIRHTPLACE_PROVINCE');
-    const birthplacecountry = localStorage.getItem('BIRHTPLACE_COUNTRY');
+    const B_municipality = localStorage.getItem('BIRTHPLACE_MUNICIPALITY');
+    const B_province = localStorage.getItem('BIRHTPLACE_PROVINCE');
+    const B_country = localStorage.getItem('BIRHTPLACE_COUNTRY');
     //Age
     const age = localStorage.getItem('AGE');
     //Civil Status
@@ -327,10 +327,10 @@ window.addEventListener('load', () => {
     document.getElementById('result-MiddleName').innerHTML = middlename;
     document.getElementById('result-LastName').innerHTML = lastname;
     document.getElementById('result-Gender').innerHTML = gender;
-    document.getElementById('result-Girthdate').innerHTML = birthdate;
-    document.getElementById('result-City').innerHTML = birthplacemunicipality;
-    document.getElementById('result-Province').innerHTML = birthplaceprovince;
-    document.getElementById('result-Country').innerHTML = birthplacecountry;
+    document.getElementById('result-Birthdate').innerHTML = birthdate;
+    document.getElementById('result-B_City').innerHTML = B_municipality;
+    document.getElementById('result-B_Province').innerHTML = B_province;
+    document.getElementById('result-B_Country').innerHTML = B_country;
     document.getElementById('result-Age').innerHTML = age;
     document.getElementById('result-Civil').innerHTML = civilstatus;
     document.getElementById('result-Citizenship').innerHTML = citizenship;
