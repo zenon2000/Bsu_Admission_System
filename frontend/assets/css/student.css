@@ -1533,6 +1533,14 @@ nav {
 	margin-top: 10px;
 }
 
+#result-signature-slip
+ {
+	border: 1px solid #000;
+	height: 100px;
+	width: 300px;
+	margin-top: 10px;
+}
+
 @media screen and (max-width: 576px) {
 	#content nav form .form-input input {
 		display: none;

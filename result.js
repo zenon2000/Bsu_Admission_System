@@ -97,14 +97,27 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         console.log('ID picture not found in localStorage');
     }
-      // Retrieve the e-signature from localStorage and display it in the result page
-  const signature = localStorage.getItem('signature');
-  if (signature) {
-    const img = document.createElement('img');
-    img.src = signature;
-    img.style.width = '200px'; // Adjust the size as needed
-    document.getElementById('result-signature').appendChild(img);
-  } else {
-    console.log('E-Signature not found in localStorage');
-  }
-});
+
+
+     // Retrieve and display the student's signature
+     const signature = localStorage.getItem('signature');
+     if (signature) {
+         const img = document.createElement('img');
+         img.src = signature;
+         img.style.width = '200px'; // Adjust the size as needed
+         document.getElementById('result-signature').appendChild(img);
+     } else {
+         console.log('E-Signature not found in localStorage');
+     }
+ 
+     // Retrieve and display the applicant's signature
+     const applicantSignature = localStorage.getItem('applicantSignature');
+     if (applicantSignature) {
+         const img = document.createElement('img');
+         img.src = applicantSignature;
+         img.style.width = '200px'; // Adjust the size as needed
+         document.getElementById('result-signature-slip').appendChild(img);
+     } else {
+         console.log("Applicant's E-Signature not found in localStorage");
+     }
+ });

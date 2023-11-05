@@ -1,8 +1,4 @@
-document.getElementById('clear-applicant-signature').addEventListener('click', function () {
-    const canvas = document.querySelector('#applicant-signature-pad canvas');
-    const context = canvas.getContext('2d');
-    context.clearRect(0, 0, canvas.width, canvas.height);
-  });
+
 function handleForm(event) {
     event.preventDefault();
 
@@ -42,8 +38,11 @@ function handleForm(event) {
     const degreeApplied = document.getElementById('degree_applied').value;
     const major = document.getElementById('major').value;
     const natureOfDegree = document.getElementById('nature_of_degree').value;
-    const canvas = document.querySelector('#applicant-signature-pad canvas');
-    const signature = canvas.toDataURL();
+    const canvas = document.querySelector('#signature-pad canvas');
+    const signatureData = canvas.toDataURL();
+    const applicantCanvas = document.querySelector('#applicant-signature-pad canvas');
+    const applicantSignatureData = applicantCanvas.toDataURL();
+   
     
     // Store data in localStorage
     localStorage.setItem('lastName', lastName);
@@ -84,8 +83,8 @@ function handleForm(event) {
     localStorage.setItem('degreeApplied', degreeApplied);
     localStorage.setItem('major', major);
     localStorage.setItem('natureOfDegree', natureOfDegree);
-    localStorage.setItem('signature', signature);
-
+    localStorage.setItem('signature', signatureData);
+    localStorage.setItem('applicantSignature', applicantSignatureData);
 
     // Retrieve and save the ID picture
     const fileInput = document.getElementById('id_picture');
