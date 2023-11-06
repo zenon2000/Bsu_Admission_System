@@ -253,11 +253,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
   
 });
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
     // Retrieve data from localStorage and display it in the result page
     const lastName = localStorage.getItem('lastName');
     const firstName = localStorage.getItem('firstName');
     const middleName = localStorage.getItem('middleName');
+    const name = `${firstName} ${middleName} ${lastName}`;
+    const uppercaseName = `${lastName.toUpperCase()}, ${firstName.toUpperCase()} ${middleName.toUpperCase()}`;
+
     const gender = localStorage.getItem('gender');
     const birthdate = localStorage.getItem('birthdate');
     const city = localStorage.getItem('city');
@@ -341,6 +347,11 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('result-Degree').textContent = degreeApplied;
     document.getElementById('result-major').textContent = major;
     document.getElementById('result-natureDegree').textContent = natureOfDegree;
+    const profileNameElement = document.querySelector('.profile-name');
+    profileNameElement.textContent = name;
+
+    const signNameElement = document.querySelector('.sign-name');
+    signNameElement.textContent = uppercaseName;
 
     // Retrieve and display the ID picture if available
     const idPicture = localStorage.getItem('id_picture');

@@ -42,7 +42,8 @@ function run(hideTab, showTab) {
         for (i = 0; i < y.length; i++) {
             if (y[i].value === "") {
                 $(y[i]).css("background", "#ffdddd");
-                y[i].placeholder = "Please fill up the field";
+                y[i].placeholder = "Please fill up all the field";
+                y[i].focus();
                 return false;
             }
         }

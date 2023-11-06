@@ -25,22 +25,22 @@ li {
 	--dark-grey: #AAAAAA;
 	--dark: #342E37;
 	--redlight: #DB504A;
-	--light-red:#ffaaa7;
+	--light-red: #ffaaa7;
 	--yellow: #FFCE26;
 	--light-yellow: #FFF2C6;
 	--orange: #FD7238;
 	--light-orange: #FFE0D3;
-	--green:#008000;
-	--light-green:#a6fda6;
-	--dark-green:#394b39;
-	--lighter-grey:#f4f4f4;
-	--light-gray:#f0f0f0;
+	--green: #008000;
+	--light-green: #a6fda6;
+	--dark-green: #394b39;
+	--lighter-grey: #f4f4f4;
+	--light-gray: #f0f0f0;
 	--fb-blue: #4267B2;
 	--red: #f00;
 	--li-grey: #ccc;
-	--gray:#c4bfbf;
-	--light-hover: #f0f2f5; 
-	
+	--gray: #c4bfbf;
+	--light-hover: #f0f2f5;
+
 }
 
 html {
@@ -64,7 +64,7 @@ body {
 
 /* SIDEBAR */
 
-  
+
 #sidebar {
 	position: fixed;
 	top: 0;
@@ -78,12 +78,15 @@ body {
 	overflow-x: hidden;
 	scrollbar-width: none;
 }
+
 #sidebar::--webkit-scrollbar {
 	display: none;
 }
+
 #sidebar.hide {
 	width: 60px;
 }
+
 #sidebar .brand {
 	font-size: 24px;
 	font-weight: 700;
@@ -98,18 +101,19 @@ body {
 	z-index: 500;
 	padding-bottom: 1px;
 	box-sizing: content-box;
-	margin-top:5px ;
+	margin-top: 5px;
 }
 
-#sidebar .brand .bsulogo{
-height:31px;
-width: 32px;
-align-items: center;
-margin:15px;
-margin-inline-end: 23px;
-display: flex;
-justify-content: center;
+#sidebar .brand .bsulogo {
+	height: 31px;
+	width: 32px;
+	align-items: center;
+	margin: 15px;
+	margin-inline-end: 23px;
+	display: flex;
+	justify-content: center;
 }
+
 #sidebar .brand .bx {
 	min-width: 60px;
 	display: flex;
@@ -132,12 +136,14 @@ justify-content: center;
 	border-radius: 48px 0 0 48px;
 	padding: 4px;
 }
+
 #sidebar .side-menu li.active {
 	background: var(--grey);
 	position: relative;
 	justify-content: space-between;
 
 }
+
 #sidebar .side-menu li.active::before {
 	content: '';
 	position: absolute;
@@ -149,6 +155,7 @@ justify-content: center;
 	box-shadow: 20px 20px 0 var(--grey);
 	z-index: -1;
 }
+
 #sidebar .side-menu li.active::after {
 	content: '';
 	position: absolute;
@@ -160,6 +167,7 @@ justify-content: center;
 	box-shadow: 20px -20px 0 var(--grey);
 	z-index: -1;
 }
+
 #sidebar .side-menu li a {
 	width: 100%;
 	height: 100%;
@@ -173,9 +181,11 @@ justify-content: center;
 	overflow-x: hidden;
 
 }
+
 #sidebar .side-menu.top li.active a {
 	color: var(--green);
 }
+
 #sidebar.hide .side-menu li a {
 	width: calc(48px - (4px * 2));
 	transition: width .3s ease;
@@ -184,8 +194,9 @@ justify-content: center;
 #sidebar .side-menu.top li a:hover {
 	color: var(--blue);
 }
+
 #sidebar .side-menu li a .bx {
-	min-width: calc(60px  - ((4px + 6px) * 2));
+	min-width: calc(60px - ((4px + 6px) * 2));
 	display: flex;
 	justify-content: center;
 }
@@ -206,68 +217,87 @@ justify-content: center;
 
 
 #profile-popup {
-    display: none;
-    position: absolute;
-    right: 0;
-    top: 60px; /* Adjust the distance from the profile icon */
-    background-color: var(--light);
-    border: 1px solid var(--green);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 300px; /* Adjust the width as needed */
-    max-height: 400px; /* Adjust the maximum height as needed */
-    border-radius: 10px; /* Adjust the radius as needed */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a shadow for a better visual effect */
-    margin-right: 25px; /* Adjust the margin-right value as needed */
-    overflow-y: auto;
-    z-index: 2; /* Ensure the profile pop-up appears above the message pop-up */
+	display: none;
+	position: absolute;
+	right: 0;
+	top: 60px;
+	/* Adjust the distance from the profile icon */
+	background-color: var(--light);
+	border: 1px solid var(--green);
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	width: 300px;
+	/* Adjust the width as needed */
+	max-height: 400px;
+	/* Adjust the maximum height as needed */
+	border-radius: 10px;
+	/* Adjust the radius as needed */
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	/* Add a shadow for a better visual effect */
+	margin-right: 25px;
+	/* Adjust the margin-right value as needed */
+	overflow-y: auto;
+	z-index: 2;
+	/* Ensure the profile pop-up appears above the message pop-up */
 }
 
 .popup-content {
 	padding: 16px;
 }
+
 .profile-header {
 	display: flex;
 	align-items: center;
 	margin-bottom: 16px;
 }
+
 .profile-picture {
-    width: 50px; /* Adjust the width as needed */
-    height: 50px; /* Adjust the height as needed */
-    border-radius: 50%; /* Make the image circular */
-    margin-right: 15px;
+	width: 50px;
+	/* Adjust the width as needed */
+	height: 50px;
+	/* Adjust the height as needed */
+	border-radius: 50%;
+	/* Make the image circular */
+	margin-right: 15px;
 }
 
 .profile-name {
-    font-size: 16px; /* Adjust the font size as needed */
-    font-weight: bold;
-    color: var(--dark); 
+	font-size: 16px;
+	/* Adjust the font size as needed */
+	font-weight: bold;
+	color: var(--dark);
 }
+
 hr {
-    margin: 15px 0;
-    border: 0.5px solid var(--green);
+	margin: 15px 0;
+	border: 0.5px solid var(--green);
 }
 
 .profile-menu {
-    display: flex;
-    flex-direction: column;
-	
+	display: flex;
+	flex-direction: column;
+
 }
 
 .profile-item {
-    padding: 10px 0;
-    cursor: pointer;
 	padding: 10px 0;
 	cursor: pointer;
-	color: var(--dark); /* Default font color */
-	transition: color 0.3s; /* Add transition for font color change */
+	padding: 10px 0;
+	cursor: pointer;
+	color: var(--dark);
+	/* Default font color */
+	transition: color 0.3s;
+	/* Add transition for font color change */
 }
 
 .profile-item:hover {
-	
-        color: var(--blue); /* Change font color on hover */
+
+	color: var(--blue);
+	/* Change font color on hover */
 }
+
 .profile-item.clicked {
-        color: var(--green); /* Change font color when clicked */
+	color: var(--green);
+	/* Change font color when clicked */
 }
 
 .profile-header img {
@@ -281,7 +311,7 @@ hr {
 	margin: 0;
 }
 
- 
+
 
 .profile-menu a {
 	display: block;
@@ -289,43 +319,45 @@ hr {
 	text-decoration: none;
 	padding: 8px 0;
 	transition: background-color 0.3s;
-	border-radius: 10px; 
-    overflow: hidden; 
+	border-radius: 10px;
+	overflow: hidden;
 	transition: width 0.3s, padding-left 0.3s;
 	padding-left: 0;
- 
+
 }
 
 .profile-menu a:hover {
-	background-color:rgba(128, 128, 128, 0.248);
-    border-radius: 15px; 
+	background-color: rgba(128, 128, 128, 0.248);
+	border-radius: 15px;
 	padding-left: 10px;
 }
+
 .profile-menu i {
 	margin-right: 8px;
-	
+
 }
 
 .popup-header {
-    background-color: var(--green); /* Change color as needed */
-    color: var(--light);
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+	background-color: var(--green);
+	/* Change color as needed */
+	color: var(--light);
+	padding: 10px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .popup-title {
-    font-size: 18px;
-    font-weight: bold;
+	font-size: 18px;
+	font-weight: bold;
 }
 
 
 #clock {
-    font-size: 24px;
+	font-size: 24px;
 	height: 36px;
 	margin-left: 18px;
-	position:center;
+	position: center;
 	width: 150px;
 	padding: 0 16px;
 	left: 50px;
@@ -347,7 +379,8 @@ hr {
 	left: 200px;
 	transition: .3s ease;
 }
-#sidebar.hide ~ #content {
+
+#sidebar.hide~#content {
 	width: calc(100% - 60px);
 	left: 60px;
 }
@@ -357,8 +390,8 @@ hr {
 
 /* NAVBAR */
 nav {
-    position: relative;
-} 
+	position: relative;
+}
 
 #content nav {
 	height: 56px;
@@ -372,8 +405,9 @@ nav {
 	top: 0;
 	left: 0;
 	z-index: 1000;
-	
+
 }
+
 #content nav::before {
 	content: '';
 	position: absolute;
@@ -384,31 +418,38 @@ nav {
 	border-radius: 50%;
 	box-shadow: -20px -20px 0 var(--light);
 }
+
 #content nav a {
 	color: var(--dark);
 }
+
 #content nav .bx.bx-menu {
 	cursor: pointer;
 	color: var(--dark);
 }
+
 #content nav .nav-link {
 	font-size: 16px;
 	transition: .3s ease;
 }
+
 #content nav .nav-link:hover {
 	color: var(--blue);
 }
+
 #content nav form {
 	max-width: 400px;
 	width: 100%;
 	margin-right: auto;
 }
+
 #content nav form .form-input {
 	display: flex;
 	align-items: center;
 	height: 36px;
 
 }
+
 #content nav form .form-input input {
 	flex-grow: 1;
 	padding: 0 16px;
@@ -422,6 +463,7 @@ nav {
 
 	/*searchbar*/
 }
+
 #content nav form .form-input button {
 	width: 36px;
 	height: 100%;
@@ -438,23 +480,25 @@ nav {
 }
 
 nav {
-    position: relative;
+	position: relative;
 }
 
-	/*popup menu*/
+/*popup menu*/
 #content nav .profile img {
 	width: 36px;
 	height: 36px;
 	object-fit: cover;
 	border-radius: 50%;
-	
+
 }
+
 #content nav .prof {
 	position: relative;
 }
+
 #content nav .profile-menu {
 	position: absolute;
-	background:var(--light);
+	background: var(--light);
 	width: 250px;
 	right: 25px;
 	top: 20;
@@ -463,16 +507,17 @@ nav {
 	pointer-events: none;
 	border-radius: 6px;
 	box-shadow: 0 5px 10px var(--dark);
-	transition:0.2s ease ; 
+	transition: 0.2s ease;
 	margin-left: 8px;
 	font-size: 19;
 	list-style: none;
-	
+
 
 }
+
 #content nav .prof:hover .profile-menu {
 	opacity: 1;
-	pointer-events: auto; 
+	pointer-events: auto;
 }
 
 /*switch*/
@@ -486,6 +531,7 @@ nav {
 	cursor: pointer;
 	position: relative;
 }
+
 #content nav .switch-mode::before {
 	content: '';
 	position: absolute;
@@ -497,9 +543,11 @@ nav {
 	border-radius: 50%;
 	transition: all .3s ease;
 }
-#content nav #switch-mode:checked + .switch-mode::before {
+
+#content nav #switch-mode:checked+.switch-mode::before {
 	left: calc(100% - (25px - 4px) - 2px);
 }
+
 /* NAVBAR */
 
 
@@ -530,29 +578,34 @@ nav {
 	margin-bottom: 10px;
 	color: var(--dark);
 }
+
 #content main .head-title .left .breadcrumb {
 	display: flex;
 	align-items: center;
 	grid-gap: 16px;
 }
+
 #content main .head-title .left .breadcrumb li {
 	color: var(--dark);
 }
+
 #content main .head-title .left .breadcrumb li a {
 	color: var(--dark-grey);
 	pointer-events: none;
 }
+
 #content main .head-title .left .breadcrumb li a.active {
 	color: var(--blue);
 	pointer-events: unset;
 
 
 }
+
 #clock {
-    font-size: 24px;
+	font-size: 24px;
 	height: 36px;
 	margin-left: 18px;
-	position:center;
+	position: center;
 	width: 150px;
 	padding: 0 16px;
 	left: 50px;
@@ -573,6 +626,7 @@ nav {
 	grid-gap: 15px;
 	margin-top: 36px;
 }
+
 #content main .box-info li {
 	padding: 15px;
 	background: var(--light);
@@ -581,6 +635,7 @@ nav {
 	align-items: center;
 	grid-gap: 18px;
 }
+
 #content main .box-info li .bx {
 	width: 70px;
 	height: 70px;
@@ -590,10 +645,11 @@ nav {
 	justify-content: center;
 	align-items: center;
 }
+
 #content main .box-info li:nth-child(1) .bx {
 	background: var(--light-yellow);
 	color: var(--yellow);
-	
+
 }
 
 #content main .box-info li:nth-child(1) .bx:hover {
@@ -606,7 +662,7 @@ nav {
 	color: var(--green);
 }
 
- 
+
 #content main .box-info li:nth-child(3) .bx {
 	background: var(--light-blue);
 	color: var(--blue);
@@ -629,8 +685,9 @@ nav {
 	font-weight: 600;
 	color: var(--dark);
 }
+
 #content main .box-info li .text p {
-	color: var(--dark);	
+	color: var(--dark);
 	font-size: 18px;
 }
 
@@ -640,31 +697,36 @@ nav {
 
 #content main .table-data {
 	flex-grow: 1;
-    flex-basis: 300px; /* Updated value */
-    display: flex;
-    flex-wrap: wrap;
-    grid-gap: 24px;
-    margin-top: 24px;
-    width: 100%;
-    color: var(--dark);
+	flex-basis: 300px;
+	/* Updated value */
+	display: flex;
+	flex-wrap: wrap;
+	grid-gap: 24px;
+	margin-top: 24px;
+	width: 100%;
+	color: var(--dark);
 }
-#content main .table-data > div {
+
+#content main .table-data>div {
 	border-radius: 20px;
 	background: var(--light);
 	padding: 24px;
 	overflow-x: auto;
 }
+
 #content main .table-data .head {
 	display: flex;
 	align-items: center;
 	grid-gap: 16px;
 	margin-bottom: 24px;
 }
+
 #content main .table-data .head h3 {
 	margin-right: auto;
 	font-size: 24px;
 	font-weight: 600;
 }
+
 #content main .table-data .head .bx {
 	cursor: pointer;
 }
@@ -673,34 +735,41 @@ nav {
 	flex-grow: 1;
 	flex-basis: 500px;
 }
+
 #content main .table-data .order table {
 	width: 100%;
 	border-collapse: collapse;
 }
+
 #content main .table-data .order table th {
 	padding-bottom: 12px;
 	font-size: 13px;
 	text-align: left;
 	border-bottom: 1px solid var(--grey);
 }
+
 #content main .table-data .order table td {
 	padding: 16px 0;
 }
+
 #content main .table-data .order table tr td:first-child {
 	display: flex;
 	align-items: center;
 	grid-gap: 12px;
 	padding-left: 6px;
 }
+
 #content main .table-data .order table td img {
 	width: 36px;
 	height: 36px;
 	border-radius: 50%;
 	object-fit: cover;
 }
+
 #content main .table-data .order table tbody tr:hover {
 	background: var(--grey);
 }
+
 #content main .table-data .order table tr td .status {
 	font-size: 10px;
 	padding: 6px 16px;
@@ -708,12 +777,15 @@ nav {
 	border-radius: 20px;
 	font-weight: 700;
 }
+
 #content main .table-data .order table tr td .status.admitted {
 	background: var(--blue);
 }
+
 #content main .table-data .order table tr td .status.rejected {
 	background: var(--red);
 }
+
 #content main .table-data .order table tr td .status.pending {
 	background: var(--yellow);
 }
@@ -721,7 +793,7 @@ nav {
 #content main .table-data .order table tr td .button {
 	border: none;
 	border-radius: 10px;
-	color:var(--light);
+	color: var(--light);
 	padding: 4px 8px;
 	text-align: center;
 	text-decoration: none;
@@ -730,36 +802,38 @@ nav {
 	margin: 1px 1px;
 	cursor: pointer;
 	transition-duration: 0.4s;
-	
+
 }
 
 #content main .table-data .order table tr td .button.edit {
 	background-color: var(--blue);
-	color:var(--light);
+	color: var(--light);
 }
 
 #content main .table-data .order table tr td .button.edit:hover {
 	background-color: var(--lighter-grey);
-  	color: var(--gray);
+	color: var(--gray);
 }
 
 #content main .table-data .order table tr td .button.delete {
-	background-color: var(--red); 
- 	color: var(--light); 
+	background-color: var(--red);
+	color: var(--light);
 }
 
 #content main .table-data .order table tr td .button.delete:hover {
 	background-color: var(--lighter-grey);
-  	color:var(--gray);
+	color: var(--gray);
 }
 
 #content main .table-data .todo {
 	flex-grow: 1;
 	flex-basis: 500px;
 }
+
 #content main .table-data .todo .todo-list {
 	width: 100%;
 }
+
 #content main .table-data .todo .todo-list li {
 	width: 100%;
 	margin-bottom: 16px;
@@ -770,47 +844,66 @@ nav {
 	justify-content: space-between;
 	align-items: center;
 }
+
 #content main .table-data .todo .todo-list li .bx {
 	cursor: pointer;
 }
+
 #content main .table-data .todo .todo-list li.completed {
 	border-left: 10px solid var(--blue);
 }
+
 #content main .table-data .todo .todo-list li.not-completed {
 	border-left: 10px solid var(--orange);
 }
+
 #content main .table-data .todo .todo-list li:last-child {
 	margin-bottom: 0;
 }
 
 
 #result-id-picture {
-	width: 150px; 
+	width: 150px;
 	height: 150px;
-	border: 3px solid #000; 
-	display: flex; 
-	justify-content: space-between; 
-    float: right;
+	border: 2px solid #000;
+	display: flex;
+	justify-content: space-between;
 	border-radius: 5px;
-	
-	
-}
-.profile-details {
-	flex: 1; 
-	
-	
+
 
 }
+
+.Picture {
+	padding-left: 25px;
+	padding-bottom: 10px;
+
+
+}
+
+
+.profile-details {
+	flex: 1;
+
+
+
+}
+
 /* Style for the signature */
 #result-signature {
-	border: 1px solid #000;
-	height: 100px;
-	width: 300px;
-	margin-top: 10px;
+	margin: 15px;
+	text-align: right;
+      
+	
+}
+.name-sign {
+	margin-right: 15px;
+	text-align: right;
+      
+	
 }
 
-#result-signature-slip
- {
+#result-signature-slip {
+	
 	border: 1px solid #000;
 	height: 100px;
 	width: 300px;
@@ -818,29 +911,65 @@ nav {
 }
 
 .pi {
-	text-align: center; 
-	margin: 0 auto; 
+	text-align: center;
+	margin: 0 auto;
+}
+
+  .order-profile {
+	display: flex;
+	justify-content: center; /* Center horizontally */
+	align-items: center; /* Center vertically */
+	
   }
 
+.profile-result {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	max-width: 90%;
+	background-color:var(--grey);
+	color: var(--dark);
+	font-size: 16px;
+	padding-top: 20px;
+	border: 1px solid #ccc;
+	border-radius: 10px;
 
-
+  }
+  
+.profile-info-twos {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 15px;
+	margin-left: 20px;
+}
+.profile-info-one {
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	gap: 15px;
+	margin-left: 20px;
+}
 
 .profile-info-content {
 	display: grid;
-	grid-template-columns: repeat(3, 1fr); /* 3 equal-width columns */
-	gap: 15px; /* Adjust the gap between form groups */
-   padding-top: 30px;
-  width: 1100px; /* Adjust the maximum width as needed */
-    margin: 0 auto; /* Center the content within the parent container */
+	grid-template-columns: repeat(3, 1fr);
+	gap: 15px;
+	margin-left: 20px;
 }
-  
+
+
 .column {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Adjust alignment as needed */
-    padding: 15px; /* Add some spacing around each column */
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: 5px;
+	
 }
+.content-header {
+	margin: 15px 8px 0; 
+	
+  }
   
+
 
 @media screen and (max-width: 576px) {
 	#content nav form .form-input input {
@@ -859,6 +988,7 @@ nav {
 		display: block;
 		width: 100%;
 	}
+
 	#content nav form.show .form-input button {
 		width: 36px;
 		height: 100%;
@@ -867,8 +997,8 @@ nav {
 		background: var(--red);
 	}
 
-	#content nav form.show ~ .notification,
-	#content nav form.show ~ .profile {
+	#content nav form.show~.notification,
+	#content nav form.show~.profile {
 		display: none;
 	}
 
@@ -879,22 +1009,24 @@ nav {
 	#content main .table-data .head {
 		min-width: 420px;
 	}
+
 	#content main .table-data .order table {
 		min-width: 420px;
 	}
+
 	#content main .table-data .todo .todo-list {
 		min-width: 420px;
 	}
-	
-	#sidebar .brand .adminprofile{
-		height:31px;
+
+	#sidebar .brand .adminprofile {
+		height: 31px;
 		width: 32px;
 		align-items: center;
-		margin:15px;
+		margin: 15px;
 		margin-inline-end: 23px;
 		display: flex;
 		justify-content: center;
-		}
+	}
 
 }
 

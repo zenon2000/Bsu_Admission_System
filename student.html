@@ -63,12 +63,12 @@
             <div id="clock">8:10:45</div>
             <input type="checkbox" id="switch-mode" hidden>
             <label for="switch-mode" class="switch-mode"></label>
-         
+
 
             <a href="#" class="profile" id="profile-button">
                 <img src="frontend/assets/images/human icon.png" alt="User Profile" id="profile-image">
             </a>
-            
+
 
         </nav>
 
@@ -283,11 +283,11 @@
                 <!--profile-->
                 <div id="student-profile">
                     <div class="table-data">
-                        <div class="order">
-                            <div class="profile">
+                        <div class="order-profile">
+                            <div class="profile-result">
                                 <h2 class="pi">Personal Information</h2>
                                 <div class="Picture">
-                                <div id="result-id-picture"></div>
+                                    <div id="result-id-picture"></div>
                                 </div>
                                 <div class="profile-info-content">
 
@@ -311,9 +311,11 @@
                                             <span id="result-Birthdate"></span>
                                         </p>
                                     </div>
+                                </div>
+                                <div class="profile-info-content">
                                     <div class="column">
                                         <p>
-                                            <strong>Birthplace:</strong>
+                                            <strong>Birthplace:</strong><br>
                                             <span id="result-City"></span>,
                                             <span id="result-BirthProvince"></span>,
                                             <span id="result-BirthCountry"></span>
@@ -344,17 +346,21 @@
                                             <span id="result-Nationality"></span>
                                         </p>
                                     </div>
+                                </div>
+                                <p class="content-header"><strong>Permanent Home Address</strong></p>
+                                <div class="profile-info-twos">
 
                                     <div class="column">
 
-                                        <p>
-                                            <strong>Permanent Home Address:</strong>
+                                        <p class="ContactInfo"> <strong>Address:</strong>
+
                                             <span id="result-Street"></span>
                                             <span id="result-Barangay"></span>
                                             <span id="result-Municipality"></span>
                                             <span id="result-PermanentProvince"></span>
                                             <span id="result-PermanentCountry">
                                         </p>
+
                                     </div>
 
                                     <div class="column">
@@ -363,135 +369,141 @@
                                             <span id="result-ZipCode"></span>
                                         </p>
                                     </div>
-                                    <div class="column">
-                                        <p class="ContactInfo">
-                                            <strong>Contact Information</strong>
-                                        </p>
-                                    </div>
+                                </div>
+                                <br>
+                                <p class="content-header">
+                                    <strong>Contact Information</strong>
+                                </p>
+
+                                <div class="profile-info-twos">
                                     <div class="column">
                                         <p>
                                             <strong>Telephone/Mobile No.:</strong>
                                             <span id="result-Telephone"></span>
                                         </p>
-                                    </div>
-                                    <div class="column">
+
+
                                         <p>
                                             <strong>Facebook Account Name:</strong>
                                             <span id="result-Facebook"></span>
                                         </p>
-                                    </div>
-                                    <div class="column">
+
                                         <p>
                                             <strong>Email Address:</strong>
                                             <span id="result-Email"></span>
                                         </p>
                                     </div>
-                                    <p class="ContactPerson">
-                                        <strong>Contact person(s) in case of emergency</strong>
-                                    </p>
-                              
+                                </div>
+                                <p class="content-header">
+                                    <strong>Contact Persons</strong>
+                                </p>
+                                <div class="profile-info-twos">
                                     <div class="column">
-                                    <p>
-                                        <strong>Contact Person:</strong>
-                                        <span id="result-ContactOne"></span>
-                                    </p>
-                                    </div>
-                                    <div class="column">
-                                    <p>
-                                        <strong>Mobile Number:</strong>
-                                        <span id="result-NumberOne"></span>
-                                    </p>
-                                    </div>
-                                    <div class="column">
-                                    <p>
-                                        <strong>Relationship with first Contact Person:</strong>
-                                        <span id="result-RelationshipOne"></span>
-                                    </p>
-                                    </div>
-                                    <div class="column">
-                                    <p>
-                                        <strong>Contact Person:</strong>
-                                        <span id="result-ContactTwo"></span>
-                                    </p>
 
-                                    <p>
-                                        <strong>Mobile Number:</strong>
-                                        <span id="result-NumberTwo"></span>
-                                    </p>
-</div>
-<div class="column">
-                                    <p>
-                                        <strong>Relationship with second Contact Person:</strong>
-                                        <span id="result-RelationshipTwo"></span>
-                                    </p>
-</div>
-<div class="column">
-                                    <p>
-                                        <strong>Academic Classification:</strong>
-                                        <span id="result-classification"></span>
-                                    </p>
-</div>
-<div class="column">
-                                    <p class="AcadBack">
-                                        <strong>Academic Background</strong>
-                                    </p>
-</div>
-<div class="column">
-                                    <p>
-                                        <strong>Name and Address of High School/Senior High School:</strong>
-                                        <span id="high_school_name_address"></span>
-                                    </p>
-                                </div>
-                                <div class="column">
-                                    <p>
-                                        <strong>Name and Address of Division where ALS/PEPT was taken:</strong>
-                                        <span id="result-ALS"></span>
-                                    </p>
-                                </div>
-                                <div class="column">
-                                    <p>
-                                        <strong>Name and Address of College/University:</strong>
-                                        <span id="college_name_address"></span>
-                                    </p>
-                                </div>
-                                <div class="column">
-                                    <p>
-                                        <strong>Learner's Reference Number:</strong>
-                                        <span id="result-LRN"></span>
-                                    </p>
-                                </div>
-                                <div class="column">
-                                    <p>
-                                        <strong>Degree:</strong>
-                                        <span id="result-Degree"></span>
-                                    </p>
-                                </div>
-                                <div class="column">
-                                    <p>
-                                        <strong>Major in:</strong>
-                                        <span id="result-major"></span>
-                                    </p>
-                                </div>
-                                <div class="column">
-                                    <p>
-                                        <strong>Nature of degree:</strong>
-                                        <span id="result-natureDegree"></span>
-                                    </p>
-                                </div>
-                            </div>
-                           
 
-                                <h2>Student-Signature:</h2>
-                                <div id="result-signature"></div>
+
+                                        <p>
+                                            <strong>Contact Person:</strong>
+                                            <span id="result-ContactOne"></span>
+                                        </p>
+
+                                        <p>
+                                            <strong>Mobile Number:</strong>
+                                            <span id="result-NumberOne"></span>
+                                        </p>
+
+                                        <p>
+                                            <strong>Relationship:</strong>
+                                            <span id="result-RelationshipOne"></span>
+                                        </p>
+                                    </div>
+                                    <div class="column">
+                                        <p>
+                                            <strong>Contact Person:</strong>
+                                            <span id="result-ContactTwo"></span>
+                                        </p>
+
+                                        <p>
+                                            <strong>Mobile Number:</strong>
+                                            <span id="result-NumberTwo"></span>
+                                        </p>
+
+                                        <p>
+                                            <strong>Relationship:</strong>
+                                            <span id="result-RelationshipTwo"></span>
+                                        </p>
+
+                                    </div>
+                                    <div class="column">
+                                        <p class="content-header">
+                                            <strong>Academic Classification:</strong>
+                                            <span id="result-classification"></span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <p class="content-header">
+                                    <strong>Academic Background</strong>
+                                </p>
+
+                                <div class="profile-info-one">
+                                    <div class="column">
+                                        <p>
+                                            <strong>Name and Address of High School/Senior High School:</strong>
+                                            <span id="high_school_name_address"></span>
+                                        </p>
+
+                                        <p>
+                                            <strong>Name and Address of Division where ALS/PEPT was taken:</strong>
+                                            <span id="result-ALS"></span>
+                                        </p>
+
+                                        <p>
+                                            <strong>Name and Address of College/University:</strong>
+                                            <span id="college_name_address"></span>
+                                        </p>
+                                        <p>
+                                            <strong>Learner's Reference Number:</strong>
+                                            <span id="result-LRN"></span>
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="profile-info-content">
+
+                                    <div class="column">
+                                        <p>
+                                            <strong>Degree:</strong>
+                                            <span id="result-Degree"></span>
+                                        </p>
+                                    </div>
+                                    <div class="column">
+                                        <p>
+                                            <strong>Major in:</strong>
+                                            <span id="result-major"></span>
+                                        </p>
+                                    </div>
+                                    <div class="column">
+                                        <p>
+                                            <strong>Nature of degree:</strong>
+                                            <span id="result-natureDegree"></span>
+                                        </p>
+
+                                    </div>
+                                </div>
+
+
+                                <div class="name-sign">
+                                    <div id="result-signature"> </div>
+                                    <p id="sign-name" class="sign-name">DOE, JHON</p>
+                                </div>
+
                             </div>
-                            <h2>Applicant-Signature:</h2>
-                            <div id="result-signature-slip">
-                            </div>
+
                         </div>
                     </div>
                 </div>
             </div>
-
+            </div>
             <!-- Student Result -->
             <div id="student-result-content">
                 <div class="head-title">
@@ -512,90 +524,11 @@
                                 <h3>Notice of Admission (NOA)</h3>
 
                             </div>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Application No.</th>
-                                        <th>College</th>
-                                        <th>Program</th>
-                                        <th>Name</th>
-                                        <th>Birth Date</th>
-                                        <th>Sex</th>
-                                        <th>GWA</th>
-                                        <th>Math</th>
-                                        <th>Science</th>
-                                        <th>English</th>
-                                        <th>Rank</th>
-                                        <th>Result</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>000001</td>
-                                        <td>CIS</td>
-                                        <td>BSIT</td>
-                                        <td>Toge Jugon Inumaki</td>
-                                        <td>10-03-2003</td>
-                                        <td>Male</td>
-                                        <td>90%</td>
-                                        <td>90%</td>
-                                        <td>87%</td>
-                                        <td>92%</td>
-                                        <td>56</td>
-                                        <td>NOA</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <button class="button send">Send</button> <button class="button save">Save</button>
-                    <!--result (NOR)-->
-                    <div id="student-result-nor">
-                        <div class="table-data">
-                            <div class="order">
-                                <div class="head">
-                                    <h3>Notice of Readmission (NOR)</h3>
 
-                                </div>
-                                <table>
-                                    <thead>
-                                        <tr>
-                                            <th>Application No.</th>
-                                            <th>College</th>
-                                            <th>Program</th>
-                                            <th>Name</th>
-                                            <th>Birth Date</th>
-                                            <th>Sex</th>
-                                            <th>GWA</th>
-                                            <th>Math</th>
-                                            <th>Science</th>
-                                            <th>English</th>
-                                            <th>Rank</th>
-                                            <th>Result</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>000001</td>
-                                            <td>CIS</td>
-                                            <td>BSIT</td>
-                                            <td>Nobara Kugisaki</td>
-                                            <td>08-07-2004</td>
-                                            <td>Female</td>
-                                            <td>83%</td>
-                                            <td>84%</td>
-                                            <td>80%</td>
-                                            <td>81%</td>
-                                            <td>220</td>
-                                            <td>NOR</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
                         </div>
-                        <button class="button send">Send</button> <button class="button save">Save</button>
                     </div>
-                </div>
+               </div>
+
 
             </div>
 
@@ -617,10 +550,11 @@
         <!-- Popup content -->
         <div class="popup-content" id="profile-content">
             <div class="profile-header">
-                <img src="frontend/assets/images/human icon.png" alt="User Profile Picture" class="profile-picture" id="profile-picture">
+                <img src="frontend/assets/images/human icon.png" alt="User Profile Picture" class="profile-picture"
+                    id="profile-picture">
                 <p class="profile-name">John Doe</p>
             </div>
-            
+
             <hr>
             <div class="profile-menu">
                 <a href="#" id="settings" class="profile-item"><i class='bx bx-cog'></i> Settings</a>
