@@ -197,8 +197,10 @@ function handleForm(event) {
     const signatureData = canvas.toDataURL();
     const applicantCanvas = document.querySelector('#applicant-signature-pad canvas');
     const applicantSignatureData = applicantCanvas.toDataURL();
-   
-    
+    const applicantname = document.getElementById('applicant_name').value;
+    const degreeProgramApplied = document.getElementById('slip_degree').value;
+
+
     // Store data in localStorage
     localStorage.setItem('lastName', lastName);
     localStorage.setItem('firstName', firstName);
@@ -240,8 +242,10 @@ function handleForm(event) {
     localStorage.setItem('natureOfDegree', natureOfDegree);
     localStorage.setItem('signature', signatureData);
     localStorage.setItem('applicantSignature', applicantSignatureData);
+    localStorage.setItem('applicantname', applicantname);
+    localStorage.setItem('degreeProgramApplied', degreeProgramApplied);
 
-    // Retrieve and save the ID picture
+
     const fileInput = document.getElementById('id_picture');
     if (fileInput.files.length > 0) {
         const reader = new FileReader();

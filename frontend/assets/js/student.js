@@ -314,8 +314,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const degreeApplied = localStorage.getItem('degreeApplied');
     const major = localStorage.getItem('major');
     const natureOfDegree = localStorage.getItem('natureOfDegree');
+    const applicantname = localStorage.getItem('applicantname');
+    const degreeProgramApplied = localStorage.getItem('degreeProgramApplied');
 
-    
     // Display the retrieved data on the result page
 
     document.getElementById('result-LastName').textContent = lastName;
@@ -349,11 +350,13 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('result-natureDegree').textContent = natureOfDegree;
     const profileNameElement = document.querySelector('.profile-name');
     profileNameElement.textContent = name;
-
     const signNameElement = document.querySelector('.sign-name');
     signNameElement.textContent = uppercaseName;
-
-    // Retrieve and display the ID picture if available
+    const resultApplicantName = document.getElementById('result-ApplicantName');
+    resultApplicantName.textContent = applicantname;
+    const degreeProgramAppliedElement = document.getElementById('result-Program');
+    degreeProgramAppliedElement.textContent = degreeProgramApplied;
+   // Retrieve and display the ID picture if available
     const idPicture = localStorage.getItem('id_picture');
 
     if (idPicture) {
@@ -366,6 +369,10 @@ document.addEventListener('DOMContentLoaded', () => {
     
         const img3 = document.createElement('img');
         img3.src = idPicture;
+        
+        const img4 = document.createElement('img');
+        img4.src = idPicture;
+    
     
         // Append the first image to 'result-id-picture'
         document.getElementById('result-id-picture').appendChild(img1);
@@ -380,10 +387,16 @@ document.addEventListener('DOMContentLoaded', () => {
         // Replace the 'profile-picture' image with img3
         const profilePicture = document.getElementById('profile-picture');
         profilePicture.parentNode.replaceChild(img3, profilePicture);
+
+          // Append img4 to the 'StudentResult-picture' 
+          const studentResultPicture = document.getElementById('StudentResult-picture');
+          studentResultPicture.appendChild(img4);
     } else {
         console.log('ID picture not found in localStorage');
     }
     
+ 
+   
     
      // Retrieve and display the student's signature
      const signature = localStorage.getItem('signature');
@@ -406,4 +419,8 @@ document.addEventListener('DOMContentLoaded', () => {
      } else {
          console.log("Applicant's E-Signature not found in localStorage");
      }
+
+
+
+     
  });

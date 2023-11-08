@@ -968,7 +968,68 @@ nav {
 	margin: 15px 8px 0; 
 	
   }
-  
+  .StudentResult-Content {
+    display: flex;
+    align-items: center;
+    border: 2px solid #000; /* Add border to the result info div */
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.student-picture {
+    width: 30%; /* Adjust the width as needed */
+    margin-right: 20px; /* Add some space between the picture and the information */
+}
+
+.student-picture img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.result-info {
+    width: 70%; /* Adjust the width as needed */
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.result-style {
+    margin-bottom: 10px; /* Add some space between each result section */
+}
+
+/* Additional styling as per your design requirements */
+.applicant-name {
+    font-weight: bold;
+    font-size: 1.2em; /* Example font size */
+    color: #333; /* Example text color */
+}
+
+.applicant-number {
+    font-style: italic;
+    color: #777; /* Lighter color for contrast */
+}
+
+.program-info {
+    color: #009688; /* Green color for emphasis */
+}
+
+.status-pending {
+    font-weight: bold;
+    color: #FFA500; /* Orange color for pending status */
+}
+/* Center the announcement text */
+.result-status-dets {
+    text-align: center; /* Align text to the center */
+    font-size: 1.2em; /* Example font size */
+    font-weight: bold; /* Example font weight */
+    color: #FF0000; /* Red color for emphasis */
+    padding: 10px; /* Add some padding around the text */
+    border: 2px solid #FF0000; /* Add a border */
+    border-radius: 5px; /* Add border radius for a softer look */
+	margin: 20px 0; /* Add margin top and bottom */
+}
 
 
 @media screen and (max-width: 576px) {
