@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="frontend/assets/css//student.css" />
     <!-- Boxicons -->
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 </head>
 
 <body>
@@ -61,8 +63,6 @@
                 </div>
             </form>
             <div id="clock">8:10:45</div>
-            <input type="checkbox" id="switch-mode" hidden>
-            <label for="switch-mode" class="switch-mode"></label>
 
 
             <a href="#" class="profile" id="profile-button">
@@ -525,44 +525,47 @@
                 <div id="student-result">
                     <div class="table-data">
                         <div class="order">
-                        
-                                <div class="StudentResult-Content">
-                                    <div id="StudentResult-picture" class="student-picture">
-                                  </div>
-                                
-                                    <div class="result-info">
-                                        <div class="result-style">
-                                            <p class="result-p">
-                                                <strong>Applicant Name:</strong>
-                                                <span id="result-ApplicantName" class="applicant-name"></span>
-                                            </p>
-                                        </div>
-                                
-                                        <div class="result-style">
-                                            <p class="result-p">
-                                                <strong>Applicant #:</strong>
-                                                <span id="result-ApplicantNo" class="applicant-number"></span>
-                                            </p>
-                                        </div>
-                                
-                                        <div class="result-style">
-                                            <p class="result-p">
-                                                <strong>Program:</strong>
-                                                <span id="result-Program" class="program-info"></span>
-                                            </p>
-                                        </div>
-                                
-                                        <div class="result-style">
-                                            <p class="result-p">
-                                                <strong>Status:</strong>
-                                                <a href="#" id="Pending" class="status-pending">Pending</a>
-                                            </p>
-                                        </div>
+
+                            <div class="StudentResult-Content">
+                                <div id="StudentResult-picture" class="student-picture">
+                                </div>
+
+                                <div class="result-info">
+                                    <div class="result-style">
+                                        <p class="result-p">
+                                            <strong>Applicant Name:</strong>
+                                            <span id="result-ApplicantName" class="applicant-name"></span>
+                                        </p>
+                                    </div>
+
+                                    <div class="result-style">
+                                        <p class="result-p">
+                                            <strong>Applicant #:</strong>
+                                            <span id="result-ApplicantNo" class="applicant-number"></span>
+                                        </p>
+                                    </div>
+
+                                    <div class="result-style">
+                                        <p class="result-p">
+                                            <strong>Program:</strong>
+                                            <span id="result-Program" class="program-info"></span>
+                                        </p>
+                                    </div>
+
+                                    <div class="result-style">
+                                        <p class="result-p">
+                                            <strong>Status:</strong>
+                                            <a href="#" id="Pending" class="status-pending">Pending</a>
+                                        </p>
                                     </div>
                                 </div>
-                                <div> <p class="result-status-dets">PLEASE BE INFORMED THAT BSU ADMISSION 2023-2024 RESULTS ARE NOT YET AVAILABLE</p>
-                                </div>
-                        
+                            </div>
+                            <div>
+                                <p class="result-status-dets">PLEASE BE INFORMED THAT BSU ADMISSION 2023-2024 RESULTS
+                                    ARE NOT YET AVAILABLE</p>
+                            </div>
+
+
                         </div>
                     </div>
 
@@ -594,13 +597,68 @@
 
             <hr>
             <div class="profile-menu">
-                <a href="#" id="settings" class="profile-item"><i class='bx bx-cog'></i> Settings</a>
-                <a href="#" id="help" class="profile-item"><i class='bx bx-question-mark'></i> Help and Support</a>
-                <a href="#" id="logout" class="profile-item"><i class='bx bx-log-out'></i> Logout</a>
-            </div>
+                <a href="#" id="settings" class="profile-item">  <i class='bx bx-sun'></i>Display</a>
+         
+       <div class="dropdown" id="settings-dropdown">
+                    <a href="#">Dark Mode 
+                        <input type="checkbox" id="switch-mode" hidden>
+                        <label for="switch-mode" class="switch-mode"></label></a>
+
+                
+
+                </div>
+              
+<a href="#" id="help" class="profile-item"><i class='bx bx-question-mark'></i> Help and Support</a>
+
+<div class="dropdown" id="help-dropdown">
+    <!-- Content for Help and Support dropdown -->
+    <!-- Trigger for the FAQ pop-up -->
+    <a href="#" onclick="openPopup('faq-popup')">FAQ (Frequently Asked Questions)</a>
+    
+    <!-- Trigger for the Contact Us pop-up -->
+    <a href="#" onclick="openPopup('contact-popup')">Contact Us</a>
+    
+    <!-- Trigger for the Report a Problem pop-up -->
+    <a href="#" onclick="openPopup('report-popup')">Report a Problem</a>
+</div>
+
+<a href="#" id="logout" class="profile-item"><i class='bx bx-log-out'></i> Logout</a>
+
+<!-- Pop-up for FAQ -->
+<div id="faq-popup" class="popup">
+    <h2>FAQ (Frequently Asked Questions)</h2>
+    <!-- Add your FAQ content here -->
+    <p>Q: How can I reset my password?</p>
+    <p>A: You can reset your password by...</p>
+    <button onclick="closePopup('faq-popup')">Close</button>
+</div>
+
+<!-- Pop-up for Contact Us -->
+<div id="contact-popup" class="popup">
+    <h2>Contact Us</h2>
+    <!-- Add your contact form or details here -->
+    <p>Email: contact@example.com</p>
+    <button onclick="closePopup('contact-popup')">Close</button>
+</div>
+
+<!-- Pop-up for Report a Problem -->
+<div id="report-popup" class="popup">
+    <h2>Report a Problem</h2>
+    <!-- Add your report form or details here -->
+    <p>Please describe the problem:</p>
+    <textarea></textarea>
+    <button onclick="closePopup('report-popup')">Close</button>
+</div>
+
+<!-- Overlay to darken the background when the pop-up is open -->
+<div id="overlay" class="overlay" onclick="closeAllPopups()"></div>
+
+                
         </div>
     </div>
 
+
+    
     <!-- CONTENT -->
     <script src="frontend/assets/js/student.js"></script>
 </body>

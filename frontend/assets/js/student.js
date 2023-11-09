@@ -168,7 +168,38 @@ function showTime() {
 showTime();
 //clock
 
+$(document).ready(function () {
+    $("#settings").click(function () {
+        $("#settings-dropdown").toggle();
+        $("#help-dropdown").hide(); // Hide the other dropdown
+        $("#profile-content").toggleClass("soft-transition");
+    });
 
+    $("#help").click(function () {
+        $("#help-dropdown").toggle();
+        $("#settings-dropdown").hide(); // Hide the other dropdown
+        $("#profile-content").toggleClass("soft-transition");
+    });
+});
+
+function openPopup(popupId) {
+    closeAllPopups();
+    document.getElementById(popupId).style.display = 'block';
+    document.getElementById('overlay').style.display = 'block';
+}
+
+function closePopup(popupId) {
+    document.getElementById(popupId).style.display = 'none';
+    document.getElementById('overlay').style.display = 'none';
+}
+
+function closeAllPopups() {
+    var popups = document.querySelectorAll('.popup');
+    for (var i = 0; i < popups.length; i++) {
+        popups[i].style.display = 'none';
+    }
+    document.getElementById('overlay').style.display = 'none';
+}
 
 document.addEventListener("DOMContentLoaded", function () {
   
@@ -253,6 +284,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   
 });
+
+
 
 
 

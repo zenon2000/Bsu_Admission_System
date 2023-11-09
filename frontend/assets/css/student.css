@@ -352,7 +352,29 @@ hr {
 	font-weight: bold;
 }
 
+      .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
 
+        /* Style for the overlay */
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 900;
+        }
 #clock {
 	font-size: 24px;
 	height: 36px;
@@ -522,9 +544,9 @@ nav {
 
 /*switch*/
 
-#content nav .switch-mode {
+.switch-mode {
 	display: block;
-	min-width: 50px;
+	width: 50px;
 	height: 25px;
 	border-radius: 25px;
 	background: var(--grey);
@@ -532,7 +554,7 @@ nav {
 	position: relative;
 }
 
-#content nav .switch-mode::before {
+ .switch-mode::before {
 	content: '';
 	position: absolute;
 	top: 2px;
@@ -544,11 +566,15 @@ nav {
 	transition: all .3s ease;
 }
 
-#content nav #switch-mode:checked+.switch-mode::before {
+ #switch-mode:checked+.switch-mode::before {
 	left: calc(100% - (25px - 4px) - 2px);
 }
 
-/* NAVBAR */
+/* Add this style to your CSS */
+.show {
+    display: block;
+}
+
 
 
 
@@ -1030,6 +1056,27 @@ nav {
     border-radius: 5px; /* Add border radius for a softer look */
 	margin: 20px 0; /* Add margin top and bottom */
 }
+
+/* Add a margin-left to the dropdown elements */
+.dropdown {
+    display: none;
+    margin-left: 30px; /* Adjust the value as needed */
+}
+
+/* Style for the dropdown links */
+.dropdown a {
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+    background-color: #f9f9f9;
+    color: #666; /* Change the color to a lighter black (e.g., #666) */
+}
+
+/* Style for the dropdown links on hover */
+.dropdown a:hover {
+    background-color: #ccc;
+}
+/* Add this class for a soft transition effect */
 
 
 @media screen and (max-width: 576px) {
