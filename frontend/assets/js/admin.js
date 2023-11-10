@@ -265,14 +265,7 @@ document.addEventListener('DOMContentLoaded', function () {
         viewRequestContent.style.display = 'none'; // Hide View Request content
     });
 
-    manageScheduleLink.addEventListener('click', function (event) {
-        event.preventDefault(); // Prevent the default link behavior
-        dashboardContent.style.display = 'none'; // Hide the dashboard content
-        approveApplicantContent.style.display = 'none'; // Hide the approve applicants content
-        manageScheduleContent.style.display = 'block'; // Show Manage Schedule content
-        manageFacultyContent.style.display = 'none'; // Hide Manage Faculty content
-        viewRequestContent.style.display = 'none'; // Hide View Request content
-    });
+
 
     manageFacultyLink.addEventListener('click', function (event) {
         event.preventDefault(); // Prevent the default link behavior

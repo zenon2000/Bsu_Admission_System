@@ -11,9 +11,9 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('loginForm').style.display = 'block';
     });
 
-    // Add event listener for the "Login" link inside the registration form
+    // Add event listener for the "Sign up" link inside the login form
     document.getElementById('signupLink').addEventListener('click', function() {
-        // Toggle the visibility of the login form and hide the registration form
+        // Toggle the visibility of the registration form and hide the login form
         document.getElementById('loginForm').style.display = 'none';
         document.getElementById('registrationForm').style.display = 'block';
     });
