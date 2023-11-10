@@ -76,7 +76,19 @@ $('input[name="id_picture"]').change(function () {
     $('label[for="id_picture"]').text(fileName);
 });
 
+function updateSelection() {
+    var categoryDropdown = document.getElementById("categoryDropdown");
+    var boardFields = document.getElementById("boardFields");
+    var nonBoardField = document.getElementById("nonBoardField");
 
+    if (categoryDropdown.value === "Board") {
+      boardFields.classList.remove("programFields");
+      nonBoardField.classList.add("programFields");
+    } else if (categoryDropdown.value === "Non-board") {
+      boardFields.classList.add("programFields");
+      nonBoardField.classList.remove("programFields");
+    }
+  }
 
 
 // Handle clicking the image preview to change the image
@@ -199,7 +211,7 @@ function handleForm(event) {
     const applicantSignatureData = applicantCanvas.toDataURL();
     const applicantname = document.getElementById('applicant_name').value;
     const degreeProgramApplied = document.getElementById('slip_degree').value;
-
+   
 
     // Store data in localStorage
     localStorage.setItem('lastName', lastName);

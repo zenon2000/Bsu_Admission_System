@@ -1,11 +1,20 @@
-const wrapper = document.querySelector('.wrapper');
-const loginLink = document.querySelector('.login-link');
-const registerLink = document.querySelector('.register-link');
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('joinUsButton').addEventListener('click', function() {
+        // Toggle the visibility of the login form and hide the registration form
+        document.getElementById('loginForm').style.display = 'block';
+        document.getElementById('registrationForm').style.display = 'none';
+    });
 
-registerLink.addEventListener('click', ()=> { 
-    wrapper.classList.add('active'); 
-});
+    document.getElementById('signupLink').addEventListener('click', function() {
+        // Toggle the visibility of the registration form and hide the login form
+        document.getElementById('registrationForm').style.display = 'block';
+        document.getElementById('loginForm').style.display = 'none';
+    });
 
-loginLink.addEventListener('click', ()=> { 
-    wrapper.classList.remove('active'); 
+    // Add event listener for the "Login" link inside the registration form
+    document.getElementById('loginLink').addEventListener('click', function() {
+        // Toggle the visibility of the login form and hide the registration form
+        document.getElementById('loginForm').style.display = 'block';
+        document.getElementById('registrationForm').style.display = 'none';
+    });
 });

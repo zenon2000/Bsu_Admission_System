@@ -21,27 +21,6 @@ menuBar.addEventListener('click', function () {
 	sidebar.classList.toggle('hide');
 })
 
-//dropdown
-document.addEventListener('DOMContentLoaded', function () {
-    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
-
-    dropdownToggles.forEach(function (toggle) {
-        toggle.addEventListener('click', function (e) {
-            e.preventDefault();
-            const dropdownContent = toggle.nextElementSibling;
-            const chevronIcon = toggle.querySelector('.bx-chevron-down');
-
-            // Toggle the visibility of the dropdown content
-            if (dropdownContent.style.display === 'block') {
-                dropdownContent.style.display = 'none';
-                chevronIcon.style.transform = 'rotate(0deg)';
-            } else {
-                dropdownContent.style.display = 'block';
-                chevronIcon.style.transform = 'rotate(180deg)';
-            }
-        });
-    });
-});
 
 
 //search bar
@@ -110,37 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
 //search bar
 
 
-//side bar
-document.addEventListener('DOMContentLoaded', function () {
-    const dropdownItems = document.querySelectorAll('#courses-dropdown .dropdown-content li a');
 
-    dropdownItems.forEach(function (item) {
-        const fullText = item.getAttribute('data-fulltext');
-        const abbreviation = item.querySelector('.text');
-
-        // Save the original abbreviation
-        const originalAbbreviation = abbreviation.textContent;
-
-        item.addEventListener('mouseover', function () {
-            // Apply a smaller font size and show the full text on two lines when hovering
-            abbreviation.style.fontSize = '12px';
-            abbreviation.style.whiteSpace = 'normal'; // Allow multiple lines
-            abbreviation.textContent = fullText;
-        });
-
-        item.addEventListener('mouseout', function () {
-            // Restore the original state when not hovering
-            abbreviation.style.fontSize = ''; // Empty string resets to the default size
-            abbreviation.style.whiteSpace = 'nowrap'; // Display on one line
-            abbreviation.textContent = originalAbbreviation;
-        });
-    });
-});
-
-//side bar
-
-
-//clock
 // Calling showTime function at every second
 setInterval(showTime, 1000);
  
