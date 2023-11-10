@@ -1,3 +1,6 @@
+<?php
+include_once '../db_conn.php';
+?>
 
 <!-- Export -->
 <div id="export-content">
@@ -11,16 +14,16 @@
             </ul>
         </div>
     </div>
-
+    <button name="export" type="submit" class="button export" onclick="exportToExcel()">Export to Excel</button>
  <!--export-->
- <div id="student-result-nor">
+ <div id="student-export">
     <div class="table-data">
         <div class="order">
             <div class="head">
                 <h3>Student Master List</h3>
                 <i class='bx bx-search' id="searchIcon"></i>
-                <div class="search-box" id="searchBox-form">
-                    <input type="text" placeholder="Search...">
+                <div class="search-box" id="searchBox-student-export">
+                    <input type="text" id="student-export" placeholder="Search...">
                 </div>
             </div>
             <table>
@@ -30,34 +33,52 @@
                         <th>College</th>
                         <th>Program</th>
                         <th>Name</th>
+                        <th>Email</th>
                         <th>Birth Date</th>
                         <th>Sex</th>
+                        <th>Age</th>
+                        <th>Civil Status</th>
+                        <th>Nationality</th>
                         <th>GWA</th>
                         <th>Math</th>
                         <th>Science</th>
                         <th>English</th>
                         <th>Rank</th>
-                        <th>Result</th>
                     </tr>
                 </thead>
                 <tbody>
+
+                <?php 
+
+                // Fetch records from database 
+                $result = $con->query("SELECT * FROM student_result ORDER BY rank ASC"); 
+                if($result->num_rows > 0){ 
+                    while($row = $result->fetch_assoc()){ 
+                ?>
                     <tr>
-                        <td>000001</td>
-                        <td>CIS</td>
-                        <td>BSIT</td>
-                        <td>Nobara Kugisaki</td>
-                        <td>08-07-2004</td>
-                        <td>Female</td>
+                        <td><?php echo $row['app_number']; ?></td>
+                        <td><?php echo $row['college']; ?></td>
+                        <td><?php echo $row['course']; ?></td>
+                        <td><?php echo $row['lname']; ?></td>
+                        <td><?php echo $row['email']; ?></td>
+                        <td><?php echo $row['b_date']; ?></td>
+                        <td><?php echo $row['sex']; ?></td>
+                        <td>18</td>
+                        <td>Single</td>
+                        <td>Japanese</td>
                         <td>83%</td>
                         <td>84%</td>
                         <td>80%</td>
                         <td>81%</td>
                         <td>220</td>
-                       <td>NOR</td>
                     </tr>
+
+                    <?php } }else{ ?>
+                    <tr><td colspan="7">No member(s) found...</td></tr>
+                <?php } ?>
                 </tbody>
             </table>
         </div>
     </div>
-  <button class="button export" onclick="exportToExcel()">Export to Excel</button>
+  </div>
 </div>

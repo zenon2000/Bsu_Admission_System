@@ -1,7 +1,7 @@
- <!-- SIDEBAR -->
- <section id="sidebar">
+	 <!-- SIDEBAR -->
+     <section id="sidebar">
         <a href="#" class="brand">
-            <img class="bsulogo" src="images/BSU Logo1.png" alt="BSU LOGO">
+            <img class="bsulogo" src="../images/BSU Logo1.png" alt="BSU LOGO">
             <span class="text">Staff</span>
         </a>
 
@@ -42,7 +42,7 @@
             </li>
 
             <li class="">
-                <a href="#" id="student-form-link">
+                <a href="#" id="student-forms-link">
                     <i class='bx bxs-book-content'></i>
                     <span class="text">Student Forms</span>
                 </a>

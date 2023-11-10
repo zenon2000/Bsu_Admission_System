@@ -20,7 +20,7 @@
             </a>
              
             <a href="#" class="profile" id="profile-button">
-                <img src="frontend/assets/images/human icon.png" alt="User Profile">
+                <img src="images/human icon.png" alt="User Profile">
             </a>
             
         </nav>

@@ -20,32 +20,6 @@
 
 </section>
 
-
-
-  <!-- NOTIFICATION container -->
- <div class="notification-popup" id="notification-popup">
-    <div class="popup-header">
-        <span class="popup-title">Notifications</span>
-    </div>
-    <div class="popup-content" id="notification-content">
-        <div class="notification-item">
-            <img src="frontend/assets/images/human icon.png" alt="User Avatar">
-            <div class="notification-text">
-                <p><strong>User 1</strong> submitted an application for BACOM admission</p>
-                <span class="timestamp">2 hours ago</span>
-            </div>
-        </div>
-        <div class="notification-item">
-            <img src="frontend/assets/images/human icon.png" alt="User Avatar">
-            <div class="notification-text">
-                <p><strong>User 2</strong> requested for a copy of addmited BSIT Students</p>
-                <span class="timestamp">5 hours ago</span>
-            </div>
-        </div>
-        <!-- Add more notification items as needed -->
-    </div>
-</div>
-
 <!-- Add the profile popup container here -->
 
 <!-- Add the profile popup container here -->
@@ -53,7 +27,7 @@
 <!-- Popup content -->
 <div class="popup-content" id="profile-content">
     <div class="profile-header">
-        <img src="frontend/assets/images/human icon.png" alt="User Profile Picture" class="profile-picture">
+        <img src="../images/human icon.png" alt="User Profile Picture" class="profile-picture">
         <p class="profile-name">John Doe</p>
     </div>
     <hr>
