@@ -3,7 +3,7 @@
         margin: 0;
         padding: 0;
         font-family: 'Arial', sans-serif;
-        background-image: url('assets/images/banner.jpg');
+        background-image: url('https://github.com/zenon2000/Bsu_Admission_System/blob/4c494b17c2bc046700560a2c7493c3cc4e44f0c0/frontend/assets/images/banner.jpg');
          background-size: cover;
         background-position: center;
         color: #fff; /* Set text color to white or a suitable contrast */
@@ -128,19 +128,28 @@ input {
     box-sizing: border-box;
 }
 
-button {
+
+
+.btnn {
+    background-color: #15ff00;
+    border: none;
+    color: rgb(255, 255, 255);
     width: 100%;
     padding: 10px;
-    background-color: #338436;
-    color: white;
-    border: none;
-    border-radius: 5px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
 }
-
+.btnn a {
+    color: #ffffff; /* Font color (white in this example) */
+    text-decoration: none;
+    font-weight: bold; /* Make the font bold */
+}
 .link {
     text-align: left;
     margin-bottom: 15px;

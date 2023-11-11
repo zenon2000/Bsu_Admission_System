@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Profile</title>
-    <link rel="icon" href="frontend/assets/images/BSU Logo1.png" type="image/x-icon">
-    <link rel="stylesheet" href="frontend/assets/css//student.css" />
+    <link rel="icon" href="../frontend/assets/images/BSU Logo1.png" type="image/x-icon">
+    <link rel="stylesheet" href="../frontend/assets/css//student.css" />
     <!-- Boxicons -->
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -17,7 +17,7 @@
     <!-- SIDEBAR -->
     <section id="sidebar">
         <a href="#" class="brand">
-            <img class="bsulogo" src="frontend/assets/images/BSU Logo1.png" alt="BSU LOGO">
+            <img class="bsulogo" src="../frontend/assets/images/BSU Logo1.png" alt="BSU LOGO">
             <span class="text">Student</span>
         </a>
 
@@ -66,7 +66,7 @@
 
 
             <a href="#" class="profile" id="profile-button">
-                <img src="frontend/assets/images/human icon.png" alt="User Profile" id="profile-image">
+                <img src="../frontend/assets/images/human icon.png" alt="User Profile" id="profile-image">
             </a>
 
 
@@ -98,13 +98,7 @@
                         </span>
                     </li>
 
-                    <li id="admitted-box">
-                        <i class='bx bx-calendar'></i>
-                        <span class="text">
-                            <h3>01-10-2024</h3>
-                            <p>Admission Date</p>
-                        </span>
-                    </li>
+                   
 
                     <li id="readmitted-box">
                         <i class='bx bx-calendar'></i>
@@ -262,6 +256,26 @@
                                     </tr>
                                 </tbody>
                             </table>
+                        </div>
+                    </div>
+                </div>
+                <div id="readmission-announce" >
+                    <div class="table-data">
+                        <div class="order">
+                            <div class="head">
+                                <h3>Readmission Date</h3>
+                            </div>
+                           <div>Readmission will start January 1- to 29</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="releasing-annouce" >
+                    <div class="table-data">
+                        <div class="order">
+                            <div class="head">
+                                <h3>Releasing Of Result</h3>
+                            </div>
+                           <div>Realeasing of result will be posted when availablle</div>
                         </div>
                     </div>
                 </div>
@@ -590,7 +604,7 @@
         <!-- Popup content -->
         <div class="popup-content" id="profile-content">
             <div class="profile-header">
-                <img src="frontend/assets/images/human icon.png" alt="User Profile Picture" class="profile-picture"
+                <img src="../frontend/assets/images/human icon.png" alt="User Profile Picture" class="profile-picture"
                     id="profile-picture">
                 <p class="profile-name">John Doe</p>
             </div>
@@ -622,7 +636,7 @@
     <a href="#" onclick="openPopup('report-popup')">Report a Problem</a>
 </div>
 
-<a href="#" id="logout" class="profile-item"><i class='bx bx-log-out'></i> Logout</a>
+<a href="logout.php" id="logout" class="profile-item"><i class='bx bx-log-out'></i> Logout</a>
 
 <!-- Pop-up for FAQ -->
 <div id="faq-popup" class="popup">
@@ -660,7 +674,7 @@
 
     
     <!-- CONTENT -->
-    <script src="frontend/assets/js/student.js"></script>
+    <script src="../frontend/assets/js/student.js"></script>
 </body>
 
 </html>

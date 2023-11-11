@@ -171,23 +171,10 @@ showTime();
 
 
 document.addEventListener("DOMContentLoaded", function () {
-    const notificationButton = document.querySelector("#notification-button");
-    const notificationPopup = document.querySelector("#notification-popup");
-    const profileButton = document.querySelector("#profile-button");
+     const profileButton = document.querySelector("#profile-button");
     const profilePopup = document.querySelector("#profile-popup");
 
-    // Toggle the display of the notification popup when the button is clicked
-    notificationButton.addEventListener("click", function () {
-        // Toggle the visibility of the notification popup
-        notificationPopup.style.display = notificationPopup.style.display === "block" ? "none" : "block";
-    });
 
-    // Close the notification popup when the user clicks outside the popup
-    document.addEventListener("click", function (event) {
-        if (!notificationButton.contains(event.target) && !notificationPopup.contains(event.target)) {
-            notificationPopup.style.display = "none";
-        }
-    });
 
     // Toggle the display of the profile popup when the button is clicked
     profileButton.addEventListener("click", function () {
@@ -214,14 +201,14 @@ document.addEventListener('DOMContentLoaded', function () {
     const AdmittedItem = document.getElementById('admitted-box');
     const ReadmittedItem = document.getElementById('readmitted-box');
     const NonqualifiedItem = document.getElementById('nonqualified-box');
-    const FormItem = document.getElementById('form-box');
+  
     const overallItem = document.getElementById('dashboard-link');
 
     const AvailableTable = document.getElementById('available-slot');
     const AdmittedTable = document.getElementById('admitted');
     const ReadmittedTable = document.getElementById('readmitted');
     const NonqualifiedTable = document.getElementById('nonqualified');
-    const FormTable = document.getElementById('form');
+
     const overallTable = document.getElementById('over-all');
   
     // Hide all tables initially excepts the over-all
@@ -229,7 +216,7 @@ document.addEventListener('DOMContentLoaded', function () {
     AdmittedTable.style.display = 'none';
     ReadmittedTable.style.display = 'none';
     NonqualifiedTable.style.display = 'none';
-    FormTable.style.display = 'none';
+  
     overallTable.style.display = 'block';
 
     AvailableItem.addEventListener('click', function () {
@@ -238,7 +225,7 @@ document.addEventListener('DOMContentLoaded', function () {
         AdmittedTable.style.display = 'none';
         ReadmittedTable.style.display = 'none';
         NonqualifiedTable.style.display = 'none';
-        FormTable.style.display = 'none';
+       
         overallTable.style.display = 'none';
        
     });
@@ -249,7 +236,7 @@ document.addEventListener('DOMContentLoaded', function () {
         AdmittedTable.style.display = 'block';
         ReadmittedTable.style.display = 'none';
         NonqualifiedTable.style.display = 'none';
-        FormTable.style.display = 'none';
+     
         overallTable.style.display = 'none';
     });
 
@@ -259,7 +246,7 @@ document.addEventListener('DOMContentLoaded', function () {
         AdmittedTable.style.display = 'none';
         ReadmittedTable.style.display = 'block';
         NonqualifiedTable.style.display = 'none';
-        FormTable.style.display = 'none';
+     
         overallTable.style.display = 'none';
     });
 
@@ -269,20 +256,11 @@ document.addEventListener('DOMContentLoaded', function () {
         AdmittedTable.style.display = 'none';
         ReadmittedTable.style.display = 'none';
         NonqualifiedTable.style.display = 'block';
-        FormTable.style.display = 'none';
+     
         overallTable.style.display = 'none';
     });
 
-    FormItem.addEventListener('click', function () {
-        // Show the "Form" table and hide others
-        AvailableTable.style.display = 'none';
-        AdmittedTable.style.display = 'none';
-        ReadmittedTable.style.display = 'none';
-        NonqualifiedTable.style.display = 'none';
-        FormTable.style.display = 'block';
-        overallTable.style.display = 'none';
-      
-    });
+
 
   overallItem.addEventListener('click', function () {
         // Show the "Overall" table and hide others
@@ -290,7 +268,7 @@ document.addEventListener('DOMContentLoaded', function () {
         AdmittedTable.style.display = 'none';
         ReadmittedTable.style.display = 'none';
         NonqualifiedTable.style.display = 'none';
-        FormTable.style.display = 'none';
+    
         overallTable.style.display = 'block';
       
     });
