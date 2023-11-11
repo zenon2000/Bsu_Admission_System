@@ -1,11 +1,12 @@
 <?php
+session_start();
 include("config.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $stmt = $conn->prepare("SELECT id, password, user_type FROM users WHERE email = ?");
+    $stmt = $conn->prepare("SELECT id, password, userType FROM users WHERE email = ?");
     $stmt->bind_param("s", $email);
     $stmt->execute();
     $stmt->store_result();
@@ -13,25 +14,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($stmt->num_rows > 0) {
         $stmt->bind_result($id, $hashedPassword, $userType);
         $stmt->fetch();
-        
+
         if (password_verify($password, $hashedPassword)) {
             session_start();
             $_SESSION['user_id'] = $id;
             $_SESSION['user_type'] = $userType;
 
-            if ($userType == 'staff') {
+            if ($userType == 'admin') {
+                header("Location: admin.html");
+            } elseif ($userType == 'staff') {
                 header("Location: staff.html");
             } elseif ($userType == 'student') {
                 header("Location: admissionform.html");
-            } elseif ($row["user_type"] == "admin") {
-                // If you want to handle admin separately, redirect to admin.html
-                header("Location: admin.html");
             } else {
-                echo "Invalid user type";
+                // Handle other user types
             }
-            exit();
         } else {
-            echo "Invalid password";
+            echo "Incorrect password";
         }
     } else {
         echo "User not found";

@@ -40,7 +40,8 @@ function run(hideTab, showTab) {
         }
 
         for (i = 0; i < y.length; i++) {
-            if (y[i].value === "") {
+            if ((hideTab === 2 || hideTab === 3) && y[i].value === "") {
+                // Handle empty fields with visual cues
                 $(y[i]).css("background", "#ffdddd");
                 y[i].placeholder = "Please fill up all the field";
                 y[i].focus();
@@ -77,67 +78,95 @@ $('input[name="id_picture"]').change(function () {
 });
 
 
-    function updateSelection() {
-        var categoryDropdown = document.getElementById("categoryDropdown");
-        var boardFields = document.getElementById("boardFields");
-        var nonBoardField = document.getElementById("nonBoardField");
-  
-        if (categoryDropdown.value === "Board") {
-          boardFields.classList.remove("programFields");
-          nonBoardField.classList.add("programFields");
-        } else if (categoryDropdown.value === "Non-board") {
-          boardFields.classList.add("programFields");
-          nonBoardField.classList.remove("programFields");
-        }
-      }
-  
-      function calculateGWA() {
-        var englishGrade = parseFloat(document.getElementById("englishGrade").value);
-        var mathGrade = parseFloat(document.getElementById("mathGrade").value);
-        var scienceGrade = parseFloat(document.getElementById("scienceGrade").value);
-  
-     
-  
-        // Calculate GWA (you can adjust the weights as needed)
+function updateSelection() {
+    // Reset the form and hide all fields
+    document.getElementById('boardFields').style.display = 'none';
+    document.getElementById('nonBoardField').style.display = 'none';
+    document.getElementById('boardProgramsDropdown').style.display = 'none';
+    document.getElementById('nonBoardProgramsDropdown').style.display = 'none';
+
+
+    
+    // Show the relevant fields based on the selection
+    var categoryDropdown = document.getElementById('categoryDropdown');
+    var selectedCategory = categoryDropdown.options[categoryDropdown.selectedIndex].value;
+
+    if (selectedCategory === 'Board') {
+      document.getElementById('boardFields').style.display = 'block';
+    } else if (selectedCategory === 'Non-board') {
+      document.getElementById('nonBoardField').style.display = 'block';
+    }
+  }
+
+   function updateSelection() {
+    var natureOfDegree = document.getElementById("categoryDropdown").value;
+    
+    // Hide all program fields initially
+    document.getElementById("boardFields").style.display = "none";
+    document.getElementById("nonBoardField").style.display = "none";
+    document.getElementById("boardProgramsDropdown").style.display = "none";
+    document.getElementById("nonBoardProgramsDropdown").style.display = "none";
+
+    if (natureOfDegree === "Board") {
+      // Show board program fields
+      document.getElementById("boardFields").style.display = "block";
+    } else if (natureOfDegree === "Non-board") {
+      // Show non-board program fields
+      document.getElementById("nonBoardField").style.display = "block";
+    }
+  }
+
+  function calculateGWA() {
+    var natureOfDegree = document.getElementById("categoryDropdown").value;
+
+    if (natureOfDegree === "Board") {
+      // Assuming you have input fields with IDs: englishGrade, mathGrade, scienceGrade
+      var englishGrade = parseFloat(document.getElementById("englishGrade").value);
+      var mathGrade = parseFloat(document.getElementById("mathGrade").value);
+      var scienceGrade = parseFloat(document.getElementById("scienceGrade").value);
+
+      // Check if grades are within the accepted range (75-99)
+      if (englishGrade >= 75 && mathGrade >= 75 && scienceGrade >= 75 && englishGrade <= 99 && mathGrade <= 99 && scienceGrade <= 99) {
+        // Calculate GWA
         var gwa = (englishGrade + mathGrade + scienceGrade) / 3;
-  
-        // Display the result
-        var gwaResultElement = document.getElementById("gwaResult");
-        gwaResultElement.textContent = "Your General Weighted Average (GWA) is: " + gwa.toFixed(2);
-  
-        // Check if GWA is 86% or higher to show board programs dropdown
+        document.getElementById("gwaResult").innerText = "GWA: " + gwa.toFixed(2) + "%";
+
+        // Check if GWA is above the required threshold (86%)
         if (gwa >= 86) {
-          var boardProgramsDropdown = document.getElementById("boardProgramsDropdown");
-          boardProgramsDropdown.classList.remove("programFields");
+          // Show board programs dropdown
+          document.getElementById("boardProgramsDropdown").style.display = "block";
         } else {
-          alert("You didn't pass the qualified GWA requirement for Board Programs.");
+          alert("You didn't pass the required GWA (86% or above) for board programs.");
         }
+      } else {
+        alert("Please enter valid grades between 75 and 99.");
       }
-  
-      function submitNonBoardForm() {
-        displayNonBoardGWA();
-      }
-      
-      function displayNonBoardGWA() {
-        var gwaGrade = parseFloat(document.getElementById("gwaGrade").value);
-      
-        if (isNaN(gwaGrade)) {
-          alert("Please enter a valid GWA grade.");
-          return;
-        }
-      
-        // Display the provided Non-Board GWA
-        var nonBoardGwaResultElement = document.getElementById("nonBoardGwaResult");
-        nonBoardGwaResultElement.textContent = "Your General Weighted Average (GWA) is: " + gwaGrade.toFixed(2);
-      
-        // Check if GWA is 80 or higher to show non-board programs dropdown
+    }
+  }
+
+  function submitNonBoardForm() {
+    var natureOfDegree = document.getElementById("categoryDropdown").value;
+
+    if (natureOfDegree === "Non-board") {
+      // Assuming you have an input field with ID: gwaGrade
+      var gwaGrade = parseFloat(document.getElementById("gwaGrade").value);
+
+      // Check if GWA is within the accepted range (80-99)
+      if (gwaGrade >= 80 && gwaGrade <= 99) {
+        document.getElementById("nonBoardGwaResult").innerText = "GWA: " + gwaGrade.toFixed(2) + "%";
+
+        // Check if GWA is above the required threshold (80%)
         if (gwaGrade >= 80) {
-          var nonBoardProgramsDropdown = document.getElementById("nonBoardProgramsDropdown");
-          nonBoardProgramsDropdown.classList.remove("programFields");
+          // Show non-board programs dropdown
+          document.getElementById("nonBoardProgramsDropdown").style.display = "block";
         } else {
-          alert("You didn't pass the qualified GWA requirement for Non-Board Programs.");
+          alert("You didn't pass the required GWA (80% or above) for non-board programs.");
         }
+      } else {
+        alert("Please enter a valid GWA between 75 and 99.");
       }
+    }
+  }
       
 // Handle clicking the image preview to change the image
 document.getElementById('id_picture_preview_container').addEventListener('click', function () {
