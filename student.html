@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile</title>
+    <link rel="icon" href="/assets/images/BSU Logo1.png" type="image/x-icon">
+    <link rel="stylesheet" href="student.css" />
+    <!-- Boxicons -->
+    
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+	 <!-- SIDEBAR -->
+	<section id="sidebar">
+        <a href="#" class="brand">
+            <img class="bsulogo" src="/assets/images/BSU Logo1.png" alt="BSU LOGO">
+            <span class="text">Student</span>
+        </a>
+
+        <ul class="side-menu top">
+            <li class="active">
+                <a href="#" id="student-profile-link">
+                    <i class='bx bx-'></i>
+                    <span class="text">profile</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" id="announcements-link">
+                    <i class='bx bx-group'></i>
+                    <span class="text">Announcement</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" id="result-link">
+                    <i class='bx bx-receipt'></i>
+                    <span class="text">Result</span>
+                </a>
+            </li>
+          
+        
+                        </ul>
+                    
+    </section>
+    <!-- SIDEBAR -->
+    <!-- CONTENT -->
+    <section id="content">
+        <!-- NAVBAR -->
+        <nav>
+            <i class='bx bx-menu'></i>
+            <a href="#" class="nav-link">Categories</a>
+            <form id="search-form">
+        <div class="form-input">
+            <input type="text" id="searchInput" placeholder="Search...">
+            <button type="submit" class="search-btn"><i class='bx bx-search'></i></button>
+        </div>
+        </form>
+            <div id="clock">8:10:45</div>
+            <input type="checkbox" id="switch-mode" hidden>
+            <label for="switch-mode" class="switch-mode"></label>
+            <a href="#" class="notification" id="notification-button" style="display: none;">
+                <i class='bx bxs-bell'></i>
+                <span class="num">8</span>
+                <div class="circle"></div>
+            </a>
+           
+            <a href="#" class="profile" id="student-profile-button">
+                <img src="/assets/images/human icon.png" alt="User Profile">
+            </a>
+            
+        </nav>
+
+        
+        <!-- NAVBAR -->
+
+        <!-- MAIN -->
+        <main>
+               	<!--dashboard-->   
+            <div id="profile-content">
+              <div class="head-title">
+                <div class="left">
+                    <h1>Profile</h1>
+                    <ul class="breadcrumb">
+                        <li>
+                            <a href="#">profile</a>
+                        </li>
+                        <li><i class='bx bx-chevron-right'></i></li>
+                        <li>
+                            <a class="active" href="#">Home</a>
+                        </li>
+                    </ul>
+                </div>
+               
+             </div>
+       
+             <ul class="box-info">
+                <li id="verified-application">
+                    <i class='bx bx-group'></i>
+                    <span class="text">
+                        <h3>1020</h3>
+                        <p>Verified Application</p>
+                    </span>
+                </li>
+                <li id="to-be-reviewed">
+                    <i class='bx bx-street-view'></i>
+                    <span class="text">
+                        <h3>1020</h3>
+                        <p>To Be Reviewed</p>
+                    </span>
+                </li>
+                <li id="results-item">
+                    <i class='bx bx-chart' ></i>
+                    <span class="text">
+                        <h3>2834</h3>
+                        <p>Results</p>
+                    </span>
+                </li>
+                <li id="faculty-item">
+                    <i class='bx bx-user'></i>
+                    <span class="text">
+                        <h3>2543</h3>
+                        <p>Faculty</p>
+                    </span>
+                </li>
+            </ul>
+            
+       
+            <!--verified-->
+                <div>
+                 <div id="verified" class="table-data" style="display: none;">
+                   <div class="order">
+                    <div class="head">
+                        <h3>Verified Application</h3>
+                        <i class='bx bx-search' id="searchIcon"></i>
+                        <div class="search-box" id="searchBox-verified">
+                            <input type="text" placeholder="Search...">
+                        </div>
+                    </div>                    
+                        <table>
+                      
+                        <thead>
+                            <tr>
+                                <th>Application Number</th>
+                                <th>College</th>
+                                <th>Course</th>
+                                <th>Last Name</th>
+                                <th>First Name</th>
+                                <th>Middle Name</th>
+                                <th>Status</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><p>0000001</p></td>
+                                <td><p>College of Information Science</p></td>
+                                <td><p>Bachelor of...</p></td>
+                                <td><p>Monkey</p></td>
+                                <td><p>Luffy</p></td>
+                                <td><p>D'sWill</p></td>
+                                <td><span class="status completed">Reviewed</span></td>
+                            </tr>
+						</tbody>
+					</table>
+
+                  </div>
+                  </div>
+                
+                   <!--reviewed-->
+                   <div id="reviewed" class="table-data" >
+                    <div class="order">
+                        <div class="table-container">
+                            <div class="head">
+                                <h3>To be reviewed</h3>
+                                <i class='bx bx-search' id="searchIcon"></i>
+                                <div class="search-box" id="searchBox-reviewed">
+                                    <input type="text" placeholder="Search...">
+                                </div>
+                            </div>
+                            
+                            <table>
+                          
+                          
+                            <thead>
+                                <tr>
+                                <th>Application Number</th>
+                                <th>College</th>
+                                <th>Course</th>
+                                <th>Last Name</th>
+                                <th>First Name</th>
+                                <th>Middle Name</th>
+                                <th>Status</th>
+                                
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><p>0000001</p></td>
+                                    <td><p>College of Teacher Education</p></td>
+                                    <td><p>Bachelor of....</p></td>
+                                    <td><p>Monkey</p></td>
+                                    <td><p>Garp</p></td>
+                                    <td><p>D'sWill</p></td>
+                                    <td><span class="status pending">Pending</span></td>
+                                    
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                    </div>
+                   </div>
+                   <!--result-->
+                   <div id="resultsT" class="table-data" >
+                    <div class="order">
+                        <div class="head">
+                            <h3>Results</h3>
+                            <i class='bx bx-search' id="searchIcon"></i>
+                            <div class="search-box" id="searchBox-result">
+                                <input type="text" placeholder="Search...">
+                            </div>
+                        </div>
+                    <div class="table-container">
+                        <table>
+                          
+                            <thead>
+                                <tr>
+                                <th>Application Number</th>
+                                <th>College</th>
+                                <th>Course</th>
+                                <th>Last Name</th>
+                                <th>First Name</th>
+                                <th>Middle Name</th>
+                                <th>Status</th>
+                                
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><p>0000001</p></td>
+                                    <td><p>College of Human Kinetics</p></td>
+                                    <td><p>Bachelor of...</p></td>
+                                    <td><p>Monkey</p></td>
+                                    <td><p>Dragon</p></td>
+                                    <td><p>D'sWill</p></td>
+                                    <td><span class="status process">Complete</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    </div>
+                 </div>
+        
+                    <!--Faculty-->
+                    <div id="faculty" class="table-data" >
+                        <div class="order">
+                            <div class="head">
+                                <h3>Faculty</h3>
+                                <i class='bx bx-search' id="searchIcon"></i>
+                                <div class="search-box" id="searchBox-faculty">
+                                    <input type="text" placeholder="Search...">
+                                </div>
+                            </div>
+                        <div class="table-container">
+                            <table>
+                              
+                                <thead>
+                                    <tr>
+                                    <th>Identification Number</th>
+                                    <th>College</th>
+                                    <th>Department</th>
+                                    <th>User Name</th>
+                                    <th>Email Address</th>
+                                    <th>Password</th>
+                                    
+                                    
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><p>0000001</p></td>
+                                        <td><p>College of Engineering</p></td>
+                                        <td><p>Department of...</p></td>
+                                        <td><p>Satoru</p></td>
+                                        <td><p>Satorugojo@gmail.com</p></td>
+                                        <td><p>Jujutsu_Kaisen</p></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+        
+                        </div>
+                        </div>
+                       </div>
+                   
+                    </div>
+                </div>
+            </div>
+	<!--Approve Applicants-->   
+    <div id="announcements-content">
+        <div class="head-title">
+            <div class="left">
+                <h1>Announcement</h1>
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="#">Announcement</a>
+                    </li>
+                    <li><i class='bx bx-chevron-right'></i></li>
+                    <li>
+                        <a class="active" href="#">Home</a>
+                    </li>
+                </ul>
+            </div>
+           
+        </div>
+   
+     
+
+            <!--approve-->
+            <div id="Approved-Applicants" class="table-data" >
+                <div class="order">
+                    <div class="head">
+                        <i class='bx bx-search' id="searchIcon"></i>
+                        <div class="search-box" id="searchBox">
+                            <input type="text" placeholder="Search...">
+                        </div>
+                    </div>
+                <div class="table-container">
+                    <table>
+                      
+                        <thead>
+                            <tr>
+                            <th>Colleges</th>
+                            <th>Department</th>
+                            <th>Username</th>
+                            <th>Last Name</th>
+                            <th>First Name</th>
+                            <th>Middle Name</th>
+                            <th>Status</th>
+                            
+                            
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                 <img src="/assets/images/human icon.png" alt="Student">
+                                    <p>0000001</p>
+                                </td>
+                                <td><p>College of Information Sciences</p></td>
+                                <td><p>Bachelor of Sciences in Information Technology</p></td>
+                                <td><p>Lee</p></td>
+                                <td><p>Hee</p></td>
+                                <td><p>Seung</p></td>
+                                <td><button class="button Red">Review</button></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="/assets/images/human icon.png" alt="Student">
+                                    <p>0000002</p>
+                                </td>
+                                <td><p>College of Teacher Education</p></td>
+                                <td><p>Bachelor of Secondary Education</p></td>
+                                <td><p>Wang</p></td>
+                                <td><p>Yi</p></td>
+                                <td><p>Bo</p></td>
+                                <td><button class="button Green">Reviewed</button></td>
+                             </tr>
+                            
+                        </tbody>
+                    </table>
+
+                </div>
+                </div>
+               </div>
+            </div>
+
+            <!--Result-->   
+    <div id="result-content">
+        <div class="head-title">
+            <div class="left">
+                <h1>Result</h1>
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="#">Manage Schedule</a>
+                    </li>
+                    <li><i class='bx bx-chevron-right'></i></li>
+                    <li>
+                        <a class="active" href="#">Home</a>
+                    </li>
+                </ul>
+            </div>
+           
+        </div>
+
+
+            <!--approve-->
+            
+                </div>
+                </div>
+               </div>
+            </div>
+           
+
+    <!--Manage Faculty-->   
+    <div id="ManageFaculty-content">
+        <div class="head-title">
+            <div class="left">
+                <h1>Manage Faculty</h1>
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="#">Manage Faculty</a>
+                    </li>
+                    <li><i class='bx bx-chevron-right'></i></li>
+                    <li>
+                        <a class="active" href="#">Home</a>
+                    </li>
+                </ul>
+            </div>
+           
+        </div>
+        <div class="table-data">
+            <div class="order">
+                <div class="head">
+                  
+                    <i class='bx bx-search' id="searchIcon"></i>
+                    
+                    <div class="search-box" id="searchBox">
+                        <input type="text" placeholder="Search...">
+                    </div>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Student</th>
+                            <th>Date of Admission</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <p>John Doe</p>
+                            </td>
+                            <td>01-10-2021</td>
+                            <td><span class="status completed">Admitted</span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Jane Doe</p>
+                            </td>
+                            <td>01-10-2021</td>
+                            <td><span class="status pending">Rejected</span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Johny Doe</p>
+                            </td>
+                            <td>01-10-2021</td>
+                            <td><span class="status process">Pending</span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Johnie Doe</p>
+                            </td>
+                            <td>01-10-2021</td>
+                            <td><span class="status pending">Pending</span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Janie Doe</p>
+                            </td>
+                            <td>01-10-2021</td>
+                            <td><span class="status completed">Admitted</span></td> 
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            </div>
+            </div>
+
+             <!--View Request-->   
+    <div id="ViewRequest-content">
+        <div class="head-title">
+            <div class="left">
+                <h1>View Request</h1>
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="#">View Request</a>
+                    </li>
+                    <li><i class='bx bx-chevron-right'></i></li>
+                    <li>
+                        <a class="active" href="#">Home</a>
+                    </li>
+                </ul>
+            </div>
+           
+        </div>
+        <div class="table-data">
+            <div class="order">
+                <div class="head">
+                  
+                    <i class='bx bx-search' id="searchIcon"></i>
+                    <div class="search-box" id="searchBox">
+                        <input type="text" placeholder="Search...">
+                    </div>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Student</th>
+                            <th>Date of Admission</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <p>John Doe</p>
+                            </td>
+                            <td>01-10-2021</td>
+                            <td><span class="status completed">Admitted</span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Jane Doe</p>
+                            </td>
+                            <td>01-10-2021</td>
+                            <td><span class="status pending">Rejected</span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Johny Doe</p>
+                            </td>
+                            <td>01-10-2021</td>
+                            <td><span class="status process">Pending</span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Johnie Doe</p>
+                            </td>
+                            <td>01-10-2021</td>
+                            <td><span class="status pending">Pending</span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Janie Doe</p>
+                            </td>
+                            <td>01-10-2021</td>
+                            <td><span class="status completed">Admitted</span></td> 
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            </div>
+    </div>
+		</main>
+		<!-- MAIN -->
+
+
+
+	</section>
+    
+	
+
+      <!-- NOTIFICATION container -->
+     <div class="notification-popup" id="notification-popup">
+        <div class="popup-header">
+            <span class="popup-title">Notifications</span>
+        </div>
+        <div class="popup-content" id="notification-content">
+            <div class="notification-item">
+                <img src="/assets/images/human icon.png" alt="User Avatar">
+                <div class="notification-text">
+                    <p><strong>User 1</strong> submitted an application for BACOM admission</p>
+                    <span class="timestamp">2 hours ago</span>
+                </div>
+            </div>
+            <div class="notification-item">
+                <img src="/assets/images/human icon.png" alt="User Avatar">
+                <div class="notification-text">
+                    <p><strong>User 2</strong> requested for a copy of addmited BSIT Students</p>
+                    <span class="timestamp">5 hours ago</span>
+                </div>
+            </div>
+            <!-- Add more notification items as needed -->
+        </div>
+    </div>
+    
+    <!-- Add the profile popup container here -->
+   
+<!-- Add the profile popup container here -->
+<div class="profile-popup" id="profile-popup">
+    <!-- Popup content -->
+    <div class="popup-content" id="profile-content">
+        <div class="profile-header">
+            <img src="/assets/images/human icon.png" alt="User Profile Picture" class="profile-picture">
+            <p class="profile-name">John Doe</p>
+        </div>
+        <hr>
+        <div class="profile-menu">
+            <a href="#" id="settings" class="profile-item"><i class='bx bx-cog'></i> Settings</a>
+            <a href="#" id="help" class="profile-item"><i class='bx bx-question-mark'></i> Help and Support</a>
+            <a href="#" id="logout" class="profile-item"><i class='bx bx-log-out'></i> Logout</a>
+        </div>
+    </div>
+</div>
+	
+	<!-- CONTENT -->
+      <script src="student.js"></script>
+  </body>
+</html>
