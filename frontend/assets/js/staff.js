@@ -169,9 +169,9 @@ showTime();
 //clock
 
 
-
 document.addEventListener("DOMContentLoaded", function () {
-     const profileButton = document.querySelector("#profile-button");
+  
+    const profileButton = document.querySelector("#profile-button");
     const profilePopup = document.querySelector("#profile-popup");
 
 
@@ -188,8 +188,6 @@ document.addEventListener("DOMContentLoaded", function () {
             profilePopup.style.display = "none";
         }
     });
-
-    
 });
 
 
