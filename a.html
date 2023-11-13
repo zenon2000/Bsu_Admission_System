@@ -29,250 +29,34 @@
   <form id="myForm" action="admission.php" onclick="" onsubmit="handleForm(event)" method="POST" autocomplete="off" enctype="multipart/form-data">
    
    
-    <div class="form-group">
-      <label class="small-label" for="categoryDropdown">Select Program</label>
-      <select class="input" id="categoryDropdown">
-        <option value="" disabled selected>Select nature of degree</option>
-        <option value="Board">Board</option>
-        <option value="Non-board">Non-Board</option>
-      </select>
-    </div>
-
-    <div class="form-group">
-      <label class="small-label" for="englishGrade">English Grade</label>
-      <input type="number" class="input" id="englishGrade" placeholder="Enter English grade">
-
-      <label class="small-label" for="mathGrade">Math Grade</label>
-      <input type="number" class="input" id="mathGrade" placeholder="Enter Math grade">
-
-      <label class="small-label" for="scienceGrade">Science Grade</label>
-      <input type="number" class="input" id="scienceGrade" placeholder="Enter Science grade">
-
-      <button type="button" onclick="calculateGWA()">Submit Board Grades</button>
-      <p id="gwaResult"></p>
-    </div>
-
-<div class="form-group">
-<label class="small-label" for="gwaGrade">GWA Grade</label>
-<input type="number" class="input" id="gwaGrade" placeholder="Enter GWA grade">
-<button type="button">Submit Non-Board Grades</button>
-<p id="nonBoardGwaResult"></p>
-</div>
-
-<div class="form-group">
-  <div id="boardProgramsDropdown" class="programFields">
-    <label for="board-programs">Board Programs</label>
-    <select name="board-programs" id="board-programs" class="input" onchange="updateDegreeFields()">
-      <option value="">Board Programs</option>
-      <optgroup label="College of Teacher Education">
-        <option value="Bachelor of Early Childhood Education">Bachelor of Early Childhood Education</option>
-        <option value="Bachelor of Elementary Education">Bachelor of Elementary Education </option>
-        <option value="Bachelor of Secondary Education (BSEd) Major in English">Bachelor of Secondary Education
-          (BSEd) Major in English</option>
-        <option value="Bachelor of Secondary Education (BSEd) Major in Filipino">Bachelor of Secondary Education
-          (BSEd) Major in Filipino</option>
-        <option value="Bachelor of Secondary Education (BSEd) Major in Mathematics">Bachelor of Secondary
-          Education (BSEd) Major in Mathematics</option>
-        <option value="Bachelor of Secondary Education (BSEd) Major in Science">Bachelor of Secondary Education
-          (BSEd) Major in Science</option>
-        <option value="Bachelor of Secondary Education (BSEd) Major in Social Studies">Bachelor of Secondary
-          Education (BSEd) Major in Social Studies</option>
-        <option value="Bachelor of Secondary Education (BSEd) Major in Values">Bachelor of Secondary Education
-          (BSEd) Major in Values</option>
-        <option value="Bachelor of Technology and Livelihood Education Major in Agri-Fisheries">Bachelor of
-          Technology and Livelihood
-          Education Major in Agri-Fisheries</option>
-        <option value="Bachelor of Technology and Livelihood Education Major in Home Economics">Bachelor of
-          Technology and Livelihood
-          Education Major in Home Economics</option>
-        <option value="Doctor of Veterinary Medicine">Doctor of Veterinary Medicine</option>
-      </optgroup>
-      <optgroup label="College of Natural Sciences">
-        <option value="Bachelor of Science in Biology">Bachelor of Science in Biology</option>
-        <option value="Bachelor of Science in Environmental Science">Bachelor of Science in Environmental
-          Science</option>
-        <option value="Bachelor of Science in Chemistry">Bachelor of Science in Chemistry</option>
-      </optgroup>
-
-      <optgroup label="College of Numeracy and Applied Sciences">
-        <option value="Bachelor of Science in Mathematics">Bachelor of Science in Mathematics</option>
-        <option value="Bachelor of Science in Statistics">Bachelor of Science in Statistics</option>
-      </optgroup>
-
-      <optgroup label="College of Social Sciences">
-        <option value="Bachelor of Arts in History">Bachelor of Arts in History</option>
-        <option value="Bachelor of Arts in Psychology">Bachelor of Arts in Psychology</option>
-      </optgroup>
-
-
-
-      <optgroup label="College of Public Administration and Governance">
-        <option value="Bachelor in Public Administration">Bachelor in Public Administration</option>
-        <option value="Diploma in Public Administration">Diploma in Public Administration</option>
-        <option value="Certificate in Public Administration">Certificate in Public Administration</option>
-      </optgroup>
-
-
-
-      <optgroup label="College of Engineering">
-        <option value="Bachelor of Science in Agricultural and Biosystems Engineering">Bachelor of Science in
-          Agricultural and Biosystems Engineering</option>
-        <option value="Bachelor of Science in Civil Engineering">Bachelor of Science in Civil Engineering
-        </option>
-        <option value="Bachelor of Science in Industrial Engineering">Bachelor of Science in Industrial
-          Engineering</option>
-        <option value="Bachelor of Science in Electrical Engineering">Bachelor of Science in Electrical
-          Engineering</option>
-      </optgroup>
-
-
-
-      <optgroup label="">
-        <option value="Bachelor of Science in Forestry (BSF)">Bachelor of Science in Forestry (BSF)</option>
-        <option value="Bachelor of Science in Nursing (BSN)">Bachelor of Science in Nursing (BSN)</option>
-        <option value="Doctor of Veterinary Medicine (DVM)">Doctor of Veterinary Medicine (DVM)</option>
-      </optgroup>
-    </select>
-  </div>
-
-
-
-  <div id="nonBoardProgramsDropdown" class="programFields">
-    <label for="NonBoardProgram">Non-Board Programs</label>
-    <select name="NonBoardProgram" id="NonBoardProgram" class="input" onchange="updateDegreeFields()">
-
-      <option value="">Non-Board Programs</option>
-      <optgroup label="College of Agriculture">
-        <option value="Bachelor of Science in Agriculture (BSA)">Bachelor of Science in Agriculture (BSA)
-        </option>
-        <option value="Bachelor of Science in Agribusiness (BSAB)">Bachelor of Science in Agribusiness (BSAB)
-        </option>
-      </optgroup>
-      <optgroup label="College of Arts and Humanities">
-        <option value="Bachelor of Arts in Communication">Bachelor of Arts in Communication</option>
-        <option value="Bachelor of Arts in English Language">Bachelor of Arts in English Language</option>
-        <option value="Bachelor of Arts in Filipino Language">Bachelor of Arts in Filipino Language</option>
-      </optgroup>
-
-      <optgroup label="College of Home Economics and Technology">
-        <option value="Bachelor of Science in Hospitality Management">Bachelor of Science in Hospitality
-          Management</option>
-        <option value="Bachelor of Science in Nutrition and Dietetics">Bachelor of Science in Nutrition and
-          Dietetics</option>
-        <option value="Bachelor of Science in Entrepreneurship specialized in Apparel & Fashion Enterprise">
-          Bachelor of Science in Entrepreneurship specialized in Apparel & Fashion Enterprise</option>
-        <option value="Bachelor of Science in Food Technology">Bachelor of Science in Food Technology</option>
-        <option value="Bachelor of Science in Tourism Management">Bachelor of Science in Tourism Management
-        </option>
-        <option value="Bachelor of Science in Entrepreneurship specialized in Food Enterprise">Bachelor of
-          Science in Entrepreneurship specialized in Food Enterprise</option>
-      <optgroup label="College of Human Kinetics">
-        <option value="Bachelor of Science in Exercise and Sports Science">Bachelor of Science in Exercise and
-          Sports Science</option>
-        <option value="Bachelor in Physical Education">Bachelor in Physical Education</option>
-      </optgroup>
-      <optgroup label="College of Information Sciences">
-        <option value="Bachelor of Library and Information Science (BLIS)">Bachelor of Library and Information
-          Science (BLIS)</option>
-        <option value="Bachelor of Science in Information Technology (BSIT)">Bachelor of Science in Information
-          Technology (BSIT)</option>
-        <option value="Bachelor of Science in Development Communication (BSCD) major in:">Bachelor of Science in
-          Development Communication (BSCD) major in:</option>
-      </optgroup>
-
-    </select>
-  </div>
-</div>
-
-
-
-<div class="form-container">
-  <!-- Full name -->
-   <!-- Last Name Input -->
-   <div class="form-group">
-    <label class="small-label" for="last_name">Last Name</label>
-    <input type="text" name="last_name" class="input" id="last_name" placeholder="Last Name" required
-      oninput="updateApplicantName()">
-  </div>
-
-  <!-- First Name Input -->
-  <div class="form-group">
-    <label class="small-label" for="first_name">First Name</label>
-    <input type="text" name="first_name" class="input" id="first_name" placeholder="First Name"
-      autocomplete="name" required oninput="updateApplicantName()">
-  </div>
-
-  <!-- Middle Name Input -->
-  <div class="form-group">
-    <label class="small-label" for="middle_name">Middle Name</label>
-    <input type="text" name="middle_name" class="input" id="middle_name" placeholder="Middle Name"
-      autocomplete="middle" required oninput="updateApplicantName()">
-  </div>
-
-<!-- Gender at Birth -->
-  <div class="form-group">
-    <label class="small-label" for="gender">Gender at birth</label>
-    <select name="gender" class="input" id="gender" required>
-      <option value="" disabled selected>Select Gender</option>
-      <option value="male">Male</option>
-      <option value="female">Female</option>
-    </select>
-  </div>
-
-<p class="personal_information">Permanent Home Address</p>
-<div class="form-container">
-  <!-- House # & Street -->
-  <div class="form-group">
-    <label class="small-label" for="house_street">&nbsp;</label>
-    <input type="text" name="house_street" class="input" id="house_street" placeholder="House # & Street"
-      required>
-  </div>
-  <!-- Barangay/Subdivision -->
-  <div class="form-group">
-    <label class="small-label" for="barangay_subdivision">&nbsp;</label>
-    <input type="text" name="barangay_subdivision" class="input" id="barangay_subdivision"
-      placeholder="Barangay/Subdivision" required>
-  </div>
-  <!--Municipality(town)/City -->
-  <div class="form-group">
-    <label class="small-label" for="municipality_city">&nbsp;</label>
-    <input type="text" name="municipality_city" class="input" id="municipality_city"
-      placeholder="Municipality(town)/City" required>
-  </div>
-  <!-- Province -->
-  <div class="form-group">
-    <label class="small-label" for="province">&nbsp;</label>
-    <input type="text" name="province" class="input" id="province" placeholder="Province" required>
-  </div>
-  <!-- Country/State -->
-  <div class="form-group">
-    <label class="small-label" for="country_state">&nbsp;</label>
-    <input type="text" name="country_state" class="input" id="country_state" placeholder="Country/State"
-      required>
-  </div>
-  <!-- zip-code -->
-  <div class="form-group">
-    <label class="small-label" for="zip_code">&nbsp;</label>
-    <input type="number" name="zip_code" class="input" id="zip_code" placeholder="Zip Code" required>
-  </div>
-</div>
-
-<!--Email Address -->
-  <div class="form-group">
-    <label class="small-label" for="email">Email Address</label>
-    <input type="text" name="email" class="input" id="email" placeholder="Enter active email address"
-      autocomplete="email:" required oninput="validateEmail()">
-    <p id="email-error" style="color: red;"></p>
-  </div>
-   <!-- Applicant Number -->
-   <div class="applicant_number">
-    <label for="applicant_number" class="applicant_number">Applicant Number:</label>
-    <input type="text" name="applicant_number" id="applicant_number" >
-</div>
   </form>
 
+  <div class="applicant_number">
+    <label for="applicant_number" class="applicant_number">Applicant Number:</label>
+    <input type="text" name="applicant_number" id="applicant_number" readonly>
+  </div>
+  <script>
+    function generateApplicantNumber() {
+      // Get the current date
+      const currentDate = new Date();
+      const day = currentDate.getDate();
+      const month = currentDate.getMonth() + 1; // Adding 1 because months are zero-indexed
+  
+      // Get the order of the user (you can replace this with your logic to determine the order)
+      const userOrder = 1; // Replace this with your logic to get the user order
+  
+      // Format the date and user order to create the applicant number
+      const formattedDate = `${day < 10 ? '0' : ''}${day}-${month < 10 ? '0' : ''}${month}`;
+      const formattedOrder = userOrder.toString().padStart(4, '0');
+      const applicantNumber = `${formattedDate}-${formattedOrder}`;
+  
+      // Set the generated applicant number to the input field
+      document.getElementById('applicant_number').value = applicantNumber;
+    }
+  
+    // Call the function when the page loads
 
- 
+  </script>
 </body>
 
 

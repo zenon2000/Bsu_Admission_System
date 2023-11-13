@@ -280,7 +280,7 @@ function validatePhoneNumber(inputId) {
     phoneNumberError.textContent = "Please enter a valid Philippine phone number.";
   }
 }
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   // Get the current date
   var currentDate = new Date();
 
@@ -358,21 +358,25 @@ function submitForm() {
 
 
 function generateApplicantNumber() {
-  const now = new Date();
-  const month = String(now.getMonth() + 1).padStart(2, '0'); // Get the current month (1-12) and pad with 0 if needed
-  const day = String(now.getDate()).padStart(2, '0'); // Get the current day (1-31) and pad with 0 if needed
+  // Get the current date
+  const currentDate = new Date();
+  const day = currentDate.getDate();
+  const month = currentDate.getMonth() + 1; // Adding 1 because months are zero-indexed
 
-  // In a real scenario, you would replace this part with your logic to get the applicant's sequence number.
-  // For this example, let's generate a random number between 1 and 9999.
-  const sequenceNumber = Math.floor(Math.random() * 9999) + 1;
+  // Get the order of the user (you can replace this with your logic to determine the order)
+  const userOrder = 1; // Replace this with your logic to get the user order
 
-  const applicantNumber = `${month}-${day}-${sequenceNumber.toString().padStart(4, '0')}`;
-  document.getElementById("applicant_number").value = applicantNumber;
+  // Format the date and user order to create the applicant number
+  const formattedDate = `${day < 10 ? '0' : ''}${day}-${month < 10 ? '0' : ''}${month}`;
+  const formattedOrder = userOrder.toString().padStart(4, '0');
+  const applicantNumber = `${formattedDate}-${formattedOrder}`;
+
+  // Set the generated applicant number to the input field
+  document.getElementById('applicant_number').value = applicantNumber;
 }
 
-// Call this function to generate the applicant number when needed.
-generateApplicantNumber();
-
+// Call the function when the page loads
+window.onload = generateApplicantNumber;
 
 function handleForm(event) {
   event.preventDefault();
@@ -420,7 +424,6 @@ function handleForm(event) {
   const applicantname = document.getElementById('applicant_name').value;
   const degreeProgramApplied = document.getElementById('slip_degree').value;
 
-
   // Store data in localStorage
   localStorage.setItem('lastName', lastName);
   localStorage.setItem('firstName', firstName);
@@ -464,7 +467,19 @@ function handleForm(event) {
   localStorage.setItem('applicantSignature', applicantSignatureData);
   localStorage.setItem('applicantname', applicantname);
   localStorage.setItem('degreeProgramApplied', degreeProgramApplied);
+  const applicantNumber = document.getElementById('applicant_number').value;
+  localStorage.setItem('applicantNumber', applicantNumber);
+  const applicationDate = document.getElementById('application_date').value;
+  const dateComponents = applicationDate.split('-'); // Assuming the date format is YYYY-MM-DD
 
+  const year = dateComponents[0];
+  const month = dateComponents[1];
+  const day = dateComponents[2];
+
+  // Store date components in localStorage
+  localStorage.setItem('year', year);
+  localStorage.setItem('month', month);
+  localStorage.setItem('day', day);
 
   const fileInput = document.getElementById('id_picture');
   if (fileInput.files.length > 0) {
