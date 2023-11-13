@@ -80,14 +80,7 @@
                 </div>
             </form>
             <div id="clock">8:10:45</div>
-            <input type="checkbox" id="switch-mode" hidden>
-            <label for="switch-mode" class="switch-mode"></label>
-            <a href="#" class="notification" id="notification-button" style="display: none;">
-                <i class='bx bxs-bell'></i>
-                <span class="num">8</span>
-                <div class="circle"></div>
-            </a>
-
+           
             <a href="#" class="profile" id="profile-button">
                 <img src="../frontend/assets/images/human icon.png" alt="User Profile">
             </a>
@@ -1183,28 +1176,50 @@
         </main>
         <!-- MAIN -->
 
-
-
     </section>
-
-    <!-- Add the profile popup container here -->
 
     <!-- Add the profile popup container here -->
     <div class="profile-popup" id="profile-popup">
         <!-- Popup content -->
         <div class="popup-content" id="profile-content">
             <div class="profile-header">
-                <img src="../frontend/assets/images/human icon.png" alt="User Profile Picture" class="profile-picture">
+                <img src="../frontend/assets/images/human icon.png" alt="User Profile Picture" class="profile-picture"
+                    id="profile-picture">
                 <p class="profile-name">John Doe</p>
             </div>
+
             <hr>
             <div class="profile-menu">
-                <a href="#" id="settings" class="profile-item"><i class='bx bx-cog'></i> Settings</a>
-                <a href="#" id="help" class="profile-item"><i class='bx bx-question-mark'></i> Help and Support</a>
-                <a href="logout.php" id="logout" class="profile-item"><i class='bx bx-log-out'></i> Logout</a>
-            </div>
+                <a href="#" id="settings" class="profile-item">  <i class='bx bx-sun'></i>Display</a>
+         
+       <div class="dropdown" id="settings-dropdown">
+                    <a href="#">Dark Mode 
+                        <input type="checkbox" id="switch-mode" hidden>
+                        <label for="switch-mode" class="switch-mode"></label></a>
+
+                
+
+                </div>
+<a href="#" id="settings" class="profile-item"><i class='bx bx-cog'></i> Settings</a>              
+<a href="#" id="help" class="profile-item"><i class='bx bx-question-mark'></i> Help and Support</a>
+
+<div class="dropdown" id="help-dropdown">
+    <!-- Content for Help and Support dropdown -->
+    <!-- Trigger for the FAQ pop-up -->
+    <a href="faq_page.html" onclick="openPopup('faq-popup')">FAQ (Frequently Asked Questions)</a>
+    
+    <!-- Trigger for the Contact Us pop-up -->
+    <a href="#" onclick="openPopup('contact-popup')">Contact Us</a>
+    
+    <!-- Trigger for the Report a Problem pop-up -->
+    <!-- <a href="#" onclick="openPopup('report-popup')">Report a Problem</a>-->
+</div>
+
+<a href="logout.php" id="logout" class="profile-item"><i class='bx bx-log-out'></i> Logout</a>
+            
         </div>
     </div>
+</div>
 
     <!-- CONTENT -->
     <script src="../frontend/assets/js/staff.js"></script>
