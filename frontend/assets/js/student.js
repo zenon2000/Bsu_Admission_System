@@ -519,4 +519,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+//log out prompt
+function confirmLogout() {
+    // Display a confirmation dialog
+    var confirmLogout = confirm("Are you sure you want to log out?");
 
+    // If the user clicks "OK," redirect to logout.php
+    if (confirmLogout) {
+        window.location.href = "logout.php";
+    } else {
+        alert("Logout canceled");
+    }
+}

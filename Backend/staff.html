@@ -1215,8 +1215,21 @@
     <!-- <a href="#" onclick="openPopup('report-popup')">Report a Problem</a>-->
 </div>
 
-<a href="logout.php" id="logout" class="profile-item"><i class='bx bx-log-out'></i> Logout</a>
-            
+<a href="#" id="logout" class="profile-item" onclick="confirmLogout()"><i class='bx bx-log-out'></i> Logout</a>
+    <script>
+        //log out prompt
+        function confirmLogout() {
+        // Display a confirmation dialog
+        var confirmLogout = confirm("Are you sure you want to log out?");
+
+        // If the user clicks "OK," redirect to logout.php
+        if (confirmLogout) {
+            window.location.href = "logout.php";
+        } else {
+            alert("Logout canceled");
+        }
+    }
+    </script>            
         </div>
     </div>
 </div>
