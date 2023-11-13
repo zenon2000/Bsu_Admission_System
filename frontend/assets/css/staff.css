@@ -1022,7 +1022,7 @@ nav {
 /**/
 #content main .table-data .head h3 {
 	margin-right: auto;
-	font-size: 14px;
+	font-size: 18px;
 	font-weight: 600;
 }
 #content main .table-data .head .bx {
@@ -1065,13 +1065,13 @@ nav {
 }
 #content main .table-data .order table th {
 	padding-bottom: 1px;
-	font-size: 12px;
+	font-size: 14px;
 	border-bottom: 1px solid var(--grey);
 	border: 2px solid var(--dark-grey); /* Add a 1px solid border around table headers and data cells */
 }
 #content main .table-data .order table td {
 	padding: 2px 5px;
-	font-size: 10px;
+	font-size: 12px;
 	border: 2px solid var(--dark-grey); /* Add a 1px solid border around table headers and data cells */
 }
 #content main .table-data .order table th, td {

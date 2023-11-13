@@ -196,206 +196,61 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener('DOMContentLoaded', function () {
     const AvailableItem = document.getElementById('available-box');
-    const AdmittedItem = document.getElementById('admitted-box');
-    const ReadmittedItem = document.getElementById('readmitted-box');
-    const NonqualifiedItem = document.getElementById('nonqualified-box');
-  
-    const overallItem = document.getElementById('dashboard-link');
-
-    const AvailableTable = document.getElementById('available-slot');
-    const AdmittedTable = document.getElementById('admitted');
-    const ReadmittedTable = document.getElementById('readmitted');
-    const NonqualifiedTable = document.getElementById('nonqualified');
-
-    const overallTable = document.getElementById('over-all');
-  
-    // Hide all tables initially excepts the over-all
-    AvailableTable.style.display = 'none';
-    AdmittedTable.style.display = 'none';
-    ReadmittedTable.style.display = 'none';
-    NonqualifiedTable.style.display = 'none';
-  
-    overallTable.style.display = 'block';
-
-    AvailableItem.addEventListener('click', function () {
-        // Show the "Available" table and hide others
-        AvailableTable.style.display = 'block';
-        AdmittedTable.style.display = 'none';
-        ReadmittedTable.style.display = 'none';
-        NonqualifiedTable.style.display = 'none';
-       
-        overallTable.style.display = 'none';
-       
-    });
-
-    AdmittedItem.addEventListener('click', function () {
-        // Show the "Admitted" table and hide others
-        AvailableTable.style.display = 'none';
-        AdmittedTable.style.display = 'block';
-        ReadmittedTable.style.display = 'none';
-        NonqualifiedTable.style.display = 'none';
-     
-        overallTable.style.display = 'none';
-    });
-
-    ReadmittedItem.addEventListener('click', function () {
-        // Show the "Readmitted" table and hide others
-        AvailableTable.style.display = 'none';
-        AdmittedTable.style.display = 'none';
-        ReadmittedTable.style.display = 'block';
-        NonqualifiedTable.style.display = 'none';
-     
-        overallTable.style.display = 'none';
-    });
-
-    NonqualifiedItem.addEventListener('click', function () {
-        // Show the "Nonqualified" table and hide others
-        AvailableTable.style.display = 'none';
-        AdmittedTable.style.display = 'none';
-        ReadmittedTable.style.display = 'none';
-        NonqualifiedTable.style.display = 'block';
-     
-        overallTable.style.display = 'none';
-    });
-
-
-
-  overallItem.addEventListener('click', function () {
-        // Show the "Overall" table and hide others
-        AvailableTable.style.display = 'none';
-        AdmittedTable.style.display = 'none';
-        ReadmittedTable.style.display = 'none';
-        NonqualifiedTable.style.display = 'none';
-        overallTable.style.display = 'block';
-      
-    });
-
+    const AdmittedItem = document.getElementById('admission-box');
+    const ReadmittedItem = document.getElementById('admitted-box');
+    const NonqualifiedItem = document.getElementById('readmitted-box');
 });
 
- 
 //pressing Sidebar
 document.addEventListener('DOMContentLoaded', function () {
     const dashboardLink = document.getElementById('dashboard-link');
     const dashboardContent = document.getElementById('dashboard-content');
-    const StudentProfileLink = document.getElementById('student-profile-link');
-    const StudentProfileContent = document.getElementById('student-profile-content');
+    const MasterListLink = document.getElementById('master-list-link');
+    const MasterListContent = document.getElementById('master-list-content');
     const StudentResultLink = document.getElementById('student-result-link'); 
     const StudentResultContent = document.getElementById('student-result-content');
-    const ImportLink = document.getElementById('import-link'); 
-    const ImportContent = document.getElementById('import-content'); 
-    const ExportLink = document.getElementById('export-link');
-    const ExportContent = document.getElementById('export-content'); 
-    const StudentFormsLink = document.getElementById('student-forms-link'); 
-    const StudentFormsContent = document.getElementById('student-forms-content');
-    const CollegeCoursesLink = document.getElementById('college-courses-link'); 
-    const CollegeCoursesContent = document.getElementById('college-courses-content'); 
-
+    const AnnouncementsLink = document.getElementById('announcements-link'); 
+    const AnnouncementsContent = document.getElementById('announcements-content'); 
+    
     // Initially hide the content divs by default
     dashboardContent.style.display = 'block';
-    StudentProfileContent.style.display = 'none';
+    MasterListContent.style.display = 'none';
     StudentResultContent.style.display = 'none';
-    ImportContent.style.display = 'none'; 
-    ExportContent.style.display = 'none';
-    StudentFormsContent.style.display = 'none'; 
-    CollegeCoursesContent.style.display = 'none'; 
+    AnnouncementsContent.style.display = 'none'; 
 
     // Add event listeners to the links
     dashboardLink.addEventListener('click', function (event) {
         event.preventDefault(); // Prevent the default link behavior
         dashboardContent.style.display = 'block';
-        StudentProfileContent.style.display = 'none';
+        MasterListContent.style.display = 'none';
         StudentResultContent.style.display = 'none';
-        ImportContent.style.display = 'none'; 
-        ExportContent.style.display = 'none';
-        StudentFormsContent.style.display = 'none'; 
-        CollegeCoursesContent.style.display = 'none';
+        AnnouncementsContent.style.display = 'none'; 
     });
 
-    StudentProfileLink.addEventListener('click', function (event) {
+    MasterListLink.addEventListener('click', function (event) {
         event.preventDefault(); // Prevent the default link behavior
         dashboardContent.style.display = 'none';
-        StudentProfileContent.style.display = 'block';
-        StudentResultContent.style.display = 'none'; 
-        ImportContent.style.display = 'none'; 
-        ExportContent.style.display = 'none';
-        StudentFormsContent.style.display = 'none'; 
-        CollegeCoursesContent.style.display = 'none';
-    
+        MasterListContent.style.display = 'block';
+        StudentResultContent.style.display = 'none';
+        AnnouncementsContent.style.display = 'none'; 
     });
 
     StudentResultLink.addEventListener('click', function (event) {
         event.preventDefault(); // Prevent the default link behavior
         dashboardContent.style.display = 'none';
-        StudentProfileContent.style.display = 'none';
+        MasterListContent.style.display = 'none';
         StudentResultContent.style.display = 'block';
-        ImportContent.style.display = 'none'; 
-        ExportContent.style.display = 'none';
-        StudentFormsContent.style.display = 'none';
-        CollegeCoursesContent.style.display = 'none';
+        AnnouncementsContent.style.display = 'none'; 
     });
 
-    ImportLink.addEventListener('click', function (event) {
+    AnnouncementsLink.addEventListener('click', function (event) {
         event.preventDefault(); // Prevent the default link behavior
         dashboardContent.style.display = 'none';
-        StudentProfileContent.style.display = 'none';
-        StudentResultContent.style.display = 'none'; 
-        ImportContent.style.display = 'block'; 
-        ExportContent.style.display = 'none';
-        StudentFormsContent.style.display = 'none';
-        CollegeCoursesContent.style.display = 'none';
+        MasterListContent.style.display = 'none';
+        StudentResultContent.style.display = 'none';
+        AnnouncementsContent.style.display = 'block'; 
     });
-
-    ExportLink.addEventListener('click', function (event) {
-        event.preventDefault(); // Prevent the default link behavior
-        dashboardContent.style.display = 'none';
-        StudentProfileContent.style.display = 'none';
-        StudentResultContent.style.display = 'none'; 
-        ImportContent.style.display = 'none'; 
-        ExportContent.style.display = 'block';
-        StudentFormsContent.style.display = 'none';
-        CollegeCoursesContent.style.display = 'none';
-    });
-
-    StudentFormsLink.addEventListener('click', function (event) {
-        event.preventDefault(); // Prevent the default link behavior
-        dashboardContent.style.display = 'none';
-        StudentProfileContent.style.display = 'none';
-        StudentResultContent.style.display = 'none'; 
-        ImportContent.style.display = 'none'; 
-        ExportContent.style.display = 'none';
-        StudentFormsContent.style.display = 'block';
-        CollegeCoursesContent.style.display = 'none';
-    });
-
-
 });
-//import files
-    var importElement = document.querySelector('link[rel="import"]');
-    var importedHTML = importElement.import; //to be fixed
-
-// Access the contents of the imported HTML file.
-   // var paragraphElement = importedHTML.querySelector('p');
-
-
-//export files
-      function exportToExcel() {
-        let table = document.getElementById("table");
-        let html = table.outerHTML;
-
-        // Replace special characters to avoid Excel issues
-        html = html.replace(/ /g, "%20");
-        html = html.replace(/<tr>/g, "<tr>\r\n");
-
-        let uri = "data:application/vnd.ms-excel," + encodeURIComponent(html);
-
-        let link = document.createElement("a");
-        link.href = uri;
-        link.style = "visibility:hidden";
-        link.download = "data.xls";
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-      }   //to be fixed
 
 // tab like buttons for Student Result and Forms
   const tabButtons = document.querySelectorAll('.tab-button');

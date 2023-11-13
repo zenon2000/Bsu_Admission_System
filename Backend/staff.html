@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BSU OUR Staff</title>
+    <title>BSU OUR Admission Unit Personnel</title>
     <link rel="icon" href="../frontend/assets/images/BSU Logo1.png" type="image/x-icon">
     <link rel="stylesheet" href="../frontend/assets/css//staff.css" />
     <!-- Boxicons -->
@@ -16,7 +16,7 @@
     <section id="sidebar">
         <a class="brand">
             <img class="bsulogo" src="../frontend/assets/images/BSU Logo1.png" alt="BSU LOGO">
-            <span class="text">Staff</span>
+            <span class="text">Personnel</span>
         </a>
 
         <ul class="side-menu top">
@@ -28,9 +28,9 @@
             </li>
 
             <li class="">
-                <a href="#" id="student-profile-link">
+                <a href="#" id="master-list-link">
                     <i class='bx bxs-user-pin'></i>
-                    <span class="text">Student Profile</span>
+                    <span class="text">Master List</span>
                 </a>
             </li>
 
@@ -42,27 +42,11 @@
             </li>
 
             <li class="">
-                <a href="#" id="import-link">
-                    <i class='bx bxs-file-import'></i>
-                    <span class="text">Master List Import</span>
-                </a>
-            </li>
-
-            <li class="">
-                <a href="#" id="export-link">
-                    <i class='bx bxs-file-export'></i>
-                    <span class="text">Master List Export</span>
-                </a>
-            </li>
-
-            <li class="">
-                <a href="#" id="student-forms-link">
+                <a href="#" id="announcements-link">
                     <i class='bx bxs-book-content'></i>
-                    <span class="text">Student Forms</span>
+                    <span class="text">Announcements</span>
                 </a>
             </li>
-
-           
         </ul>
     </section>
     <!-- SIDEBAR -->
@@ -86,12 +70,12 @@
             </a>
 
         </nav>
-
-
         <!-- NAVBAR -->
 
         <!-- MAIN -->
+
         <main>
+        <!--Dashboard-->
             <div id="dashboard-content">
                 <div class="head-title">
                     <div class="left">
@@ -113,7 +97,7 @@
                         </span>
                     </li>
 
-                    <li id="admitted-box">
+                    <li id="admission-box">
                         <i class='bx bxs-group'></i>
                         <span class="text">
                             <h3>2834</h3>
@@ -121,7 +105,7 @@
                         </span>
                     </li>
 
-                    <li id="readmitted-box">
+                    <li id="admitted-box">
                         <i class='bx bx-user-check'></i>
                         <span class="text">
                             <h3>2543</h3>
@@ -129,384 +113,35 @@
                         </span>
                     </li>
 
-                    <li id="nonqualified-box">
+                    <li id="readmitted-box">
                         <i class='bx bxs-user-x'></i>
                         <span class="text">
                             <h3>1020</h3>
                             <p>Students For Readmission</p>
                         </span>
                     </li>
-
-
                 </ul>
-                <!--over-all-->
-                <div id="over-all">
-                    <div class="table-data">
-                        <div class="order">
-                            <div class="head">
-                                <h3>Student Lists</h3>
-                                <i class='bx bx-search' id="searchIcon"></i>
-                                <div class="search-box" id="searchBox-overall">
-                                    <input type="text" id="overall-searchBox" placeholder="Search...">
-                                </div>
-                            </div>
-                            <table>
-                                <colgroup>
-                                    <col style="width: 20%;">
-                                    <col style="width: 20%;">
-                                    <col style="width: 20%;">
-                                    <col style="width: 20%;">
-                                    <col style="width: 5%;">
-                                    <col style="width: 15%;">
-                                </colgroup>
-                                <thead>
-                                    <tr>
-                                        <th>College<br>
-                                            <select class="custom-dropdown">
-                                                <option value="none">College</option>
-                                                <option value="CA">College of Agriculture</option>
-                                                <option value="CAH">College of Arts & Humanities</option>
-                                                <option value="CEAT">College of Engineering & Applied Technology
-                                                </option>
-                                                <option value="CF">College of Forestry</option>
-                                                <option value="CHET">College of Home Economics & Technology</option>
-                                                <option value="CHK">College of Human Kinetics</option>
-                                                <option value="CIS">College of Information Sciences</option>
-                                                <option value="CNS">College of Natural Sciences</option>
-                                                <option value="CN">College of Nursing</option>
-                                                <option value="CNAS">College of Numeracy & Applied Sciences</option>
-                                                <option value="CPAG">College of Public Administration & Governance
-                                                </option>
-                                                <option value="CSS">College of Social Sciences</option>
-                                                <option value="CTE">College of Teacher Education</option>
-                                                <option value="CVM">College of Veterinary Medicine</option>
-                                            </select>
-                                        </th>
-                                        <th>Program<br>
-                                            <select class="custom-dropdown">
-                                                <option value="none">Program</option>
-                                                <option value="CIS">Bachelor of Library and Information Science</option>
-                                                <option value="CIS">Bachelor of Science in Development Communication
-                                                </option>
-                                                <option value="CIS">Bachelor of Science in Information Technology
-                                                </option>
-                                            </select>
-                                        </th>
-                                        <th>Major<br>
-                                            <select class="custom-dropdown">
-                                                <option value="none">Major</option>
-                                                <option value="CIS">Bachelor of Library and Information Science</option>
-                                                <option value="CIS">Bachelor of Science in Development Communication
-                                                </option>
-                                                <option value="CIS">Bachelor of Science in Information Technology
-                                                </option>
-                                            </select>
-                                        </th>
-                                        <th>Student</th>
-                                        <th>Age</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>College of Information Sciences</td>
-                                        <td>Bachelor of Information Technology</td>
-                                        <td>Pathology</td>
-                                        <td>Gojo Satoru</td>
-                                        <td>18</td>
-                                        <td>Notice of Admission</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <!--Available Slots-->
-                <div id="available-slot">
-                    <div class="table-data">
-                        <div class="order">
-                            <div class="head">
-                                <h3>Available Slots</h3>
-                                <i class='bx bx-search' id="searchIcon"></i>
-                                <div class="search-box" id="searchBox-available">
-                                    <input type="text" id="available-searchBox" placeholder="Search...">
-                                </div>
-                            </div>
-                            <table>
-                                <colgroup>
-                                    <col style="width: 30%;">
-                                    <col style="width: 30%;">
-                                    <col style="width: 20%;">
-                                    <col style="width: 20%;">
-                                </colgroup>
-                                <thead>
-                                    <tr data-college="CIS">
-                                        <th>College<br>
-                                            <select class="custom-dropdown">
-                                                <option value="none">College</option>
-                                                <option value="CIS">College of Information Sciences</option>
-                                                <option value="CHET">College of Home Economics and Technology</option>
-                                                <option value="CA">College of Agriculture</option>
-                                                <option value="CHK">College of Human Kinetics</option>
-                                                <option value="CAS">College of Ars and Sciences</option>
-                                            </select>
-                                        </th>
-                                        <th>Program<br>
-                                            <select class="custom-dropdown">
-                                                <option value="none">Program</option>
-                                                <option value="CIS">Bachelor of Library and Information Science</option>
-                                                <option value="CIS">Bachelor of Science in Development Communication
-                                                </option>
-                                                <option value="CIS">Bachelor of Science in Information Technology
-                                                </option>
-                                            </select>
-                                        </th>
-                                        <th>Total Slots</th>
-                                        <th>Available Slots</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>College of Information Sciences</td>
-                                        <td>Bachelor of Science in Information Technology</td>
-                                        <td>100</td>
-                                        <td>50</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
-                <!--Admitted-->
-                <div id="admitted">
-                    <div class="table-data">
-                        <div class="order">
-                            <div class="head">
-                                <h3>Students For Admission</h3>
-                                <i class='bx bx-search' id="searchIcon"></i>
-                                <div class="search-box" id="searchBox-admitted">
-                                    <input type="text" id="admitted-searchBox" placeholder="Search...">
-                                </div>
-                            </div>
-                            <table>
-                                <colgroup>
-                                    <col style="width: 22%;">
-                                    <col style="width: 22%;">
-                                    <col style="width: 10%;">
-                                    <col style="width: 15%;">
-                                    <col style="width: 15%;">
-                                    <col style="width: 6%;">
-                                    <col style="width: 10%;">
-                                </colgroup>
-                                <thead>
-                                    <tr>
-                                        <th>College<br>
-                                            <select class="custom-dropdown">
-                                                <option value="none">College</option>
-                                                <option value="CIS">College of Information Sciences</option>
-                                                <option value="CHET">College of Home Economics and Technology</option>
-                                                <option value="CA">College of Agriculture</option>
-                                                <option value="CHK">College of Human Kinetics</option>
-                                                <option value="CAS">College of Ars and Sciences</option>
-                                            </select>
-                                        </th>
-                                        <th>Program<br>
-                                            <select class="custom-dropdown">
-                                                <option value="none">Program</option>
-                                                <option value="CIS">Bachelor of Library and Information Science</option>
-                                                <option value="CIS">Bachelor of Science in Development Communication
-                                                </option>
-                                                <option value="CIS">Bachelor of Science in Information Technology
-                                                </option>
-                                            </select>
-                                        </th>
-                                        <th>Application No.</th>
-                                        <th>Student</th>
-                                        <th>Email</th>
-                                        <th>Rank</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr data-college="CIS">
-                                        <td>College of Information Sciences</td>
-                                        <td>Bachelor of Science in Information Technology</td>
-                                        <td>000001</td>
-                                        <td>Gojo Satoru</td>
-                                        <td>satorugojo@gmail.com</td>
-                                        <td>1</td>
-                                        <td>Notice of Admission</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <!--Readmitted-->
-                <div id="readmitted">
-                    <div class="table-data">
-                        <div class="order">
-                            <div class="head">
-                                <h3>Students For Readmission</h3>
-                                <i class='bx bx-search' id="searchIcon"></i>
-                                <div class="search-box" id="searchBox-readmitted">
-                                    <input type="text" id="readmitted-searchBox" placeholder="Search...">
-                                </div>
-                            </div>
-                            <table>
-                                <colgroup>
-                                    <col style="width: 22%;">
-                                    <col style="width: 22%;">
-                                    <col style="width: 10%;">
-                                    <col style="width: 15%;">
-                                    <col style="width: 15%;">
-                                    <col style="width: 6%;">
-                                    <col style="width: 10%;">
-                                </colgroup>
-                                <thead>
-                                    <tr>
-                                        <th>College<br>
-                                            <select class="custom-dropdown">
-                                                <option value="none">College</option>
-                                                <option value="CIS">College of Information Sciences</option>
-                                                <option value="CHET">College of Home Economics and Technology</option>
-                                                <option value="CA">College of Agriculture</option>
-                                                <option value="CHK">College of Human Kinetics</option>
-                                                <option value="CAS">College of Ars and Sciences</option>
-                                            </select>
-                                        </th>
-                                        <th>Program<br>
-                                            <select class="custom-dropdown">
-                                                <option value="none">Program</option>
-                                                <option value="CIS">Bachelor of Library and Information Science</option>
-                                                <option value="CIS">Bachelor of Science in Development Communication
-                                                </option>
-                                                <option value="CIS">Bachelor of Science in Information Technology
-                                                </option>
-                                            </select>
-                                        </th>
-                                        <th>Application No.</th>
-                                        <th>Student</th>
-                                        <th>Email</th>
-                                        <th>Rank</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr data-college="CIS">
-                                        <td>College of Information Sciences</td>
-                                        <td>Bachelor of Science in Information Technology</td>
-                                        <td>000101</td>
-                                        <td>Megumi Fushiguro</td>
-                                        <td>fushiguromegumi@gmail.com</td>
-                                        <td>101</td>
-                                        <td>Notice of Result</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
-                <!--Nonqualified-->
-                <div id="nonqualified">
-                    <div class="table-data">
-                        <div class="order">
-                            <div class="head">
-                                <h3>Non-Qualified Applicants</h3>
-                                <i class='bx bx-search' id="searchIcon"></i>
-                                <div class="search-box" id="searchBox-nonqualified">
-                                    <input type="text" id="nonqualified-searchBox" placeholder="Search...">
-                                </div>
-                            </div>
-                            <table>
-                                <colgroup>
-                                    <col style="width: 22%;">
-                                    <col style="width: 22%;">
-                                    <col style="width: 10%;">
-                                    <col style="width: 15%;">
-                                    <col style="width: 15%;">
-                                    <col style="width: 6%;">
-                                    <col style="width: 10%;">
-                                </colgroup>
-                                <thead>
-                                    <tr>
-                                        <th>College<br>
-                                            <select class="custom-dropdown">
-                                                <option value="none">College</option>
-                                                <option value="CIS">College of Information Sciences</option>
-                                                <option value="CHET">College of Home Economics and Technology</option>
-                                                <option value="CA">College of Agriculture</option>
-                                                <option value="CHK">College of Human Kinetics</option>
-                                                <option value="CAS">College of Ars and Sciences</option>
-                                            </select>
-                                        </th>
-                                        <th>Program<br>
-                                            <select class="custom-dropdown">
-                                                <option value="none">Program</option>
-                                                <option value="CIS">Bachelor of Library and Information Science</option>
-                                                <option value="CIS">Bachelor of Science in Development Communication
-                                                </option>
-                                                <option value="CIS">Bachelor of Science in Information Technology
-                                                </option>
-                                            </select>
-                                        </th>
-                                        <th>Application No.</th>
-                                        <th>Student</th>
-                                        <th>Email</th>
-                                        <th>Rank</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr data-college="CIS">
-                                        <td>
-                                            <p>College of Information Sciences</p>
-                                        </td>
-                                        <td>Bachelor of Science in Information Technology</td>
-                                        <td>000500</td>
-                                        <td>YuJi Itadori</td>
-                                        <td>itadoriyuji@gmail.com</td>
-                                        <td>500</td>
-                                        <td>Notice of Result</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
 
             </div>
 
-            <!--Student Profile-->
-            <div id="student-profile-content">
+            <!--Master List-->
+            <div id="master-list-content">
                 <div class="head-title">
                     <div class="left">
-                        <h1>Student Profile</h1>
+                        <h1>Master List</h1>
                         <ul class="breadcrumb">
-                            <li><a href="#">Student Profile</a></li>
+                            <li><a href="#">Master List</a></li>
                             <li><i class='bx bx-chevron-right'></i></li>
                             <li><a class="active" href="staff.html">Home</a></li>
                         </ul>
                     </div>
                 </div>
-                <!--profile-->
-                <div id="student-profile">
+                <!--master list-->
+                <div id="master-list">
                     <div class="table-data">
                         <div class="order">
                             <div class="head">
-                                <h3>
-                                    <select class="profile-dropdown">
-                                        <option value="none">College</option>
-                                        <option value="CIS">College of Information Sciences</option>
-                                        <option value="CHET">College of Home Economics and Technology</option>
-                                        <option value="CA">College of Agriculture</option>
-                                        <option value="CHK">College of Human Kinetics</option>
-                                        <option value="CAS">College of Ars and Sciences</option>
-                                    </select>
-                                </h3>
+                                <h3>List of Students</h3>
                                 <i class='bx bx-search' id="searchIcon"></i>
                                 <div class="search-box" id="searchBox-student-profile">
                                     <input type="text" id="student-profile-search" placeholder="Search...">
@@ -514,68 +149,40 @@
                             </div>
                             <table>
                                 <colgroup>
-                                    <col style="width: 8%;">
-                                    <col style="width: 8%;">
-                                    <col style="width: 8%;">
-                                    <col style="width: 7%;">
-                                    <col style="width: 7%;">
-                                    <col style="width: 8%;">
+                                    <col style="width: 10%;">
+                                    <col style="width: 13%;">
+                                    <col style="width: 26%;">
+                                    <col style="width: 23%;">
+                                    <col style="width: 6%;">
+                                    <col style="width: 6%;">
+                                    <col style="width: 6%;">
+                                    <col style="width: 6%;">
                                     <col style="width: 4%;">
-                                    <col style="width: 8%;">
-                                    <col style="width: 8%;">
-                                    <col style="width: 8%;">
-                                    <col style="width: 4%;">
-                                    <col style="width: 4%;">
-                                    <col style="width: 5%;">
-                                    <col style="width: 4%;">
-                                    <col style="width: 9%;">
                                 </colgroup>
                                 <thead>
                                     <tr>
                                         <th>Application No.</th>
-                                        <th>Program<br>
-                                            <select class="custom-dropdown">
-                                                <option value="none">Program</option>
-                                                <option value="CIS">Bachelor of Library and Information Science</option>
-                                                <option value="CIS">Bachelor of Science in Development Communication
-                                                </option>
-                                                <option value="CIS">Bachelor of Science in Information Technology
-                                                </option>
-                                            </select>
-                                        </th>
-                                        <th>Last Name</th>
-                                        <th>First Name</th>
-                                        <th>Middle Name</th>
-                                        <th>Birth Date</th>
-                                        <th>Sex</th>
-                                        <th>Email</th>
-                                        <th>Municipality</th>
-                                        <th>Province</th>
-                                        <th>GWA</th>
+                                        <th>Nature of Degree</th>
+                                        <th>Program</th>
+                                        <th>Name</th>
                                         <th>Math</th>
                                         <th>Science</th>
                                         <th>English</th>
-                                        <th>Action</th>
+                                        <th>GWA</th>
+                                        <th>Rank</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td>000001</td>
-                                        <td>BSIT</td>
-                                        <td>Inumaki</td>
-                                        <td>Toge</td>
-                                        <td>Jugon</td>
-                                        <td>10-03-2003</td>
-                                        <td>Male</td>
-                                        <td>inumakitoge@gmail.com</td>
-                                        <td>Hino-shi</td>
-                                        <td>Tokyo</td>
-                                        <td>90%</td>
-                                        <td>90%</td>
-                                        <td>87%</td>
-                                        <td>92%</td>
-                                        <td><button class="button edit" type="submit">Edit</button> <button
-                                                class="button delete" type="submit">Delete</button></td>
+                                        <td>Non-Board</td>
+                                        <td>Bachelor of Information Technology</td>
+                                        <td>Toge Inumaki</td>
+                                        <td>80%</td>
+                                        <td>83%</td>
+                                        <td>83%</td>
+                                        <td>83%</td>
+                                        <td>1</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -797,240 +404,8 @@
 
             </div>
 
-            <!-- Import -->
-            <div id="import-content">
-                <div class="head-title">
-                    <div class="left">
-                        <h1>Master List Import</h1>
-                        <ul class="breadcrumb">
-                            <li><a href="#">Master List Import</a></li>
-                            <li><i class='bx bx-chevron-right'></i></li>
-                            <li><a class="active" href="staff.html">Home</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <form class="importform" action="/upload" method="post" enctype="multipart/form-data">
-                    <label for="file">Select file to import:</label>
-                    <input type="file" id="file" name="file" multiple>
-                    <button type="submit">Import</button>
-                </form>
-                <link rel="import" href="staff.html">
-                <!--import-->
-                <div id="student-import">
-                    <div class="table-data">
-                        <div class="order">
-                            <div class="head">
-                                <h3>Student Master List</h3>
-                                <i class='bx bx-search' id="searchIcon"></i>
-                                <div class="search-box" id="searchBox-student-import">
-                                    <input type="text" id="student-import-searchBox" placeholder="Search...">
-                                </div>
-                            </div>
-                            <table>
-                                <colgroup>
-                                    <col style="width: 8%;">
-                                    <col style="width: 10%;">
-                                    <col style="width: 10%;">
-                                    <col style="width: 10%;">
-                                    <col style="width: 7%;">
-                                    <col style="width: 4%;">
-                                    <col style="width: 9%;">
-                                    <col style="width: 8%;">
-                                    <col style="width: 8%;">
-                                    <col style="width: 4%;">
-                                    <col style="width: 4%;">
-                                    <col style="width: 5%;">
-                                    <col style="width: 5%;">
-                                    <col style="width: 4%;">
-                                    <col style="width: 4%;">
-                                </colgroup>
-                                <thead>
-                                    <tr>
-                                        <th>Application No.</th>
-                                        <th>College<br>
-                                            <select class="custom-dropdown">
-                                                <option value="none">College</option>
-                                                <option value="CIS">College of Information Sciences</option>
-                                                <option value="CHET">College of Home Economics and Technology</option>
-                                                <option value="CA">College of Agriculture</option>
-                                                <option value="CHK">College of Human Kinetics</option>
-                                                <option value="CAS">College of Ars and Sciences</option>
-                                            </select>
-                                        </th>
-                                        <th>Program<br>
-                                            <select class="custom-dropdown">
-                                                <option value="none">Program</option>
-                                                <option value="CIS">Bachelor of Library and Information Science</option>
-                                                <option value="CIS">Bachelor of Science in Development Communication
-                                                </option>
-                                                <option value="CIS">Bachelor of Science in Information Technology
-                                                </option>
-                                            </select>
-                                        </th>
-                                        <th>Name</th>
-                                        <th>Birth Date</th>
-                                        <th>Sex</th>
-                                        <th>Email</th>
-                                        <th>Municipality</th>
-                                        <th>Province</th>
-                                        <th>GWA</th>
-                                        <th>Math</th>
-                                        <th>Science</th>
-                                        <th>English</th>
-                                        <th>Rank</th>
-                                        <th>Result</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>00056</td>
-                                        <td>CIS</td>
-                                        <td>BSIT</td>
-                                        <td>Toge Inumaki</td>
-                                        <td>10-03-2003</td>
-                                        <td>Male</td>
-                                        <td>inumakitoge@gmail.com</td>
-                                        <td>Hino-shi</td>
-                                        <td>Tokyo</td>
-                                        <td>90%</td>
-                                        <td>90%</td>
-                                        <td>87%</td>
-                                        <td>92%</td>
-                                        <td>56</td>
-                                        <td>NOA</td>
-                                    </tr>
-                                    <tr>
-                                        <td>000220</td>
-                                        <td>CIS</td>
-                                        <td>BSIT</td>
-                                        <td>Nobara Kugisaki</td>
-                                        <td>08-07-2004</td>
-                                        <td>Female</td>
-                                        <td>kugisakinobara@gmail.com</td>
-                                        <td>Hino-shi</td>
-                                        <td>Tokyo</td>
-                                        <td>83%</td>
-                                        <td>84%</td>
-                                        <td>80%</td>
-                                        <td>81%</td>
-                                        <td>220</td>
-                                        <td>NOR</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- Export -->
-            <div id="export-content">
-                <div class="head-title">
-                    <div class="left">
-                        <h1>Master List Export</h1>
-                        <ul class="breadcrumb">
-                            <li><a href="#">Master List Export</a></li>
-                            <li><i class='bx bx-chevron-right'></i></li>
-                            <li><a class="active" href="staff.html">Home</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <button class="button export" onclick="exportToExcel()">Export to Excel</button>
-                <!--export-->
-                <div id="student-export">
-                    <div class="table-data">
-                        <div class="order">
-                            <div class="head">
-                                <h3>Student Master List</h3>
-                                <i class='bx bx-search' id="searchIcon"></i>
-                                <div class="search-box" id="searchBox-student-export">
-                                    <input type="text" id="student-export" placeholder="Search...">
-                                </div>
-                            </div>
-                            <table>
-                                <colgroup>
-                                    <col style="width: 8%;">
-                                    <col style="width: 10%;">
-                                    <col style="width: 10%;">
-                                    <col style="width: 10%;">
-                                    <col style="width: 7%;">
-                                    <col style="width: 4%;">
-                                    <col style="width: 9%;">
-                                    <col style="width: 8%;">
-                                    <col style="width: 8%;">
-                                    <col style="width: 4%;">
-                                    <col style="width: 4%;">
-                                    <col style="width: 5%;">
-                                    <col style="width: 5%;">
-                                    <col style="width: 4%;">
-                                    <col style="width: 4%;">
-                                </colgroup>
-                                <thead>
-                                    <tr>
-                                        <th>Application No.</th>
-                                        <th>College<br>
-                                            <select class="custom-dropdown">
-                                                <option value="none">College</option>
-                                                <option value="CIS">College of Information Sciences</option>
-                                                <option value="CHET">College of Home Economics and Technology</option>
-                                                <option value="CA">College of Agriculture</option>
-                                                <option value="CHK">College of Human Kinetics</option>
-                                                <option value="CAS">College of Ars and Sciences</option>
-                                            </select>
-                                        </th>
-                                        <th>Program<br>
-                                            <select class="custom-dropdown">
-                                                <option value="none">Program</option>
-                                                <option value="CIS">Bachelor of Library and Information Science</option>
-                                                <option value="CIS">Bachelor of Science in Development Communication
-                                                </option>
-                                                <option value="CIS">Bachelor of Science in Information Technology
-                                                </option>
-                                            </select>
-                                        </th>
-                                        <th>Name</th>
-                                        <th>Birth Date</th>
-                                        <th>Sex</th>
-                                        <th>Email</th>
-                                        <th>Municipality</th>
-                                        <th>Province</th>
-                                        <th>GWA</th>
-                                        <th>Math</th>
-                                        <th>Science</th>
-                                        <th>English</th>
-                                        <th>Rank</th>
-                                        <th>Result</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>000220</td>
-                                        <td>CIS</td>
-                                        <td>BSIT</td>
-                                        <td>Nobara Kugisaki</td>
-                                        <td>08-07-2004</td>
-                                        <td>Female</td>
-                                        <td>kugisakinobara@gmail.com</td>
-                                        <td>Hino-shi</td>
-                                        <td>Tokyo</td>
-                                        <td>83%</td>
-                                        <td>84%</td>
-                                        <td>80%</td>
-                                        <td>81%</td>
-                                        <td>220</td>
-                                        <td>NOR</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Student Forms -->
-            <div id="student-forms-content">
+            <!-- Announcements -->
+             <div id="announcements-content">
                 <div class="head-title">
                     <div class="left">
                         <h1>Student Forms</h1>
@@ -1068,110 +443,6 @@
                     <p>Notice of Result</p>
                 </div>
 
-            </div>
-
-            <!--Colleges-->
-            <div id="college-courses-content">
-                <div class="head-title">
-                    <div class="left">
-                        <h1>Colleges</h1>
-                        <ul class="breadcrumb">
-                            <li><a href="#">Colleges</a></li>
-                            <li><i class='bx bx-chevron-right'></i></li>
-                            <li><a class="active" href="staff.html">Home</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <!--colleges-->
-                <div id="student-profile">
-                    <div class="table-data">
-                        <div class="order">
-                            <div class="head">
-                                <h3>
-                                    <select class="profile-dropdown">
-                                        <option value="none">College</option>
-                                        <option value="CIS">College of Information Sciences</option>
-                                        <option value="CHET">College of Home Economics and Technology</option>
-                                        <option value="CA">College of Agriculture</option>
-                                        <option value="CHK">College of Human Kinetics</option>
-                                        <option value="CAS">College of Ars and Sciences</option>
-                                    </select>
-                                </h3>
-                                <i class='bx bx-search' id="searchIcon"></i>
-                                <div class="search-box" id="searchBox-student-profile">
-                                    <input type="text" id="student-profile-searchBox" placeholder="Search...">
-                                </div>
-                            </div>
-                            <table>
-                                <colgroup>
-                                    <col style="width: 8%;">
-                                    <col style="width: 8%;">
-                                    <col style="width: 8%;">
-                                    <col style="width: 7%;">
-                                    <col style="width: 7%;">
-                                    <col style="width: 8%;">
-                                    <col style="width: 4%;">
-                                    <col style="width: 8%;">
-                                    <col style="width: 8%;">
-                                    <col style="width: 8%;">
-                                    <col style="width: 4%;">
-                                    <col style="width: 4%;">
-                                    <col style="width: 5%;">
-                                    <col style="width: 4%;">
-                                    <col style="width: 9%;">
-                                </colgroup>
-                                <thead>
-                                    <tr>
-                                        <th>Application No.</th>
-                                        <th>Program<br>
-                                            <select class="custom-dropdown">
-                                                <option value="none">Program</option>
-                                                <option value="CIS">Bachelor of Library and Information Science</option>
-                                                <option value="CIS">Bachelor of Science in Development Communication
-                                                </option>
-                                                <option value="CIS">Bachelor of Science in Information Technology
-                                                </option>
-                                            </select>
-                                        </th>
-                                        <th>Last Name</th>
-                                        <th>First Name</th>
-                                        <th>Middle Name</th>
-                                        <th>Birth Date</th>
-                                        <th>Sex</th>
-                                        <th>Email</th>
-                                        <th>Municipality</th>
-                                        <th>Province</th>
-                                        <th>GWA</th>
-                                        <th>Math</th>
-                                        <th>Science</th>
-                                        <th>English</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>000001</td>
-                                        <td>BSIT</td>
-                                        <td>Inumaki</td>
-                                        <td>Toge</td>
-                                        <td>Jugon</td>
-                                        <td>10-03-2003</td>
-                                        <td>Male</td>
-                                        <td>inumakitoge@gmail.com</td>
-                                        <td>Hino-shi</td>
-                                        <td>Tokyo</td>
-                                        <td>90%</td>
-                                        <td>90%</td>
-                                        <td>87%</td>
-                                        <td>92%</td>
-                                        <td><button class="button edit" type="submit">Edit</button> <button
-                                                class="button delete" type="submit">Delete</button></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
             </div>
         </main>
         <!-- MAIN -->
