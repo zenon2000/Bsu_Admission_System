@@ -352,7 +352,7 @@ hr {
 	font-weight: bold;
 }
 
-     
+
 #clock {
 	font-size: 24px;
 	height: 36px;
@@ -532,7 +532,7 @@ nav {
 	position: relative;
 }
 
- .switch-mode::before {
+.switch-mode::before {
 	content: '';
 	position: absolute;
 	top: 2px;
@@ -544,17 +544,43 @@ nav {
 	transition: all .3s ease;
 }
 
- #switch-mode:checked+.switch-mode::before {
+#switch-mode:checked+.switch-mode::before {
 	left: calc(100% - (25px - 4px) - 2px);
 }
 
 /* Add this style to your CSS */
 .show {
-    display: block;
+	display: block;
 }
 
 
+#see-more-button {
+	float: right;
+	background-color: var(--blue);
+	/* Set the background color */
+	color: var(--light);
+	/* Set the text color */
+	padding: 10px 15px;
+	/* Add padding for a comfortable size */
+	border: none;
+	/* Remove border for a clean look */
+	border-radius: 5px;
+	/* Add border-radius for rounded corners */
+	cursor: pointer;
+	/* Change cursor on hover for better usability */
+	transition: background-color 0.3s;
+	/* Add a smooth transition effect */
+}
 
+#see-more-button:hover {
+	background-color: var(--green);
+	/* Change background color on hover */
+}
+
+#see-more-button i {
+	margin-left: 5px;
+	/* Add space between text and icon */
+}
 
 
 
@@ -604,6 +630,7 @@ nav {
 
 
 }
+
 #content main .head-title .btn-download {
 	height: 36px;
 	padding: 0 16px;
@@ -615,13 +642,14 @@ nav {
 	align-items: center;
 	grid-gap: 10px;
 	font-weight: 500;
-	transition: background 0.3s ease; /* Add transition for a smooth color change */
-  }
-  
-  #content main .head-title .btn-download:hover {
+	transition: background 0.3s ease;
+	/* Add transition for a smooth color change */
+}
+
+#content main .head-title .btn-download:hover {
 	background: var(--green)
 }
-  
+
 
 #clock {
 	font-size: 24px;
@@ -898,34 +926,34 @@ nav {
 .Picture {
 	padding-left: 25px;
 	padding-bottom: 10px;
-
-
 }
 
 
 .profile-details {
 	flex: 1;
-
-
-
 }
 
 /* Style for the signature */
 #result-signature {
 	margin: 15px;
 	text-align: right;
-      
-	
 }
+
+#date-of-application {
+	width: 120px;
+	float: right;
+	padding: 5px;
+}
+
 .name-sign {
 	margin-right: 15px;
 	text-align: right;
-      
-	
+
+
 }
 
 #result-signature-slip {
-	
+
 	border: 1px solid #000;
 	height: 100px;
 	width: 300px;
@@ -937,33 +965,36 @@ nav {
 	margin: 0 auto;
 }
 
-  .order-profile {
+.order-profile {
 	display: flex;
-	justify-content: center; /* Center horizontally */
-	align-items: center; /* Center vertically */
-	
-  }
+	justify-content: center;
+	/* Center horizontally */
+	align-items: center;
+	/* Center vertically */
+
+}
 
 .profile-result {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	max-width: 90%;
-	background-color:var(--grey);
-	color: var(--dark);
+	background-color: rgb(243, 243, 243);
+	color: black;
 	font-size: 16px;
 	padding-top: 20px;
 	border: 1px solid #ccc;
 	border-radius: 10px;
 
-  }
-  
+}
+
 .profile-info-twos {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	gap: 15px;
 	margin-left: 20px;
 }
+
 .profile-info-one {
 	display: grid;
 	grid-template-columns: repeat(1, 1fr);
@@ -984,131 +1015,155 @@ nav {
 	flex-direction: column;
 	align-items: flex-start;
 	padding: 5px;
-	
+
 }
+
 .content-header {
-	margin: 15px 8px 0; 
-	
-  }
-  .StudentResult-Content {
-    display: flex;
-    align-items: center;
-    border: 2px solid #000; /* Add border to the result info div */
-    padding: 5px;
-    border-radius: 5px;
+	margin: 15px 8px 0;
+
+}
+
+.StudentResult-Content {
+	display: flex;
+	align-items: center;
+	border: 2px solid #000;
+	/* Add border to the result info div */
+	padding: 5px;
+	border-radius: 5px;
 }
 
 .student-picture {
-    width: 30%; /* Adjust the width as needed */
-    margin-right: 20px; /* Add some space between the picture and the information */
+	width: 30%;
+	/* Adjust the width as needed */
+	margin-right: 20px;
+	/* Add some space between the picture and the information */
 }
 
 .student-picture img {
-    max-width: 100%;
-    height: auto;
-    display: block;
+	max-width: 100%;
+	height: auto;
+	display: block;
 }
 
 .result-info {
-    width: 70%; /* Adjust the width as needed */
-    flex: 3;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+	width: 70%;
+	/* Adjust the width as needed */
+	flex: 3;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
 
 .result-style {
-    margin-bottom: 10px; /* Add some space between each result section */
+	margin-bottom: 10px;
+	/* Add some space between each result section */
 }
 
 /* Additional styling as per your design requirements */
 .applicant-name {
-    font-weight: bold;
-    font-size: 1.2em; /* Example font size */
-    color: #333; /* Example text color */
+	
+	font-size: 1.2em;
+	/* Example font size */
+	color: var(--dark);
+	/* Example text color */
 }
 
 .applicant-number {
-    font-style: italic;
-    color: #777; /* Lighter color for contrast */
+	
+	color: #777;
+	/* Lighter color for contrast */
 }
 
 .program-info {
-    color: #009688; /* Green color for emphasis */
+	color: #009688;
+	/* Green color for emphasis */
 }
 
 .status-pending {
-    font-weight: bold;
-    color: #FFA500; /* Orange color for pending status */
+	font-weight: bold;
+	color: #FFA500;
+	/* Orange color for pending status */
 }
+
 /* Center the announcement text */
 .result-status-dets {
-    text-align: center; /* Align text to the center */
-    font-size: 1.2em; /* Example font size */
-    font-weight: bold; /* Example font weight */
-    color: #FF0000; /* Red color for emphasis */
-    padding: 10px; /* Add some padding around the text */
-    border: 2px solid #FF0000; /* Add a border */
-    border-radius: 5px; /* Add border radius for a softer look */
-	margin: 20px 0; /* Add margin top and bottom */
+	text-align: center;
+	/* Align text to the center */
+	font-size: 1.2em;
+	/* Example font size */
+	font-weight: bold;
+	/* Example font weight */
+	color: #FF0000;
+	/* Red color for emphasis */
+	padding: 10px;
+	/* Add some padding around the text */
+	border: 2px solid #FF0000;
+	/* Add a border */
+	border-radius: 5px;
+	/* Add border radius for a softer look */
+	margin: 20px 0;
+	/* Add margin top and bottom */
 }
 
 /* Add a margin-left to the dropdown elements */
 .dropdown {
-    display: none;
-    margin-left: 30px; /* Adjust the value as needed */
+	display: none;
+	margin-left: 30px;
+	/* Adjust the value as needed */
 }
 
 /* Style for the dropdown links */
 .dropdown a {
-    padding: 10px;
-    text-decoration: none;
-    display: block;
-    background-color: #f9f9f9;
-    color: #666; /* Change the color to a lighter black (e.g., #666) */
+	padding: 10px;
+	text-decoration: none;
+	display: block;
+	background-color: #f9f9f9;
+	color: #666;
+	/* Change the color to a lighter black (e.g., #666) */
 }
 
 /* Style for the dropdown links on hover */
 .dropdown a:hover {
-    background-color: #ccc;
+	background-color: #ccc;
 }
+
 /* Add this class for a soft transition effect */
 .faq-header {
 	background-color: #333;
 	color: #fff;
 	text-align: center;
 	padding: 1em 0;
-  }
+}
 
-  .faq-container {
+.faq-container {
 	max-width: 800px;
 	margin: 20px auto;
 	padding: 20px;
 	background-color: #fff;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 	border-radius: 8px;
-  }
+}
 
-  h2.faq-question {
+h2.faq-question {
 	color: #333;
-  }
+}
 
-  .faq-question {
+.faq-question {
 	cursor: pointer;
 	padding: 10px;
 	border: 1px solid #ddd;
 	border-radius: 4px;
 	margin-bottom: 10px;
 	background-color: #f9f9f9;
-  }
+}
 
-  .faq-answer {
+.faq-answer {
 	display: none;
 	padding: 10px;
 	border: 1px solid #ddd;
 	border-radius: 4px;
 	background-color: #fff;
-  }
+}
 
 
 

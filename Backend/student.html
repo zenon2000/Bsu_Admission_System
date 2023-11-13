@@ -98,12 +98,12 @@
                         </span>
                     </li>
 
-                   
+
 
                     <li id="readmitted-box">
                         <i class='bx bx-calendar'></i>
                         <span class="text">
-                            <h3>01-15-2024</h3>
+                          
                             <p>Readmission Date</p>
                         </span>
                     </li>
@@ -111,7 +111,7 @@
                     <li id="nonqualified-box">
                         <i class='bx bx-calendar'></i>
                         <span class="text">
-                            <h3>01-21-2014</h3>
+                         
                             <p>Releasing of Result Date</p>
                         </span>
                     </li>
@@ -120,14 +120,14 @@
                 </ul>
 
                 <!--Available Slots-->
-                <div id="available-slot"">
+                <div id="available-slot">
                     <div class="table-data">
                         <div class="order">
                             <div class="head">
                                 <h3>Available Slots</h3>
 
                             </div>
-                            <table>
+                            <table id="available-table">
                                 <thead>
                                     <tr data-college="CIS">
                                         <th>Program</th>
@@ -254,28 +254,37 @@
                                         <td>100</td>
                                         <td>50</td>
                                     </tr>
+
                                 </tbody>
+
                             </table>
+                            <button id="see-more-button">
+                                See More <i class='bx bx-chevrons-right'></i>
+                            </button>
+
                         </div>
                     </div>
                 </div>
-                <div id="readmission-announce" >
+                <div id="readmission-announce" style="display: none;">
                     <div class="table-data">
                         <div class="order">
                             <div class="head">
                                 <h3>Readmission Date</h3>
                             </div>
-                           <div>Readmission will start January 1- to 29</div>
+                            <div>Readmission will start January 1- to 29</div>
                         </div>
                     </div>
                 </div>
-                <div id="releasing-annouce" >
+                <div id="releasing-annouce" style="display: none;">
                     <div class="table-data">
                         <div class="order">
                             <div class="head">
                                 <h3>Releasing Of Result</h3>
                             </div>
-                           <div>Realeasing of result will be posted when availablle</div>
+                            <div>
+                                <p class="result-status-dets">PLEASE BE INFORMED THAT BSU ADMISSION 2023-2024 RESULTS
+                                    ARE NOT YET AVAILABLE</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -294,7 +303,7 @@
                         </ul>
                     </div>
                     <a href="#" class="btn-download">
-                        <i class='bx bxs-cloud-download' ></i>
+                        <i class='bx bxs-cloud-download'></i>
                         <span class="text">Download PDF</span>
                     </a>
                 </div>
@@ -305,221 +314,228 @@
                             <div class="order-profile">
                                 <div class="profile-result">
                                     <form action="">
-                                    <h2 class="pi">Personal Information</h2>
-                                    <div class="Picture">
-                                        <div id="result-id-picture"></div>
-                                    </div>
-                                    <div class="profile-info-content">
-
-                                        <div class="column">
-                                            <p class="fnp">
-                                                <strong>Name:</strong>
-                                                <span id="result-LastName"></span>,
-                                                <span id="result-FirstName"></span>
-                                                <span id="result-MiddleName"></span>
-                                            </p>
+                                       
+                                        
+                                        <div class="Picture">
+                                            <h2 class="pi">Personal Information</h2>
+                                            <div id="date-of-application"></div>
+                                        <br>
+                                            <div id="result-id-picture"></div>
+                                            
                                         </div>
-                                        <div class="column">
-                                            <p class="genderp">
-                                                <strong>Gender at birth:</strong>
-                                                <span id="result-Gender"></span>
-                                            </p>
+                                        
+                                        <div class="profile-info-content">
+
+                                            <div class="column">
+                                                <p class="fnp">
+                                                    <strong>Name:</strong>
+                                                    <span id="result-LastName"></span>,
+                                                    <span id="result-FirstName"></span>
+                                                    <span id="result-MiddleName"></span>
+                                                </p>
+                                            </div>
+                                            <div class="column">
+                                                <p class="genderp">
+                                                    <strong>Gender at birth:</strong>
+                                                    <span id="result-Gender"></span>
+                                                </p>
+                                            </div>
+                                            <div class="column">
+                                                <p class="bdate">
+                                                    <strong>Birthdate:</strong>
+                                                    <span id="result-Birthdate"></span>
+                                                </p>
+                                            </div>
                                         </div>
-                                        <div class="column">
-                                            <p class="bdate">
-                                                <strong>Birthdate:</strong>
-                                                <span id="result-Birthdate"></span>
-                                            </p>
+                                        <div class="profile-info-content">
+                                            <div class="column">
+                                                <p>
+                                                    <strong>Birthplace:</strong><br>
+                                                    <span id="result-City"></span>,
+                                                    <span id="result-BirthProvince"></span>,
+                                                    <span id="result-BirthCountry"></span>
+                                                </p>
+                                            </div>
+
+                                            <div class="column">
+                                                <p>
+                                                    <strong>Age:</strong>
+                                                    <span id="result-Age"></span>
+                                                </p>
+                                            </div>
+                                            <div class="column">
+                                                <p>
+                                                    <strong>Civil Status:</strong>
+                                                    <span id="result-Civil"></span>
+                                                </p>
+                                            </div>
+                                            <div class="column">
+                                                <p>
+                                                    <strong>Citizenship:</strong>
+                                                    <span id="result-Citizenship"></span>
+                                                </p>
+                                            </div>
+                                            <div class="column">
+                                                <p>
+                                                    <strong>Nationality:</strong>
+                                                    <span id="result-Nationality"></span>
+                                                </p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="profile-info-content">
-                                        <div class="column">
-                                            <p>
-                                                <strong>Birthplace:</strong><br>
-                                                <span id="result-City"></span>,
-                                                <span id="result-BirthProvince"></span>,
-                                                <span id="result-BirthCountry"></span>
-                                            </p>
+                                        <p class="content-header"><strong>Permanent Home Address</strong></p>
+                                        <div class="profile-info-twos">
+
+                                            <div class="column">
+
+                                                <p class="ContactInfo"> <strong>Address:</strong>
+
+                                                    <span id="result-Street"></span>
+                                                    <span id="result-Barangay"></span>
+                                                    <span id="result-Municipality"></span>
+                                                    <span id="result-PermanentProvince"></span>
+                                                    <span id="result-PermanentCountry">
+                                                </p>
+
+                                            </div>
+
+                                            <div class="column">
+                                                <p>
+                                                    <strong>Zip Code:</strong>
+                                                    <span id="result-ZipCode"></span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <p class="content-header">
+                                            <strong>Contact Information</strong>
+                                        </p>
+
+                                        <div class="profile-info-twos">
+                                            <div class="column">
+                                                <p>
+                                                    <strong>Telephone/Mobile No.:</strong>
+                                                    <span id="result-Telephone"></span>
+                                                </p>
+
+
+                                                <p>
+                                                    <strong>Facebook Account Name:</strong>
+                                                    <span id="result-Facebook"></span>
+                                                </p>
+
+                                                <p>
+                                                    <strong>Email Address:</strong>
+                                                    <span id="result-Email"></span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <p class="content-header">
+                                            <strong>Contact Persons</strong>
+                                        </p>
+                                        <div class="profile-info-twos">
+                                            <div class="column">
+
+
+
+                                                <p>
+                                                    <strong>Contact Person:</strong>
+                                                    <span id="result-ContactOne"></span>
+                                                </p>
+
+                                                <p>
+                                                    <strong>Mobile Number:</strong>
+                                                    <span id="result-NumberOne"></span>
+                                                </p>
+
+                                                <p>
+                                                    <strong>Relationship:</strong>
+                                                    <span id="result-RelationshipOne"></span>
+                                                </p>
+                                            </div>
+                                            <div class="column">
+                                                <p>
+                                                    <strong>Contact Person:</strong>
+                                                    <span id="result-ContactTwo"></span>
+                                                </p>
+
+                                                <p>
+                                                    <strong>Mobile Number:</strong>
+                                                    <span id="result-NumberTwo"></span>
+                                                </p>
+
+                                                <p>
+                                                    <strong>Relationship:</strong>
+                                                    <span id="result-RelationshipTwo"></span>
+                                                </p>
+
+                                            </div>
+                                            <div class="column">
+                                                <p class="content-header">
+                                                    <strong>Academic Classification:</strong>
+                                                    <span id="result-classification"></span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <p class="content-header">
+                                            <strong>Academic Background</strong>
+                                        </p>
+
+                                        <div class="profile-info-one">
+                                            <div class="column">
+                                                <p>
+                                                    <strong>Name and Address of High School/Senior High School:</strong>
+                                                    <span id="high_school_name_address"></span>
+                                                </p>
+
+                                                <p>
+                                                    <strong>Name and Address of Division where ALS/PEPT was
+                                                        taken:</strong>
+                                                    <span id="result-ALS"></span>
+                                                </p>
+
+                                                <p>
+                                                    <strong>Name and Address of College/University:</strong>
+                                                    <span id="college_name_address"></span>
+                                                </p>
+                                                <p>
+                                                    <strong>Learner's Reference Number:</strong>
+                                                    <span id="result-LRN"></span>
+                                                </p>
+                                            </div>
                                         </div>
 
-                                        <div class="column">
-                                            <p>
-                                                <strong>Age:</strong>
-                                                <span id="result-Age"></span>
-                                            </p>
-                                        </div>
-                                        <div class="column">
-                                            <p>
-                                                <strong>Civil Status:</strong>
-                                                <span id="result-Civil"></span>
-                                            </p>
-                                        </div>
-                                        <div class="column">
-                                            <p>
-                                                <strong>Citizenship:</strong>
-                                                <span id="result-Citizenship"></span>
-                                            </p>
-                                        </div>
-                                        <div class="column">
-                                            <p>
-                                                <strong>Nationality:</strong>
-                                                <span id="result-Nationality"></span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <p class="content-header"><strong>Permanent Home Address</strong></p>
-                                    <div class="profile-info-twos">
+                                        <div class="profile-info-content">
 
-                                        <div class="column">
+                                            <div class="column">
+                                                <p>
+                                                    <strong>Degree:</strong>
+                                                    <span id="result-Degree"></span>
+                                                </p>
+                                            </div>
+                                            <div class="column">
+                                                <p>
+                                                    <strong>Major in:</strong>
+                                                    <span id="result-major"></span>
+                                                </p>
+                                            </div>
+                                            <div class="column">
+                                                <p>
+                                                    <strong>Nature of degree:</strong>
+                                                    <span id="result-natureDegree"></span>
+                                                </p>
 
-                                            <p class="ContactInfo"> <strong>Address:</strong>
-
-                                                <span id="result-Street"></span>
-                                                <span id="result-Barangay"></span>
-                                                <span id="result-Municipality"></span>
-                                                <span id="result-PermanentProvince"></span>
-                                                <span id="result-PermanentCountry">
-                                            </p>
-
+                                            </div>
                                         </div>
 
-                                        <div class="column">
-                                            <p>
-                                                <strong>Zip Code:</strong>
-                                                <span id="result-ZipCode"></span>
-                                            </p>
+
+                                        <div class="name-sign">
+                                            <div id="result-signature"> </div>
+                                            <p id="sign-name" class="sign-name">DOE, JHON</p>
                                         </div>
-                                    </div>
-                                    <br>
-                                    <p class="content-header">
-                                        <strong>Contact Information</strong>
-                                    </p>
 
-                                    <div class="profile-info-twos">
-                                        <div class="column">
-                                            <p>
-                                                <strong>Telephone/Mobile No.:</strong>
-                                                <span id="result-Telephone"></span>
-                                            </p>
-
-
-                                            <p>
-                                                <strong>Facebook Account Name:</strong>
-                                                <span id="result-Facebook"></span>
-                                            </p>
-
-                                            <p>
-                                                <strong>Email Address:</strong>
-                                                <span id="result-Email"></span>
-                                            </p>
+                                        <h2 style="display: none;">Applicant-Signature:</h2>
+                                        <div id="result-signature-slip" style="display: none;">
                                         </div>
-                                    </div>
-                                    <p class="content-header">
-                                        <strong>Contact Persons</strong>
-                                    </p>
-                                    <div class="profile-info-twos">
-                                        <div class="column">
-
-
-
-                                            <p>
-                                                <strong>Contact Person:</strong>
-                                                <span id="result-ContactOne"></span>
-                                            </p>
-
-                                            <p>
-                                                <strong>Mobile Number:</strong>
-                                                <span id="result-NumberOne"></span>
-                                            </p>
-
-                                            <p>
-                                                <strong>Relationship:</strong>
-                                                <span id="result-RelationshipOne"></span>
-                                            </p>
-                                        </div>
-                                        <div class="column">
-                                            <p>
-                                                <strong>Contact Person:</strong>
-                                                <span id="result-ContactTwo"></span>
-                                            </p>
-
-                                            <p>
-                                                <strong>Mobile Number:</strong>
-                                                <span id="result-NumberTwo"></span>
-                                            </p>
-
-                                            <p>
-                                                <strong>Relationship:</strong>
-                                                <span id="result-RelationshipTwo"></span>
-                                            </p>
-
-                                        </div>
-                                        <div class="column">
-                                            <p class="content-header">
-                                                <strong>Academic Classification:</strong>
-                                                <span id="result-classification"></span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <p class="content-header">
-                                        <strong>Academic Background</strong>
-                                    </p>
-
-                                    <div class="profile-info-one">
-                                        <div class="column">
-                                            <p>
-                                                <strong>Name and Address of High School/Senior High School:</strong>
-                                                <span id="high_school_name_address"></span>
-                                            </p>
-
-                                            <p>
-                                                <strong>Name and Address of Division where ALS/PEPT was taken:</strong>
-                                                <span id="result-ALS"></span>
-                                            </p>
-
-                                            <p>
-                                                <strong>Name and Address of College/University:</strong>
-                                                <span id="college_name_address"></span>
-                                            </p>
-                                            <p>
-                                                <strong>Learner's Reference Number:</strong>
-                                                <span id="result-LRN"></span>
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    <div class="profile-info-content">
-
-                                        <div class="column">
-                                            <p>
-                                                <strong>Degree:</strong>
-                                                <span id="result-Degree"></span>
-                                            </p>
-                                        </div>
-                                        <div class="column">
-                                            <p>
-                                                <strong>Major in:</strong>
-                                                <span id="result-major"></span>
-                                            </p>
-                                        </div>
-                                        <div class="column">
-                                            <p>
-                                                <strong>Nature of degree:</strong>
-                                                <span id="result-natureDegree"></span>
-                                            </p>
-
-                                        </div>
-                                    </div>
-
-
-                                    <div class="name-sign">
-                                        <div id="result-signature"> </div>
-                                        <p id="sign-name" class="sign-name">DOE, JHON</p>
-                                    </div>
-
-                                    <h2 style="display: none;">Applicant-Signature:</h2>
-                                    <div id="result-signature-slip" style="display: none;">
-                                    </div>
                                     </form>
                                 </div>
                             </div>
@@ -560,10 +576,11 @@
 
                                     <div class="result-style">
                                         <p class="result-p">
-                                            <strong>Applicant #:</strong>
-                                            <span id="result-ApplicantNo" class="applicant-number"></span>
+                                          <strong>Applicant Number:</strong>
+                                          <span id="result-ApplicantNumber" class="applicant-number"></span>
                                         </p>
-                                    </div>
+                                      </div>
+                                      
 
                                     <div class="result-style">
                                         <p class="result-p">
@@ -574,15 +591,11 @@
 
                                     <div class="result-style">
                                         <p class="result-p">
-                                            <strong>Status:</strong>
+                                            <strong>Status of Result:</strong>
                                             <a href="#" id="Pending" class="status-pending">Pending</a>
                                         </p>
                                     </div>
                                 </div>
-                            </div>
-                            <div>
-                                <p class="result-status-dets">PLEASE BE INFORMED THAT BSU ADMISSION 2023-2024 RESULTS
-                                    ARE NOT YET AVAILABLE</p>
                             </div>
 
 
@@ -617,38 +630,38 @@
 
             <hr>
             <div class="profile-menu">
-                <a href="#" id="settings" class="profile-item">  <i class='bx bx-sun'></i>Display</a>
-         
-       <div class="dropdown" id="settings-dropdown">
-                    <a href="#">Dark Mode 
+                <a href="#" id="settings" class="profile-item"> <i class='bx bx-sun'></i>Display</a>
+
+                <div class="dropdown" id="settings-dropdown">
+                    <a href="#">Dark Mode
                         <input type="checkbox" id="switch-mode" hidden>
                         <label for="switch-mode" class="switch-mode"></label></a>
 
-                
+
 
                 </div>
-<a href="#" id="settings" class="profile-item"><i class='bx bx-cog'></i> Settings</a>              
-<a href="#" id="help" class="profile-item"><i class='bx bx-question-mark'></i> Help and Support</a>
+                <a href="#" id="settings" class="profile-item"><i class='bx bx-cog'></i> Settings</a>
+                <a href="#" id="help" class="profile-item"><i class='bx bx-question-mark'></i> Help and Support</a>
 
-<div class="dropdown" id="help-dropdown">
-    <!-- Content for Help and Support dropdown -->
-    <!-- Trigger for the FAQ pop-up -->
-    <a href="faq_page.html" onclick="openPopup('faq-popup')">FAQ (Frequently Asked Questions)</a>
-    
-    <!-- Trigger for the Contact Us pop-up -->
-    <a href="#" onclick="openPopup('contact-popup')">Contact Us</a>
-    
-    <!-- Trigger for the Report a Problem pop-up -->
-    <!-- <a href="#" onclick="openPopup('report-popup')">Report a Problem</a>-->
-</div>
+                <div class="dropdown" id="help-dropdown">
+                    <!-- Content for Help and Support dropdown -->
+                    <!-- Trigger for the FAQ pop-up -->
+                    <a href="faq_page.html" onclick="openPopup('faq-popup')">FAQ (Frequently Asked Questions)</a>
 
-<a href="#" id="logout" class="profile-item" onclick="confirmLogout()"><i class='bx bx-log-out'></i> Logout</a>
+                    <!-- Trigger for the Contact Us pop-up -->
+                    <a href="#" onclick="openPopup('contact-popup')">Contact Us</a>
 
-<!-- Pop-up for FAQ -->
-<!-- <div id="faq-popup" class="popup">
+                    <!-- Trigger for the Report a Problem pop-up -->
+                    <!-- <a href="#" onclick="openPopup('report-popup')">Report a Problem</a>-->
+                </div>
+
+                <a href="#" id="logout" class="profile-item" onclick="confirmLogout()"><i class='bx bx-log-out'></i> Logout</a>
+
+                <!-- Pop-up for FAQ -->
+                <!-- <div id="faq-popup" class="popup">
     <h2>FAQ (Frequently Asked Questions)</h2> -->
-    <!-- Add your FAQ content here -->
-        <!-- <h2>When is the application for Admission Period?</h2>
+                <!-- Add your FAQ content here -->
+                <!-- <h2>When is the application for Admission Period?</h2>
 <div id="faq-popup" class="popup">
     <h2>FAQ (Frequently Asked Questions)</h2>
   
@@ -687,26 +700,26 @@
     <button onclick="closePopup('contact-popup')">Close</button>
 </div>
 -->
-<!--Pop-up for Report a Problem -->
-<!-- <div id="report-popup" class="popup">
+                <!--Pop-up for Report a Problem -->
+                <!-- <div id="report-popup" class="popup">
     <h2>Report a Problem</h2>-->
-    <!-- Add your report form or details here -->
-    <!-- <p>Please describe the problem:</p>
+                <!-- Add your report form or details here -->
+                <!-- <p>Please describe the problem:</p>
     <textarea></textarea>
     <button onclick="closePopup('report-popup')">Close</button>
 </div> -->
 
-<!-- Overlay to darken the background when the pop-up is open
+                <!-- Overlay to darken the background when the pop-up is open
 <div id="overlay" class="overlay" onclick="closeAllPopups()"></div>
  -->
-                
+
+            </div>
         </div>
-    </div>
 
 
-    
-    <!-- CONTENT -->
-    <script src="../frontend/assets/js/student.js"></script>
+
+        <!-- CONTENT -->
+        <script src="../frontend/assets/js/student.js"></script>
 </body>
 
 </html>

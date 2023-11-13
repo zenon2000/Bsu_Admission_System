@@ -222,22 +222,67 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-//pressing available slot
 document.addEventListener('DOMContentLoaded', function () {
-    // Get the "Available Slots" icon and the "Available Slot" content
+    // Get the elements needed for toggling visibility
     const availableBox = document.getElementById('available-box');
     const availableSlot = document.getElementById('available-slot');
+    const readmissionAnnounce = document.getElementById('readmission-announce');
+    const releasingAnnounce = document.getElementById('releasing-annouce');
 
-    // Add a click event listener to the "Available Slots" icon
+    // Add click event listeners to the corresponding elements
     availableBox.addEventListener('click', function () {
-        // Toggle the visibility of the "Available Slot" content
-        if (availableSlot.style.display === 'none' || availableSlot.style.display === '') {
-            availableSlot.style.display = 'block';
+        // Toggle visibility of "Available Slots" content
+        toggleVisibility(availableSlot);
+    });
+
+    const readmittedBox = document.getElementById('readmitted-box');
+    readmittedBox.addEventListener('click', function () {
+        // Show "Readmission Date" content and hide others
+        readmissionAnnounce.style.display = 'block';
+        availableSlot.style.display = 'none';
+        releasingAnnounce.style.display = 'none';
+    });
+
+    // Add click event listener for the "Releasing of Result" box
+    const nonqualifiedBox = document.getElementById('nonqualified-box');
+    nonqualifiedBox.addEventListener('click', function () {
+        // Show "Releasing of Result" content and hide others
+        releasingAnnounce.style.display = 'block';
+        availableSlot.style.display = 'none';
+        readmissionAnnounce.style.display = 'none';
+    });
+
+    // Function to toggle visibility of an element
+    function toggleVisibility(element) {
+        if (element.style.display === 'none' || element.style.display === '') {
+            element.style.display = 'block';
         } else {
-            availableSlot.style.display = 'none';
+            element.style.display = 'none';
         }
+    }
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const seeMoreButton = document.getElementById('see-more-button');
+    const tableRows = document.getElementById('available-table').querySelectorAll('tbody tr');
+
+    // Display only 5 rows initially
+    for (let i = 5; i < tableRows.length; i++) {
+        tableRows[i].style.display = 'none';
+    }
+
+    seeMoreButton.addEventListener('click', function () {
+        // Toggle display and update button text
+        for (let i = 5; i < tableRows.length; i++) {
+            tableRows[i].style.display = (tableRows[i].style.display === 'none' || tableRows[i].style.display === '') ? 'table-row' : 'none';
+        }
+
+        seeMoreButton.innerHTML = (seeMoreButton.innerHTML.includes('See More')) ? 'See Less <i class=\'bx bx-chevron-up\'></i>' : 'See More <i class=\'bx bx-chevron-down\'></i>';
     });
 });
+
+
 
 
 
@@ -349,6 +394,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const natureOfDegree = localStorage.getItem('natureOfDegree');
     const applicantname = localStorage.getItem('applicantname');
     const degreeProgramApplied = localStorage.getItem('degreeProgramApplied');
+    const year = localStorage.getItem('year');
+    const month = localStorage.getItem('month');
+    const day = localStorage.getItem('day');
+
+    // Display the date components in the desired sequence
+    const dateDisplayElement = document.getElementById('date-of-application');
+    dateDisplayElement.textContent = ` ${month}-${day}-${year}`;
 
     // Display the retrieved data on the result page
 
@@ -389,6 +441,10 @@ document.addEventListener('DOMContentLoaded', () => {
     resultApplicantName.textContent = applicantname;
     const degreeProgramAppliedElement = document.getElementById('result-Program');
     degreeProgramAppliedElement.textContent = degreeProgramApplied;
+    const applicantNumber = localStorage.getItem('applicantNumber');
+    document.getElementById('result-ApplicantNumber').textContent = applicantNumber;
+  
+   
     // Retrieve and display the ID picture if available
     const idPicture = localStorage.getItem('id_picture');
 
