@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Profile</title>
     <link rel="icon" href="../frontend/assets/images/BSU Logo1.png" type="image/x-icon">
-    <link rel="stylesheet" href="../frontend/assets/css//student.css" />
+    <link rel="stylesheet" href="../frontend/assets/css/student.css" />
     <!-- Boxicons -->
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
+    <script src="../frontend/assets/js/html2pdf.bundle.js"></script>
 </head>
 
 <body>
@@ -120,7 +120,7 @@
                 </ul>
 
                 <!--Available Slots-->
-                <div id="available-slot" style="display: none;">
+                <div id="available-slot"">
                     <div class="table-data">
                         <div class="order">
                             <div class="head">
@@ -293,6 +293,10 @@
                             <li><a class="active" href="student.html">Home</a></li>
                         </ul>
                     </div>
+                    <a href="#" class="btn-download">
+                        <i class='bx bxs-cloud-download' ></i>
+                        <span class="text">Download PDF</span>
+                    </a>
                 </div>
                 <!--profile-->
                 <div id="student-profile">
@@ -300,6 +304,7 @@
                         <div class="order">
                             <div class="order-profile">
                                 <div class="profile-result">
+                                    <form action="">
                                     <h2 class="pi">Personal Information</h2>
                                     <div class="Picture">
                                         <div id="result-id-picture"></div>
@@ -515,6 +520,7 @@
                                     <h2 style="display: none;">Applicant-Signature:</h2>
                                     <div id="result-signature-slip" style="display: none;">
                                     </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>

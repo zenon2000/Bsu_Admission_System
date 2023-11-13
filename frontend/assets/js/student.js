@@ -453,7 +453,69 @@ document.addEventListener('DOMContentLoaded', () => {
          console.log("Applicant's E-Signature not found in localStorage");
      }
 
+// Add an event listener to the download button
+const downloadButton = document.querySelector('.btn-download');
+downloadButton.addEventListener('click', downloadFormData);
+
+// Function to create and download a PDF file with the form data
+function downloadFormData() {
+    // Create a div element with the form data content
+    const formDataDiv = document.createElement('div');
+    formDataDiv.innerHTML = `
+        <h1>Student Form Data</h1>
+        <p><strong>Name:</strong> ${lastName}, ${firstName} ${middleName}</p>
+        <p><strong>Gender:</strong> ${gender}</p>
+        <p><strong>Birthdate:</strong> ${birthdate}</p>
+        <p><strong>City:</strong> ${city}</p>
+        <p><strong>Birth Province:</strong> ${birthprovince}</p>
+        <p><strong>Country:</strong> ${country}</p>
+        <p><strong>Age:</strong> ${age}</p>
+        <p><strong>Civil Status:</strong> ${civilStatus}</p>
+        <p><strong>Citizenship:</strong> ${citizenship}</p>
+        <p><strong>Nationality:</strong> ${nationality}</p>
+        <p><strong>Street:</strong> ${street}</p>
+        <p><strong>Barangay:</strong> ${barangay}</p>
+        <p><strong>Municipality:</strong> ${municipality}</p>
+        <p><strong>Permanent Province:</strong> ${province}</p>
+        <p><strong>Permanent Country:</strong> ${countryState}</p>
+        <p><strong>Zip Code:</strong> ${zipCode}</p>
+        <p><strong>Telephone:</strong> ${telephone}</p>
+        <p><strong>Facebook:</strong> ${facebook}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Contact Person 1:</strong> ${contactPersonName}, <strong>Mobile:</strong> ${contactPersonMobile}, <strong>Relationship:</strong> ${relationship}</p>
+        <p><strong>Contact Person 2:</strong> ${contactPerson2Name}, <strong>Mobile:</strong> ${contactPerson2Mobile}, <strong>Relationship:</strong> ${relationship2}</p>
+        <p><strong>Academic Classification:</strong> ${academicClassification}</p>
+        <p><strong>High School Address:</strong> ${highSchoolAddress}</p>
+        <p><strong>ALS/PEPT Address:</strong> ${alsPeptAddress}</p>
+        <p><strong>College/University Address:</strong> ${collegeAddress}</p>
+        <p><strong>LRN:</strong> ${lrn}</p>
+        <p><strong>Degree Applied:</strong> ${degreeApplied}</p>
+        <p><strong>Major:</strong> ${major}</p>
+        <p><strong>Nature of Degree:</strong> ${natureOfDegree}</p>
+        <p><strong>Applicant Name:</strong> ${applicantname}</p>
+        <p><strong>Degree Program Applied:</strong> ${degreeProgramApplied}</p>
+
+        <!-- Display ID picture -->
+        <p><strong>ID Picture:</strong></p>
+        <img src="${localStorage.getItem('id_picture')}" style="max-width: 100%; height: auto;"/>
+
+        <!-- Display Signatures -->
+        <p><strong>Student's Signature:</strong></p>
+        <img src="${localStorage.getItem('signature')}" style="max-width: 100%; height: auto;"/>
+        
+        <p><strong>Applicant's Signature:</strong></p>
+        <img src="${localStorage.getItem('applicantSignature')}" style="max-width: 100%; height: auto;"/>
+    `;
+
+    // Convert the div content to a PDF
+    html2pdf(formDataDiv, {
+        margin: 10,
+        filename: 'student_form_data.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+    });
+}
+});
 
 
-     
- });

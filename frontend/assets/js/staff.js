@@ -268,7 +268,6 @@ document.addEventListener('DOMContentLoaded', function () {
         AdmittedTable.style.display = 'none';
         ReadmittedTable.style.display = 'none';
         NonqualifiedTable.style.display = 'none';
-    
         overallTable.style.display = 'block';
       
     });
@@ -370,16 +369,7 @@ document.addEventListener('DOMContentLoaded', function () {
         CollegeCoursesContent.style.display = 'none';
     });
 
-    CollegeCoursesLink.addEventListener('click', function (event) {
-        event.preventDefault(); // Prevent the default link behavior
-        dashboardContent.style.display = 'none';
-        StudentProfileContent.style.display = 'none';
-        StudentResultContent.style.display = 'none'; 
-        ImportContent.style.display = 'none'; 
-        ExportContent.style.display = 'none';
-        StudentFormsContent.style.display = 'none';
-        CollegeCoursesContent.style.display = 'block';
-    });
+
 });
 //import files
     var importElement = document.querySelector('link[rel="import"]');
