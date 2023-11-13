@@ -1,14 +1,14 @@
 const allSideMenu = document.querySelectorAll('#sidebar .side-menu.top li a');
 
-allSideMenu.forEach(item=> {
-	const li = item.parentElement;
+allSideMenu.forEach(item => {
+    const li = item.parentElement;
 
-	item.addEventListener('click', function () {
-		allSideMenu.forEach(i=> {
-			i.parentElement.classList.remove('active');
-		})
-		li.classList.add('active');
-	})
+    item.addEventListener('click', function () {
+        allSideMenu.forEach(i => {
+            i.parentElement.classList.remove('active');
+        })
+        li.classList.add('active');
+    })
 });
 
 
@@ -18,7 +18,7 @@ const menuBar = document.querySelector('#content nav .bx.bx-menu');
 const sidebar = document.getElementById('sidebar');
 
 menuBar.addEventListener('click', function () {
-	sidebar.classList.toggle('hide');
+    sidebar.classList.toggle('hide');
 })
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -51,33 +51,33 @@ const searchButtonIcon = document.querySelector('#content nav form .form-input b
 const searchForm = document.querySelector('#content nav form');
 
 searchButton.addEventListener('click', function (e) {
-	if(window.innerWidth < 576) {
-		e.preventDefault();
-		searchForm.classList.toggle('show');
-		if(searchForm.classList.contains('show')) {
-			searchButtonIcon.classList.replace('bx-search', 'bx-x');
-		} else {
-			searchButtonIcon.classList.replace('bx-x', 'bx-search');
-		}
-	}
+    if (window.innerWidth < 576) {
+        e.preventDefault();
+        searchForm.classList.toggle('show');
+        if (searchForm.classList.contains('show')) {
+            searchButtonIcon.classList.replace('bx-search', 'bx-x');
+        } else {
+            searchButtonIcon.classList.replace('bx-x', 'bx-search');
+        }
+    }
 })
 
 
 
 
-if(window.innerWidth < 768) {
-	sidebar.classList.add('hide');
-} else if(window.innerWidth > 576) {
-	searchButtonIcon.classList.replace('bx-x', 'bx-search');
-	searchForm.classList.remove('show');
+if (window.innerWidth < 768) {
+    sidebar.classList.add('hide');
+} else if (window.innerWidth > 576) {
+    searchButtonIcon.classList.replace('bx-x', 'bx-search');
+    searchForm.classList.remove('show');
 }
 
 
 window.addEventListener('resize', function () {
-	if(this.innerWidth > 576) {
-		searchButtonIcon.classList.replace('bx-x', 'bx-search');
-		searchForm.classList.remove('show');
-	}
+    if (this.innerWidth > 576) {
+        searchButtonIcon.classList.replace('bx-x', 'bx-search');
+        searchForm.classList.remove('show');
+    }
 })
 
 
@@ -85,11 +85,11 @@ window.addEventListener('resize', function () {
 const switchMode = document.getElementById('switch-mode');
 
 switchMode.addEventListener('change', function () {
-	if(this.checked) {
-		document.body.classList.add('dark');
-	} else {
-		document.body.classList.remove('dark');
-	}
+    if (this.checked) {
+        document.body.classList.add('dark');
+    } else {
+        document.body.classList.remove('dark');
+    }
 })
 
 
@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function () {
 //clock
 // Calling showTime function at every second
 setInterval(showTime, 1000);
- 
+
 // Defining showTime funcion
 function showTime() {
     // Getting current time and date
@@ -136,7 +136,7 @@ function showTime() {
     let min = time.getMinutes();
     let sec = time.getSeconds();
     am_pm = "AM";
- 
+
     // Setting time for 12 Hrs format
     if (hour >= 12) {
         if (hour > 12) hour -= 12;
@@ -145,12 +145,12 @@ function showTime() {
         hr = 12;
         am_pm = "AM";
     }
- 
+
     hour =
         hour < 10 ? "0" + hour : hour;
     min = min < 10 ? "0" + min : min;
     sec = sec < 10 ? "0" + sec : sec;
- 
+
     let currentTime =
         hour +
         ":" +
@@ -158,13 +158,13 @@ function showTime() {
         ":" +
         sec +
         am_pm;
- 
+
     // Displaying the time
     document.getElementById(
         "clock"
     ).innerHTML = currentTime;
 }
- 
+
 showTime();
 //clock
 
@@ -202,7 +202,7 @@ function closeAllPopups() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  
+
     const profileButton = document.querySelector("#profile-button");
     const profilePopup = document.querySelector("#profile-popup");
 
@@ -247,14 +247,14 @@ document.addEventListener('DOMContentLoaded', function () {
     const dashboardContent = document.getElementById('student-profile-content');
     const StudentProfileLink = document.getElementById('student-profile-link');
     const StudentProfileContent = document.getElementById('dashboard-content');
-    const StudentResultLink = document.getElementById('student-result-link'); 
+    const StudentResultLink = document.getElementById('student-result-link');
     const StudentResultContent = document.getElementById('student-result-content');
-    
+
     // Initially hide the content divs by default
     dashboardContent.style.display = 'block';
     StudentProfileContent.style.display = 'none';
     StudentResultContent.style.display = 'none';
-   
+
 
     // Add event listeners to the links
     dashboardLink.addEventListener('click', function (event) {
@@ -262,16 +262,16 @@ document.addEventListener('DOMContentLoaded', function () {
         dashboardContent.style.display = 'block';
         StudentProfileContent.style.display = 'none';
         StudentResultContent.style.display = 'none';
-       
+
     });
 
     StudentProfileLink.addEventListener('click', function (event) {
         event.preventDefault(); // Prevent the default link behavior
         dashboardContent.style.display = 'none';
         StudentProfileContent.style.display = 'block';
-        StudentResultContent.style.display = 'none'; 
-       
-    
+        StudentResultContent.style.display = 'none';
+
+
     });
 
     StudentResultLink.addEventListener('click', function (event) {
@@ -279,10 +279,10 @@ document.addEventListener('DOMContentLoaded', function () {
         dashboardContent.style.display = 'none';
         StudentProfileContent.style.display = 'none';
         StudentResultContent.style.display = 'block';
-        
+
     });
 
-  
+
 });
 
 
@@ -318,8 +318,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const contactPersonName = localStorage.getItem('contact_person_1');
     const contactPersonMobile = localStorage.getItem('contact_person_1_mobile');
     const relationship = localStorage.getItem('relationship_1');
-      // Update the DOM elements for Contact Person 1
-      if (contactPersonName && contactPersonMobile && relationship) {
+    // Update the DOM elements for Contact Person 1
+    if (contactPersonName && contactPersonMobile && relationship) {
         document.getElementById('result-ContactOne').textContent = contactPersonName;
         document.getElementById('result-NumberOne').textContent = contactPersonMobile;
         document.getElementById('result-RelationshipOne').textContent = relationship;
@@ -327,7 +327,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Handle case where data is not available in localStorage
         console.log('Emergency contact person details not found in localStorage');
     }
-   
+
     const contactPerson2Name = localStorage.getItem('contact_person_2');
     const contactPerson2Mobile = localStorage.getItem('contact_person_2_mobile');
     const relationship2 = localStorage.getItem('relationship_2');
@@ -389,79 +389,84 @@ document.addEventListener('DOMContentLoaded', () => {
     resultApplicantName.textContent = applicantname;
     const degreeProgramAppliedElement = document.getElementById('result-Program');
     degreeProgramAppliedElement.textContent = degreeProgramApplied;
-   // Retrieve and display the ID picture if available
+    // Retrieve and display the ID picture if available
     const idPicture = localStorage.getItem('id_picture');
 
     if (idPicture) {
         // Create the image elements
         const img1 = document.createElement('img');
         img1.src = idPicture;
-    
+
         const img2 = document.createElement('img');
         img2.src = idPicture;
-    
+
         const img3 = document.createElement('img');
         img3.src = idPicture;
-        
+
         const img4 = document.createElement('img');
         img4.src = idPicture;
-    
-    
+
+
         // Append the first image to 'result-id-picture'
         document.getElementById('result-id-picture').appendChild(img1);
-    
+
         // Replace the image source inside the 'profile-button' anchor tag
         const profileImage = document.getElementById('profile-image');
         profileImage.src = idPicture;
-    
+
         // Replace the existing 'profile-button' image with img2
         profileImage.parentNode.replaceChild(img2, profileImage);
-    
+
         // Replace the 'profile-picture' image with img3
         const profilePicture = document.getElementById('profile-picture');
         profilePicture.parentNode.replaceChild(img3, profilePicture);
 
-          // Append img4 to the 'StudentResult-picture' 
-          const studentResultPicture = document.getElementById('StudentResult-picture');
-          studentResultPicture.appendChild(img4);
+        // Append img4 to the 'StudentResult-picture' 
+        const studentResultPicture = document.getElementById('StudentResult-picture');
+        studentResultPicture.appendChild(img4);
     } else {
         console.log('ID picture not found in localStorage');
     }
-    
- 
-   
-    
-     // Retrieve and display the student's signature
-     const signature = localStorage.getItem('signature');
-     if (signature) {
-         const img = document.createElement('img');
-         img.src = signature;
-         img.style.width = '200px'; // Adjust the size as needed
-         document.getElementById('result-signature').appendChild(img);
-     } else {
-         console.log('E-Signature not found in localStorage');
-     }
- 
-     // Retrieve and display the applicant's signature
-     const applicantSignature = localStorage.getItem('applicantSignature');
-     if (applicantSignature) {
-         const img = document.createElement('img');
-         img.src = applicantSignature;
-         img.style.width = '200px'; // Adjust the size as needed
-         document.getElementById('result-signature-slip').appendChild(img);
-     } else {
-         console.log("Applicant's E-Signature not found in localStorage");
-     }
 
-// Add an event listener to the download button
-const downloadButton = document.querySelector('.btn-download');
-downloadButton.addEventListener('click', downloadFormData);
 
-// Function to create and download a PDF file with the form data
-function downloadFormData() {
-    // Create a div element with the form data content
-    const formDataDiv = document.createElement('div');
-    formDataDiv.innerHTML = `
+
+
+    // Retrieve and display the student's signature
+    const signature = localStorage.getItem('signature');
+    if (signature) {
+        const img = document.createElement('img');
+        img.src = signature;
+        img.style.width = '200px'; // Adjust the size as needed
+        document.getElementById('result-signature').appendChild(img);
+    } else {
+        console.log('E-Signature not found in localStorage');
+    }
+
+    // Retrieve and display the applicant's signature
+    const applicantSignature = localStorage.getItem('applicantSignature');
+    if (applicantSignature) {
+        const img = document.createElement('img');
+        img.src = applicantSignature;
+        img.style.width = '200px'; // Adjust the size as needed
+        document.getElementById('result-signature-slip').appendChild(img);
+    } else {
+        console.log("Applicant's E-Signature not found in localStorage");
+    }
+
+    // Add an event listener to the download button
+    const downloadButton = document.querySelector('.btn-download');
+    downloadButton.addEventListener('click', downloadFormData);
+
+    // Function to create and download a PDF file with the form data
+    function downloadFormData() {
+        // Create a div element with the form data content
+        const formDataDiv = document.createElement('div');
+        formDataDiv.innerHTML = `
+    
+        <!-- Display ID picture -->
+        <p><strong>ID Picture:</strong></p>
+        <img src="${localStorage.getItem('id_picture')}" style="max-width: 100px; height: auto;"/>
+
         <h1>Student Form Data</h1>
         <p><strong>Name:</strong> ${lastName}, ${firstName} ${middleName}</p>
         <p><strong>Gender:</strong> ${gender}</p>
@@ -495,10 +500,6 @@ function downloadFormData() {
         <p><strong>Applicant Name:</strong> ${applicantname}</p>
         <p><strong>Degree Program Applied:</strong> ${degreeProgramApplied}</p>
 
-        <!-- Display ID picture -->
-        <p><strong>ID Picture:</strong></p>
-        <img src="${localStorage.getItem('id_picture')}" style="max-width: 100%; height: auto;"/>
-
         <!-- Display Signatures -->
         <p><strong>Student's Signature:</strong></p>
         <img src="${localStorage.getItem('signature')}" style="max-width: 100%; height: auto;"/>
@@ -507,15 +508,15 @@ function downloadFormData() {
         <img src="${localStorage.getItem('applicantSignature')}" style="max-width: 100%; height: auto;"/>
     `;
 
-    // Convert the div content to a PDF
-    html2pdf(formDataDiv, {
-        margin: 10,
-        filename: 'student_form_data.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2 },
-        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-    });
-}
+        // Convert the div content to a PDF
+        html2pdf(formDataDiv, {
+            margin: 10,
+            filename: 'student_form_data.pdf',
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { scale: 2 },
+            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+        });
+    }
 });
 
 
