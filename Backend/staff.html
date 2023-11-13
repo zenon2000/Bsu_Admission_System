@@ -141,12 +141,28 @@
                     <div class="table-data">
                         <div class="order">
                             <div class="head">
+                                <div class="dropdown-nature">
                                 <h3>List of Students</h3>
-                                <i class='bx bx-search' id="searchIcon"></i>
-                                <div class="search-box" id="searchBox-student-profile">
-                                    <input type="text" id="student-profile-search" placeholder="Search...">
+                                <!--Drop Down for Nature of Degree-->
+                                <label for="myDropdown" class="nature-degree">Select Nature of Degree:</label>
+                                <select id="myDropdown">
+                                    <option value disabled selected>Select Nature of Degree</option>
+                                    <option value="non-board">Non-Board</option>
+                                    <option value="board">Board</option>
+                                </select>
+                                <!-- Container for the second dropdown -->
+                                <div id="secondDropdownContainer" style="display: none;">
+                                    <label for="secondDropdown">Select a course:</label>
+                                    <select id="secondDropdown">
+                                        <!-- Options for the second dropdown related to 'Board' -->
+                                        <option value="math">Math</option>
+                                        <option value="science">Science</option>
+                                        <option value="english">English</option>
+                                    </select>
                                 </div>
                             </div>
+                            </div>
+                            <div id="table-container">
                             <table>
                                 <colgroup>
                                     <col style="width: 10%;">
@@ -189,7 +205,7 @@
                         </div>
                     </div>
                 </div>
-
+                </div>
             </div>
 
             <!-- Student Result -->

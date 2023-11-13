@@ -661,14 +661,20 @@ nav {
 	overflow-y: auto;
 }
 
-/* Add this CSS to adjust the search box and icon */
-.search-box {
+/* Add this CSS to adjust nature of degree dropdown */
+.dropdown-nature {
     display: flex;
+	justify-content: flex-start;
     align-items: center;
     margin-right: 20px; /* Add some margin for spacing */
 }
 
-/* Adjust the input box styles */
+.dropdown-nature .nature-degree {
+    display: inline-block;
+	float: right;
+}
+
+/* Adjust the input box styles */ /*delete*/
 .search-box input[type="text"] {
     border: none;
     padding: 5px 10px;
@@ -1061,18 +1067,20 @@ nav {
 #content main .table-data .order table {
 	width: 100%;
 	border-collapse: collapse; /* Merge cell borders into a single line */
-	border: 2px solid var(--dark-grey); /* Add a 1px solid border around table headers and data cells */
+	border: 1px solid var(--dark-grey); /* Add a 1px solid border around table headers and data cells */
 }
 #content main .table-data .order table th {
-	padding-bottom: 1px;
-	font-size: 14px;
-	border-bottom: 1px solid var(--grey);
-	border: 2px solid var(--dark-grey); /* Add a 1px solid border around table headers and data cells */
+	border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+	font-size: 12px;
+	background-color: #f2f2f2;
 }
 #content main .table-data .order table td {
-	padding: 2px 5px;
+	border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
 	font-size: 12px;
-	border: 2px solid var(--dark-grey); /* Add a 1px solid border around table headers and data cells */
 }
 #content main .table-data .order table th, td {
 	width: 0px;
