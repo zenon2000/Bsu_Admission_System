@@ -78,29 +78,17 @@ function run(hideTab, showTab) {
         var fileName = $(this).val().split("\\").pop();
         $('label[for="id_picture"]').text(fileName);
       });
-      // Validate the picture input
       var pictureInput = $('input[name="id_picture"]');
-      if (pictureInput[0].files.length === 0) {
-        alert("Please upload an ID picture.");
-        return false;
-      }
-
-      // Validate the e-signature
-      if (signaturePad.isEmpty()) {
-        alert("Please provide your e-signature.");
-        return false;
-      }
-      // Display a confirmation dialog for the user to check information before proceeding
-      if (!confirm("Are you sure you want to proceed to the next step? Please double-check your information on this page.")) {
-        return false;
-      }
-    } else if (hideTab === 3) {
-      // Validating the applicant's e-signature in Tab 3
-      if (applicantSignaturePad.isEmpty()) {
-        alert("Please provide the applicant's e-signature.");
-        return false;
-      }
+    if (pictureInput[0].files.length === 0) {
+      alert("Please upload an ID picture.");
+      return false;
     }
+
+    // Display a confirmation dialog for the user to check information before proceeding
+    if (!confirm("Are you sure you want to proceed to the next step? Please double-check your information on this page.")) {
+      return false;
+    }
+  }
 
     for (i = 0; i < y.length; i++) {
       if ((hideTab === 2 || hideTab === 3) && y[i].value === "") {
@@ -326,37 +314,6 @@ document.getElementById('id_picture').addEventListener('change', function (e) {
 });
 
 
-// Initialize the Signature Pad
-var signaturePad = new SignaturePad(document.querySelector("#signature-pad canvas"));
-//  handle the second signature
-var applicantSignaturePad = new SignaturePad(document.querySelector("#applicant-signature-pad canvas"));
-
-// Clear the e-signature without reloading the page
-document.getElementById("clear-signature").addEventListener("click", function (e) {
-  e.preventDefault(); // Prevent the default form submission behavior
-  signaturePad.clear();
-});
-// Clear the applicant's e-signature without reloading the page
-document.getElementById("clear-applicant-signature").addEventListener("click", function (e) {
-  e.preventDefault(); // Prevent the default form submission behavior
-  applicantSignaturePad.clear();
-});
-
-
-
-// Function to submit the form with both e-signatures
-function submitForm() {
-  var userSignatureData = signaturePad.toDataURL(); // Get the user's e-signature as data URL
-  var applicantSignatureData = applicantSignaturePad.toDataURL(); // Get the applicant's e-signature as data URL
-
-  // You can send the signature data to the server or handle it as needed
-  // For demonstration, we'll log it to the console
-  console.log("User's E-Signature Data: ", userSignatureData);
-  console.log("Applicant's E-Signature Data: ", applicantSignatureData);
-  alert("Form submitted with e-signatures. Check the console for the e-signature data.");
-}
-
-
 function generateApplicantNumber() {
   // Get the current date
   const currentDate = new Date();
@@ -377,126 +334,3 @@ function generateApplicantNumber() {
 
 // Call the function when the page loads
 window.onload = generateApplicantNumber;
-
-function handleForm(event) {
-  event.preventDefault();
-
-  // Retrieve and store all form data in localStorage
-  const lastName = document.getElementById('last_name').value;
-  const firstName = document.getElementById('first_name').value;
-  const middleName = document.getElementById('middle_name').value;
-  const gender = document.getElementById('gender').value;
-  const birthdate = document.getElementById('birthdate').value;
-  const city = document.getElementById('birthplace-municipality').value;
-  const birthprovince = document.getElementById('birthplace-province').value;
-  const country = document.getElementById('birthplace_country').value;
-  const age = document.getElementById('age').value;
-  const civilStatus = document.getElementById('civil_status').value;
-  const citizenship = document.getElementById('citizenship').value;
-  const nationality = document.getElementById('nationality').value;
-  const houseStreet = document.getElementById('house_street').value;
-  const barangaySubdivision = document.getElementById('barangay_subdivision').value;
-  const municipalityCity = document.getElementById('municipality_city').value;
-  const province = document.getElementById('province').value;
-  const countryState = document.getElementById('country_state').value;
-  const zipCode = document.getElementById('zip_code').value;
-  const phone = document.getElementById('phone').value;
-  const facebook = document.getElementById('facebook').value;
-  const email = document.getElementById('email').value;
-  const contactPersonName = document.getElementById('contact_person_1').value;
-  const contactPersonMobile = document.getElementById('contact_person_1_mobile').value;
-  const relationship = document.getElementById('relationship_1').value;
-  const contactPerson2Name = document.getElementById('contact_person_2').value;
-  const contactPerson2Mobile = document.getElementById('contact_person_2_mobile').value;
-  const relationship2 = document.getElementById('relationship_2').value;
-  const academicClassification = document.getElementById('academic_classification').value;
-  const highSchoolAddress = document.getElementById('high_school_name_address').value;
-  const alsPeptAddress = document.getElementById('als_pept_name_address').value;
-  const collegeAddress = document.getElementById('college_name_address').value;
-  const lrn = document.getElementById('lrn').value;
-  const degreeApplied = document.getElementById('degree_applied').value;
-
-  const natureOfDegree = document.getElementById('nature_of_degree').value;
-  const canvas = document.querySelector('#signature-pad canvas');
-  const signatureData = canvas.toDataURL();
-  const applicantCanvas = document.querySelector('#applicant-signature-pad canvas');
-  const applicantSignatureData = applicantCanvas.toDataURL();
-  const applicantname = document.getElementById('applicant_name').value;
-  const degreeProgramApplied = document.getElementById('slip_degree').value;
-
-  // Store data in localStorage
-  localStorage.setItem('lastName', lastName);
-  localStorage.setItem('firstName', firstName);
-  localStorage.setItem('middleName', middleName);
-  localStorage.setItem('gender', gender);
-  localStorage.setItem('birthdate', birthdate);
-  localStorage.setItem('city', city);
-  localStorage.setItem('birthprovince', birthprovince);
-  localStorage.setItem('country', country);
-  localStorage.setItem('age', age);
-  localStorage.setItem('civilStatus', civilStatus);
-  localStorage.setItem('citizenship', citizenship);
-  localStorage.setItem('nationality', nationality);
-  localStorage.setItem('houseStreet', houseStreet);
-  localStorage.setItem('barangaySubdivision', barangaySubdivision);
-  localStorage.setItem('municipalityCity', municipalityCity);
-  localStorage.setItem('province', province);
-  localStorage.setItem('countryState', countryState);
-  localStorage.setItem('zipCode', zipCode);
-  localStorage.setItem('phone', phone);
-  localStorage.setItem('facebook', facebook);
-  localStorage.setItem('email', email);
-  localStorage.setItem('contact_person_1', contactPersonName);
-  localStorage.setItem('contact_person_1_mobile', contactPersonMobile);
-  localStorage.setItem('relationship_1', relationship);
-  localStorage.setItem('contact_person_1', contactPersonName);
-  localStorage.setItem('contact_person_1_mobile', contactPersonMobile);
-  localStorage.setItem('relationship_1', relationship);
-  localStorage.setItem('contact_person_2', contactPerson2Name);
-  localStorage.setItem('contact_person_2_mobile', contactPerson2Mobile);
-  localStorage.setItem('relationship_2', relationship2);
-  localStorage.setItem('academicClassification', academicClassification);
-  localStorage.setItem('highSchoolAddress', highSchoolAddress);
-  localStorage.setItem('alsPeptAddress', alsPeptAddress);
-  localStorage.setItem('collegeAddress', collegeAddress);
-  localStorage.setItem('lrn', lrn);
-  localStorage.setItem('degreeApplied', degreeApplied);
-
-  localStorage.setItem('natureOfDegree', natureOfDegree);
-  localStorage.setItem('signature', signatureData);
-  localStorage.setItem('applicantSignature', applicantSignatureData);
-  localStorage.setItem('applicantname', applicantname);
-  localStorage.setItem('degreeProgramApplied', degreeProgramApplied);
-  const applicantNumber = document.getElementById('applicant_number').value;
-  localStorage.setItem('applicantNumber', applicantNumber);
-  const applicationDate = document.getElementById('application_date').value;
-  const dateComponents = applicationDate.split('-'); // Assuming the date format is YYYY-MM-DD
-
-  const year = dateComponents[0];
-  const month = dateComponents[1];
-  const day = dateComponents[2];
-
-  // Store date components in localStorage
-  localStorage.setItem('year', year);
-  localStorage.setItem('month', month);
-  localStorage.setItem('day', day);
-
-  const fileInput = document.getElementById('id_picture');
-  if (fileInput.files.length > 0) {
-    const reader = new FileReader();
-
-    reader.onload = function (e) {
-      const idPictureData = e.target.result;
-      localStorage.setItem('id_picture', idPictureData);
-
-      // Redirect to the result page
-      window.location.href = 'student.html';
-    };
-
-    reader.readAsDataURL(fileInput.files[0]);
-  } else {
-    // If no ID picture uploaded, still redirect to the result page
-    window.location.href = 'student.html';
-  }
-}
-
