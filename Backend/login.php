@@ -33,13 +33,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     exit(); 
                 } else {
                     // User needs to fill out the admission form, redirect to admission form
-                    header("Location: admissionform.html");
+                    header("Location: ../Backend/save_admission_data.php");
                     exit();
                 }
             } elseif ($userType == 'admin') {
-                header("Location: admin.html");
+                header("Location: ../frontend/admin.html");
             } elseif ($userType == 'staff') {
-                header("Location: staff.html");
+                header("Location: ../frontend/staff.html");
             } else {
                 // Handle other user types
             }
