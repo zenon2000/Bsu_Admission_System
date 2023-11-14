@@ -332,9 +332,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-
-
-
 //log out prompt
 function confirmLogout() {
     // Display a confirmation dialog
@@ -342,7 +339,7 @@ function confirmLogout() {
 
     // If the user clicks "OK," redirect to logout.php
     if (confirmLogout) {
-        window.location.href = "logout.php";
+        window.location.href = "../Backend/logout.php";
     } else {
         alert("Logout canceled");
     }

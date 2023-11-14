@@ -1,4 +1,7 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 include("config.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -69,7 +72,7 @@ if ($id_picture['error'] === UPLOAD_ERR_OK) {
 // Save file path in the database
 $id_picture_data = $target_path;
 } else {
-    echo "Error uploading ID picture. Error code: " . $id_picture['error'];
+    echo "Error uploading ID picture. Please ensure it's a valid image file.";
     exit();
 }
 
