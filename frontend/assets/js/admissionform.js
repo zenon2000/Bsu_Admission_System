@@ -253,7 +253,7 @@ function validateEmail() {
   if (emailRegex.test(emailInput.value)) {
     emailError.textContent = ""; // Clear error message
   } else {
-    emailError.textContent = "Please enter a valid email address.";
+    emailError.textContent = "Please enter the same email address.";
   }
 }
 function validatePhoneNumber(inputId) {

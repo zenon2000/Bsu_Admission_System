@@ -37,6 +37,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $science_grade = $_POST['scienceGrade'];
     $gwa_grade = $_POST['gwaGrade'];
 
+       // Check if the email entered in the admission form matches the one saved in the session
+       $admissionFormEmail = $_POST['email'];
+
+       if (isset($_SESSION['registered_email']) && $admissionFormEmail !== $_SESSION['registered_email']) {
+           // Email in admission form does not match the registered email
+           echo "Please use the same email you used during registration.";
+           exit();
+       }
 // Check if a file was uploaded
 if ($id_picture['error'] === UPLOAD_ERR_OK) {
     // Ensure the file is an image (optional)
@@ -74,16 +82,24 @@ $id_picture_data = $target_path;
     $stmt->bind_param("sssssissssiisssississssssssssdddd", 
         $id_picture_data, $applicant_name, $gender, $birthdate, $birthplace, $age, $civil_status, $citizenship, $nationality, $permanent_address, $zip_code, $phone, $facebook, $email, $contact_person_1, $contact_person_1_mobile, $relationship_1, $contact_person_2, $contact_person_2_mobile, $relationship_2, $academic_classification, $high_school_name_address, $als_pept_name_address, $college_name_address, $lrn, $degree_applied, $nature_of_degree, $applicant_number, $application_date, $english_grade, $math_grade, $science_grade, $gwa_grade);
 
-    // Execute the statement
-    if ($stmt->execute()) {
-        echo "Data saved successfully!";
-    } else {
-        echo "Error: " . $stmt->error;
-    }
+  // Execute the statement
+  if ($stmt->execute()) {
+    // Set a session variable indicating that the admission form is filled out
+    $_SESSION['admission_form_filled'] = true;
 
-    // Close the statement
-    $stmt->close();
+    // Redirect to student dashboard
+    header("Location: student.html");
+    exit();
+} else {
+    echo "Error: " . $stmt->error;
 }
+
+// Close the statement
+$stmt->close();
+    // Unset the session variable to remove the stored email (optional)
+    unset($_SESSION['registered_email']);
+}
+
 
 $conn->close();
 ?>

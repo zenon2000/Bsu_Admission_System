@@ -23,6 +23,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit(); // Stop execution
         }
         // Proceed with user registration if the email is unique
+        // Save the user's email in the session
+    $_SESSION['registered_email'] = $email;
     
     $stmt = $conn->prepare("INSERT INTO users (name, email, password, userType) VALUES (?, ?, ?, ?)");
     $stmt->bind_param("ssss", $name, $email, $hashedPassword, $userType);

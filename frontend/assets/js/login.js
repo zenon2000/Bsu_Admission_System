@@ -23,3 +23,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 });
+document.addEventListener('DOMContentLoaded', function () {
+    var registerEmailInput = document.getElementById('registerEmail');
+
+    registerEmailInput.addEventListener('input', function () {
+        // Store the entered email in a variable
+        var enteredEmail = registerEmailInput.value;
+
+        // Set the entered email in a cookie or local storage
+        localStorage.setItem('enteredEmail', enteredEmail);
+    });
+});
