@@ -15,7 +15,7 @@ $result = $conn->query($sql);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BSU OUR Admission Unit Personnel</title>
     <link rel="icon" href="../frontend/assets/images/BSU Logo1.png" type="image/x-icon">
-    <link rel="stylesheet" href="../frontend/assets/css//staff.css" />
+    <link rel="stylesheet" href="../frontend/assets/css//personnel.css" />
     <!-- Boxicons -->
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 </head>
