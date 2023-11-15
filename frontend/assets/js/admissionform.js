@@ -179,7 +179,7 @@ function calculateGWA() {
         // Show board programs dropdown
         document.getElementById("boardProgramsDropdown").style.display = "block";
       } else {
-        alert("You didn't pass the required GWA (86% or above) for board programs.");
+        alert("Sorry! your GWA didn't pass the required General Weighted Average for Board Program. We advise you not to continue filling the Admission Form, Thank you.");
       }
     } else {
       alert("Please enter valid grades between 75 and 99.");
@@ -206,7 +206,7 @@ function submitNonBoardForm() {
         alert("You didn't pass the required GWA (80% or above) for non-board programs.");
       }
     } else {
-      alert("Please enter a valid GWA between 75 and 99.");
+      alert("Sorry! your GWA didn't pass the required General Weighted Average for Non-board Program. We advise you not to continue filling the Admission Form, Thank you.");
     }
   }
 }

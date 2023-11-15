@@ -189,13 +189,14 @@ document.addEventListener('DOMContentLoaded', function () {
     const MasterListContent = document.getElementById('master-list-content');
     const StudentResultLink = document.getElementById('student-result-link'); 
     const StudentResultContent = document.getElementById('student-result-content');
-  
+    const AnnouncementsLink = document.getElementById('announcements-link'); 
+    const AnnouncementsContent = document.getElementById('announcements-content'); 
     
     // Initially hide the content divs by default
     dashboardContent.style.display = 'block';
     MasterListContent.style.display = 'none';
     StudentResultContent.style.display = 'none';
-  
+    AnnouncementsContent.style.display = 'none'; 
 
     // Add event listeners to the links
     dashboardLink.addEventListener('click', function (event) {
@@ -203,7 +204,7 @@ document.addEventListener('DOMContentLoaded', function () {
         dashboardContent.style.display = 'block';
         MasterListContent.style.display = 'none';
         StudentResultContent.style.display = 'none';
-     
+        AnnouncementsContent.style.display = 'none'; 
     });
 
     MasterListLink.addEventListener('click', function (event) {
@@ -211,7 +212,7 @@ document.addEventListener('DOMContentLoaded', function () {
         dashboardContent.style.display = 'none';
         MasterListContent.style.display = 'block';
         StudentResultContent.style.display = 'none';
-       
+        AnnouncementsContent.style.display = 'none'; 
     });
 
     StudentResultLink.addEventListener('click', function (event) {
@@ -219,10 +220,16 @@ document.addEventListener('DOMContentLoaded', function () {
         dashboardContent.style.display = 'none';
         MasterListContent.style.display = 'none';
         StudentResultContent.style.display = 'block';
-      
+        AnnouncementsContent.style.display = 'none'; 
     });
 
-  
+    AnnouncementsLink.addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent the default link behavior
+        dashboardContent.style.display = 'none';
+        MasterListContent.style.display = 'none';
+        StudentResultContent.style.display = 'none';
+        AnnouncementsContent.style.display = 'block'; 
+    });
 });
 
 // tab like buttons for Student Result and Forms
@@ -246,113 +253,3 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-//dropdown for nature of degree
-document.addEventListener('DOMContentLoaded', function () {
-    var dropdown = document.getElementById('myDropdown');
-    var secondDropdownContainer = document.getElementById('secondDropdownContainer');
-    var secondDropdown = document.getElementById('secondDropdown');
-
-    // Add an event listener to the dropdown
-    dropdown.addEventListener('change', function () {
-        if (dropdown.value === 'board') {
-            // Show the second dropdown if 'Board' is selected
-            secondDropdownContainer.style.display = 'block';
-        } else {
-            // Hide the second dropdown for other selections
-            secondDropdownContainer.style.display = 'none';
-        }
-    });
-
-    // Set the value based on the condition
-    var condition = true;
-
-    if (condition) {
-        dropdown.value = 'board';
-        // Show the second dropdown initially if 'Board' is selected
-        secondDropdownContainer.style.display = 'block';
-    } else {
-        dropdown.value = 'non-board';
-    }
-});
-
-
-$(document).ready(function () {
-    // Enable editing when the "Edit" button is clicked
-    $(".btn-edit").on("click", function () {
-        const id = $(this).data("id");
-
-        // Hide "Edit" button and show "Update" button
-        $(`#row_${id} .btn-edit`).hide();
-        $(`#row_${id} .btn-update`).show();
-
-        // Enable editing for all editable spans in the row
-        $(`#row_${id} .editable`).attr("contenteditable", true).prop("disabled", false);
-
-        // Replace status cell with dropdown
-        const currentStatus = $(`#row_${id} .status-dropdown`).val();
-        const statusDropdownHtml = `
-            <select class='status-dropdown' data-id='${id}'>
-                <option value='Pending' ${currentStatus === 'Pending' ? 'selected' : ''}>Pending</option>
-                <option value='Approve' ${currentStatus === 'Approve' ? 'selected' : ''}>Approve</option>
-                <option value='Reject' ${currentStatus === 'Reject' ? 'selected' : ''}>Reject</option>
-            </select>
-        `;
-        $(`#row_${id} .status-cell`).html(statusDropdownHtml);
-    });
-
-
-    // Update the data in the database when the "Update" button is clicked
-    $(".btn-update").on("click", function () {
-        const id = $(this).data("id");
-
-        // Hide "Update" button and show "Edit" button
-        $(`#row_${id} .btn-update`).hide();
-        $(`#row_${id} .btn-edit`).show();
-
-        // Disable editing for all editable spans and the status dropdown in the row
-        $(`#row_${id} .editable, #row_${id} .status-dropdown`).attr("contenteditable", false).prop("disabled", true);
-
-        // Update the data in the database using AJAX
-        const data = {};
-        data['status'] = $(`#row_${id} .status-dropdown`).val();
-        $(`#row_${id} .editable`).each(function () {
-            const editType = $(this).data("edit-type");
-            const value = $(this).text();
-            data[editType] = value;
-        });
-
-        $.ajax({
-            url: "UpdateStaff.php",
-            method: "POST",
-            data: { id: id, data: data },
-            success: function (response) {
-                // Handle success (if needed)
-            },
-            error: function (error) {
-                console.error("Error updating data: " + error);
-            }
-        });
-    });
-
-    // Deletion
-    $(".btn-delete").on("click", function () {
-        const id = $(this).data("id");
-
-        // Confirm deletion
-        if (confirm("Are you sure you want to delete this staff member?")) {
-            // Delete the data in the database using AJAX
-            $.ajax({
-                url: "delete_staff.php",
-                method: "GET",
-                data: { id: id },
-                success: function (response) {
-                    // Remove the row from the table on success
-                    $(`#row_${id}`).remove();
-                },
-                error: function (error) {
-                    console.error("Error deleting data: " + error);
-                }
-            });
-        }
-    });
-});
