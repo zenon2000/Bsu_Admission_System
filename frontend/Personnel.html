@@ -136,39 +136,42 @@
                         </ul>
                     </div>
                 </div>
+
+                
                 <!--master list-->
                 <div id="master-list">
                     <div class="table-data">
                         <div class="order">
                             <div class="head">
-                            <div class="dropdown-nature">
                                 <h3>List of Students</h3>
-                                <!--Drop Down for Nature of Degree-->
-                                <div>
-                                <select id="NatureofDegree" onchange="updateSelection(this)">
-                                    <option value disabled selected>Select Nature of Degree</option>
-                                    <option value="1">Non-Board</option>
-                                    <option value="0">Board</option>
-                                </select>
-                               
-                                <!-- Dropdown for Non-Board Programs -->
-                                <select class="nonboardProgram" id="nonBoard">
-                                    <option value disabled selected>Non-Board Programs</option>
-                                    <option value="BSIT">BSED</option>
-                                    <option value="BLIS">LET</option>
-                                </select>
-
-                                <!-- Dropdown for Board Programs -->
-                                <select class="boardProgram" id="Board">
-                                    <option value disabled selected>Board Programs</option>
-                                    <option value="BSIT">BSED</option>
-                                    <option value="BLIS">LET</option>
-                                </select>
-                                 </div>
+                            <div class="headfornaturetosort">
+                                <!--Drop Down for Nature of Degree--> 
+                                   <select class="NatureDropdown" id="NatureofDegree" onchange="updateSelection(this)">
+                                       <option value disabled selected>Select Nature of Degree</option>
+                                       <option value="1">Non-Board</option>
+                                       <option value="0">Board</option>
+                                   </select>
+                                  
+                                   <!-- Dropdown for Non-Board Programs -->
+                                   <select class="nonboardProgram" id="nonBoard">
+                                       <option value disabled selected>Non-Board Programs</option>
+                                       <option value="BSIT">BSED</option>
+                                       <option value="BLIS">LET</option>
+                                   </select>
+               
+                                   <!-- Dropdown for Board Programs -->
+                                   <select class="boardProgram" id="Board">
+                                       <option value disabled selected>Board Programs</option>
+                                       <option value="BSIT">BSED</option>
+                                       <option value="BLIS">LET</option>
+                                   </select>
+                                
+                                    <label for="rangeInput"></label>
+                                           <input class="ForRange" type="number" id="rangeInput" name="rangeInput" placeholder="1-10" min="1" onchange="validateRange()">
+                                           <i class='bx bx-sort'></i>
+                            </div>
                             </div>
 
-                            <input type="number" class="input" name="Range" id="Range" placeholder="Enter Range">
-                            </div>
                             <div id="table-container">
                             <table>
                                 <colgroup>
@@ -229,101 +232,87 @@
                 </div>
 
                 <div class="tabs">
-                    <button class="tab-button active" data-tab="tab1">Notice of Admission</button>
-                    <button class="tab-button" data-tab="tab2">Notice of Result</button>
-                    <button class="button send" type="submit">Send</button> <button class="button save"
-                        type="submit">Save</button>
+                    <button class="tab-button" data-tab="tab1">NOA</button>
+                    <button class="tab-button" data-tab="tab2">NOR</button>
+                    <button class="button send" type="submit">Send</button> <button class="button save" type="submit">Save</button>
                 </div>
   
                 <div class="tab-content" id="tab1">
                     <!--result(NOA)-->
                     <div id="student-result-noa">
-                        <div class="table-data">
-                            <div class="order">
-                                <div class="head">
-                                    <h3>Student Master List (NOA)</h3>
-                                    <i class='bx bx-search' id="searchIcon"></i>
-                                    <div class="search-box" id="searchBox-noa">
-                                        <input type="text" id="noa-searchBox" placeholder="Search...">
+                            <div class="table-data">
+                                <div class="order">
+                                    <div class="head">
+                                        <h3>Notice of Admission</h3>
+                                    <div class="headfornaturetosort">
+                                        <!--Drop Down for Nature of Degree--> 
+                                           <select class="NatureDropdown" id="NatureofDegree" onchange="updateSelection(this)">
+                                               <option value disabled selected>Select Nature of Degree</option>
+                                               <option value="1">Non-Board</option>
+                                               <option value="0">Board</option>
+                                           </select>
+                                          
+                                           <!-- Dropdown for Non-Board Programs -->
+                                           <select class="nonboardProgram" id="nonBoard">
+                                               <option value disabled selected>Non-Board Programs</option>
+                                               <option value="BSIT">BSED</option>
+                                               <option value="BLIS">LET</option>
+                                           </select>
+                       
+                                           <!-- Dropdown for Board Programs -->
+                                           <select class="boardProgram" id="Board">
+                                               <option value disabled selected>Board Programs</option>
+                                               <option value="BSIT">BSED</option>
+                                               <option value="BLIS">LET</option>
+                                           </select>
+                                        
+                                            <label for="rangeInput"></label>
+                                                   <input class="ForRange" type="number" id="rangeInput" name="rangeInput" placeholder="1-10" min="1" onchange="validateRange()">
+                                                   <i class='bx bx-sort'></i>
                                     </div>
+                                    </div>
+        
+                                    <div id="table-container">
+                                    <table>
+                                        <colgroup>
+                                            <col style="width: 10%;">
+                                            <col style="width: 13%;">
+                                            <col style="width: 26%;">
+                                            <col style="width: 23%;">
+                                            <col style="width: 6%;">
+                                            <col style="width: 6%;">
+                                            <col style="width: 6%;">
+                                            <col style="width: 6%;">
+                                            <col style="width: 4%;">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th>Application No.</th>
+                                                <th>Nature of Degree</th>
+                                                <th>Program</th>
+                                                <th>Name</th>
+                                                <th>Math</th>
+                                                <th>Science</th>
+                                                <th>English</th>
+                                                <th>GWA</th>
+                                                <th>Rank</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>000001</td>
+                                                <td>Non-Board</td>
+                                                <td>Bachelor of Information Technology</td>
+                                                <td>Toge Inumaki</td>
+                                                <td>80%</td>
+                                                <td>83%</td>
+                                                <td>83%</td>
+                                                <td>83%</td>
+                                                <td>1</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
-                                <table>
-                                    <colgroup>
-                                        <col style="width: 8%;">
-                                        <col style="width: 10%;">
-                                        <col style="width: 10%;">
-                                        <col style="width: 10%;">
-                                        <col style="width: 7%;">
-                                        <col style="width: 4%;">
-                                        <col style="width: 9%;">
-                                        <col style="width: 8%;">
-                                        <col style="width: 8%;">
-                                        <col style="width: 4%;">
-                                        <col style="width: 4%;">
-                                        <col style="width: 5%;">
-                                        <col style="width: 5%;">
-                                        <col style="width: 4%;">
-                                        <col style="width: 4%;">
-                                    </colgroup>
-                                    <thead>
-                                        <tr>
-                                            <th>Application No.</th>
-                                            <th>College<br>
-                                                <select class="custom-dropdown">
-                                                    <option value="none">College</option>
-                                                    <option value="CIS">College of Information Sciences</option>
-                                                    <option value="CHET">College of Home Economics and Technology
-                                                    </option>
-                                                    <option value="CA">College of Agriculture</option>
-                                                    <option value="CHK">College of Human Kinetics</option>
-                                                    <option value="CAS">College of Ars and Sciences</option>
-                                                </select>
-                                            </th>
-                                            <th>Program<br>
-                                                <select class="custom-dropdown">
-                                                    <option value="none">Program</option>
-                                                    <option value="CIS">Bachelor of Library and Information Science
-                                                    </option>
-                                                    <option value="CIS">Bachelor of Science in Development Communication
-                                                    </option>
-                                                    <option value="CIS">Bachelor of Science in Information Technology
-                                                    </option>
-                                                </select>
-                                            </th>
-                                            <th>Name</th>
-                                            <th>Birth Date</th>
-                                            <th>Sex</th>
-                                            <th>Email</th>
-                                            <th>Municipality</th>
-                                            <th>Province</th>
-                                            <th>GWA</th>
-                                            <th>Math</th>
-                                            <th>Science</th>
-                                            <th>English</th>
-                                            <th>Rank</th>
-                                            <th>Result</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>00056</td>
-                                            <td>CIS</td>
-                                            <td>BSIT</td>
-                                            <td>Toge Jugon Inumaki</td>
-                                            <td>10-03-2003</td>
-                                            <td>Male</td>
-                                            <td>inumakitoge@gmail.com</td>
-                                            <td>Hino-shi</td>
-                                            <td>Tokyo</td>
-                                            <td>90%</td>
-                                            <td>90%</td>
-                                            <td>87%</td>
-                                            <td>92%</td>
-                                            <td>56</td>
-                                            <td>NOA</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
                             </div>
                         </div>
 
@@ -333,92 +322,79 @@
                 <div class="tab-content" id="tab2">
                     <!--result (NOR)-->
                     <div id="student-result-nor">
-                        <div class="table-data">
-                            <div class="order">
-                                <div class="head">
-                                    <h3>Student Master List (NOR)</h3>
-                                    <i class='bx bx-search' id="searchIcon"></i>
-                                    <div class="search-box" id="searchBox-nor">
-                                        <input type="text" id="nor-searchBox" placeholder="Search...">
+                            <div class="table-data">
+                                <div class="order">
+                                    <div class="head">
+                                        <h3>Notice of Result</h3>
+                                    <div class="headfornaturetosort">
+                                        <!--Drop Down for Nature of Degree--> 
+                                           <select class="NatureDropdown" id="NatureofDegree" onchange="updateSelection(this)">
+                                               <option value disabled selected>Select Nature of Degree</option>
+                                               <option value="1">Non-Board</option>
+                                               <option value="0">Board</option>
+                                           </select>
+                                          
+                                           <!-- Dropdown for Non-Board Programs -->
+                                           <select class="nonboardProgram" id="nonBoard">
+                                               <option value disabled selected>Non-Board Programs</option>
+                                               <option value="BSIT">BSED</option>
+                                               <option value="BLIS">LET</option>
+                                           </select>
+                       
+                                           <!-- Dropdown for Board Programs -->
+                                           <select class="boardProgram" id="Board">
+                                               <option value disabled selected>Board Programs</option>
+                                               <option value="BSIT">BSED</option>
+                                               <option value="BLIS">LET</option>
+                                           </select>
+                                        
+                                            <label for="rangeInput"></label>
+                                                   <input class="ForRange" type="number" id="rangeInput" name="rangeInput" placeholder="1-10" min="1" onchange="validateRange()">
+                                                   <i class='bx bx-sort'></i>
                                     </div>
+                                    </div>
+        
+                                    <div id="table-container">
+                                    <table>
+                                        <colgroup>
+                                            <col style="width: 10%;">
+                                            <col style="width: 13%;">
+                                            <col style="width: 26%;">
+                                            <col style="width: 23%;">
+                                            <col style="width: 6%;">
+                                            <col style="width: 6%;">
+                                            <col style="width: 6%;">
+                                            <col style="width: 6%;">
+                                            <col style="width: 4%;">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th>Application No.</th>
+                                                <th>Nature of Degree</th>
+                                                <th>Program</th>
+                                                <th>Name</th>
+                                                <th>Math</th>
+                                                <th>Science</th>
+                                                <th>English</th>
+                                                <th>GWA</th>
+                                                <th>Rank</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>000001</td>
+                                                <td>Non-Board</td>
+                                                <td>Bachelor of Information Technology</td>
+                                                <td>Toge Inumaki</td>
+                                                <td>80%</td>
+                                                <td>83%</td>
+                                                <td>83%</td>
+                                                <td>83%</td>
+                                                <td>1</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
-                                <table>
-                                    <colgroup>
-                                        <col style="width: 8%;">
-                                        <col style="width: 10%;">
-                                        <col style="width: 10%;">
-                                        <col style="width: 10%;">
-                                        <col style="width: 7%;">
-                                        <col style="width: 4%;">
-                                        <col style="width: 9%;">
-                                        <col style="width: 8%;">
-                                        <col style="width: 8%;">
-                                        <col style="width: 4%;">
-                                        <col style="width: 4%;">
-                                        <col style="width: 5%;">
-                                        <col style="width: 5%;">
-                                        <col style="width: 4%;">
-                                        <col style="width: 4%;">
-                                    </colgroup>
-                                    <thead>
-                                        <tr>
-                                            <th>Application No.</th>
-                                            <th>College<br>
-                                                <select class="custom-dropdown">
-                                                    <option value="none">College</option>
-                                                    <option value="CIS">College of Information Sciences</option>
-                                                    <option value="CHET">College of Home Economics and Technology
-                                                    </option>
-                                                    <option value="CA">College of Agriculture</option>
-                                                    <option value="CHK">College of Human Kinetics</option>
-                                                    <option value="CAS">College of Ars and Sciences</option>
-                                                </select>
-                                            </th>
-                                            <th>Program<br>
-                                                <select class="custom-dropdown">
-                                                    <option value="none">Program</option>
-                                                    <option value="CIS">Bachelor of Library and Information Science
-                                                    </option>
-                                                    <option value="CIS">Bachelor of Science in Development Communication
-                                                    </option>
-                                                    <option value="CIS">Bachelor of Science in Information Technology
-                                                    </option>
-                                                </select>
-                                            </th>
-                                            <th>Name</th>
-                                            <th>Birth Date</th>
-                                            <th>Sex</th>
-                                            <th>Email</th>
-                                            <th>Municipality</th>
-                                            <th>Province</th>
-                                            <th>GWA</th>
-                                            <th>Math</th>
-                                            <th>Science</th>
-                                            <th>English</th>
-                                            <th>Rank</th>
-                                            <th>Result</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>000220</td>
-                                            <td>CIS</td>
-                                            <td>BSIT</td>
-                                            <td>Nobara Kugisaki</td>
-                                            <td>08-07-2004</td>
-                                            <td>Female</td>
-                                            <td>kugisakinobara@gmail.com</td>
-                                            <td>Hino-shi</td>
-                                            <td>Tokyo</td>
-                                            <td>83%</td>
-                                            <td>84%</td>
-                                            <td>80%</td>
-                                            <td>81%</td>
-                                            <td>220</td>
-                                            <td>NOR</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
                             </div>
                         </div>
 

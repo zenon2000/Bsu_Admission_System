@@ -284,3 +284,26 @@ function updateSelection(answer) {
         document.getElementById('nonBoard').classList.add('nonboardProgram');
     }
 };
+
+//Range Field (e.g. 1-10)
+function validateRange() {
+    const rangeInput = document.getElementById('rangeInput');
+    const rangeValue = rangeInput.value;
+  
+    if (!/^\d+\-\d+$/.test(rangeValue)) {
+      alert('Invalid range format. Please enter a range in the format "1-20".');
+      rangeInput.value = '';
+      return;
+    }
+  
+    const [start, end] = rangeValue.split('-');
+  
+    if (parseInt(start) > parseInt(end)) {
+      alert('Invalid range. The starting number must be less than the ending number.');
+      rangeInput.value = '';
+      return;
+    }
+  
+    // Range is valid
+    console.log('Valid range:', rangeValue);
+  }

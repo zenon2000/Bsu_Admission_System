@@ -661,19 +661,53 @@ nav {
 	overflow-y: auto;
 }
 
-/* Add this CSS to adjust nature of degree dropdown */
-.dropdown-nature {
-    display: flex;
-    align-items: center;
-    margin-right: 20px; /* Add some margin for spacing */
+/*Nature to Sort css*/
+.headfornaturetosort {
+	float: right;
+	display: flex;
+	flex: row;
 }
-
+/* Add this CSS to adjust nature of degree dropdown */
+.NatureDropdown {
+	border: 1px solid var(--dark);
+	font-size: 10px;
+	width: 140px;
+	height: 20px;
+	padding: 2px 2px;
+	margin-right: 5px;
+}
 .nonboardProgram {
 	display: none;
+	border: 1px solid var(--dark);
+	font-size: 10px;
+	width: 140px;
+	height: 20px;
+	padding: 2px 2px;
 }
 .boardProgram {
 	display: none;
+	border: 1px solid var(--dark);
+	font-size: 10px;
+	width: 140px;
+	height: 20px;
+	padding: 2px 2px;	
 }
+
+/*Range*/
+.ForRange {
+	border: 1px solid var(--dark);
+	border-radius: none;
+	font-size: 12px;
+	width: 50px;
+	height: 20px;
+	padding: 4px 4px;
+	margin-left: 5px;
+}
+/*Sort Icon*/
+.bx.bx-sort {
+	font-size: 20px;
+	margin-left: 5px;
+  }
 
 /* Adjust the input box styles */ /*delete*/
 .search-box input[type="text"] {
@@ -692,13 +726,13 @@ nav {
   background-color: var(--dark-grey);
   border: none;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 16px;
   margin-top: 20px;
   border-radius: 3px;
 }
 
 .tab-button:hover {
-	background-color: var(--light-green);
+	background-color: var(--blue);
 	color:var(--gray);
   }
   
@@ -984,53 +1018,24 @@ nav {
     display: flex;
     flex-wrap: wrap;
     grid-gap: 24px;
-    margin-top: 24px;
+    margin-top: 10px;
     width: 100%;
     color: var(--dark);
 }
 #content main .table-data > div {
-	border-radius: 20px;
+	border-radius: 10px;
 	background: var(--light);
-	padding: 15px;
+	padding: 20px;
 	overflow-x: auto;
 }
 #content main .table-data .head {
-	display: flex;
 	align-items: center;
 	grid-gap: 16px;
-	margin-bottom: 24px;
+	margin-bottom: 40px;
 }
-/*Drop down for Student Profile*/
-#content main .table-data .head .profile-dropdown {
-    background-color:var(--light);
-    color: var(--dark);
-    border: 1px solid var(--dark);
-	border-radius: 5px;
-    font-size: 16px;
-	font-weight: bold;
-    width: 400px;
-}
-/* Style the dropdown options */
-#content main .table-data .head .profile-dropdown option {
-    background-color: var(--light);
-    color: var(--dark);
-    font-size: 14px;
-}
-/* Style the arrow (pseudo-element) */
-#content main .table-data .head .profile-dropdown::after {
-    content: '\25BC'; /* Unicode character for a down arrow */
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    color: var(--dark);
-    font-size: 16px;
-}
-/**/
 #content main .table-data .head h3 {
-	margin-right: auto;
 	font-size: 18px;
-	font-weight: 600;
+	float: left;
 }
 #content main .table-data .head .bx {
 	cursor: pointer;
@@ -1040,31 +1045,7 @@ nav {
 	flex-basis: 200px;
 	flex-grow: 1; /* Can grow to fill available space */
 }
-/*Drop down for College and programs*/
-#content main .table-data .order .custom-dropdown {
-    background-color:var(--light);
-    color: var(--dark);
-    border: 1px solid var(--dark);
-    font-size: 10px;
-    width: 65px;
-}
-/* Style the dropdown options */
-#content main .table-data .order .custom-dropdown option {
-    background-color: var(--light);
-    color: var(--dark);
-    font-size: 14px;
-}
-/* Style the arrow (pseudo-element) */
-#content main .table-data .order .custom-dropdown::after {
-    content: '\25BC'; /* Unicode character for a down arrow */
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    color: var(--dark);
-    font-size: 14px;
-}
-/**/
+
 #content main .table-data .order table {
 	width: 100%;
 	border-collapse: collapse; /* Merge cell borders into a single line */
@@ -1073,14 +1054,14 @@ nav {
 #content main .table-data .order table th {
 	border: 1px solid #dddddd;
     text-align: left;
-    padding: 8px;
+    padding: 6px;
 	font-size: 12px;
 	background-color: #f2f2f2;
 }
 #content main .table-data .order table td {
 	border: 1px solid #dddddd;
     text-align: left;
-    padding: 8px;
+    padding: 6px;
 	font-size: 12px;
 }
 #content main .table-data .order table th, td {
