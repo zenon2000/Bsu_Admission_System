@@ -46,7 +46,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $math_grade = $_POST['mathGrade'];
     $science_grade = $_POST['scienceGrade'];
     $gwa_grade = $_POST['gwaGrade'];
-
+    $rank = $_POST['rank'];
+    $result = $_POST['result'];
          // Check if the email entered in the admission form matches the one saved in the session
     $registered_email = $_SESSION['registered_email'];
     if ($email !== $registered_email) {
@@ -85,11 +86,11 @@ $id_picture_data = $target_path;
 
 
     // Prepare SQL statement for inserting data into admission_data table
-    $stmt = $conn->prepare("INSERT INTO admission_data (id_picture, applicant_name, gender, birthdate, birthplace, age, civil_status, citizenship, nationality, permanent_address, zip_code, phone, facebook, email, contact_person_1, contact_person_1_mobile, relationship_1, contact_person_2, contact_person_2_mobile, relationship_2, academic_classification, high_school_name_address, als_pept_name_address, college_name_address, lrn, degree_applied, nature_of_degree, applicant_number, application_date, english_grade, math_grade, science_grade, gwa_grade) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt = $conn->prepare("INSERT INTO admission_data (id_picture, applicant_name, gender, birthdate, birthplace, age, civil_status, citizenship, nationality, permanent_address, zip_code, phone, facebook, email, contact_person_1, contact_person_1_mobile, relationship_1, contact_person_2, contact_person_2_mobile, relationship_2, academic_classification, high_school_name_address, als_pept_name_address, college_name_address, lrn, degree_applied, nature_of_degree, applicant_number, application_date, english_grade, math_grade, science_grade, gwa_graderank, result) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
     // Bind parameters
-    $stmt->bind_param("sssssissssiisssississssssssssdddd", 
-        $id_picture_data, $applicant_name, $gender, $birthdate, $birthplace, $age, $civil_status, $citizenship, $nationality, $permanent_address, $zip_code, $phone, $facebook, $email, $contact_person_1, $contact_person_1_mobile, $relationship_1, $contact_person_2, $contact_person_2_mobile, $relationship_2, $academic_classification, $high_school_name_address, $als_pept_name_address, $college_name_address, $lrn, $degree_applied, $nature_of_degree, $applicant_number, $application_date, $english_grade, $math_grade, $science_grade, $gwa_grade);
+    $stmt->bind_param("sssssissssiisssississssssssssddddss", 
+        $id_picture_data, $applicant_name, $gender, $birthdate, $birthplace, $age, $civil_status, $citizenship, $nationality, $permanent_address, $zip_code, $phone, $facebook, $email, $contact_person_1, $contact_person_1_mobile, $relationship_1, $contact_person_2, $contact_person_2_mobile, $relationship_2, $academic_classification, $high_school_name_address, $als_pept_name_address, $college_name_address, $lrn, $degree_applied, $nature_of_degree, $applicant_number, $application_date, $english_grade, $math_grade, $science_grade, $gwa_grade, $rank, $result);
 
   // Execute the statement
   if ($stmt->execute()) {

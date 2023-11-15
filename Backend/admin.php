@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -9,6 +11,7 @@
     <link rel="stylesheet" href="../frontend\assets\css\adminf.css" />
     <!-- Boxicons -->
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 
 <body>
@@ -138,23 +141,7 @@
                             <div class="head">
                                 <div class="dropdown-nature">
                                 <h3>List of Students</h3>
-                                <!--Drop Down for Nature of Degree-->
-                                <label for="myDropdown" class="nature-degree">Select Nature of Degree:</label>
-                                <select id="myDropdown">
-                                    <option value disabled selected>Select Nature of Degree</option>
-                                    <option value="non-board">Non-Board</option>
-                                    <option value="board">Board</option>
-                                </select>
-                                <!-- Container for the second dropdown -->
-                                <div id="secondDropdownContainer" style="display: none;">
-                                    <label for="secondDropdown">Select a course:</label>
-                                    <select id="secondDropdown">
-                                        <!-- Options for the second dropdown related to 'Board' -->
-                                        <option value="math">Math</option>
-                                        <option value="science">Science</option>
-                                        <option value="english">English</option>
-                                    </select>
-                                </div>
+                                
                             </div>
                             </div>
                             <div id="table-container">
@@ -176,6 +163,7 @@
                                         <th>Nature of Degree</th>
                                         <th>Program</th>
                                         <th>Name</th>
+                                        <th>Email</th>
                                         <th>Math</th>
                                         <th>Science</th>
                                         <th>English</th>
@@ -189,6 +177,7 @@
                                         <td>Non-Board</td>
                                         <td>Bachelor of Information Technology</td>
                                         <td>Toge Inumaki</td>
+                                        <td>toge@gmail.com</td>
                                         <td>80%</td>
                                         <td>83%</td>
                                         <td>83%</td>
@@ -222,6 +211,7 @@
         <div class="order">
             <div class="head">
                 <h3>List of Personnels</h3>
+               
             </div>
             <div id="table-container">
                 <table>
@@ -230,8 +220,9 @@
                         <col style="width: 13%;">
                         <col style="width: 26%;">
                         <col style="width: 23%;">
-                        <col style="width: 6%;">
-                        <col style="width: 6%;">
+                        <col style="width: 10%;">
+                        <col style="width: 10%;">
+                        
                       
                     </colgroup>
                     <thead>
@@ -241,36 +232,89 @@
                             <th>Email</th>
                             <th>Password</th>
                             <th>Status</th>
+                            
                             <th>Action</th>
+
                         </tr>
                     </thead>
                     <tbody id="stafflist">
-                        <!-- PHP code to fetch staff data from the database -->
-                        <?php
+                    <?php
                         include("config.php");
 
                         $query = "SELECT * FROM users WHERE userType = 'staff'";
                         $result = $conn->query($query);
 
                         while ($row = $result->fetch_assoc()) {
-                            echo "<tr>";
+                            echo "<tr id='row_" . $row['id'] . "'>";
                             echo "<td>" . $row['id'] . "</td>";
-                            echo "<td>" . $row['name'] . "</td>";
-                            echo "<td>" . $row['email'] . "</td>";
-                            echo "<td>" . $row['password'] . "</td>";
-                            echo "<td>" . $row['status'] . "</td>";
+                            echo "<td><span class='editable' data-id='" . $row['id'] . "' data-edit-type='name'>" . $row['name'] . "</span></td>";
+                            echo "<td><span class='editable' data-id='" . $row['id'] . "' data-edit-type='email'>" . $row['email'] . "</span></td>";
+                            echo "<td><span class='editable' data-id='" . $row['id'] . "' data-edit-type='password'>" . $row['password'] . "</span></td>";
                             echo "<td>";
-                            echo "<a href='edit_staff.php?id=" . $row['id'] . "'>Edit</a> | ";
-                            echo "<a href='delete_staff.php?id=" . $row['id'] . "'>Delete</a>";
+                            echo "<select class='status-dropdown' data-id='" . $row['id'] . "'>";
+                            echo "<option value='Pending' " . ($row['status'] == 'Pending' ? 'selected' : '') . ">Pending</option>";
+                            echo "<option value='Approve' " . ($row['status'] == 'Approve' ? 'selected' : '') . ">Approve</option>";
+                            echo "<option value='Reject' " . ($row['status'] == 'Reject' ? 'selected' : '') . ">Reject</option>";
+                            echo "</select>";
+                            echo "</td>";
+                            echo "<td>";
+                            echo "<button class='btn-edit' data-id='" . $row['id'] . "'>Edit</button>";
+                            echo "<button class='btn-update' data-id='" . $row['id'] . "' style='display: none;'>Update</button>";
+                            echo "<button class='btn-delete' data-id='" . $row['id'] . "'>Delete</button>";
                             echo "</td>";
                             echo "</tr>";
                         }
 
                         $conn->close();
                         ?>
-                        <!-- End of PHP code -->
+                       <div>
+  
                     </tbody>
                 </table>
+<table>
+<a href="restore_staff.php">Restore Deleted Staff Members</a>
+                    <h2>Deleted Staff Members</h2>
+<?php
+include("config.php");
+
+// Fetch deleted staff members
+$query = "SELECT * FROM deleted_staff"; // Assuming you have a table to store deleted staff members
+$result = $conn->query($query);
+
+if ($result->num_rows > 0) {
+    echo "<table>";
+    echo "<thead>";
+    echo "<tr>";
+    echo "<th>ID NO.</th>";
+    echo "<th>Name</th>";
+    echo "<th>Email</th>";
+    echo "<th>Status</th>";
+    echo "<th>Action</th>";
+    echo "</tr>";
+    echo "</thead>";
+    echo "<tbody>";
+
+    while ($row = $result->fetch_assoc()) {
+        echo "<tr>";
+        echo "<td>" . $row['id'] . "</td>";
+        echo "<td>" . $row['name'] . "</td>";
+        echo "<td>" . $row['email'] . "</td>";
+        echo "<td>" . $row['status'] . "</td>";
+        echo "<td><a href='edit_deleted_staff.php?id=" . $row['id'] . "'>Edit Status</a></td>";
+        echo "</tr>";
+    }
+
+    echo "</tbody>";
+    echo "</table>";
+} else {
+    echo "No deleted staff members found.";
+}
+
+$conn->close();
+?>
+                </div>
+</table>
+                
             </div>
         </div>
     </div>
