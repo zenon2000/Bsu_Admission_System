@@ -6,13 +6,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $stmt = $conn->prepare("SELECT id, password, userType FROM users WHERE email = ?");
+    $stmt = $conn->prepare("SELECT id, password, userType, status FROM users WHERE email = ?");
     $stmt->bind_param("s", $email);
     $stmt->execute();
     $stmt->store_result();
 
     if ($stmt->num_rows > 0) {
-        $stmt->bind_result($id, $hashedPassword, $userType);
+        $stmt->bind_result($id, $hashedPassword, $userType, $status);
         $stmt->fetch();
 
         if (password_verify($password, $hashedPassword)) {
@@ -33,18 +33,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     exit(); 
                 } else {
                     // User needs to fill out the admission form, redirect to admission form
-                    header("Location: ../Backend/save_admission_data.php");
+                    header("Location: ../Backend/form.php");
                     exit();
+                } 
+            } elseif ($userType == 'staff') {
+                // Check the status of staff registration
+                if ($status == 'approved') {
+                    header("Location: ../frontend/staff.html");
+                    exit();
+                } elseif ($status == 'pending') {
+                    echo "Your registration is pending approval.";
+                } elseif ($status == 'rejected') {
+                    echo "Your registration has been rejected. Please contact the administrator.";
                 }
             } elseif ($userType == 'admin') {
-                header("Location: ../frontend/admin.html");
-            } elseif ($userType == 'staff') {
-                header("Location: ../frontend/staff.html");
+                header("Location: ../backend/admin.php");
             } else {
-                // Handle other user types
+                echo "Incorrect password";
             }
-        } else {
-            echo "Incorrect password";
         }
     } else {
         echo "User not found";

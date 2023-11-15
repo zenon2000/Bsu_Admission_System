@@ -1,4 +1,5 @@
 <?php
+session_start();
 include("config.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -7,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST['password'];
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
     $userType = $_POST['userType'];
-
+    $status = ($userType == 'student') ? 'approved' : 'pending';
         // Check if the email already exists
         $checkEmailQuery = "SELECT id FROM users WHERE email = ?";
         $stmtCheckEmail = $conn->prepare($checkEmailQuery);
@@ -23,11 +24,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit(); // Stop execution
         }
         // Proceed with user registration if the email is unique
-        // Save the user's email in the session
+          // Save email in the session variable
     $_SESSION['registered_email'] = $email;
-    
-    $stmt = $conn->prepare("INSERT INTO users (name, email, password, userType) VALUES (?, ?, ?, ?)");
-    $stmt->bind_param("ssss", $name, $email, $hashedPassword, $userType);
+
+
+    $stmt = $conn->prepare("INSERT INTO users (name, email, password, userType, status) VALUES (?, ?, ?, ?, ?)");
+    $stmt->bind_param("sssss", $name, $email, $hashedPassword, $userType,$status);
 
     if ($stmt->execute()) {
         header("Location: login.php");

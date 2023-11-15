@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BSU OUR Admission Admin</title>
     <link rel="icon" href="../frontend/assets/images/BSU Logo1.png" type="image/x-icon">
-    <link rel="stylesheet" href="a.css" />
+    <link rel="stylesheet" href="../frontend\assets\css\adminf.css" />
     <!-- Boxicons -->
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 </head>
@@ -203,7 +203,7 @@
                 </div>
             </div>
 
-            <!-- Student Result -->
+          <!-- Personnel List  -->
             <div id="student-result-content">
                 <div class="head-title">
                     <div class="left">
@@ -216,55 +216,65 @@
                     </div>
                 </div>
 
-                  <!--master list-->
-                  <div id="master-listpersonnel">
-                    <div class="table-data">
-                        <div class="order">
-                            <div class="head">
-                              <h3>List of Personnels</h3>
-                             
-                            </div>
-                            <div id="table-container">
-                            <table>
-                                <colgroup>
-                                    <col style="width: 10%;">
-                                    <col style="width: 13%;">
-                                    <col style="width: 26%;">
-                                    <col style="width: 23%;">
-                                    <col style="width: 6%;">
-                                    <col style="width: 6%;">
-                                   >
-                                </colgroup>
-                                <thead>
-                                    <tr>
-                                        <th>ID NO.</th>
-                                        <th>Name</th>
-                                        <th>Email</th>
-                                        <th>Password</th>
-                                        <th>Status</th>
-                                        <th>Action</th>
-                                        
-                                    </tr>
-                                </thead>
-                                <tbody id="stafflist">
-                                    <tr>
-                                        <td>000001</td>
-                                        <td>Non-Board</td>
-                                        <td>Bachelor of Information Technology</td>
-                                        <td>Toge Inumaki</td>
-                                        <td>Pending</td>
-                                        <td>Edit</td>
-                                        
-                                        
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                </div>
+      <!-- Staff List Table -->
+<div id="master-listpersonnel">
+    <div class="table-data">
+        <div class="order">
+            <div class="head">
+                <h3>List of Personnels</h3>
             </div>
-  
+            <div id="table-container">
+                <table>
+                    <colgroup>
+                        <col style="width: 10%;">
+                        <col style="width: 13%;">
+                        <col style="width: 26%;">
+                        <col style="width: 23%;">
+                        <col style="width: 6%;">
+                        <col style="width: 6%;">
+                      
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>ID NO.</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Password</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="stafflist">
+                        <!-- PHP code to fetch staff data from the database -->
+                        <?php
+                        include("config.php");
+
+                        $query = "SELECT * FROM users WHERE userType = 'staff'";
+                        $result = $conn->query($query);
+
+                        while ($row = $result->fetch_assoc()) {
+                            echo "<tr>";
+                            echo "<td>" . $row['id'] . "</td>";
+                            echo "<td>" . $row['name'] . "</td>";
+                            echo "<td>" . $row['email'] . "</td>";
+                            echo "<td>" . $row['password'] . "</td>";
+                            echo "<td>" . $row['status'] . "</td>";
+                            echo "<td>";
+                            echo "<a href='edit_staff.php?id=" . $row['id'] . "'>Edit</a> | ";
+                            echo "<a href='delete_staff.php?id=" . $row['id'] . "'>Delete</a>";
+                            echo "</td>";
+                            echo "</tr>";
+                        }
+
+                        $conn->close();
+                        ?>
+                        <!-- End of PHP code -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
               
 
                
@@ -334,7 +344,7 @@
 </div>
 
     <!-- CONTENT -->
-    <script src="adminf.js"></script>
+    <script src="../frontend\assets\js\adminf.js"></script>
 </body>
 
 </html>

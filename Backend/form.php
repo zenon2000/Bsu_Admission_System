@@ -1,7 +1,14 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
+session_start(); // Start the session
 
+// Check if the registered_email session variable is set
+if (!isset($_SESSION['registered_email'])) {
+    // Redirect to register.php or handle the case where the user is not registered
+    header("Location: register.php");
+    exit();
+}
 include("config.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -40,14 +47,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $science_grade = $_POST['scienceGrade'];
     $gwa_grade = $_POST['gwaGrade'];
 
-       // Check if the email entered in the admission form matches the one saved in the session
-       $admissionFormEmail = $_POST['email'];
+         // Check if the email entered in the admission form matches the one saved in the session
+    $registered_email = $_SESSION['registered_email'];
+    if ($email !== $registered_email) {
+        echo "Error: Email mismatch. Please use the same email as in registration.";
+        exit();
+    }
 
-       if (isset($_SESSION['registered_email']) && $admissionFormEmail !== $_SESSION['registered_email']) {
-           // Email in admission form does not match the registered email
-           echo "Please use the same email you used during registration.";
-           exit();
-       }
 // Check if a file was uploaded
 if ($id_picture['error'] === UPLOAD_ERR_OK) {
     // Ensure the file is an image (optional)
@@ -120,7 +126,20 @@ $conn->close();
   <link rel="icon" href="../frontend/assets/images/BSU Logo1.png" type="image/x-icon">
   <link rel="stylesheet" href="..\frontend\assets\css\admissionform.css">
   <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
+  <script>
+        // JavaScript function to check if the entered email matches the registered email
+        function checkEmail() {
+            var enteredEmail = document.getElementById('email').value;
+            var registeredEmail = '<?php echo $_SESSION['registered_email']; ?>';
 
+            if (enteredEmail !== registeredEmail) {
+                alert('Error: Email mismatch. Please use the same email as in registration.');
+                return false; // Prevent form submission
+            }
+
+            return true; // Allow form submission
+        }
+    </script>
 
 </head>
 
@@ -139,7 +158,7 @@ $conn->close();
     </div>
   </header>
 
-  <form id="registrationForm" action="save_admission_data.php" method="POST" enctype="multipart/form-data">
+  <form id="registrationForm" action="form.php" method="POST" onsubmit="return checkEmail()" enctype="multipart/form-data">
 
 
     <div class="progress-bar">
@@ -494,7 +513,7 @@ $conn->close();
               your previous School.</li>
           </ol>
         </ol>
-        <p>NOTE: PROCEED ONLY TO THE NEXT STEP IF ALL REQUIREMENTS ARE COMPLETE!</p>
+        <p>NOTE: PROCEED ONLY TO THE NEXT STEP IF ALL REQUIREMENTS ARE COMPLETE, INCOMPLETE REQUIREMENTS WILL NOT BE ENTERTAINED!</p>
 
 
       </div>
