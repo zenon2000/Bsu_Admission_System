@@ -141,26 +141,33 @@
                     <div class="table-data">
                         <div class="order">
                             <div class="head">
-                                <div class="dropdown-nature">
+                            <div class="dropdown-nature">
                                 <h3>List of Students</h3>
                                 <!--Drop Down for Nature of Degree-->
-                                <label for="myDropdown" class="nature-degree">Select Nature of Degree:</label>
-                                <select id="myDropdown">
+                                <div>
+                                <select id="NatureofDegree" onchange="updateSelection(this)">
                                     <option value disabled selected>Select Nature of Degree</option>
-                                    <option value="non-board">Non-Board</option>
-                                    <option value="board">Board</option>
+                                    <option value="1">Non-Board</option>
+                                    <option value="0">Board</option>
                                 </select>
-                                <!-- Container for the second dropdown -->
-                                <div id="secondDropdownContainer" style="display: none;">
-                                    <label for="secondDropdown">Select a course:</label>
-                                    <select id="secondDropdown">
-                                        <!-- Options for the second dropdown related to 'Board' -->
-                                        <option value="math">Math</option>
-                                        <option value="science">Science</option>
-                                        <option value="english">English</option>
-                                    </select>
-                                </div>
+                               
+                                <!-- Dropdown for Non-Board Programs -->
+                                <select class="nonboardProgram" id="nonBoard">
+                                    <option value disabled selected>Non-Board Programs</option>
+                                    <option value="BSIT">BSED</option>
+                                    <option value="BLIS">LET</option>
+                                </select>
+
+                                <!-- Dropdown for Board Programs -->
+                                <select class="boardProgram" id="Board">
+                                    <option value disabled selected>Board Programs</option>
+                                    <option value="BSIT">BSED</option>
+                                    <option value="BLIS">LET</option>
+                                </select>
+                                 </div>
                             </div>
+
+                            <input type="number" class="input" name="Range" id="Range" placeholder="Enter Range">
                             </div>
                             <div id="table-container">
                             <table>

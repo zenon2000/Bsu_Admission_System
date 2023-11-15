@@ -274,30 +274,13 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 //dropdown for nature of degree
-document.addEventListener('DOMContentLoaded', function () {
-    var dropdown = document.getElementById('myDropdown');
-    var secondDropdownContainer = document.getElementById('secondDropdownContainer');
-    var secondDropdown = document.getElementById('secondDropdown');
-
-    // Add an event listener to the dropdown
-    dropdown.addEventListener('change', function () {
-        if (dropdown.value === 'board') {
-            // Show the second dropdown if 'Board' is selected
-            secondDropdownContainer.style.display = 'block';
-        } else {
-            // Hide the second dropdown for other selections
-            secondDropdownContainer.style.display = 'none';
-        }
-    });
-
-    // Set the value based on the condition
-    var condition = true;
-
-    if (condition) {
-        dropdown.value = 'board';
-        // Show the second dropdown initially if 'Board' is selected
-        secondDropdownContainer.style.display = 'block';
+function updateSelection(answer) {
+    console.log(answer.value);
+    if(answer.value == 1){
+        document.getElementById('nonBoard').classList.remove('nonboardProgram');
+        document.getElementById('Board').classList.add('boardProgram');
     } else {
-        dropdown.value = 'non-board';
+        document.getElementById('Board').classList.remove('boardProgram');
+        document.getElementById('nonBoard').classList.add('nonboardProgram');
     }
-});
+};

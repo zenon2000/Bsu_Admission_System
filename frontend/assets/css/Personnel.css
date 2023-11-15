@@ -664,14 +664,15 @@ nav {
 /* Add this CSS to adjust nature of degree dropdown */
 .dropdown-nature {
     display: flex;
-	justify-content: flex-start;
     align-items: center;
     margin-right: 20px; /* Add some margin for spacing */
 }
 
-.dropdown-nature .nature-degree {
-    display: inline-block;
-	float: right;
+.nonboardProgram {
+	display: none;
+}
+.boardProgram {
+	display: none;
 }
 
 /* Adjust the input box styles */ /*delete*/
