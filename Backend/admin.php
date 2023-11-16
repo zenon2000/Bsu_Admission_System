@@ -1,4 +1,65 @@
+<?php
+session_start();
+include("config.php");
 
+// Check if the user is an admin, otherwise redirect them
+if (!isset($_SESSION['user_type']) || $_SESSION['user_type'] !== 'admin') {
+    header("Location: loginpage.php");
+    exit();
+}
+
+// Function to get all staff members
+function getAllStaff() {
+    global $conn;
+    $query = "SELECT id, name, email, userType, status FROM users WHERE userType = 'staff'";
+    $result = $conn->query($query);
+    return $result;
+}
+
+// Function to update staff status
+function updateStaffStatus($staffId, $newStatus) {
+    global $conn;
+    $query = "UPDATE users SET status = ? WHERE id = ? AND userType = 'staff'";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param("si", $newStatus, $staffId);
+    return $stmt->execute();
+}
+
+// Function to delete staff member
+function deleteStaff($staffId) {
+    global $conn;
+    $query = "DELETE FROM users WHERE id = ? AND userType = 'staff'";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param("i", $staffId);
+    return $stmt->execute();
+}
+
+// Check if the form for updating status is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['updateStatus'])) {
+    $staffId = $_POST['staffId'];
+    $newStatus = $_POST['newStatus'];
+    updateStaffStatus($staffId, $newStatus);
+}
+
+// Check if the form for deleting staff member is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['deleteStaff'])) {
+    $staffId = $_POST['staffId'];
+    deleteStaff($staffId);
+}
+
+
+
+// Function to get all student form data
+function getAllStudentFormData() {
+    global $conn;
+    $query = "SELECT id,applicant_number,degree_applied,nature_of_degree, applicant_name, email, math_grade, science_grade, english_grade, gwa_grade, rank FROM admission_data";
+    $result = $conn->query($query);
+    return $result;
+}
+
+// Display all student form data in the table
+$studentFormData = getAllStudentFormData();
+?>
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -7,18 +68,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BSU OUR Admission Admin</title>
-    <link rel="icon" href="../frontend/assets/images/BSU Logo1.png" type="image/x-icon">
-    <link rel="stylesheet" href="../frontend\assets\css\adminf.css" />
+    <link rel="icon" href="assets/images/BSU Logo1.png" type="image/x-icon">
+    <link rel="stylesheet" href="assets\css\admin.css" />
     <!-- Boxicons -->
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    
 </head>
 
 <body>
     <!-- SIDEBAR -->
     <section id="sidebar">
         <a class="brand">
-            <img class="bsulogo" src="../frontend/assets/images/BSU Logo1.png" alt="BSU LOGO">
+            <img class="bsulogo" src="assets/images/BSU Logo1.png" alt="BSU LOGO">
             <span class="text">Admin</span>
         </a>
 
@@ -64,7 +126,7 @@
             <div id="clock">8:10:45</div>
            
             <a href="#" class="profile" id="profile-button">
-                <img src="../frontend/assets/images/human icon.png" alt="User Profile">
+                <img src="assets/images/human icon.png" alt="User Profile">
             </a>
 
         </nav>
@@ -147,22 +209,24 @@
                             <div id="table-container">
                             <table>
                                 <colgroup>
+                                    <col style="width: 5%;">
                                     <col style="width: 10%;">
-                                    <col style="width: 13%;">
-                                    <col style="width: 26%;">
-                                    <col style="width: 23%;">
-                                    <col style="width: 6%;">
-                                    <col style="width: 6%;">
-                                    <col style="width: 6%;">
-                                    <col style="width: 6%;">
-                                    <col style="width: 4%;">
+                                    <col style="width: 15%;">
+                                    <col style="width: 10%;">
+                                    <col style="width: 20%;">
+                                    <col style="width: 8%;">
+                                    <col style="width: 8%;">
+                                    <col style="width: 8%;">
+                                    <col style="width: 8%;">
                                 </colgroup>
                                 <thead>
                                     <tr>
+                                        <th>#</th>
                                         <th>Application No.</th>
+                                        <th>Name</th>
                                         <th>Nature of Degree</th>
                                         <th>Program</th>
-                                        <th>Name</th>
+                                        
                                         <th>Email</th>
                                         <th>Math</th>
                                         <th>Science</th>
@@ -172,19 +236,30 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>000001</td>
-                                        <td>Non-Board</td>
-                                        <td>Bachelor of Information Technology</td>
-                                        <td>Toge Inumaki</td>
-                                        <td>toge@gmail.com</td>
-                                        <td>80%</td>
-                                        <td>83%</td>
-                                        <td>83%</td>
-                                        <td>83%</td>
-                                        <td>1</td>
-                                    </tr>
-                                </tbody>
+                                <?php
+    // Counter for numbering the students
+    $counter = 1;
+
+    // Loop through the results and populate the table rows
+    while ($row = $studentFormData->fetch_assoc()) {
+    ?>
+        <tr>
+            <td><?php echo $counter++; ?></td>
+            <td><?php echo $row['applicant_number']; ?></td>
+            <td><?php echo $row['applicant_name']; ?></td>
+            <td><?php echo $row['nature_of_degree']; ?></td>
+            <td><?php echo $row['degree_applied']; ?></td>
+            <td><?php echo $row['email']; ?></td>
+            <td><?php echo $row['math_grade']; ?></td>
+            <td><?php echo $row['science_grade']; ?></td>
+            <td><?php echo $row['english_grade']; ?></td>
+            <td><?php echo $row['gwa_grade']; ?></td>
+            <td><?php echo $row['rank']; ?></td>
+            <!-- Add more columns as needed -->
+        </tr>
+        <?php
+    }
+    ?>                      </tbody>
                             </table>
                         </div>
                     </div>
@@ -216,104 +291,72 @@
             <div id="table-container">
                 <table>
                     <colgroup>
-                        <col style="width: 10%;">
-                        <col style="width: 13%;">
-                        <col style="width: 26%;">
-                        <col style="width: 23%;">
-                        <col style="width: 10%;">
-                        <col style="width: 10%;">
+                        <col style="width: 5%;">
+                        <col style="width: 20%;">
+                        <col style="width: 15%;">
+                        <col style="width: 15%;">
+                        <col style="width: 30%;">
+                        <col style="width: 15%;">
+                        <col style="width: 15%;">
                         
                       
                     </colgroup>
                     <thead>
                         <tr>
-                            <th>ID NO.</th>
+                            <th>#</th>
                             <th>Name</th>
                             <th>Email</th>
-                            <th>Password</th>
+                           
                             <th>Status</th>
-                            
+                            <th>Update Status</th>
                             <th>Action</th>
 
                         </tr>
                     </thead>
                     <tbody id="stafflist">
                     <?php
-                        include("config.php");
+    // Counter for numbering the students
+    $counter = 1;
 
-                        $query = "SELECT * FROM users WHERE userType = 'staff'";
-                        $result = $conn->query($query);
+        // Display all staff members in the table
+        $staffMembers = getAllStaff();
+        while ($row = $staffMembers->fetch_assoc()) {
+            ?>
+            <tr>
+                <td><?php echo $counter++; ?></td>
+                <td><?php echo $row['name']; ?></td>
+                <td><?php echo $row['email']; ?></td>
+               
+                <td><?php echo $row['status']; ?></td>
+                <td>
+                    <form method="post" action="">
+                        <input type="hidden" name="staffId" value="<?php echo $row['id']; ?>">
 
-                        while ($row = $result->fetch_assoc()) {
-                            echo "<tr id='row_" . $row['id'] . "'>";
-                            echo "<td>" . $row['id'] . "</td>";
-                            echo "<td><span class='editable' data-id='" . $row['id'] . "' data-edit-type='name'>" . $row['name'] . "</span></td>";
-                            echo "<td><span class='editable' data-id='" . $row['id'] . "' data-edit-type='email'>" . $row['email'] . "</span></td>";
-                            echo "<td><span class='editable' data-id='" . $row['id'] . "' data-edit-type='password'>" . $row['password'] . "</span></td>";
-                            echo "<td>";
-                            echo "<select class='status-dropdown' data-id='" . $row['id'] . "'>";
-                            echo "<option value='Pending' " . ($row['status'] == 'Pending' ? 'selected' : '') . ">Pending</option>";
-                            echo "<option value='Approve' " . ($row['status'] == 'Approve' ? 'selected' : '') . ">Approve</option>";
-                            echo "<option value='Reject' " . ($row['status'] == 'Reject' ? 'selected' : '') . ">Reject</option>";
-                            echo "</select>";
-                            echo "</td>";
-                            echo "<td>";
-                            echo "<button class='btn-edit' data-id='" . $row['id'] . "'>Edit</button>";
-                            echo "<button class='btn-update' data-id='" . $row['id'] . "' style='display: none;'>Update</button>";
-                            echo "<button class='btn-delete' data-id='" . $row['id'] . "'>Delete</button>";
-                            echo "</td>";
-                            echo "</tr>";
-                        }
+                        <!-- Dropdown for updating status -->
+                        <select name="newStatus">
+                         
+                            <option value="pending">Pending</option>
+                            <option value="approved">Approved</option>
+                            <option value="rejected">Rejected</option>
+                        </select>
 
-                        $conn->close();
-                        ?>
-                       <div>
-  
+                        <button type="submit" name="updateStatus">Update Status</button>
+                    </form>
+                </td>
+                <td>
+                    <!-- Form for deleting staff member -->
+                    <form method="post" action="">
+                        <input type="hidden" name="staffId" value="<?php echo $row['id']; ?>">
+                        <button type="submit" name="deleteStaff">Delete Staff</button>
+                    </form>
+                </td>
+            </tr>
+            <?php
+        }
+        ?>
                     </tbody>
                 </table>
-<table>
-<a href="restore_staff.php">Restore Deleted Staff Members</a>
-                    <h2>Deleted Staff Members</h2>
-<?php
-include("config.php");
 
-// Fetch deleted staff members
-$query = "SELECT * FROM deleted_staff"; // Assuming you have a table to store deleted staff members
-$result = $conn->query($query);
-
-if ($result->num_rows > 0) {
-    echo "<table>";
-    echo "<thead>";
-    echo "<tr>";
-    echo "<th>ID NO.</th>";
-    echo "<th>Name</th>";
-    echo "<th>Email</th>";
-    echo "<th>Status</th>";
-    echo "<th>Action</th>";
-    echo "</tr>";
-    echo "</thead>";
-    echo "<tbody>";
-
-    while ($row = $result->fetch_assoc()) {
-        echo "<tr>";
-        echo "<td>" . $row['id'] . "</td>";
-        echo "<td>" . $row['name'] . "</td>";
-        echo "<td>" . $row['email'] . "</td>";
-        echo "<td>" . $row['status'] . "</td>";
-        echo "<td><a href='edit_deleted_staff.php?id=" . $row['id'] . "'>Edit Status</a></td>";
-        echo "</tr>";
-    }
-
-    echo "</tbody>";
-    echo "</table>";
-} else {
-    echo "No deleted staff members found.";
-}
-
-$conn->close();
-?>
-                </div>
-</table>
                 
             </div>
         </div>
@@ -336,7 +379,7 @@ $conn->close();
         <!-- Popup content -->
         <div class="popup-content" id="profile-content">
             <div class="profile-header">
-                <img src="../frontend/assets/images/human icon.png" alt="User Profile Picture" class="profile-picture"
+                <img src="assets/images/human icon.png" alt="User Profile Picture" class="profile-picture"
                     id="profile-picture">
                 <p class="profile-name">John Doe</p>
             </div>
@@ -388,7 +431,7 @@ $conn->close();
 </div>
 
     <!-- CONTENT -->
-    <script src="../frontend\assets\js\adminf.js"></script>
+    <script src="assets\js\admin.js"></script>
 </body>
 
 </html>
