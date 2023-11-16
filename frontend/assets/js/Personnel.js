@@ -308,20 +308,72 @@ function validateRange() {
     console.log('Valid range:', rangeValue);
   }
 
-  //Available slot - Announcements
   document.addEventListener("DOMContentLoaded", function () {
     // Get the element with the class 'bx bx-clipboard'
-    var clipboardIcon = document.querySelector('.bx.bx-clipboard');
+    var ClipboardIcon = document.querySelector('.bx.bx-clipboard');
 
     // Get the element with the id 'announcements-link'
-    var announcementsLink = document.getElementById('announcements-link');
+    var AnnouncementsLink = document.getElementById('announcements-link');
+    // click button
+    var tab3Button = document.querySelector(".tab-button[data-tab='tab3']");
+    var tab4Button = document.querySelector(".tab-button[data-tab='tab4']");
+    var tab5Button = document.querySelector(".tab-button[data-tab='tab5']");
+    var tab6Button = document.querySelector(".tab-button[data-tab='tab6']");
+
+    // Get the element with the id 'tab4' inside 'announcements-link'
+    var tab3Element = document.getElementById('tab3');
+    var tab4Element = document.getElementById('tab4');
+    var tab5Element = document.getElementById('tab5');
+    var tab6Element = document.getElementById('tab6');
 
     // Add a click event listener to the clipboard icon
-    clipboardIcon.addEventListener('click', function () {
-        // Navigate to the announcements link when the clipboard icon is clicked
-        announcementsLink.click();
+    ClipboardIcon.addEventListener('click', function () {
+        // Navigate to the 'announcements-link' and directly show the contents of 'tab4'
+        AnnouncementsLink.click();
+
+        // Show the contents of 'tab4' and hide other tabs
+        tab4Element.style.display = 'block';
+        tab3Element.style.display = 'none';
+        tab5Element.style.display = 'none';
+        tab6Element.style.display = 'none';
+
+        // Scroll to 'tab4' with a smooth animation
+        tab4Element.scrollIntoView({ behavior: 'smooth' });
+    });
+
+    tab3Button.addEventListener("click", function () {
+        // Show tab3 content and hide other tabs
+        tab3Element.style.display = "block";
+        tab4Element.style.display = "none";
+        tab5Element.style.display = "none";
+        tab6Element.style.display = "none";
+    });
+
+    tab4Button.addEventListener("click", function () {
+        // Show tab4 content and hide other tabs
+        tab3Element.style.display = "none";
+        tab4Element.style.display = "block";
+        tab5Element.style.display = "none";
+        tab6Element.style.display = "none";
+    });
+
+    tab5Button.addEventListener("click", function () {
+        // Show tab5 content and hide other tabs
+        tab3Element.style.display = "none";
+        tab4Element.style.display = "none";
+        tab5Element.style.display = "block";
+        tab6Element.style.display = "none";
+    });
+
+    tab6Button.addEventListener("click", function () {
+        // Show tab6 content and hide other tabs
+        tab3Element.style.display = "none";
+        tab4Element.style.display = "none";
+        tab5Element.style.display = "none";
+        tab6Element.style.display = "block";
     });
 });
+
 
 //Students for Admission - Master List
 document.addEventListener("DOMContentLoaded", function () {
