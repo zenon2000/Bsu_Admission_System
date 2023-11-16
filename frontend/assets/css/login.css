@@ -159,14 +159,3 @@ input {
     text-align: left;
     margin-bottom: 5px;
 }
-
-.icons {
-    display: flex;
-    align-items: center;
-}
-
-.icons a {
-    margin-right: 10px;
-    color: #000; /* Change the color as needed */
-    text-decoration: none;
-}
