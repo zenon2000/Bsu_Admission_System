@@ -1,12 +1,24 @@
 <?php
-// Connect to the database (modify this according to your connection details)
+session_start();
 include("config.php");
 
-// Query to fetch all records from the database
-$sql = "SELECT * FROM admission_data";
-$result = $conn->query($sql);
-?>
+// Check if the user is personnel, otherwise redirect them
+if (!isset($_SESSION['user_type']) || $_SESSION['user_type'] !== 'staff') {
+    header("Location: loginpage.php");
+    exit();
+}
 
+// Function to get all student data
+function getAllStudentData() {
+    global $conn;
+    $query = "SELECT * FROM admission_data";
+    $result = $conn->query($query);
+    return $result;
+}
+
+// Get all student data
+$studentFormData = getAllStudentData();
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -14,8 +26,8 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BSU OUR Admission Unit Personnel</title>
-    <link rel="icon" href="../frontend/assets/images/BSU Logo1.png" type="image/x-icon">
-    <link rel="stylesheet" href="../frontend/assets/css//personnel.css" />
+    <link rel="icon" href="assets/images/BSU Logo1.png" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css//personnel.css" />
     <!-- Boxicons -->
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 </head>
@@ -24,7 +36,7 @@ $result = $conn->query($sql);
     <!-- SIDEBAR -->
     <section id="sidebar">
         <a class="brand">
-            <img class="bsulogo" src="../frontend/assets/images/BSU Logo1.png" alt="BSU LOGO">
+            <img class="bsulogo" src="assets/images/BSU Logo1.png" alt="BSU LOGO">
             <span class="text">Personnel</span>
         </a>
 
@@ -75,7 +87,7 @@ $result = $conn->query($sql);
             <div id="clock">8:10:45</div>
            
             <a href="#" class="profile" id="profile-button">
-                <img src="../frontend/assets/images/human icon.png" alt="User Profile">
+                <img src="assets/images/human icon.png" alt="User Profile">
             </a>
 
         </nav>
@@ -149,14 +161,40 @@ $result = $conn->query($sql);
                 <div id="master-list">
     <div class="table-data">
         <div class="order">
-            <div class="head">
-                <h3>List of Students</h3>
-            </div>
+             <div class="head">
+                                <h3>List of Students</h3>
+                            <div class="headfornaturetosort">
+                                <!--Drop Down for Nature of Degree--> 
+                                   <select class="NatureDropdown" id="NatureofDegree" onchange="updateSelection(this)">
+                                       <option value disabled selected>Select Nature of Degree</option>
+                                       <option value="Non-Board">Non-Board</option>
+                                       <option value="Non-Board">Board</option>
+                                   </select>
+                                  
+                                   <!-- Dropdown for Non-Board Programs -->
+                                   <select class="nonboardProgram" id="nonBoard">
+                                       <option value disabled selected>Non-Board Programs</option>
+                                       <option value="BSIT">BSED</option>
+                                       <option value="BLIS">LET</option>
+                                   </select>
+               
+                                   <!-- Dropdown for Board Programs -->
+                                   <select class="boardProgram" id="Board">
+                                   <label for="board-programs">Board Programs</label>
+                                       <option value="BSIT">BSED</option>
+                                       <option value="BLIS">LET</option>
+                                   </select>
+                                
+                                    <label for="rangeInput"></label>
+                                           <input class="ForRange" type="number" id="rangeInput" name="rangeInput" placeholder="1-10" min="1" onchange="validateRange()">
+                                           <i class='bx bx-sort'></i>
+                            </div>
+                            </div>
             <div id="table-container">
                 <table>
                     <thead>
                         <tr>
-                            <th>ID No.</th>
+                            <th>#</th>
                             <th>Application No.</th>
                             <th>Nature of Degree</th>
                             <th>Program</th>
@@ -172,30 +210,38 @@ $result = $conn->query($sql);
                         </tr>
                     </thead>
                     <tbody>
-                        <?php
-                        // Loop through each row from the database result
-                        while ($row = $result->fetch_assoc()) {
-                            echo "<tr>";
-                            echo "<td>{$row['id']}</td>";
-                            echo "<td>{$row['applicant_number']}</td>";
-                            echo "<td>{$row['nature_of_degree']}</td>";
-                            echo "<td>{$row['degree_applied']}</td>";  // Add this line
-                            echo "<td>{$row['applicant_name']}</td>";
-                            echo "<td>{$row['email']}</td>";
-                            echo "<td>{$row['math_grade']}</td>";
-                            echo "<td>{$row['science_grade']}</td>";
-                            echo "<td>{$row['english_grade']}</td>";
-                            echo "<td>{$row['gwa_grade']}</td>";
-                            echo "<td>{$row['Rank']}</td>";
-                            echo "<td>{$row['Result']}</td>";
-                            echo "<td>";
-                            echo "<button onclick='editFunction({$row['id']})'>Edit</button>";
-                            echo "<button onclick='deleteFunction({$row['id']})'>Delete</button>";
-                            echo "<button onclick='saveFunction({$row['id']})' style='display:none;'>Save</button>";
-                            echo "</td>";
-                            echo "</tr>";
-                        }
-                        ?>
+                    <?php
+            // Counter for numbering the students
+            $counter = 1;
+
+            // Loop through the results and populate the table rows
+            while ($row = $studentFormData->fetch_assoc()) {
+            ?>
+                <tr>
+                    <td><?php echo $counter++; ?></td>
+                    <td><?php echo $row['applicant_number']; ?></td>
+                    <td><?php echo $row['nature_of_degree']; ?></td>
+                    <td><?php echo $row['degree_applied']; ?></td>
+                    <td><?php echo $row['applicant_name']; ?></td>
+                    <td><?php echo $row['email']; ?></td>
+<!-- Modify these input fields in the <tbody> section of personnel.php -->
+<td><input type="number" id="mathGrade" name="mathGrade" onchange="calculateGWA()" value="<?php echo $row['math_grade']; ?>"></td>
+<td><input type="number" id="scienceGrade" name="scienceGrade" onchange="calculateGWA()" value="<?php echo $row['science_grade']; ?>"></td>
+<td><input type="number" id="englishGrade" name="englishGrade" onchange="calculateGWA()" value="<?php echo $row['english_grade']; ?>"></td>
+<td><input type="text" id="gwaGrade" name="gwaGrade" readonly value="<?php echo $row['gwa_grade']; ?>"></td>
+
+                    <td><?php echo $row['Rank']; ?></td>
+                    <td><?php echo $row['Result']; ?></td>
+                    <td>
+                        <!-- Add action buttons here (edit, delete, etc.) -->
+                        <!-- Example: -->
+                        <a href="edit_student.php?id=<?php echo $row['id']; ?>">Edit</a>
+                        <a href="delete_student.php?id=<?php echo $row['id']; ?>">Delete</a>
+                    </td>
+                </tr>
+            <?php
+            }
+            ?>
                     </tbody>
                 </table>
                             </div>
@@ -467,7 +513,7 @@ $result = $conn->query($sql);
         <!-- Popup content -->
         <div class="popup-content" id="profile-content">
             <div class="profile-header">
-                <img src="../frontend/assets/images/human icon.png" alt="User Profile Picture" class="profile-picture"
+                <img src="assets/images/human icon.png" alt="User Profile Picture" class="profile-picture"
                     id="profile-picture">
                 <p class="profile-name">John Doe</p>
             </div>
@@ -519,8 +565,8 @@ $result = $conn->query($sql);
 </div>
 
     <!-- CONTENT -->
-    <script src="../frontend/assets/js/stafff.js"></script>
+    <script src="assets/js/personnel.js"></script>
 </body>
-
+ <!-- #region -->
 </html>
 

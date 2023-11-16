@@ -38,13 +38,13 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Profile</title>
-    <link rel="icon" href="../frontend/assets/images/BSU Logo1.png" type="image/x-icon">
-    <link rel="stylesheet" href="../frontend/assets/css/student.css" />
+    <link rel="icon" href="assets/images/BSU Logo1.png" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/student.css" />
     <!-- Boxicons -->
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
-    <script src="..\frontend\assets\js\jspdf.min.js"></script>
+    <script src="assets\js\jspdf.min.js"></script>
 <!-- Include the pdf.js library -->
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -54,7 +54,7 @@ $conn->close();
     <!-- SIDEBAR -->
     <section id="sidebar">
         <a href="#" class="brand">
-            <img class="bsulogo" src="../frontend/assets/images/BSU Logo1.png" alt="BSU LOGO">
+            <img class="bsulogo" src="assets/images/BSU Logo1.png" alt="BSU LOGO">
             <span class="text">Student</span>
         </a>
 
@@ -103,7 +103,7 @@ $conn->close();
 
 
             <a href="#" class="profile" id="profile-button">
-                <img src="../frontend/assets/images/human icon.png" alt="User Profile" id="profile-image">
+                <img src="assets/images/human icon.png" alt="User Profile" id="profile-image">
             </a>
 
 
@@ -646,7 +646,7 @@ $conn->close();
         <!-- Popup content -->
         <div class="popup-content" id="profile-content">
             <div class="profile-header">
-                <img src="../frontend/assets/images/human icon.png" alt="User Profile Picture" class="profile-picture" id="profile-picture">
+                <img src="assets/images/human icon.png" alt="User Profile Picture" class="profile-picture" id="profile-picture">
                 <p class="profile-name" id="applicant-name"><?php echo $row['applicant_name']; ?></p>
             </div>
            
@@ -692,7 +692,7 @@ $conn->close();
 
 
         <!-- CONTENT -->
-        <script src="../frontend/assets/js/student.js"></script>
+        <script src="assets/js/student.js"></script>
 </body>
 
 </html>

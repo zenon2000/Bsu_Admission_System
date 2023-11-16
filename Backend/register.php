@@ -9,30 +9,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
     $userType = $_POST['userType'];
     $status = ($userType == 'student') ? 'approved' : 'pending';
-        // Check if the email already exists
-        $checkEmailQuery = "SELECT id FROM users WHERE email = ?";
-        $stmtCheckEmail = $conn->prepare($checkEmailQuery);
-        $stmtCheckEmail->bind_param("s", $email);
-        $stmtCheckEmail->execute();
-        $stmtCheckEmail->store_result();
-    
-        if ($stmtCheckEmail->num_rows > 0) {
-            // Email already exists, inform the user
-            echo "Email already in use. Please choose another email.";
-            $stmtCheckEmail->close();
-            $conn->close();
-            exit(); // Stop execution
-        }
-        // Proceed with user registration if the email is unique
-          // Save email in the session variable
+
+    // Check if the email already exists
+    $checkEmailQuery = "SELECT id FROM users WHERE email = ?";
+    $stmtCheckEmail = $conn->prepare($checkEmailQuery);
+    $stmtCheckEmail->bind_param("s", $email);
+    $stmtCheckEmail->execute();
+    $stmtCheckEmail->store_result();
+
+    if ($stmtCheckEmail->num_rows > 0) {
+        // Email already exists, inform the user
+        echo "Email already in use. Please choose another email.";
+        $stmtCheckEmail->close();
+        $conn->close();
+        exit(); // Stop execution
+    }
+
+    // Proceed with user registration if the email is unique
     $_SESSION['registered_email'] = $email;
 
-
     $stmt = $conn->prepare("INSERT INTO users (name, email, password, userType, status) VALUES (?, ?, ?, ?, ?)");
-    $stmt->bind_param("sssss", $name, $email, $hashedPassword, $userType,$status);
+    $stmt->bind_param("sssss", $name, $email, $hashedPassword, $userType, $status);
 
     if ($stmt->execute()) {
-        header("Location: login.php");
+        header("Location: loginpage.php");
         exit();
     } else {
         echo "Error: " . $stmt->error;
@@ -43,6 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 $conn->close();
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -76,21 +77,9 @@ $conn->close();
             <button class="cn" id="joinUsButton">JOIN US</button>
         </div>
 
-        <div class="form" id="loginForm">
-            <form action="login.php" method="POST">
-                <h2>Login</h2>
-                <input type="email" name="email" placeholder="Email" required>
-                <input type="password" name="password" placeholder="Password" required>
-                <button class="btnn" type="submit">Login</button>
-                <p class="link">Don't have an account<br>
-                    <a href="#" id="signupLink">Sign up </a> here
-                </p>
-            </form>
-        </div>
-
       
         <div class="form" id="registrationForm">
-            <form  action="register.php" method="POST" id="RegForm">
+            <form  method="POST" id="RegForm">
                 <h2>Register</h2>
                 <input type="text" name="name" placeholder="Name" required>
                 <input type="email" name="email" placeholder="Email" required>
@@ -104,7 +93,7 @@ $conn->close();
                 </select>
                 <button class="btnn" type="submit">Register</button>
                 <p class="link">Already have an account<br>
-                    <a href="#" id="loginLink">Login</a> here
+                    <a href="loginpage.php" id="loginLink">Login</a> here
                 </p>
             </form>
            
@@ -118,7 +107,7 @@ $conn->close();
 
     </footer>
 
-    <script src="../frontend\assets\js\login.js"></script>
+    <script src="assets\js\reg.js"></script>
 </body>
 
 </html>
