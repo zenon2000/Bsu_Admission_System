@@ -86,7 +86,7 @@ $id_picture_data = $target_path;
 
 
     // Prepare SQL statement for inserting data into admission_data table
-    $stmt = $conn->prepare("INSERT INTO admission_data (id_picture, applicant_name, gender, birthdate, birthplace, age, civil_status, citizenship, nationality, permanent_address, zip_code, phone, facebook, email, contact_person_1, contact_person_1_mobile, relationship_1, contact_person_2, contact_person_2_mobile, relationship_2, academic_classification, high_school_name_address, als_pept_name_address, college_name_address, lrn, degree_applied, nature_of_degree, applicant_number, application_date, english_grade, math_grade, science_grade, gwa_graderank, result) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt = $conn->prepare("INSERT INTO admission_data (id_picture, applicant_name, gender, birthdate, birthplace, age, civil_status, citizenship, nationality, permanent_address, zip_code, phone, facebook, email, contact_person_1, contact_person_1_mobile, relationship_1, contact_person_2, contact_person_2_mobile, relationship_2, academic_classification, high_school_name_address, als_pept_name_address, college_name_address, lrn, degree_applied, nature_of_degree, applicant_number, application_date, english_grade, math_grade, science_grade, gwa_grade, rank, result) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
     // Bind parameters
     $stmt->bind_param("sssssissssiisssississssssssssddddss", 
@@ -201,9 +201,12 @@ $conn->close();
             among all other applicants is considered.</li>
         </ol>
         <ul>
-          <li>Notice of the result of the application for admission shall be announced to the admission portal</li>
-
-        </ul>
+          <li>Notice of the result of the application for admission shall be announced in your student dashboard</li>
+          </ul>
+          <div class="message">
+     <span class="important-text">PLEASE ENTER THE CORRECT GRADE OR GWA.THIS IS NOT A BASIS FOR RANKING, BUT TO GUIDE YOU IN CHOOSING YOUR COURSE IF YOU MEET THE REQUIRED GWA.</span>
+  
+       
         <h2>Course guide for Application</h2>
         <div class="page-container">
           <div class="form-container">
@@ -215,8 +218,7 @@ $conn->close();
                 <option value="Non-board">Non-Board</option>
               </select>
             </div>
-
-
+          
             <!-- Input grades for Board selection -->
             <div id="boardFields" class="programFields">
               <label class="small-label" for="englishGrade">English Grade</label>
@@ -229,7 +231,7 @@ $conn->close();
               <label class="small-label" for="scienceGrade">Science Grade</label>
               <input type="number" class="input" name="scienceGrade" id="scienceGrade" placeholder="Enter Science grade">
 
-              <button type="button" onclick="calculateGWA()">Submit Board Grades</button>
+              <button type="button" onclick="calculateGWA()">Submit</button>
               <p id="gwaResult"></p>
             </div>
 
@@ -238,7 +240,7 @@ $conn->close();
               <label class="small-label" for="gwaGrade">GWA Grade</label>
               <input type="number" class="input" name="gwaGrade" id="gwaGrade" placeholder="Enter GWA grade">
 
-              <button type="button" onclick="submitNonBoardForm()">Submit Non-Board Grades</button>
+              <button type="button" onclick="submitNonBoardForm()">Submit</button>
               <p id="nonBoardGwaResult"></p>
             </div>
 
@@ -380,6 +382,7 @@ $conn->close();
             </div>
           </div>
         </div>
+        </div>
         <p class="coa"><strong><em>Classification of the applicant.</em></strong> An Applicant may only be classified
           in
           one category (except for second degree transferee):</p>
@@ -514,15 +517,16 @@ $conn->close();
               your previous School.</li>
           </ol>
         </ol>
-        <p>NOTE: PROCEED ONLY TO THE NEXT STEP IF ALL REQUIREMENTS ARE COMPLETE, INCOMPLETE REQUIREMENTS WILL NOT BE ENTERTAINED!</p>
+        <p></p>
 
-
-      </div>
-
-      <label class="checkbox-container">
+        <p><label class="checkbox-container">
         <input type="checkbox" id="read-guidelines" required>
-        <span class="checkmark"></span> I have read all the guidelines.
+        <span class="checkmark"></span> NOTE: CHECK AND PROCEED ONLY TO THE NEXT STEP IF ALL REQUIREMENTS ARE COMPLETE, INCOMPLETE REQUIREMENTS WILL NOT BE ENTERTAINED!</p>
       </label>
+      
+    </div>
+
+     
 
 
 
@@ -762,6 +766,8 @@ $conn->close();
               placeholder="Enter Name and Address">
 
           </div>
+        </div>
+        <div class="form-container">
           <div class="form-group">
             <label class="small-label" for="als_pept_name_address" style="white-space: nowrap;">ALS/PEPT was
               taken:</label>
@@ -769,12 +775,16 @@ $conn->close();
               placeholder="Enter Name and Address">
 
           </div>
+        </div>
+        <div class="form-container">
           <div class="form-group">
 
             <label class="small-label" for="college_name_address">College/University:</label>
             <input type="text" name="college_name_address" class="input" id="college_name_address" required
               placeholder="Enter Name and Address">
           </div>
+        </div>
+          <div class="form-container">
           <div class="form-group">
             <label class="small-label" for="lrn" style="white-space: nowrap;">Learner's Reference Number</label>
             <input type="number" name="lrn" class="input" id="lrn" placeholder="Enter LRN" pattern="[0-9]*"

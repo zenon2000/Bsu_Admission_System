@@ -942,7 +942,7 @@ nav {
 #date-of-application {
 	width: 120px;
 	float: right;
-	padding: 5px;
+	padding-left:-15px;
 }
 
 .name-sign {

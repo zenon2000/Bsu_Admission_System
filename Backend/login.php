@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 if ($stmtCheckAdmission->num_rows > 0) {
                     // User has already filled out the admission form, redirect to student dashboard
-                    header("Location: ../frontend/student.html");
+                    header("Location: ../Backend/student.php");
                     exit(); 
                 } else {
                     // User needs to fill out the admission form, redirect to admission form
@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             } elseif ($userType == 'staff') {
                 // Check the status of staff registration
                 if ($status == 'approved') {
-                    header("Location: ../frontend/personnel.html");
+                    header("Location: ../Backend/personnel.php");
                     exit();
                 } elseif ($status == 'pending') {
                     echo "Your registration is pending approval.";

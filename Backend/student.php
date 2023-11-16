@@ -45,6 +45,7 @@ $conn->close();
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
     <script src="..\frontend\assets\js\jspdf.min.js"></script>
+<!-- Include the pdf.js library -->
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
@@ -339,9 +340,10 @@ $conn->close();
                         </ul>
                     </div>
                     <a href="#" class="btn-download" onclick="generatePDF()">
-        <i class='bx bxs-cloud-download'></i>
-        <span class="text">Download PDF</span>
-    </a>
+            <i class='bx bxs-cloud-download'></i>
+            <span class="text">Download PDF</span>
+        </a>
+    
                 </div>
                 <!--profile-->
                 <div id="student-profile">
@@ -552,7 +554,7 @@ $conn->close();
 
                                             </div>
                                         </div>
-
+                                        
 
                                     
 
@@ -583,21 +585,21 @@ $conn->close();
                         <div class="order">
 
                             <div class="StudentResult-Content">
-                                <div id="StudentResult-picture" class="student-picture">
+                                <div id="StudentResult-picture" class="student-picture"><img src="<?php echo $row['id_picture']; ?>" alt="ID Picture">
                                 </div>
 
                                 <div class="result-info">
                                     <div class="result-style">
                                         <p class="result-p">
                                             <strong>Applicant Name:</strong>
-                                            <span id="result-ApplicantName" class="applicant-name"></span>
+                                            <span id="result-ApplicantName" class="applicant-name"><?php echo $row['applicant_name']; ?></span>
                                         </p>
                                     </div>
 
                                     <div class="result-style">
                                         <p class="result-p">
                                             <strong>Applicant Number:</strong>
-                                            <span id="result-ApplicantNumber" class="applicant-number"> <?php echo $row['applicant_name']; ?></span>
+                                            <span id="result-ApplicantNumber" class="applicant-number"><?php echo $row['applicant_number']; ?> </span>
                                         </p>
                                     </div>
 
