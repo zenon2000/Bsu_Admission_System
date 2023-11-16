@@ -273,7 +273,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-//dropdown for nature of degree
+//dropdown for nature of degree (Master List)
 function updateSelection(answer) {
     console.log(answer.value);
     if(answer.value == 1){
@@ -282,6 +282,30 @@ function updateSelection(answer) {
     } else {
         document.getElementById('Board').classList.remove('boardProgram');
         document.getElementById('nonBoard').classList.add('nonboardProgram');
+    }
+};
+
+//dropdown for nature of degree (Student Result - NOA)
+function updateSelectionNOA(answer) {
+    console.log(answer.value);
+    if(answer.value == 1){
+        document.getElementById('nonBoardNOA').classList.remove('nonboardProgram');
+        document.getElementById('BoardNOA').classList.add('boardProgram');
+    } else {
+        document.getElementById('BoardNOA').classList.remove('boardProgram');
+        document.getElementById('nonBoardNOA').classList.add('nonboardProgram');
+    }
+};
+
+//dropdown for nature of degree (Student Result - NOR)
+function updateSelectionNOR(answer) {
+    console.log(answer.value);
+    if(answer.value == 1){
+        document.getElementById('nonBoardNOR').classList.remove('nonboardProgram');
+        document.getElementById('BoardNOR').classList.add('boardProgram');
+    } else {
+        document.getElementById('BoardNOR').classList.remove('boardProgram');
+        document.getElementById('nonBoardNOR').classList.add('nonboardProgram');
     }
 };
 

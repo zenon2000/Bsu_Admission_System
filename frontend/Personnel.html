@@ -246,21 +246,21 @@
                                         <h3>Notice of Admission</h3>
                                     <div class="headfornaturetosort">
                                         <!--Drop Down for Nature of Degree--> 
-                                           <select class="NatureDropdown" id="NatureofDegree" onchange="updateSelection(this)">
+                                           <select class="NatureDropdown" id="NatureofDegree" onchange="updateSelectionNOA(this)">
                                                <option value disabled selected>Select Nature of Degree</option>
                                                <option value="1">Non-Board</option>
                                                <option value="0">Board</option>
                                            </select>
                                           
                                            <!-- Dropdown for Non-Board Programs -->
-                                           <select class="nonboardProgram" id="nonBoard">
+                                           <select class="nonboardProgram" id="nonBoardNOA">
                                                <option value disabled selected>Non-Board Programs</option>
                                                <option value="BSIT">BSED</option>
                                                <option value="BLIS">LET</option>
                                            </select>
                        
                                            <!-- Dropdown for Board Programs -->
-                                           <select class="boardProgram" id="Board">
+                                           <select class="boardProgram" id="BoardNOA">
                                                <option value disabled selected>Board Programs</option>
                                                <option value="BSIT">BSED</option>
                                                <option value="BLIS">LET</option>
@@ -275,15 +275,17 @@
                                     <div id="table-container">
                                     <table>
                                         <colgroup>
+                                            <col style="width: 9%;">
                                             <col style="width: 10%;">
-                                            <col style="width: 13%;">
-                                            <col style="width: 26%;">
-                                            <col style="width: 23%;">
+                                            <col style="width: 21%;">
+                                            <col style="width: 16%;">
                                             <col style="width: 6%;">
                                             <col style="width: 6%;">
                                             <col style="width: 6%;">
                                             <col style="width: 6%;">
-                                            <col style="width: 4%;">
+                                            <col style="width: 6%;">
+                                            <col style="width: 7%;">
+                                            <col style="width: 7%;">
                                         </colgroup>
                                         <thead>
                                             <tr>
@@ -296,6 +298,8 @@
                                                 <th>English</th>
                                                 <th>GWA</th>
                                                 <th>Rank</th>
+                                                <th>Result</th>
+                                                <th>Status</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -309,6 +313,8 @@
                                                 <td>83%</td>
                                                 <td>83%</td>
                                                 <td>1</td>
+                                                <td>NOA</td>
+                                                <td>Accepted/Declined</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -328,21 +334,21 @@
                                         <h3>Notice of Result</h3>
                                     <div class="headfornaturetosort">
                                         <!--Drop Down for Nature of Degree--> 
-                                           <select class="NatureDropdown" id="NatureofDegree" onchange="updateSelection(this)">
+                                           <select class="NatureDropdown" id="NatureofDegree" onchange="updateSelectionNOR(this)">
                                                <option value disabled selected>Select Nature of Degree</option>
                                                <option value="1">Non-Board</option>
                                                <option value="0">Board</option>
                                            </select>
                                           
                                            <!-- Dropdown for Non-Board Programs -->
-                                           <select class="nonboardProgram" id="nonBoard">
+                                           <select class="nonboardProgram" id="nonBoardNOR">
                                                <option value disabled selected>Non-Board Programs</option>
                                                <option value="BSIT">BSED</option>
                                                <option value="BLIS">LET</option>
                                            </select>
                        
                                            <!-- Dropdown for Board Programs -->
-                                           <select class="boardProgram" id="Board">
+                                           <select class="boardProgram" id="BoardNOR">
                                                <option value disabled selected>Board Programs</option>
                                                <option value="BSIT">BSED</option>
                                                <option value="BLIS">LET</option>
