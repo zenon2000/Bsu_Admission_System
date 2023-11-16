@@ -307,3 +307,117 @@ function validateRange() {
     // Range is valid
     console.log('Valid range:', rangeValue);
   }
+
+  //Available slot - Announcements
+  document.addEventListener("DOMContentLoaded", function () {
+    // Get the element with the class 'bx bx-clipboard'
+    var clipboardIcon = document.querySelector('.bx.bx-clipboard');
+
+    // Get the element with the id 'announcements-link'
+    var announcementsLink = document.getElementById('announcements-link');
+
+    // Add a click event listener to the clipboard icon
+    clipboardIcon.addEventListener('click', function () {
+        // Navigate to the announcements link when the clipboard icon is clicked
+        announcementsLink.click();
+    });
+});
+
+//Students for Admission - Master List
+document.addEventListener("DOMContentLoaded", function () {
+    // Get the element with the class 'bx bxs-group'
+    var groupIcon = document.querySelector('.bx.bxs-group');
+
+    // Get the element with the id 'master-list-link'
+    var masterListLink = document.getElementById('master-list-link');
+
+    // Add a click event listener to the group icon
+    groupIcon.addEventListener('click', function () {
+        // Navigate to the master-list link when the group icon is clicked
+        masterListLink.click();
+    });
+});
+
+//Admitted Students - Student Result NOA
+document.addEventListener("DOMContentLoaded", function () {
+    // Get the element with the class 'bx bx-user-check'
+    var userCheckIcon = document.querySelector('.bx.bx-user-check');
+
+    // Get the element with the id 'student-result-link'
+    var studentResultLink = document.getElementById('student-result-link');
+    //click button
+    var tab1Button = document.querySelector(".tab-button[data-tab='tab1']");
+    var tab2Button = document.querySelector(".tab-button[data-tab='tab2']");
+
+    // Get the element with the id 'tab1' inside 'student-result-link'
+    var tab1Element = document.getElementById('tab1');
+    var tab2Element = document.getElementById('tab2');
+
+    // Add a click event listener to the user-check icon
+    userCheckIcon.addEventListener('click', function () {
+        // Navigate to the 'student-result-link' and directly show the contents of 'tab1'
+        studentResultLink.click();
+        
+        // Show the contents of 'tab1'
+        tab1Element.style.display = 'block';
+        tab2Element.style.display = 'none';
+        
+        // Scroll to 'tab1' with a smooth animation
+        tab1Element.scrollIntoView({ behavior: 'smooth' });
+    });
+
+    tab1Button.addEventListener("click", function () {
+        // Show tab1 content and hide tab2 content
+        tab1Content.style.display = "block";
+        tab2Content.style.display = "none";
+    });
+
+    tab2Button.addEventListener("click", function () {
+        // Show tab2 content and hide tab1 content
+        tab1Content.style.display = "none";
+        tab2Content.style.display = "block";
+    });
+});
+
+//Students for Readmission - Student Result NOR
+document.addEventListener("DOMContentLoaded", function () {
+    // Get the element with the class 'bx bxs-user-x'
+    var userXIcon = document.querySelector('.bx.bxs-user-x');
+
+    // Get the element with the id 'student-result-link'
+    var studentResultLink = document.getElementById('student-result-link');
+    //click button
+    var tab1Button = document.querySelector(".tab-button[data-tab='tab1']");
+    var tab2Button = document.querySelector(".tab-button[data-tab='tab2']");
+
+    // Get the tab content with the id 'tab2' inside 'student-result-content'
+    var tab2Content = document.getElementById('tab2');
+    var tab1Content = document.getElementById('tab1');
+
+    // Add a click event listener to the user-x icon
+    userXIcon.addEventListener('click', function () {
+        // Navigate to 'student-result-link'
+        studentResultLink.click();
+
+        // Show the contents in 'tab2'
+        tab2Content.style.display = 'block';
+        tab1Content.style.display = 'none';
+
+        // You may want to use setTimeout to ensure that the tab switch happens after the navigation
+        setTimeout(function () {
+            tab2Content.scrollIntoView({ behavior: 'smooth' });
+        }, 500); // Adjust the delay as needed
+    });
+
+    tab1Button.addEventListener("click", function () {
+        // Show tab1 content and hide tab2 content
+        tab1Content.style.display = "block";
+        tab2Content.style.display = "none";
+    });
+
+    tab2Button.addEventListener("click", function () {
+        // Show tab2 content and hide tab1 content
+        tab1Content.style.display = "none";
+        tab2Content.style.display = "block";
+    });
+});
