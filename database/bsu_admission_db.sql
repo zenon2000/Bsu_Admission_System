@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 15, 2023 at 12:04 PM
+-- Generation Time: Nov 16, 2023 at 12:27 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -83,7 +83,9 @@ INSERT INTO `admission_data` (`id`, `id_picture`, `applicant_name`, `gender`, `b
 (19, 0x75706c6f6164732f363535336231373835393330375f327832207369676e61747572652e706e67, 'Sawac, Sawac, Gieberly Fagwan gsf', 'female', '2000-05-11', 'La Trinindad', 22, 'single', 'Filipino', 'Filipino', 'Simpa Ampucao Itogon Benguet', 2604, 2147483647, 'JuanDoe', '586@gmail.com', 'Sawac, Gieberly Fagwan', 2147483647, 'guardian', 'Gieberly', 2147483647, 'guardian', 'als_pept_passer', 'King\'s College of The Philippines', 'N/A', 'N/A', '324535465768', 'Bachelor of Library and Information Science (BLIS)', 'Non-board', '15-11-0001', '2023-11-14', 0.00, 0.00, 0.00, 89.00, NULL, NULL),
 (20, 0x75706c6f6164732f363535343062363266336532635f32783220612e706e67, 'Bunny, Bugs Rabbit', 'male', '1979-01-21', 'La Trinindad', 43, 'single', 'Filipino', 'Filipino', 'Simpa', 2604, 2147483647, 'Bea Caligtan', 'a@gmail.com', 'Sawac, Gieberly Fagwan', 2147483647, 'guardian', 'Sawac, Gieberly Fagwan', 2147483647, 'guardian', 'hs_graduate', 'Simpa Ampucao Itogon Benguet', 'N/A', 'N/A', '324535465768', 'Bachelor of Secondary Education (BSEd) Major in English', 'Board', '15-11-0001', '2023-11-15', 88.00, 88.00, 89.00, 0.00, NULL, NULL),
 (21, 0x75706c6f6164732f363535343239346436303463385f32783220612e706e67, 'Duck, Duffy Ling', 'female', '2000-05-11', 'La Trinindad', 22, 'single', 'Filipino', 'Filipino', 'Simpa Ampucao Itogon Benguet', 2604, 2147483647, 'JuanDoe', 'duffy@gmail.com', 'Sawac, Gieberly Fagwan', 2147483647, 'parent', 'Gieberly', 2147483647, 'parent', 'shs_graduate', 'Simpa Ampucao Itogon Benguet', 'N/A', 'N/A', '324535465768', 'Bachelor of Science in Nutrition and Dietetics', 'Non-board', '15-11-0001', '2023-11-15', 0.00, 0.00, 0.00, 99.00, NULL, NULL),
-(22, 0x75706c6f6164732f363535343261623962366461385f32783220612e706e67, 'Doo, Scooby Dog', 'male', '2000-01-12', 'La Trinindad', 22, 'married', 'Filipino', 'Filipino', 'Simpa Ampucao Itogon Benguet', 2604, 2147483647, 'Bea Caligtan', 'doo@gmail.com', 'Sawac, Gieberly Fagwan', 2147483647, 'guardian', 'Sawac, Gieberly Fagwan', 2147483647, 'parent', 'hs_graduate', 'Simpa Ampucao Itogon Benguet', 'N/A', 'N/A', '324535465768', 'Bachelor of Science in Food Technology', 'Non-board', '15-11-0001', '2023-11-15', 0.00, 0.00, 0.00, 99.00, NULL, NULL);
+(22, 0x75706c6f6164732f363535343261623962366461385f32783220612e706e67, 'Doo, Scooby Dog', 'male', '2000-01-12', 'La Trinindad', 22, 'married', 'Filipino', 'Filipino', 'Simpa Ampucao Itogon Benguet', 2604, 2147483647, 'Bea Caligtan', 'doo@gmail.com', 'Sawac, Gieberly Fagwan', 2147483647, 'guardian', 'Sawac, Gieberly Fagwan', 2147483647, 'parent', 'hs_graduate', 'Simpa Ampucao Itogon Benguet', 'N/A', 'N/A', '324535465768', 'Bachelor of Science in Food Technology', 'Non-board', '15-11-0001', '2023-11-15', 0.00, 0.00, 0.00, 99.00, NULL, NULL),
+(23, 0x75706c6f6164732f363535346236613939303062635f696d726573697a65722d313639393137373337383430302e706e67, 'Gieberly, Gieberly Fagwan', 'female', '2000-05-11', 'La Trinidad,', 22, 'married', 'Filipino', 'Filipino', 'Simpa', 2604, 2147483647, 'gieb', 'main@gmail.com', 'Gieberly', 2147483647, 'parent', 'Gieberly', 2147483647, 'guardian', 'als_pept_passer', 'Ampucao', 'adef', 'bsu', '094598522224', 'Bachelor of Science in Entrepreneurship specialized in Apparel & Fashion Enterprise', 'Non-board', '15-11-0001', '2023-11-15', 0.00, 0.00, 0.00, 99.00, NULL, NULL),
+(24, 0x75706c6f6164732f363535346632666434623965615f696d726573697a65722d313639393137373337383430302e706e67, 'Gieberly, Gieberly rg', 'female', '2000-05-11', 'La Trinidad,', 22, 'single', 'Filipino', 'Filipino', 'Simpa', 2604, 2147483647, 'gieb', 'juana@gmail.com', 'Gieberly', 2147483647, 'guardian', 'Gieberly', 2147483647, 'parent', 'vocational_completers', 'Ampucao', 'adef', 'bsu', '325547658657', 'Bachelor of Science in Food Technology', 'Non-board', '16-11-0001', '2023-11-15', 0.00, 0.00, 0.00, 88.00, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -136,7 +138,9 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`, `userType`, `status`) VA
 (29, 'Bugs Bunny', 'bugs@gmail.com', '$2y$10$tIzFMYc5NSc.qcv1iFfhnewaRHAuXvs8HyiiYBtjDo9hehbE1wJ96', 'student', 'pending'),
 (30, 'Duffy Duck', 'duffy@gmail.com', '$2y$10$D8MEzwp0.yz8Z8zSv.5K9.Co0jPZw81sKVzj15on2cL0eulgFB8lG', 'student', 'pending'),
 (31, 'Scooby Doo', 'doo@gmail.com', '$2y$10$qxwU6tUMd0PG12ZBwNbQFeiBNK8rVXVt5aAxf2TGGrNHnfvXwy5GK', 'student', 'pending'),
-(33, 'Charmain Pangit', 'charmain@gmail.com', '$2y$10$.vbuRwwxPRcvbxDPYhFmxu8WYxgCplSOzJ0PzMv.HCde7bERYi8GS', 'student', 'approved');
+(33, 'Charmain Pangit', 'charmain@gmail.com', '$2y$10$.vbuRwwxPRcvbxDPYhFmxu8WYxgCplSOzJ0PzMv.HCde7bERYi8GS', 'student', 'approved'),
+(34, 'Juana Jose', 'main@gmail.com', '$2y$10$AA2eRec6yJiS91YNto7u7.LRFum31qh.KZbaZw6mBjaFddhXgWhoW', 'student', 'approved'),
+(35, 'Juan dela Cruz', 'juana@gmail.com', '$2y$10$CUtt8uOB5CHGuAPDQ0MbcOiGBf0dQRqk4XZRTi/hEB4b/C3ZHOw5S', 'student', 'approved');
 
 --
 -- Indexes for dumped tables
@@ -168,7 +172,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `admission_data`
 --
 ALTER TABLE `admission_data`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `deleted_staff`
@@ -180,7 +184,7 @@ ALTER TABLE `deleted_staff`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
